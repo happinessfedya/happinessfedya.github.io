@@ -1,0 +1,457 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="architecture/ERZLcontext-lifestyle-mermaid/" rel="next"/>
+<link href="assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<title>Integration Documentation</title>
+<link href="assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="assets/_mkdocstrings.css" rel="stylesheet"/>
+<script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#_1">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Integration Documentation" class="md-header__button md-logo" data-md-component="logo" href="." title="Integration Documentation">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Integration Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Общая структура проекта
+            
+          </span>
+</div>
+</div>
+</div>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Integration Documentation" class="md-nav__button md-logo" data-md-component="logo" href="." title="Integration Documentation">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    Integration Documentation
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Общая структура проекта
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href=".">
+<span class="md-ellipsis">
+    
+  
+    Общая структура проекта
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      
+        Структура модулей
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      
+        Структура типов данных
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="architecture/ERZLcontext-lifestyle-mermaid/">
+<span class="md-ellipsis">
+    
+  
+    Жизненный цикл ERZL_Context
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="architecture/overview/">
+<span class="md-ellipsis">
+    
+  
+    Архитектура системы
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    How to
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    How to
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="how-to/add-new-attempt-strategy/">
+<span class="md-ellipsis">
+    
+  
+    Add new attempt strategy
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="how-to/add-new-source/">
+<span class="md-ellipsis">
+    
+  
+    Add new source
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="reference/api/">
+<span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="_1">Общая структура проекта</h1>
+<h2 id="_2">Структура модулей</h2>
+<ul>
+<li><code>Общие модули</code> (Source, DataSelector, XMLBuilder и прочее) должны быть максимально простыми для их универсальности. Не должны совершать никаких доменных преобразований данных. Только технические преобразования. Не служат фильтром данных за исключением проверок на битые данные. Например: Source просто отдает данные из источника. Adapter отвечает за преобразование данных таким образом, который подойдет для дальнейшей работы с пайплайном.  </li>
+<li><code>Адаптеры</code> - Отвечают за изменение данных, как в примере выше. В т.ч. за изменение контекста. Изменением контекста считается также и присваивание переменной контексту (adapter.put_bytes()). В проекте никогда не должно быть изменения контекста не через адаптер (<s>context.attempt_id + 1</s>; adapter.attempt_plus_one()).  </li>
+<li><code>Пайплайн</code> - Служит объединением общих модулей и адаптеров в шаги. Шагом считается микро-задача, финалом которой считается любое изменение контекста. Возвращать шаг должен StepRslt.ok\error\abort с StepRslt.decision, соответствующим конкретному шагу. Набор decision прописывается внутри protocols_core_types.py  </li>
+<li><code>Оркестратор</code> - Служит объединением шагов, где в соответствии с разным StepRslt.decision определяется какое будет следующее действие. Здесь зашита исключительно бизнес логика.  </li>
+</ul>
+<h2 id="_3">Структура типов данных</h2>
+<p><strong>Проект использует статическую типизацию Python (type hints + mypy) с применением generics, Protocol (структурной типизации) и типизированных DTO для построения модульного пайплайна.</strong><br/>
+<code>*_core_types.py</code> - В подобных файлах объявляются и хранятся типы данных, кроме тех, которые исползуются в моменте для конкретного метода и не предвидится использований этого же типа. В таком случае объявляем прямо над методотом\классом, где используется этот тип.  </p>
+<p><code>Возвращаемые данные</code> - Все возвращаемые типы должны быть четко прописаны как <em>@dataclass</em>.  </p>
+<p><code>Анти-паттерны</code> - В коде не должно быть\должен быть минимум непонятно откуда взятых str, int и т.д. Все они должны быть отдельно объявлены и использоваться через ссылку на объявление.  </p>
+<h1 id="_4">Документация проекта</h1>
+<p>Документация описывает текущую архитектуру модульного интеграционного пайплайна и правила его расширения.</p>
+<p>Сейчас в репозитории реализован ERZL-пайплайн:
+- источник читает строки из XLSM;
+- adapter переводит данные в канонические поля;
+- создаётся <code>ERZL_Context</code>;
+- pipeline steps подготавливают попытки, XML и ответ;
+- orchestrator управляет search-flow и create-flow.</p>
+<hr/>
+<h2 id="_5">Как читать эту документацию</h2>
+<ul>
+<li>Если нужно понять систему целиком — начни с <code>architecture/overview.md</code>.</li>
+<li>Если нужно понять жизненный цикл context — читай <code>architecture/context-lifecycle.md</code>.</li>
+<li>Если нужно изменить поведение пайплайна — смотри <code>how-to/</code>.</li>
+<li>Если нужен точный контракт типов, шагов или конфигов — смотри <code>reference/</code>.</li>
+<li>Если нужно понять причины архитектурных решений — смотри <code>adr/</code>.</li>
+</ul>
+<hr/>
+<h2 id="_6">Страницы документации</h2>
+<h3 id="architectureoverviewmd">architecture/overview.md</h3>
+<p>Главная архитектурная страница проекта.</p>
+<p>Для чего нужна:
+- объясняет общую структуру системы;
+- показывает границы ответственности между Source, Adapters, ContextFactory, DataSelector, Pipeline steps, XML-layer и Orchestrator;
+- помогает понять, в каком слое должна жить новая логика.</p>
+<p>Когда читать:
+- при первом знакомстве с проектом;
+- перед архитектурными изменениями;
+- если непонятно, куда добавлять новый код.</p>
+<h3 id="architecturecontext-lifecyclemd">architecture/context-lifecycle.md</h3>
+<p>Описание жизненного цикла <code>ERZL_Context</code>.</p>
+<p>Для чего нужна:
+- показывает, кто и когда создаёт context;
+- объясняет, какие поля context заполняются на разных этапах;
+- фиксирует, какие модули имеют право изменять конкретные поля.</p>
+<p>Когда читать:
+- если меняется состав context;
+- если нужно понять, откуда взялось текущее состояние;
+- если есть риск смешать ответственность orchestrator и adapter.</p>
+<h3 id="architecturepipeline-flowmd">architecture/pipeline-flow.md</h3>
+<p>Подробное описание выполнения одного context.</p>
+<p>Для чего нужна:
+- показывает последовательность шагов search-flow;
+- описывает переход в create-flow;
+- объясняет retry-логику и ветвления orchestrator.</p>
+<p>Когда читать:
+- если нужно понять реальный runtime flow;
+- если меняется логика попыток, поиска или создания.</p>
+<h3 id="referencecore-typesmd">reference/core-types.md</h3>
+<p>Справка по основным DTO, dataclass и enum.</p>
+<p>Для чего нужна:
+- фиксирует ключевые типы проекта;
+- помогает быстро понять, какой объект что содержит;
+- служит опорой для типизации и docstring.</p>
+<p>Когда читать:
+- если нужно быстро посмотреть структуру DTO;
+- если добавляется новый тип;
+- если меняется контракт между слоями.</p>
+<h3 id="referenceconfig-erzlmd">reference/config-erzl.md</h3>
+<p>Справка по bootstrap-конфигу ERZL.</p>
+<p>Для чего нужна:
+- объясняет структуру <code>erzl.toml</code>;
+- показывает, как конфиг превращается в runtime-объекты;
+- фиксирует назначение source, aliases, attempts, XML и transport settings.</p>
+<p>Когда читать:
+- если меняется конфиг;
+- если добавляется новый профиль;
+- если нужно понять, откуда берутся зависимости в bootstrap.</p>
+<h3 id="referencepipeline-stepsmd">reference/pipeline-steps.md</h3>
+<p>Справка по шагам пайплайна.</p>
+<p>Для чего нужна:
+- описывает, что принимает и возвращает каждый step;
+- фиксирует, какие step-result и decision используются;
+- помогает не смешивать step-логику и orchestrator-логику.</p>
+<p>Когда читать:
+- если меняется конкретный step;
+- если нужно добавить новый шаг;
+- если нужно понять контракты <code>StepRslt</code> и decision enum.</p>
+<h3 id="referencexml-layermd">reference/xml-layer.md</h3>
+<p>Справка по XML-слою.</p>
+<p>Для чего нужна:
+- описывает builder, transport и parser ответа;
+- показывает границы между подготовкой XML, отправкой и разбором ответа;
+- помогает локализовать изменения XML-протокола.</p>
+<p>Когда читать:
+- если меняется XML-схема;
+- если нужно добавить новый XML request;
+- если нужно отлаживать transport или parser.</p>
+<h3 id="how-toadd-new-sourcemd">how-to/add-new-source.md</h3>
+<p>Практическая инструкция по добавлению нового источника данных.</p>
+<p>Для чего нужна:
+- описывает, что нужно добавить в Source;
+- объясняет, какой DTO должен вернуть источник;
+- показывает, какой adapter нужен после source.</p>
+<p>Когда читать:
+- если нужно подключить новый источник вместо XLSM;
+- если добавляется другой формат загрузки.</p>
+<h3 id="how-toadd-new-attempt-strategymd">how-to/add-new-attempt-strategy.md</h3>
+<p>Практическая инструкция по изменению логики попыток.</p>
+<p>Для чего нужна:
+- объясняет, как связаны <code>AttemptId</code>, <code>PrepareAttemptStepCfg</code>, <code>DataSelector</code> и orchestrator;
+- показывает, что можно менять в конфиге, а что должно жить в orchestrator.</p>
+<p>Когда читать:
+- если меняются наборы полей для поиска;
+- если добавляется новая стратегия попыток.</p>
+<h3 id="how-todebug-erzl-responsemd">how-to/debug-erzl-response.md</h3>
+<p>Практическая инструкция по разбору проблемных ответов ERZL.</p>
+<p>Для чего нужна:
+- помогает понять, проблема в builder, transport или parser;
+- показывает, где искать <code>xml_bytes</code>, <code>response_bytes</code> и <code>rslt_container</code>;
+- помогает различать retry, skip context и create-flow.</p>
+<p>Когда читать:
+- если пайплайн работает нестабильно;
+- если ответ приходит, но не распознаётся корректно.</p>
+<h3 id="adr">adr/</h3>
+<p>Архитектурные решения проекта.</p>
+<p>Для чего нужен раздел:
+- фиксирует спорные или важные проектные решения;
+- хранит не только “что сделали”, но и “почему сделали именно так”.</p>
+<p>Когда читать:
+- если хочется поменять базовые правила проекта;
+- если нужно понять причины текущей архитектуры.</p>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "toc.integrate", "toc.follow"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+</body>
+</html>
