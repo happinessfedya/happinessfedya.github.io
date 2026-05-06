@@ -1,0 +1,825 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA/" rel="prev"/>
+<link href="../%D0%9E%D1%82%D0%BB%D0%B0%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BE%D1%82%D0%B2%D0%B5%D1%82%20ERZL/" rel="next"/>
+<link href="../../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<title>Добавить попытку - Integration Documentation</title>
+<link href="../../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../assets/_mkdocstrings.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/toc-collapse.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#_1">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Integration Documentation" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Integration Documentation">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Integration Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Добавить попытку
+            
+          </span>
+</div>
+</div>
+</div>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Integration Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Integration Documentation">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    Integration Documentation
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../..">
+<span class="md-ellipsis">
+    
+  
+    Общая структура проекта
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    ERZL
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    ERZL
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../architecture/ERZLcontext-lifestyle-mermaid/">
+<span class="md-ellipsis">
+    
+  
+    Жизненный цикл ERZL_Context
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../architecture/overview/">
+<span class="md-ellipsis">
+    
+  
+    Архитектура системы
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    How to
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    How to
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA/">
+<span class="md-ellipsis">
+    
+  
+    Добавить источник
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Добавить попытку
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    Добавить попытку
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      
+        Порядок действий
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+<span class="md-ellipsis">
+      
+        1. Выбрать поля для новой попытки
+      
+    </span>
+</a>
+<nav aria-label="1. Выбрать поля для новой попытки" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      
+        Пример
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+<span class="md-ellipsis">
+      
+        2. Добавить попытку в файл настроек
+      
+    </span>
+</a>
+<nav aria-label="2. Добавить попытку в файл настроек" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      
+        Как было
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      
+        Как станет
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+<span class="md-ellipsis">
+      
+        Что важно
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-bootstrap">
+<span class="md-ellipsis">
+      
+        3. Подключить новую попытку в bootstrap
+      
+    </span>
+</a>
+<nav aria-label="3. Подключить новую попытку в bootstrap" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+<span class="md-ellipsis">
+      
+        Как было
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
+<span class="md-ellipsis">
+      
+        Как станет
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+<span class="md-ellipsis">
+      
+        4. Проверить, что поля попытки уже приходят в контекст
+      
+    </span>
+</a>
+<nav aria-label="4. Проверить, что поля попытки уже приходят в контекст" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_9">
+<span class="md-ellipsis">
+      
+        Пример
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+<span class="md-ellipsis">
+      
+        5. Как новая попытка проходит по пайплайну
+      
+    </span>
+</a>
+<nav aria-label="5. Как новая попытка проходит по пайплайну" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_10">
+<span class="md-ellipsis">
+      
+        Пример ожидаемого результата
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6">
+<span class="md-ellipsis">
+      
+        6. Как попытка переключается дальше
+      
+    </span>
+</a>
+<nav aria-label="6. Как попытка переключается дальше" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_11">
+<span class="md-ellipsis">
+      
+        Как это работает
+      
+    </span>
+</a>
+<nav aria-label="Как это работает" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_12">
+<span class="md-ellipsis">
+      
+        Если поля найдены
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_13">
+<span class="md-ellipsis">
+      
+        Если для текущей попытки данных нет
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_14">
+<span class="md-ellipsis">
+      
+        Если попытки закончились
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7">
+<span class="md-ellipsis">
+      
+        7. Минимальный набор файлов
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8">
+<span class="md-ellipsis">
+      
+        8. Готовый пример целиком
+      
+    </span>
+</a>
+<nav aria-label="8. Готовый пример целиком" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-toml">
+<span class="md-ellipsis">
+      
+        Шаг 1. Добавить попытку в TOML
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-bootstrap">
+<span class="md-ellipsis">
+      
+        Шаг 2. Подключить её в bootstrap
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+<span class="md-ellipsis">
+      
+        Шаг 3. Ожидаемый порядок попыток
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4_1">
+<span class="md-ellipsis">
+      
+        Шаг 4. Ожидаемое поведение
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%D0%9E%D1%82%D0%BB%D0%B0%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BE%D1%82%D0%B2%D0%B5%D1%82%20ERZL/">
+<span class="md-ellipsis">
+    
+  
+    Отладить ответ ERZL
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/api/">
+<span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="_1">Добавить попытку</h1>
+<h2 id="_2">Порядок действий</h2>
+<p>Новая попытка в этом проекте добавляется по такой цепочке:</p>
+<ol>
+<li>выбрать набор полей для новой попытки;</li>
+<li>добавить попытку в конфиг;</li>
+<li>подключить попытку в bootstrap;</li>
+<li>убедиться, что все поля уже приходят в <code>SourceData</code>;</li>
+<li>запустить пайплайн и проверить, что попытка вызывается в нужном порядке.</li>
+</ol>
+<p>Итоговая схема такая:</p>
+<pre><code class="language-text">config/erzl.toml
+-&gt; config/bootstrap_core_types.py
+-&gt; PrepareAttemptStepCfg
+-&gt; PrepareAttemptStep
+-&gt; DataSelector
+-&gt; DataAttemptStr в context
+-&gt; Orchestrator
+</code></pre>
+<hr/>
+<h2 id="1">1. Выбрать поля для новой попытки</h2>
+<p>Сначала нужно определить, по каким каноническим полям будет выполняться новая попытка.</p>
+<p>Попытка всегда задаётся через значения из <code>PersonFields</code>.</p>
+<h3 id="_3">Пример</h3>
+<p>Допустим, нужна новая попытка поиска по ФИО и дате рождения.</p>
+<p>Тогда набор полей будет такой:</p>
+<pre><code class="language-python">[
+    "surname",
+    "namep",
+    "patronymic",
+    "dateBirth",
+]
+</code></pre>
+<p>Это должны быть именно значения полей из <code>PersonFields</code>, а не названия колонок источника.</p>
+<hr/>
+<h2 id="2">2. Добавить попытку в файл настроек</h2>
+<p>Файл настроек попыток: <code>config/erzl.toml</code></p>
+<p>В проекте попытки сейчас лежат в секции:</p>
+<pre><code class="language-toml">[pipeline_steps.erzl.prepare_attempt_keys]
+</code></pre>
+<p>Нужно добавить туда новую запись.</p>
+<h3 id="_4">Как было</h3>
+<pre><code class="language-toml">[pipeline_steps.erzl.prepare_attempt_keys]
+snils_data = ["snils"]
+dudl_fio_data = ["surname", "namep", "patronymic", "dudlTypeId", "dudlSer", "dudlNom", "countryDudl"]
+</code></pre>
+<h3 id="_5">Как станет</h3>
+<pre><code class="language-toml">[pipeline_steps.erzl.prepare_attempt_keys]
+snils_data = ["snils"]
+fio_birth_data = ["surname", "namep", "patronymic", "dateBirth"]
+dudl_fio_data = ["surname", "namep", "patronymic", "dudlTypeId", "dudlSer", "dudlNom", "countryDudl"]
+</code></pre>
+<h3 id="_6">Что важно</h3>
+<p>Порядок записей здесь важен.</p>
+<p>Именно в этом порядке попытки попадут в <code>PrepareAttemptStepCfg</code>, а потом будут вызываться через <code>AttemptId</code>:</p>
+<ul>
+<li>попытка <code>0</code></li>
+<li>попытка <code>1</code></li>
+<li>попытка <code>2</code></li>
+</ul>
+<p>В примере выше порядок будет таким:</p>
+<ol>
+<li><code>snils_data</code></li>
+<li><code>fio_birth_data</code></li>
+<li><code>dudl_fio_data</code></li>
+</ol>
+<hr/>
+<h2 id="3-bootstrap">3. Подключить новую попытку в bootstrap</h2>
+<p>Файл сборки конфига попыток: <code>config/bootstrap_core_types.py</code></p>
+<p>После добавления попытки в TOML её нужно включить в <code>attempts_by_name</code> при создании <code>PrepareAttemptStepCfg</code>.</p>
+<h3 id="_7">Как было</h3>
+<pre><code class="language-python">_ERZLMainPrepareAttemptStepCfg = PrepareAttemptStepCfg.from_field_values(
+    attempts_by_name={
+        "snils_data": attempts_raw["snils_data"],
+        "dudl_fio_data": attempts_raw["dudl_fio_data"],
+    },
+    field_enum=PersonFields,
+)
+</code></pre>
+<h3 id="_8">Как станет</h3>
+<pre><code class="language-python">_ERZLMainPrepareAttemptStepCfg = PrepareAttemptStepCfg.from_field_values(
+    attempts_by_name={
+        "snils_data": attempts_raw["snils_data"],
+        "fio_birth_data": attempts_raw["fio_birth_data"],
+        "dudl_fio_data": attempts_raw["dudl_fio_data"],
+    },
+    field_enum=PersonFields,
+)
+</code></pre>
+<p>После этого новая попытка попадёт в:</p>
+<pre><code class="language-python">PrepareAttemptStepCfg.attempt_fields
+</code></pre>
+<p>и станет доступна для <code>PrepareAttemptStep</code>.</p>
+<hr/>
+<h2 id="4">4. Проверить, что поля попытки уже приходят в контекст</h2>
+<p>Файлы, которые нужно проверить:</p>
+<ul>
+<li>файл типов полей: <code>Source/source_core_types.py</code></li>
+<li>файл алиасов источника: <code>config/erzl.toml</code></li>
+<li>файл адаптера источника: <code>Adapters/Adapters.py</code></li>
+</ul>
+<p>Чтобы попытка реально сработала, все её поля должны уже приходить в:</p>
+<pre><code class="language-python">ctx.SourceData
+</code></pre>
+<p>То есть для каждого поля попытки должно выполняться следующее:</p>
+<ol>
+<li>поле существует в <code>PersonFields</code>;</li>
+<li>поле собирается адаптером <code>RenameToSourceInputAdapter</code>;</li>
+<li>у источника есть алиас на это поле.</li>
+</ol>
+<h3 id="_9">Пример</h3>
+<p>Если вы добавили попытку:</p>
+<pre><code class="language-toml">fio_birth_data = ["surname", "namep", "patronymic", "dateBirth"]
+</code></pre>
+<p>то в алиасах источника должны уже быть такие поля:</p>
+<pre><code class="language-toml">[adapters.erzl.person_fields_alias.main]
+surname = ["Пациент Фамилия"]
+namep = ["Пациент Имя"]
+patronymic = ["Пациент Отчество"]
+dateBirth = ["Пациент Дата рождения"]
+</code></pre>
+<p>После адаптации строки источника должен собираться такой <code>SourceInput</code>:</p>
+<pre><code class="language-python">SourceInput[PersonFields](
+    attributes={
+        PersonFields.SURNAME: "Иванов",
+        PersonFields.NAME: "Иван",
+        PersonFields.PATRONYMIC: "Иванович",
+        PersonFields.DATE_BIRTH: date(1980, 1, 1),
+    },
+    index=1,
+)
+</code></pre>
+<hr/>
+<h2 id="5">5. Как новая попытка проходит по пайплайну</h2>
+<p>Файл шага подготовки попытки: <code>Pipeline/pipeline_protocols.py</code></p>
+<p>Шаг <code>PrepareAttemptStep</code> берёт текущий индекс попытки:</p>
+<pre><code class="language-python">ctx.AttemptId
+</code></pre>
+<p>и выбирает набор полей:</p>
+<pre><code class="language-python">self._cfg.attempt_fields[ctx.AttemptId]
+</code></pre>
+<p>Дальше <code>DataSelector</code> пытается найти в <code>ctx.SourceData</code> все нужные поля текущей попытки.</p>
+<p>Если подходящие данные есть, результат записывается в context через <code>ColumnSelectorAdapter</code>, и в <code>ctx.DataAttemptStr</code> попадает набор полей текущей попытки.</p>
+<h3 id="_10">Пример ожидаемого результата</h3>
+<p>Если текущая попытка:</p>
+<pre><code class="language-python">("surname", "namep", "patronymic", "dateBirth")
+</code></pre>
+<p>и все поля найдены, то в context будет записано:</p>
+<pre><code class="language-python">ctx.DataAttemptStr == (
+    PersonFields.SURNAME,
+    PersonFields.NAME,
+    PersonFields.PATRONYMIC,
+    PersonFields.DATE_BIRTH,
+)
+</code></pre>
+<hr/>
+<h2 id="6">6. Как попытка переключается дальше</h2>
+<p>Файл orchestration попыток: <code>Orchestrator/Orchestrator.py</code></p>
+<p>После выполнения <code>PrepareAttemptStep</code> orchestrator получает одно из решений:</p>
+<ul>
+<li><code>CONTINUE</code></li>
+<li><code>NEXT_ATTEMPT</code></li>
+<li><code>NO_MORE_ATTEMPTS</code></li>
+</ul>
+<h3 id="_11">Как это работает</h3>
+<h4 id="_12">Если поля найдены</h4>
+<p>Orchestrator продолжает сборку search XML:</p>
+<pre><code class="language-python">SelectAttemptKeysDecision_StrEnum.CONTINUE
+</code></pre>
+<h4 id="_13">Если для текущей попытки данных нет</h4>
+<p>Orchestrator увеличивает <code>AttemptId</code>:</p>
+<pre><code class="language-python">self._adapter_base.attempt_plus_one(ctx)
+</code></pre>
+<p>и запускает следующую попытку:</p>
+<pre><code class="language-python">SelectAttemptKeysDecision_StrEnum.NEXT_ATTEMPT
+</code></pre>
+<h4 id="_14">Если попытки закончились</h4>
+<p>Когда все попытки для текущего <code>PersonType</code> исчерпаны, orchestrator получает:</p>
+<pre><code class="language-python">SelectAttemptKeysDecision_StrEnum.NO_MORE_ATTEMPTS
+</code></pre>
+<p>Дальше происходит одно из двух:</p>
+<ol>
+<li>если <code>PersonType == MOSCOW</code>, orchestrator переключает тип на <code>NONRESIDENT</code> и сбрасывает <code>AttemptId</code> в <code>0</code>;</li>
+<li>если <code>PersonType == NONRESIDENT</code>, orchestrator ставит <code>need_create = True</code>.</li>
+</ol>
+<hr/>
+<h2 id="7">7. Минимальный набор файлов</h2>
+<p>Чтобы добавить новую попытку, обычно меняются только два файла:</p>
+<ul>
+<li>файл настроек попыток: <code>config/erzl.toml</code></li>
+<li>файл сборки конфига попыток: <code>config/bootstrap_core_types.py</code></li>
+</ul>
+<p>Если используются уже существующие поля <code>PersonFields</code> и существующие алиасы источника, остальные файлы менять не нужно.</p>
+<hr/>
+<h2 id="8">8. Готовый пример целиком</h2>
+<h3 id="1-toml">Шаг 1. Добавить попытку в TOML</h3>
+<pre><code class="language-toml">[pipeline_steps.erzl.prepare_attempt_keys]
+snils_data = ["snils"]
+fio_birth_data = ["surname", "namep", "patronymic", "dateBirth"]
+dudl_fio_data = ["surname", "namep", "patronymic", "dudlTypeId", "dudlSer", "dudlNom", "countryDudl"]
+</code></pre>
+<h3 id="2-bootstrap">Шаг 2. Подключить её в bootstrap</h3>
+<pre><code class="language-python">_ERZLMainPrepareAttemptStepCfg = PrepareAttemptStepCfg.from_field_values(
+    attempts_by_name={
+        "snils_data": attempts_raw["snils_data"],
+        "fio_birth_data": attempts_raw["fio_birth_data"],
+        "dudl_fio_data": attempts_raw["dudl_fio_data"],
+    },
+    field_enum=PersonFields,
+)
+</code></pre>
+<h3 id="3">Шаг 3. Ожидаемый порядок попыток</h3>
+<pre><code class="language-text">AttemptId = 0 -&gt; snils_data
+AttemptId = 1 -&gt; fio_birth_data
+AttemptId = 2 -&gt; dudl_fio_data
+</code></pre>
+<h3 id="4_1">Шаг 4. Ожидаемое поведение</h3>
+<ul>
+<li>если в <code>SourceData</code> есть <code>snils</code>, отработает первая попытка;</li>
+<li>если <code>snils</code> нет, orchestrator перейдёт ко второй;</li>
+<li>если по второй тоже нет данных, перейдёт к третьей;</li>
+<li>если попытки закончились, произойдёт смена <code>PersonType</code> или переход в create-flow.</li>
+</ul>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "toc.integrate", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../../../assets/javascripts/toc-collapse.js"></script>
+</body>
+</html>

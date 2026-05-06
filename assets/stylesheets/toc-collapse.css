@@ -1,0 +1,38 @@
+.md-sidebar .md-nav [data-md-component="toc"] .md-nav__item--collapsible {
+  position: relative;
+}
+
+.md-sidebar .md-nav [data-md-component="toc"] .md-nav__item--collapsible > .md-nav__link {
+  padding-left: 1.4rem;
+}
+
+.md-sidebar .md-nav [data-md-component="toc"] .toc-collapse-toggle {
+  position: absolute;
+  left: 0;
+  top: 0.45rem;
+  width: 1rem;
+  height: 1rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--md-default-fg-color--light);
+  cursor: pointer;
+  font-size: 0.8rem;
+  line-height: 1;
+}
+
+.md-sidebar .md-nav [data-md-component="toc"] .toc-collapse-toggle:hover {
+  color: var(--md-default-fg-color);
+}
+
+.md-sidebar .md-nav [data-md-component="toc"] .toc-collapse-toggle::before {
+  content: "▾";
+}
+
+.md-sidebar .md-nav [data-md-component="toc"] .md-nav__item--collapsed > .toc-collapse-toggle::before {
+  content: "▸";
+}
+
+.md-sidebar .md-nav [data-md-component="toc"] .md-nav__item--collapsed > nav.md-nav {
+  display: none;
+}
