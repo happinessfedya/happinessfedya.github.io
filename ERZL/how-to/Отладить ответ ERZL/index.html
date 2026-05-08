@@ -5,7 +5,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%D0%BF%D1%8B%D1%82%D0%BA%D1%83/" rel="prev"/>
+<link href="../%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D1%84%D0%B8%D0%BB%D1%8C%20%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%B0%D1%86%D0%B8%D0%B8%20%D0%B2%20config.toml/" rel="prev"/>
 <link href="../../reference/api/" rel="next"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
@@ -221,11 +221,35 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%D0%BB%D0%B5%20%D0%BE%D1%82%20%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B0%20%D0%B4%D0%BE%20XML/">
+<span class="md-ellipsis">
+    
+  
+    Добавить поле от источника до XML
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%D0%BF%D1%8B%D1%82%D0%BA%D1%83/">
 <span class="md-ellipsis">
     
   
     Добавить попытку
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D1%84%D0%B8%D0%BB%D1%8C%20%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%B0%D1%86%D0%B8%D0%B8%20%D0%B2%20config.toml/">
+<span class="md-ellipsis">
+    
+  
+    Добавить профиль активации в config.toml
   
 
     
@@ -740,19 +764,19 @@
 <li>проверить, был ли переход в create-flow.</li>
 </ol>
 <p>Итоговая цепочка выглядит так:</p>
-<pre><code class="language-text">xml_bytes
+<div class="language-text highlight"><pre><span></span><code>xml_bytes
 -&gt; response_bytes
 -&gt; AnswerDecisionStep
 -&gt; rslt_container
 -&gt; ERZL_id / create_flags
-</code></pre>
+</code></pre></div>
 <hr/>
 <h2 id="1-xml-erzl">1. Проверить XML, который ушёл в ERZL</h2>
 <p>Файл сборки XML: <code>XML/xml_builder.py</code><br/>
 Файл orchestration: <code>Orchestrator/Orchestrator.py</code></p>
 <p>После шага построения XML в контекст кладётся:</p>
-<pre><code class="language-python">ctx.xml_bytes
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span class="n">ctx</span><span class="o">.</span><span class="n">xml_bytes</span>
+</code></pre></div>
 <h3 id="_2">Что смотреть</h3>
 <ul>
 <li>есть ли вообще <code>xml_bytes</code>;</li>
@@ -762,11 +786,11 @@
 </ul>
 <h3 id="_3">Пример</h3>
 <p>Если сейчас идёт search-попытка по <code>snils</code>, то перед отправкой в контексте должны быть:</p>
-<pre><code class="language-python">ctx.AttemptId == 0
-ctx.DataAttemptStr == (PersonFields.SNILS,)
-ctx.PersonType == AllXMLFields.ERZL.OperationsStr.FindPersonsType.MOSCOW
-ctx.xml_bytes is not None
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span class="n">ctx</span><span class="o">.</span><span class="n">AttemptId</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="n">ctx</span><span class="o">.</span><span class="n">DataAttemptStr</span> <span class="o">==</span> <span class="p">(</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SNILS</span><span class="p">,)</span>
+<span class="n">ctx</span><span class="o">.</span><span class="n">PersonType</span> <span class="o">==</span> <span class="n">AllXMLFields</span><span class="o">.</span><span class="n">ERZL</span><span class="o">.</span><span class="n">OperationsStr</span><span class="o">.</span><span class="n">FindPersonsType</span><span class="o">.</span><span class="n">MOSCOW</span>
+<span class="n">ctx</span><span class="o">.</span><span class="n">xml_bytes</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+</code></pre></div>
 <p>Если на этом этапе <code>xml_bytes</code> пустой, проблема находится до транспорта:</p>
 <ul>
 <li>в выборе полей попытки;</li>
@@ -778,8 +802,8 @@ ctx.xml_bytes is not None
 <p>Файл транспорта: <code>XML/xml_transport.py</code><br/>
 Файл адаптера транспорта: <code>Adapters/Adapters.py</code></p>
 <p>После отправки XML в контекст кладётся:</p>
-<pre><code class="language-python">ctx.response_bytes
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span class="n">ctx</span><span class="o">.</span><span class="n">response_bytes</span>
+</code></pre></div>
 <h3 id="_4">Что смотреть</h3>
 <ul>
 <li>есть ли <code>response_bytes</code>;</li>
@@ -789,8 +813,8 @@ ctx.xml_bytes is not None
 </ul>
 <h3 id="_5">Пример</h3>
 <p>После успешного transport-шага:</p>
-<pre><code class="language-python">ctx.response_bytes is not None
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span class="n">ctx</span><span class="o">.</span><span class="n">response_bytes</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+</code></pre></div>
 <p>Если <code>response_bytes</code> пустой или не похож на XML, проблема находится в транспортном слое.</p>
 <p>Если <code>response_bytes</code> заполнен, но дальше ничего не находится, проблема уже в разборе ответа или в бизнес-решении после разбора.</p>
 <hr/>
@@ -798,8 +822,8 @@ ctx.xml_bytes is not None
 <p>Файл шага разбора: <code>Pipeline/pipeline_protocols.py</code><br/>
 Файл enum решений: <code>Pipeline/pipeline_core_types.py</code></p>
 <p>Ответ разбирается через:</p>
-<pre><code class="language-python">self._get_answer.xml_rslt_to_ctx(ctx, required_fields, optional_fields)
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">_get_answer</span><span class="o">.</span><span class="n">xml_rslt_to_ctx</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">required_fields</span><span class="p">,</span> <span class="n">optional_fields</span><span class="p">)</span>
+</code></pre></div>
 <p>Этот шаг возвращает одно из решений:</p>
 <ul>
 <li><code>CONTINUE</code></li>
@@ -811,8 +835,8 @@ ctx.xml_bytes is not None
 <h3 id="_6">Как читать решения</h3>
 <h4 id="continue"><code>CONTINUE</code></h4>
 <p>XML успешно разобран, и результат уже положен в:</p>
-<pre><code class="language-python">ctx.rslt_container
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span class="n">ctx</span><span class="o">.</span><span class="n">rslt_container</span>
+</code></pre></div>
 <h4 id="retry"><code>RETRY</code></h4>
 <p>Ответ можно попробовать распарсить ещё раз без пересборки XML.</p>
 <h4 id="rebuild_and_retry"><code>REBUILD_AND_RETRY</code></h4>
@@ -826,8 +850,8 @@ ctx.xml_bytes is not None
 <p>Файл разбора XML: <code>XML/xml_getAnswer.py</code><br/>
 Файл merge результата в context: <code>Adapters/Adapters.py</code></p>
 <p>После успешного разбора шаг складывает результат в:</p>
-<pre><code class="language-python">ctx.rslt_container
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span class="n">ctx</span><span class="o">.</span><span class="n">rslt_container</span>
+</code></pre></div>
 <p>Внутри контейнера есть два основных блока:</p>
 <ul>
 <li><code>ctx.rslt_container.result</code></li>
@@ -835,83 +859,83 @@ ctx.xml_bytes is not None
 </ul>
 <h3 id="_7">Что смотреть сначала</h3>
 <h4 id="_8">Успешные данные</h4>
-<pre><code class="language-python">ctx.rslt_container.result
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span class="n">ctx</span><span class="o">.</span><span class="n">rslt_container</span><span class="o">.</span><span class="n">result</span>
+</code></pre></div>
 <p>Это список DTO по response-контейнерам.</p>
 <p>Пример:</p>
-<pre><code class="language-python">ctx.rslt_container.result[0].response_name
-ctx.rslt_container.result[0].container
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span class="n">ctx</span><span class="o">.</span><span class="n">rslt_container</span><span class="o">.</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">response_name</span>
+<span class="n">ctx</span><span class="o">.</span><span class="n">rslt_container</span><span class="o">.</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">container</span>
+</code></pre></div>
 <h4 id="erzl_1">Ошибки ERZL</h4>
-<pre><code class="language-python">ctx.rslt_container.mistakes
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span class="n">ctx</span><span class="o">.</span><span class="n">rslt_container</span><span class="o">.</span><span class="n">mistakes</span>
+</code></pre></div>
 <p>Если ERZL вернул читаемую fault-ошибку, она попадёт именно сюда.</p>
 <h3 id="search-">Пример проверки search-ответа</h3>
 <p>Для поиска персоны orchestrator ищет в <code>result</code> поле:</p>
-<pre><code class="language-python">AllXMLFields.ERZL.Response.FindPerson.SearchPerson.PERSON_ID
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span class="n">AllXMLFields</span><span class="o">.</span><span class="n">ERZL</span><span class="o">.</span><span class="n">Response</span><span class="o">.</span><span class="n">FindPerson</span><span class="o">.</span><span class="n">SearchPerson</span><span class="o">.</span><span class="n">PERSON_ID</span>
+</code></pre></div>
 <p>То есть фактически нужно проверить, есть ли в контейнере что-то такого вида:</p>
-<pre><code class="language-python">for rslt in ctx.rslt_container.result:
-    for field in rslt.container:
-        print(field.container_name, field.container_val)
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span class="k">for</span> <span class="n">rslt</span> <span class="ow">in</span> <span class="n">ctx</span><span class="o">.</span><span class="n">rslt_container</span><span class="o">.</span><span class="n">result</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">rslt</span><span class="o">.</span><span class="n">container</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">field</span><span class="o">.</span><span class="n">container_name</span><span class="p">,</span> <span class="n">field</span><span class="o">.</span><span class="n">container_val</span><span class="p">)</span>
+</code></pre></div>
 <p>Если там есть:</p>
-<pre><code class="language-text">id 123456
-</code></pre>
+<div class="language-text highlight"><pre><span></span><code>id 123456
+</code></pre></div>
 <p>значит <code>PERSON_ID</code> найден.</p>
 <hr/>
 <h2 id="5-erzl_id">5. Проверить, появился ли <code>ERZL_id</code></h2>
 <p>Файл orchestration: <code>Orchestrator/Orchestrator.py</code><br/>
 Файл ERZL-адаптера: <code>Adapters/Adapters.py</code></p>
 <p>После search-разбора orchestrator проходит по <code>ctx.rslt_container.result</code> и ищет:</p>
-<pre><code class="language-python">field.container_name == AllXMLFields.ERZL.Response.FindPerson.SearchPerson.PERSON_ID.value
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span class="n">field</span><span class="o">.</span><span class="n">container_name</span> <span class="o">==</span> <span class="n">AllXMLFields</span><span class="o">.</span><span class="n">ERZL</span><span class="o">.</span><span class="n">Response</span><span class="o">.</span><span class="n">FindPerson</span><span class="o">.</span><span class="n">SearchPerson</span><span class="o">.</span><span class="n">PERSON_ID</span><span class="o">.</span><span class="n">value</span>
+</code></pre></div>
 <p>Если поле найдено, orchestrator выполняет:</p>
-<pre><code class="language-python">self._erzl_adapter.set_ERZL_id(ctx, field.container_val)
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">_erzl_adapter</span><span class="o">.</span><span class="n">set_ERZL_id</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">field</span><span class="o">.</span><span class="n">container_val</span><span class="p">)</span>
+</code></pre></div>
 <h3 id="_9">Что проверить</h3>
-<pre><code class="language-python">ctx.ERZL_id
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span class="n">ctx</span><span class="o">.</span><span class="n">ERZL_id</span>
+</code></pre></div>
 <h3 id="_10">Пример</h3>
 <p>После удачного поиска:</p>
-<pre><code class="language-python">ctx.ERZL_id == "123456"
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span class="n">ctx</span><span class="o">.</span><span class="n">ERZL_id</span> <span class="o">==</span> <span class="s2">"123456"</span>
+</code></pre></div>
 <p>Если в <code>rslt_container.result</code> поле уже есть, а <code>ctx.ERZL_id</code> всё ещё <code>None</code>, проблема находится в логике ветвления после разбора.</p>
 <hr/>
 <h2 id="6-create-flow">6. Проверить переход в create-flow</h2>
 <p>Файл orchestration: <code>Orchestrator/Orchestrator.py</code><br/>
 Файл флагов контекста: <code>Source/source_core_types.py</code></p>
 <p>Если после search-ответа <code>PERSON_ID</code> не найден, orchestrator переводит контекст в create-flow:</p>
-<pre><code class="language-python">self._erzl_adapter.set_need_create(ctx, True)
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">_erzl_adapter</span><span class="o">.</span><span class="n">set_need_create</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
 <h3 id="_11">Что проверить</h3>
-<pre><code class="language-python">ctx.create_flags.need_create
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span class="n">ctx</span><span class="o">.</span><span class="n">create_flags</span><span class="o">.</span><span class="n">need_create</span>
+</code></pre></div>
 <h3 id="_12">Пример</h3>
 <p>Если поиск ничего не дал:</p>
-<pre><code class="language-python">ctx.ERZL_id is None
-ctx.create_flags.need_create is True
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span class="n">ctx</span><span class="o">.</span><span class="n">ERZL_id</span> <span class="ow">is</span> <span class="kc">None</span>
+<span class="n">ctx</span><span class="o">.</span><span class="n">create_flags</span><span class="o">.</span><span class="n">need_create</span> <span class="ow">is</span> <span class="kc">True</span>
+</code></pre></div>
 <p>Это означает, что search-ветка завершилась и начнётся создание персоны.</p>
 <hr/>
 <h2 id="7-create-base">7. Как отлаживать create-base ответ</h2>
 <p>После перехода в create-flow первым разбирается ответ создания базовой персоны.</p>
 <p>В этом месте orchestrator ждёт поле:</p>
-<pre><code class="language-python">AllXMLFields.ERZL.Response.CreatePerson.Base.NONRES_ID
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span class="n">AllXMLFields</span><span class="o">.</span><span class="n">ERZL</span><span class="o">.</span><span class="n">Response</span><span class="o">.</span><span class="n">CreatePerson</span><span class="o">.</span><span class="n">Base</span><span class="o">.</span><span class="n">NONRES_ID</span>
+</code></pre></div>
 <h3 id="_13">Что проверить</h3>
 <ol>
 <li>есть ли <code>ctx.response_bytes</code> после create-base запроса;</li>
 <li>попал ли <code>nonresId</code> в <code>ctx.rslt_container.result</code>;</li>
 <li>записался ли он в:</li>
 </ol>
-<pre><code class="language-python">ctx.ERZL_id
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span class="n">ctx</span><span class="o">.</span><span class="n">ERZL_id</span>
+</code></pre></div>
 <h3 id="_14">Пример</h3>
 <p>После успешного create-base:</p>
-<pre><code class="language-python">ctx.ERZL_id is not None
-ctx.create_flags.good_create_base is True
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span class="n">ctx</span><span class="o">.</span><span class="n">ERZL_id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="n">ctx</span><span class="o">.</span><span class="n">create_flags</span><span class="o">.</span><span class="n">good_create_base</span> <span class="ow">is</span> <span class="kc">True</span>
+</code></pre></div>
 <p>Если <code>response_bytes</code> есть, но <code>nonresId</code> не найден, значит проблема в содержимом ответа или в наборе обязательных полей для разбора.</p>
 <hr/>
 <h2 id="8">8. Как читать итоговое состояние контекста</h2>
@@ -934,16 +958,16 @@ ctx.create_flags.good_create_base is True
 <h2 id="9">9. Готовые сценарии проверки</h2>
 <h3 id="1">Сценарий 1. Ответ пришёл, но персона не найдена</h3>
 <p>Проверьте по порядку:</p>
-<pre><code class="language-python">ctx.response_bytes is not None
-ctx.rslt_container.result
-ctx.ERZL_id
-ctx.create_flags.need_create
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span class="n">ctx</span><span class="o">.</span><span class="n">response_bytes</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="n">ctx</span><span class="o">.</span><span class="n">rslt_container</span><span class="o">.</span><span class="n">result</span>
+<span class="n">ctx</span><span class="o">.</span><span class="n">ERZL_id</span>
+<span class="n">ctx</span><span class="o">.</span><span class="n">create_flags</span><span class="o">.</span><span class="n">need_create</span>
+</code></pre></div>
 <p>Ожидаемая картина:</p>
-<pre><code class="language-python">ctx.response_bytes is not None
-ctx.ERZL_id is None
-ctx.create_flags.need_create is True
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span class="n">ctx</span><span class="o">.</span><span class="n">response_bytes</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="n">ctx</span><span class="o">.</span><span class="n">ERZL_id</span> <span class="ow">is</span> <span class="kc">None</span>
+<span class="n">ctx</span><span class="o">.</span><span class="n">create_flags</span><span class="o">.</span><span class="n">need_create</span> <span class="ow">is</span> <span class="kc">True</span>
+</code></pre></div>
 <hr/>
 <h3 id="2-rslt_container">Сценарий 2. Ответ пришёл, но <code>rslt_container</code> пустой</h3>
 <p>Проверьте:</p>
@@ -958,30 +982,30 @@ ctx.create_flags.need_create is True
 <ol>
 <li>что в <code>ctx.rslt_container.result</code> действительно есть поле с именем:</li>
 </ol>
-<pre><code class="language-python">AllXMLFields.ERZL.Response.FindPerson.SearchPerson.PERSON_ID.value
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span class="n">AllXMLFields</span><span class="o">.</span><span class="n">ERZL</span><span class="o">.</span><span class="n">Response</span><span class="o">.</span><span class="n">FindPerson</span><span class="o">.</span><span class="n">SearchPerson</span><span class="o">.</span><span class="n">PERSON_ID</span><span class="o">.</span><span class="n">value</span>
+</code></pre></div>
 <ol>
 <li>что после разбора отработала ветка:</li>
 </ol>
-<pre><code class="language-python">GetAnswerDecision_StrEnum.CONTINUE
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span class="n">GetAnswerDecision_StrEnum</span><span class="o">.</span><span class="n">CONTINUE</span>
+</code></pre></div>
 <ol>
 <li>что orchestrator дошёл до вызова:</li>
 </ol>
-<pre><code class="language-python">self._erzl_adapter.set_ERZL_id(ctx, field.container_val)
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">_erzl_adapter</span><span class="o">.</span><span class="n">set_ERZL_id</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="n">field</span><span class="o">.</span><span class="n">container_val</span><span class="p">)</span>
+</code></pre></div>
 <hr/>
 <h3 id="4-create-base-erzl_id">Сценарий 4. После create-base не появился <code>ERZL_id</code></h3>
 <p>Проверьте:</p>
-<pre><code class="language-python">ctx.response_bytes
-ctx.rslt_container.result
-ctx.ERZL_id
-ctx.create_flags.good_create_base
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span class="n">ctx</span><span class="o">.</span><span class="n">response_bytes</span>
+<span class="n">ctx</span><span class="o">.</span><span class="n">rslt_container</span><span class="o">.</span><span class="n">result</span>
+<span class="n">ctx</span><span class="o">.</span><span class="n">ERZL_id</span>
+<span class="n">ctx</span><span class="o">.</span><span class="n">create_flags</span><span class="o">.</span><span class="n">good_create_base</span>
+</code></pre></div>
 <p>Ожидаемая картина для успешного create-base:</p>
-<pre><code class="language-python">ctx.ERZL_id is not None
-ctx.create_flags.good_create_base is True
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span class="n">ctx</span><span class="o">.</span><span class="n">ERZL_id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="n">ctx</span><span class="o">.</span><span class="n">create_flags</span><span class="o">.</span><span class="n">good_create_base</span> <span class="ow">is</span> <span class="kc">True</span>
+</code></pre></div>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>

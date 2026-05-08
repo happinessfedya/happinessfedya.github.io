@@ -250,11 +250,35 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%D0%BB%D0%B5%20%D0%BE%D1%82%20%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B0%20%D0%B4%D0%BE%20XML/">
+<span class="md-ellipsis">
+    
+  
+    Добавить поле от источника до XML
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%D0%BF%D1%8B%D1%82%D0%BA%D1%83/">
 <span class="md-ellipsis">
     
   
     Добавить попытку
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D1%84%D0%B8%D0%BB%D1%8C%20%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%B0%D1%86%D0%B8%D0%B8%20%D0%B2%20config.toml/">
+<span class="md-ellipsis">
+    
+  
+    Добавить профиль активации в config.toml
   
 
     
@@ -328,15 +352,15 @@
 <h2 id="_2">Общая схема</h2>
 <p>Система устроена как конструктор из нескольких частей.<br/>
 Для разных интеграций части могут быть разными, но общая схема остаётся одной и той же.  </p>
-<p>Обычно путь данных такой:  </p>
-<pre><code class="language-text">источник данных
+<p>Обычно путь данных такой:<br/>
+<div class="language-text highlight"><pre><span></span><code>источник данных
  -&gt; подготовка данных
  -&gt; создание context
  -&gt; шаги обработки
  -&gt; отправка запроса на внешнюю систему
  -&gt; разбор ответа
  -&gt; решение, что делать дальше
-</code></pre>
+</code></pre></div></p>
 <hr/>
 <h1 id="_3">Из каких частей состоит система</h1>
 <h2 id="source">Source</h2>

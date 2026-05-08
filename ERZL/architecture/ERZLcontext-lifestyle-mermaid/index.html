@@ -1,108 +1,212 @@
 
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../..">
+      
+      
+        <link rel="next" href="../overview/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Жизненный цикл ERZL_Context - Integration Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
 
-<html class="no-js" lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="../../.." rel="prev"/>
-<link href="../overview/" rel="next"/>
-<link href="../../../assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
-<title>Жизненный цикл ERZL_Context - Integration Documentation</title>
-<link href="../../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
-<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<link href="../../../assets/_mkdocstrings.css" rel="stylesheet"/>
-<link href="../../../assets/stylesheets/toc-collapse.css" rel="stylesheet"/>
-<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-</head>
-<body dir="ltr">
-<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
-<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
-<label class="md-overlay" for="__drawer"></label>
-<div data-md-component="skip">
-<a class="md-skip" href="#erzl_context">
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/toc-collapse.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#erzl_context" class="md-skip">
           Skip to content
         </a>
-</div>
-<div data-md-component="announce">
-</div>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
 <header class="md-header md-header--shadow" data-md-component="header">
-<nav aria-label="Header" class="md-header__inner md-grid">
-<a aria-label="Integration Documentation" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Integration Documentation">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
-</a>
-<label class="md-header__button md-icon" for="__drawer">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
-</label>
-<div class="md-header__title" data-md-component="header-title">
-<div class="md-header__ellipsis">
-<div class="md-header__topic">
-<span class="md-ellipsis">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Integration Documentation" class="md-header__button md-logo" aria-label="Integration Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
             Integration Documentation
           </span>
-</div>
-<div class="md-header__topic" data-md-component="header-topic">
-<span class="md-ellipsis">
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
             
               Жизненный цикл ERZL_Context
             
           </span>
-</div>
-</div>
-</div>
-<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
-<label class="md-header__button md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
-</label>
-<div class="md-search" data-md-component="search" role="dialog">
-<label class="md-search__overlay" for="__search"></label>
-<div class="md-search__inner" role="search">
-<form class="md-search__form" name="search">
-<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
-<label class="md-search__icon md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
-</label>
-<nav aria-label="Search" class="md-search__options">
-<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
-</button>
-</nav>
-</form>
-<div class="md-search__output">
-<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
-<div class="md-search-result" data-md-component="search-result">
-<div class="md-search-result__meta">
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
             Initializing search
           </div>
-<ol class="md-search-result__list" role="presentation"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-</nav>
+      
+    
+    
+  </nav>
+  
 </header>
-<div class="md-container" data-md-component="container">
-<main class="md-main" data-md-component="main">
-<div class="md-main__inner md-grid">
-<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
-<div class="md-sidebar__scrollwrap">
-<div class="md-sidebar__inner">
-<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--integrated" data-md-level="0">
-<label class="md-nav__title" for="__drawer">
-<a aria-label="Integration Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Integration Documentation">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
-</a>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Integration Documentation" class="md-nav__button md-logo" aria-label="Integration Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
     Integration Documentation
   </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../..">
-<span class="md-ellipsis">
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     
   
     Общая структура проекта
@@ -110,12 +214,44 @@
 
     
   </span>
-</a>
-</li>
-<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
-<span class="md-ellipsis">
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
     
   
     ERZL
@@ -123,22 +259,50 @@
 
     
   </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_2">
-<span class="md-nav__icon md-icon"></span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
             
   
     ERZL
   
 
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
     
   
     Architecture
@@ -146,22 +310,44 @@
 
     
   </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="true" aria-labelledby="__nav_2_1_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_2_1">
-<span class="md-nav__icon md-icon"></span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
             
   
     Architecture
   
 
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
     
   
     Жизненный цикл ERZL_Context
@@ -169,10 +355,17 @@
 
     
   </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
-<span class="md-ellipsis">
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
     
   
     Жизненный цикл ERZL_Context
@@ -180,589 +373,757 @@
 
     
   </span>
-</a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1-erzl_context">
-<span class="md-ellipsis">
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-erzl_context" class="md-nav__link">
+    <span class="md-ellipsis">
       
         1. Что такое ERZL_Context
       
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
       
         2. Что находится “до” контекста
       
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
       
         3. Рождение контекста
       
     </span>
-</a>
-<nav aria-label="3. Рождение контекста" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_1">
-<span class="md-ellipsis">
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Рождение контекста">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
       
         Что это значит по смыслу
       
     </span>
-</a>
+  </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#4-lifecycle">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#4-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
       
         4. Смысл ключевых полей контекста в lifecycle
       
     </span>
-</a>
-<nav aria-label="4. Смысл ключевых полей контекста в lifecycle" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-<span class="md-ellipsis">
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Смысл ключевых полей контекста в lifecycle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
       
         Как читать эти поля правильно
       
     </span>
-</a>
-<nav aria-label="Как читать эти поля правильно" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#sourcedata">
-<span class="md-ellipsis">
+  </a>
+  
+    <nav class="md-nav" aria-label="Как читать эти поля правильно">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sourcedata" class="md-nav__link">
+    <span class="md-ellipsis">
       
         SourceData
       
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#attemptid">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#attemptid" class="md-nav__link">
+    <span class="md-ellipsis">
       
         AttemptId
       
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#dataattemptstr">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#dataattemptstr" class="md-nav__link">
+    <span class="md-ellipsis">
       
         DataAttemptStr
       
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#xml_bytes-response_bytes">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#xml_bytes-response_bytes" class="md-nav__link">
+    <span class="md-ellipsis">
       
         xml_bytes и response_bytes
       
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#rslt_container">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#rslt_container" class="md-nav__link">
+    <span class="md-ellipsis">
       
         rslt_container
       
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#erzl_id">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#erzl_id" class="md-nav__link">
+    <span class="md-ellipsis">
       
         ERZL_id
       
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#create_flags">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#create_flags" class="md-nav__link">
+    <span class="md-ellipsis">
       
         create_flags
       
     </span>
-</a>
+  </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#5">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
       
         5. Общий обзор жизненного цикла
       
     </span>
-</a>
-<nav aria-label="5. Общий обзор жизненного цикла" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
-<span class="md-ellipsis">
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Общий обзор жизненного цикла">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
       
         Почему эта схема важна
       
     </span>
-</a>
+  </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#6-search-flow">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#6-search-flow" class="md-nav__link">
+    <span class="md-ellipsis">
       
         6. Search-flow как основная жизнь контекста
       
     </span>
-</a>
-<nav aria-label="6. Search-flow как основная жизнь контекста" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_4">
-<span class="md-ellipsis">
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Search-flow как основная жизнь контекста">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
       
         Из чего он состоит
       
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_5">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
       
         Что в этот момент происходит с контекстом
       
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_6">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
       
         Что важно не перепутать
       
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#search-flow">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#search-flow" class="md-nav__link">
+    <span class="md-ellipsis">
       
         Когда search-flow считается успешным
       
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#search-flow_1">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#search-flow_1" class="md-nav__link">
+    <span class="md-ellipsis">
       
         Когда search-flow не завершается сразу
       
     </span>
-</a>
+  </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#7">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
       
         7. Смена попыток и смена режима поиска
       
     </span>
-</a>
-<nav aria-label="7. Смена попыток и смена режима поиска" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_7">
-<span class="md-ellipsis">
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Смена попыток и смена режима поиска">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
       
         Следующая попытка в рамках того же режима
       
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_8">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
       
         Смена режима поиска
       
     </span>
-</a>
+  </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#8-create-flow">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#8-create-flow" class="md-nav__link">
+    <span class="md-ellipsis">
       
         8. Переход в create-flow
       
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#9-create-flow">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#9-create-flow" class="md-nav__link">
+    <span class="md-ellipsis">
       
         9. Create-flow как вторая половина жизни контекста
       
     </span>
-</a>
-<nav aria-label="9. Create-flow как вторая половина жизни контекста" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_9">
-<span class="md-ellipsis">
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Create-flow как вторая половина жизни контекста">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
       
         Почему базовая персона идёт первой
       
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#base-create">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#base-create" class="md-nav__link">
+    <span class="md-ellipsis">
       
         Что происходит после успешного base create
       
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_10">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
       
         Что здесь важно понять
       
     </span>
-</a>
+  </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#10-rslt_container">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#10-rslt_container" class="md-nav__link">
+    <span class="md-ellipsis">
       
         10. rslt_container как память контекста
       
     </span>
-</a>
-<nav aria-label="10. rslt_container как память контекста" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_11">
-<span class="md-ellipsis">
+  </a>
+  
+    <nav class="md-nav" aria-label="10. rslt_container как память контекста">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
       
         Рабочие поля последней операции
       
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_12">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
       
         Накопительные поля
       
     </span>
-</a>
+  </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#11">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
       
         11. Кто имеет право менять контекст
       
     </span>
-</a>
-<nav aria-label="11. Кто имеет право менять контекст" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#source">
-<span class="md-ellipsis">
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Кто имеет право менять контекст">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source" class="md-nav__link">
+    <span class="md-ellipsis">
       
         Source
       
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#contextfactory-contextbuilder">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#contextfactory-contextbuilder" class="md-nav__link">
+    <span class="md-ellipsis">
       
         ContextFactory / ContextBuilder
       
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#adapters">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#adapters" class="md-nav__link">
+    <span class="md-ellipsis">
       
         Adapters
       
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#xml-">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#xml-" class="md-nav__link">
+    <span class="md-ellipsis">
       
         XML-слой
       
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#orchestrator">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#orchestrator" class="md-nav__link">
+    <span class="md-ellipsis">
       
         Orchestrator
       
     </span>
-</a>
+  </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#12">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
       
         12. Инварианты жизненного цикла
       
     </span>
-</a>
-<nav aria-label="12. Инварианты жизненного цикла" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#sourcedata_1">
-<span class="md-ellipsis">
+  </a>
+  
+    <nav class="md-nav" aria-label="12. Инварианты жизненного цикла">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sourcedata_1" class="md-nav__link">
+    <span class="md-ellipsis">
       
         SourceData не должен терять смысл исходной канонической записи
       
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#attemptid-search-">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#attemptid-search-" class="md-nav__link">
+    <span class="md-ellipsis">
       
         AttemptId относится только к search-логике
       
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#dataattemptstr-search-">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#dataattemptstr-search-" class="md-nav__link">
+    <span class="md-ellipsis">
       
         DataAttemptStr относится только к текущей search-попытке
       
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#xml_bytes-response_bytes_1">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#xml_bytes-response_bytes_1" class="md-nav__link">
+    <span class="md-ellipsis">
       
         xml_bytes и response_bytes отражают последнюю операцию
       
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#rslt_container_1">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#rslt_container_1" class="md-nav__link">
+    <span class="md-ellipsis">
       
         rslt_container — накопительный
       
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#erzl_id_1">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#erzl_id_1" class="md-nav__link">
+    <span class="md-ellipsis">
       
         ERZL_id — главный переходный результат
       
     </span>
-</a>
+  </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#13-state-machine">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#13-state-machine" class="md-nav__link">
+    <span class="md-ellipsis">
       
         13. Эволюция состояния контекста как state machine
       
     </span>
-</a>
-<nav aria-label="13. Эволюция состояния контекста как state machine" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_13">
-<span class="md-ellipsis">
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Эволюция состояния контекста как state machine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
       
         Как читать эту диаграмму
       
     </span>
-</a>
+  </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#14">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
       
         14. Как читать контекст при отладке
       
     </span>
-</a>
-<nav aria-label="14. Как читать контекст при отладке" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#1-sourcedata">
-<span class="md-ellipsis">
+  </a>
+  
+    <nav class="md-nav" aria-label="14. Как читать контекст при отладке">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-sourcedata" class="md-nav__link">
+    <span class="md-ellipsis">
       
         1. SourceData
       
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#2-persontype-attemptid">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#2-persontype-attemptid" class="md-nav__link">
+    <span class="md-ellipsis">
       
         2. PersonType и AttemptId
       
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#3-dataattemptstr">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#3-dataattemptstr" class="md-nav__link">
+    <span class="md-ellipsis">
       
         3. DataAttemptStr
       
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#4-xml_bytes">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#4-xml_bytes" class="md-nav__link">
+    <span class="md-ellipsis">
       
         4. xml_bytes
       
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#5-response_bytes">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#5-response_bytes" class="md-nav__link">
+    <span class="md-ellipsis">
       
         5. response_bytes
       
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#6-rslt_container">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#6-rslt_container" class="md-nav__link">
+    <span class="md-ellipsis">
       
         6. rslt_container
       
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#7-erzl_id">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#7-erzl_id" class="md-nav__link">
+    <span class="md-ellipsis">
       
         7. ERZL_id
       
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#8-create_flags">
-<span class="md-ellipsis">
+        
+          <li class="md-nav__item">
+  <a href="#8-create_flags" class="md-nav__link">
+    <span class="md-ellipsis">
       
         8. create_flags
       
     </span>
-</a>
+  </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#15">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
       
         15. Когда эта страница закрывает вопрос полностью
       
     </span>
-</a>
+  </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_14">
-<span class="md-ellipsis">
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
       
         Короткий итог
       
     </span>
-</a>
+  </a>
+  
 </li>
-</ul>
+      
+    </ul>
+  
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../overview/">
-<span class="md-ellipsis">
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     
   
     Архитектура системы
@@ -770,15 +1131,48 @@
 
     
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
-<span class="md-ellipsis">
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
     
   
     How to
@@ -786,21 +1180,35 @@
 
     
   </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_2_2">
-<span class="md-nav__icon md-icon"></span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
             
   
     How to
   
 
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     
   
     Добавить источник
@@ -808,11 +1216,55 @@
 
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%D0%BF%D1%8B%D1%82%D0%BA%D1%83/">
-<span class="md-ellipsis">
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%D0%BB%D0%B5%20%D0%BE%D1%82%20%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B0%20%D0%B4%D0%BE%20XML/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Добавить поле от источника до XML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%D0%BF%D1%8B%D1%82%D0%BA%D1%83/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     
   
     Добавить попытку
@@ -820,11 +1272,55 @@
 
     
   </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../how-to/%D0%9E%D1%82%D0%BB%D0%B0%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BE%D1%82%D0%B2%D0%B5%D1%82%20ERZL/">
-<span class="md-ellipsis">
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D1%84%D0%B8%D0%BB%D1%8C%20%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%B0%D1%86%D0%B8%D0%B8%20%D0%B2%20config.toml/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Добавить профиль активации в config.toml
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/%D0%9E%D1%82%D0%BB%D0%B0%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BE%D1%82%D0%B2%D0%B5%D1%82%20ERZL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     
   
     Отладить ответ ERZL
@@ -832,15 +1328,48 @@
 
     
   </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
-<span class="md-ellipsis">
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
     
   
     Reference
@@ -848,21 +1377,35 @@
 
     
   </span>
-<span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_2_3">
-<span class="md-nav__icon md-icon"></span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
             
   
     Reference
   
 
           </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../reference/api/">
-<span class="md-ellipsis">
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     
   
     API
@@ -870,21 +1413,47 @@
 
     
   </span>
-</a>
-</li>
-</ul>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
 </nav>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</div>
-</div>
-</div>
-<div class="md-content" data-md-component="content">
-<article class="md-content__inner md-typeset">
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
 <h1 id="erzl_context">Жизненный цикл <code>ERZL_Context</code></h1>
 <p>Эта страница — основной документ по жизненному циклу <code>ERZL_Context</code>.</p>
 <p>Её задача — целиком закрывать вопрос <strong>как появляется, живёт, меняется и завершается один контекст</strong> в ERZL-пайплайне.</p>
@@ -899,9 +1468,9 @@
 <li>способ читать состояние контекста при отладке;</li>
 <li>Mermaid-диаграммы, которые визуально дополняют текст.</li>
 </ul>
-<p>Если нужны <strong>точные</strong> типы, DTO, enum, поля и контракты методов, это нужно смотреть в <a href="../../reference/api/">API reference</a>.<br/>
+<p>Если нужны <strong>точные</strong> типы, DTO, enum, поля и контракты методов, это нужно смотреть в <a href="../../reference/api/">API reference</a>.<br />
 Эта страница отвечает не на вопрос “какой у поля тип”, а на вопрос <strong>“как живёт контекст во времени”</strong>.</p>
-<hr/>
+<hr />
 <h2 id="1-erzl_context">1. Что такое <code>ERZL_Context</code></h2>
 <p><code>ERZL_Context</code> — это единое runtime-состояние обработки <strong>одной</strong> записи источника.</p>
 <p>Контекст живёт не как статичный dataclass “с набором полей”, а как объект, который:</p>
@@ -919,7 +1488,7 @@
 <li>каждый новый шаг не создаёт новый доменный объект, а <strong>обогащает</strong> уже существующий <code>ERZL_Context</code>.</li>
 </ul>
 <p>Именно поэтому понимать пайплайн удобнее через жизненный цикл контекста, а не через перечень модулей.</p>
-<hr/>
+<hr />
 <h2 id="2">2. Что находится “до” контекста</h2>
 <p>Перед тем как появляется <code>ERZL_Context</code>, в системе уже существуют три уровня входных данных:</p>
 <ul>
@@ -929,15 +1498,16 @@
 </ul>
 <p>На практике это означает:</p>
 <ol>
-<li>Из <code>config/erzl.toml</code> читаются настройки источника, попыток поиска, XML builder, транспорта и client-контейнеров.</li>
-<li>В bootstrap-слое из них создаются рабочие объекты: source, adapters, context factory, XML builder, transport, answer parser и orchestrator.</li>
+<li>Из <code>config/erzl.toml</code> читаются настройки источника, попыток поиска, XML builder, транспорта и несекретных client-данных.</li>
+<li>В bootstrap-слое дополнительно читаются <code>ERZL_XML_USER</code> и <code>ERZL_XML_PASSWORD</code> из корневого <code>.env</code>.</li>
+<li>Из этих данных создаются рабочие объекты: source, adapters, context factory, XML builder, transport, answer parser и orchestrator.</li>
 <li>Источник отдаёт одну конкретную запись.</li>
 <li>Адаптеры приводят эту запись к каноническому виду.</li>
 <li>Только после этого создаётся <code>ERZL_Context</code>.</li>
 </ol>
-<p>Важно: контекст <strong>не читает конфиг сам</strong>.<br/>
+<p>Важно: контекст <strong>не читает конфиг сам</strong>.<br />
 Он получает уже готовые, подготовленные данные и зависимости.</p>
-<hr/>
+<hr />
 <h2 id="3">3. Рождение контекста</h2>
 <p>Контекст создаётся фабрикой (<code>ContextFactory</code> / <code>ContextBuilder</code>) из <code>SourceInput</code>.</p>
 <p>На этом этапе в нём уже определены:</p>
@@ -967,7 +1537,7 @@
 <li><code>create_flags</code> уже существуют, но все флаги ещё находятся в начальном состоянии.</li>
 </ul>
 <p>Это очень важный архитектурный момент: контекст сразу создаётся <strong>в полной форме</strong>, но большинство его полей сначала пусты и наполняются позже.</p>
-<hr/>
+<hr />
 <h2 id="4-lifecycle">4. Смысл ключевых полей контекста в lifecycle</h2>
 <p>Ниже важно не API-описание типов, а смысл полей именно в жизненном цикле.</p>
 <table>
@@ -1022,18 +1592,18 @@
 </table>
 <h3 id="_2">Как читать эти поля правильно</h3>
 <h4 id="sourcedata"><code>SourceData</code></h4>
-<p>Это не просто входной словарь, а <strong>единый канонический источник истины</strong> для всей дальнейшей обработки.<br/>
+<p>Это не просто входной словарь, а <strong>единый канонический источник истины</strong> для всей дальнейшей обработки.<br />
 И search-flow, и create-flow читают данные именно отсюда.</p>
 <h4 id="attemptid"><code>AttemptId</code></h4>
-<p>Это индекс search-попытки.<br/>
+<p>Это индекс search-попытки.<br />
 Он не должен восприниматься как общий счётчик всех действий контекста.</p>
 <h4 id="dataattemptstr"><code>DataAttemptStr</code></h4>
 <p>Это не “запланированный набор полей из конфига”, а <strong>реально пригодный набор полей текущей попытки</strong>, который уже прошёл проверку через <code>DataSelector</code>.</p>
 <h4 id="xml_bytes-response_bytes"><code>xml_bytes</code> и <code>response_bytes</code></h4>
-<p>Это рабочие поля последней XML-операции.<br/>
+<p>Это рабочие поля последней XML-операции.<br />
 Они многократно перезаписываются в течение жизни одного контекста.</p>
 <h4 id="rslt_container"><code>rslt_container</code></h4>
-<p>Это не одноразовый ответ и не снимок одного XML-вызова.<br/>
+<p>Это не одноразовый ответ и не снимок одного XML-вызова.<br />
 Это накопительное хранилище результатов разбора, которое сопровождает контекст в течение его жизни.</p>
 <h4 id="erzl_id"><code>ERZL_id</code></h4>
 <p>Это главный переходный артефакт между search- и create-логикой.</p>
@@ -1042,9 +1612,9 @@
 <li>если он появился в create-flow — дальше на нём строятся зависимые операции.</li>
 </ul>
 <h4 id="create_flags"><code>create_flags</code></h4>
-<p>Это не просто “успешно / неуспешно”.<br/>
+<p>Это не просто “успешно / неуспешно”.<br />
 Флаги нужны для того, чтобы видеть <strong>частично успешное состояние</strong> create-сценария.</p>
-<hr/>
+<hr />
 <h2 id="5">5. Общий обзор жизненного цикла</h2>
 <p>Верхнеуровнево жизнь одного контекста выглядит так:</p>
 <ol>
@@ -1057,30 +1627,30 @@
 <li>Создать базовую персону и зависимые сущности.</li>
 <li>Завершить обработку контекста.</li>
 </ol>
-<div class="mermaid">flowchart TD
-    start["Получена запись источника"]
-    read["Source читает строку"]
-    adapt["Adapters нормализуют поля"]
-    ctx["ContextFactory создаёт ERZL_Context"]
-    search["Orchestrator запускает search-flow"]
-    prepare["Подготовить текущую search-попытку"]
-    build["Собрать search XML"]
-    transport["Отправить XML и получить ответ"]
-    parse["Разобрать ответ и обновить контекст"]
-    found{"Найден ERZL_id?"}
-    done_search["Контекст завершён через search-flow"]
-    go_create["Перейти в create-flow"]
-    done_create["Контекст завершён после create-flow"]
-    aborted["Контекст остановлен"]
+<div class="language-text highlight"><pre><span></span><code>flowchart TD
+    start[&quot;Получена запись источника&quot;]
+    read[&quot;Source читает строку&quot;]
+    adapt[&quot;Adapters нормализуют поля&quot;]
+    ctx[&quot;ContextFactory создаёт ERZL_Context&quot;]
+    search[&quot;Orchestrator запускает search-flow&quot;]
+    prepare[&quot;Подготовить текущую search-попытку&quot;]
+    build[&quot;Собрать search XML&quot;]
+    transport[&quot;Отправить XML и получить ответ&quot;]
+    parse[&quot;Разобрать ответ и обновить контекст&quot;]
+    found{&quot;Найден ERZL_id?&quot;}
+    done_search[&quot;Контекст завершён через search-flow&quot;]
+    go_create[&quot;Перейти в create-flow&quot;]
+    done_create[&quot;Контекст завершён после create-flow&quot;]
+    aborted[&quot;Контекст остановлен&quot;]
 
     start --&gt; read --&gt; adapt --&gt; ctx --&gt; search --&gt; prepare --&gt; build --&gt; transport --&gt; parse --&gt; found
-    found -- "Да" --&gt; done_search
-    found -- "Нет" --&gt; go_create --&gt; done_create
-    prepare -. "ABORT или ERROR" .-&gt; aborted
-    build -. "ABORT" .-&gt; aborted
-    transport -. "FAIL" .-&gt; aborted
-    parse -. "ABORT или SKIP" .-&gt; aborted
-</div>
+    found -- &quot;Да&quot; --&gt; done_search
+    found -- &quot;Нет&quot; --&gt; go_create --&gt; done_create
+    prepare -. &quot;ABORT или ERROR&quot; .-&gt; aborted
+    build -. &quot;ABORT&quot; .-&gt; aborted
+    transport -. &quot;FAIL&quot; .-&gt; aborted
+    parse -. &quot;ABORT или SKIP&quot; .-&gt; aborted
+</code></pre></div>
 <h3 id="_3">Почему эта схема важна</h3>
 <p>Она помогает не потерять главный смысл:</p>
 <ul>
@@ -1089,7 +1659,7 @@
 <li>фазы могут менять его состояние;</li>
 <li>но это всё ещё <strong>тот же самый объект</strong>, а не цепочка независимых DTO.</li>
 </ul>
-<hr/>
+<hr />
 <h2 id="6-search-flow">6. Search-flow как основная жизнь контекста</h2>
 <p>Search-flow — это основной путь обработки контекста.</p>
 <p>Его цель:</p>
@@ -1127,47 +1697,47 @@
 <li>один и тот же <code>PersonType</code> может пройти несколько попыток;</li>
 <li>исчерпание попыток не всегда означает create-flow: сначала возможна смена режима поиска.</li>
 </ul>
-<div class="mermaid">flowchart TD
-    s0["Search-flow started"]
-    a1["Взять текущий AttemptId"]
-    a2["Взять набор полей для попытки"]
-    a3["Проверить поля в SourceData"]
-    d1{"Есть пригодные поля?"}
+<div class="language-text highlight"><pre><span></span><code>flowchart TD
+    s0[&quot;Search-flow started&quot;]
+    a1[&quot;Взять текущий AttemptId&quot;]
+    a2[&quot;Взять набор полей для попытки&quot;]
+    a3[&quot;Проверить поля в SourceData&quot;]
+    d1{&quot;Есть пригодные поля?&quot;}
 
-    a4["Записать DataAttemptStr"]
-    a5["Собрать search XML"]
-    a6["Отправить XML"]
-    a7["Сохранить response_bytes"]
-    a8["Разобрать ответ"]
-    d2{"Какое решение вернул AnswerDecisionStep?"}
+    a4[&quot;Записать DataAttemptStr&quot;]
+    a5[&quot;Собрать search XML&quot;]
+    a6[&quot;Отправить XML&quot;]
+    a7[&quot;Сохранить response_bytes&quot;]
+    a8[&quot;Разобрать ответ&quot;]
+    d2{&quot;Какое решение вернул AnswerDecisionStep?&quot;}
 
-    next_try["NEXT_ATTEMPT"]
-    no_more["NO_MORE_ATTEMPTS"]
-    rebuild["REBUILD_AND_RETRY"]
-    stop["ABORT / SKIP_CONTEXT / ERROR"]
+    next_try[&quot;NEXT_ATTEMPT&quot;]
+    no_more[&quot;NO_MORE_ATTEMPTS&quot;]
+    rebuild[&quot;REBUILD_AND_RETRY&quot;]
+    stop[&quot;ABORT / SKIP_CONTEXT / ERROR&quot;]
 
-    d3{"Найден ERZL_id?"}
-    set_id["Записать ERZL_id"]
-    to_create["Установить need_create = True"]
-    switch_mode["Сменить PersonType и сбросить AttemptId"]
+    d3{&quot;Найден ERZL_id?&quot;}
+    set_id[&quot;Записать ERZL_id&quot;]
+    to_create[&quot;Установить need_create = True&quot;]
+    switch_mode[&quot;Сменить PersonType и сбросить AttemptId&quot;]
 
-    end_ok["Search success"]
-    end_create["Go create-flow"]
-    end_abort["Search aborted"]
+    end_ok[&quot;Search success&quot;]
+    end_create[&quot;Go create-flow&quot;]
+    end_abort[&quot;Search aborted&quot;]
 
     s0 --&gt; a1 --&gt; a2 --&gt; a3 --&gt; d1
-    d1 -- "Да" --&gt; a4 --&gt; a5 --&gt; a6 --&gt; a7 --&gt; a8 --&gt; d2
-    d1 -- "Нет" --&gt; next_try --&gt; a1
+    d1 -- &quot;Да&quot; --&gt; a4 --&gt; a5 --&gt; a6 --&gt; a7 --&gt; a8 --&gt; d2
+    d1 -- &quot;Нет&quot; --&gt; next_try --&gt; a1
 
-    d2 -- "CONTINUE" --&gt; d3
-    d3 -- "Да" --&gt; set_id --&gt; end_ok
-    d3 -- "Нет" --&gt; to_create --&gt; end_create
+    d2 -- &quot;CONTINUE&quot; --&gt; d3
+    d3 -- &quot;Да&quot; --&gt; set_id --&gt; end_ok
+    d3 -- &quot;Нет&quot; --&gt; to_create --&gt; end_create
 
-    d2 -- "NEXT_ATTEMPT" --&gt; next_try --&gt; a1
-    d2 -- "NO_MORE_ATTEMPTS" --&gt; no_more --&gt; switch_mode --&gt; a1
-    d2 -- "REBUILD_AND_RETRY" --&gt; rebuild --&gt; a5
-    d2 -- "ABORT" --&gt; stop --&gt; end_abort
-</div>
+    d2 -- &quot;NEXT_ATTEMPT&quot; --&gt; next_try --&gt; a1
+    d2 -- &quot;NO_MORE_ATTEMPTS&quot; --&gt; no_more --&gt; switch_mode --&gt; a1
+    d2 -- &quot;REBUILD_AND_RETRY&quot; --&gt; rebuild --&gt; a5
+    d2 -- &quot;ABORT&quot; --&gt; stop --&gt; end_abort
+</code></pre></div>
 <h3 id="search-flow">Когда search-flow считается успешным</h3>
 <p>Search-flow успешен, если:</p>
 <ul>
@@ -1185,7 +1755,7 @@
 <li>остановка сценария;</li>
 <li>переход в <code>create-flow</code>.</li>
 </ul>
-<hr/>
+<hr />
 <h2 id="7">7. Смена попыток и смена режима поиска</h2>
 <p>Это одна из самых важных частей жизни контекста.</p>
 <p>Нужно различать две разные вещи:</p>
@@ -1214,7 +1784,7 @@
 <li>search-flow начинается заново уже для нового режима.</li>
 </ul>
 <p>По смыслу это означает, что контекст не “ломается” и не пересоздаётся — он просто переходит в другую search-стратегию.</p>
-<hr/>
+<hr />
 <h2 id="8-create-flow">8. Переход в create-flow</h2>
 <p>Переход в create-flow — это нормальная ветка жизни контекста, а не аварийный сценарий.</p>
 <p>Обычно он означает:</p>
@@ -1229,9 +1799,9 @@
 <li>в нём выставляется <code>create_flags.need_create = True</code>;</li>
 <li>lifecycle переходит из search-фазы в create-фазу.</li>
 </ul>
-<p>Ключевой смысл здесь такой:<br/>
+<p>Ключевой смысл здесь такой:<br />
 контекст остаётся тем же самым runtime-объектом, просто меняется логика его дальнейшей жизни.</p>
-<hr/>
+<hr />
 <h2 id="9-create-flow">9. Create-flow как вторая половина жизни контекста</h2>
 <p>Create-flow запускается только после явного решения orchestrator-а.</p>
 <p>Его структура всегда двухступенчатая:</p>
@@ -1240,7 +1810,7 @@
 <li>затем создаются зависимые сущности.</li>
 </ol>
 <h3 id="_9">Почему базовая персона идёт первой</h3>
-<p>Потому что именно она должна дать <code>ERZL_id</code>.<br/>
+<p>Потому что именно она должна дать <code>ERZL_id</code>.<br />
 Без этого идентификатора нельзя корректно продолжать создание зависимых сущностей.</p>
 <h3 id="base-create">Что происходит после успешного base create</h3>
 <p>После успешного базового создания контекст может последовательно пройти операции:</p>
@@ -1256,44 +1826,44 @@
 <li>разбирает свой ответ;</li>
 <li>обновляет свой флаг в <code>create_flags</code>.</li>
 </ul>
-<div class="mermaid">flowchart TD
-    c0["need_create = True"]
+<div class="language-text highlight"><pre><span></span><code>flowchart TD
+    c0[&quot;need_create = True&quot;]
 
-    b1["Собрать XML базовой персоны"]
-    b2["Отправить XML"]
-    b3["Получить response_bytes"]
-    b4["Разобрать ответ"]
-    d1{"Получен ERZL_id?"}
+    b1[&quot;Собрать XML базовой персоны&quot;]
+    b2[&quot;Отправить XML&quot;]
+    b3[&quot;Получить response_bytes&quot;]
+    b4[&quot;Разобрать ответ&quot;]
+    d1{&quot;Получен ERZL_id?&quot;}
 
-    b5["Записать ERZL_id"]
-    b6["Установить good_create_base = True"]
-    b7["Установить good_create_base = False"]
+    b5[&quot;Записать ERZL_id&quot;]
+    b6[&quot;Установить good_create_base = True&quot;]
+    b7[&quot;Установить good_create_base = False&quot;]
 
-    ops["Последовательно пройти POLICY, DUDL, ADDRESS"]
+    ops[&quot;Последовательно пройти POLICY, DUDL, ADDRESS&quot;]
 
-    o1["Выбрать поля для текущей операции"]
-    o2["Собрать create XML"]
-    o3["Отправить XML"]
-    o4["Получить response_bytes"]
-    o5["Разобрать ответ"]
-    d2{"Операция успешна?"}
+    o1[&quot;Выбрать поля для текущей операции&quot;]
+    o2[&quot;Собрать create XML&quot;]
+    o3[&quot;Отправить XML&quot;]
+    o4[&quot;Получить response_bytes&quot;]
+    o5[&quot;Разобрать ответ&quot;]
+    d2{&quot;Операция успешна?&quot;}
 
-    o6["Установить соответствующий good_create_* = True"]
-    o7["Установить соответствующий good_create_* = False"]
-    d3{"Есть ещё create-операции?"}
+    o6[&quot;Установить соответствующий good_create_* = True&quot;]
+    o7[&quot;Установить соответствующий good_create_* = False&quot;]
+    d3{&quot;Есть ещё create-операции?&quot;}
 
-    end_ok["Create-flow finished"]
-    end_fail["Create base failed"]
+    end_ok[&quot;Create-flow finished&quot;]
+    end_fail[&quot;Create base failed&quot;]
 
     c0 --&gt; b1 --&gt; b2 --&gt; b3 --&gt; b4 --&gt; d1
-    d1 -- "Да" --&gt; b5 --&gt; b6 --&gt; ops --&gt; o1 --&gt; o2 --&gt; o3 --&gt; o4 --&gt; o5 --&gt; d2
-    d1 -- "Нет" --&gt; b7 --&gt; end_fail
+    d1 -- &quot;Да&quot; --&gt; b5 --&gt; b6 --&gt; ops --&gt; o1 --&gt; o2 --&gt; o3 --&gt; o4 --&gt; o5 --&gt; d2
+    d1 -- &quot;Нет&quot; --&gt; b7 --&gt; end_fail
 
-    d2 -- "Да" --&gt; o6 --&gt; d3
-    d2 -- "Нет" --&gt; o7 --&gt; d3
-    d3 -- "Да" --&gt; o1
-    d3 -- "Нет" --&gt; end_ok
-</div>
+    d2 -- &quot;Да&quot; --&gt; o6 --&gt; d3
+    d2 -- &quot;Нет&quot; --&gt; o7 --&gt; d3
+    d3 -- &quot;Да&quot; --&gt; o1
+    d3 -- &quot;Нет&quot; --&gt; end_ok
+</code></pre></div>
 <h3 id="_10">Что здесь важно понять</h3>
 <ul>
 <li>create-flow может быть <strong>частично успешным</strong>;</li>
@@ -1305,7 +1875,7 @@
 <li><code>good_create_DUDL</code>;</li>
 <li><code>good_create_address</code>.</li>
 </ul>
-<hr/>
+<hr />
 <h2 id="10-rslt_container">10. <code>rslt_container</code> как память контекста</h2>
 <p>В lifecycle контекста есть два очень разных типа полей:</p>
 <h3 id="_11">Рабочие поля последней операции</h3>
@@ -1328,7 +1898,7 @@
 <li>он хранит как успешные данные, так и ошибки;</li>
 <li>он позволяет понимать контекст не только “по последнему XML”, но и по накопленному результату разбора.</li>
 </ul>
-<hr/>
+<hr />
 <h2 id="11">11. Кто имеет право менять контекст</h2>
 <p>Это важная часть жизненного цикла, потому что жизнь контекста определяется не только шагами, но и тем, <strong>кто именно имеет право менять его поля</strong>.</p>
 <h3 id="source">Source</h3>
@@ -1368,11 +1938,11 @@
 <li>решает, когда идти дальше, когда повторять попытку, когда переключать режим и когда переходить в create-flow.</li>
 </ul>
 <p>Именно orchestrator задаёт <strong>сценарий жизни контекста</strong>, а не низкоуровневые слои.</p>
-<hr/>
+<hr />
 <h2 id="12">12. Инварианты жизненного цикла</h2>
 <p>Ниже — правила, которые важно держать в голове при чтении или изменении пайплайна.</p>
 <h3 id="sourcedata_1"><code>SourceData</code> не должен терять смысл исходной канонической записи</h3>
-<p>Он остаётся основой для search- и create-фаз.<br/>
+<p>Он остаётся основой для search- и create-фаз.<br />
 Это не мусорный временный словарь.</p>
 <h3 id="attemptid-search-"><code>AttemptId</code> относится только к search-логике</h3>
 <p>Он не должен превращаться в общий счётчик create-операций.</p>
@@ -1383,9 +1953,9 @@
 <h3 id="rslt_container_1"><code>rslt_container</code> — накопительный</h3>
 <p>Он должен интерпретироваться как структурированная память ответа, а не как одноразовый буфер.</p>
 <h3 id="erzl_id_1"><code>ERZL_id</code> — главный переходный результат</h3>
-<p>Если он найден поиском — create-сценарий не нужен.<br/>
+<p>Если он найден поиском — create-сценарий не нужен.<br />
 Если он получен через base create — он становится опорой для последующих create-операций.</p>
-<hr/>
+<hr />
 <h2 id="13-state-machine">13. Эволюция состояния контекста как state machine</h2>
 <p>Если смотреть на <code>ERZL_Context</code> не как на набор полей, а как на объект состояний, то его жизнь можно читать как state machine.</p>
 <p>Это особенно полезно, когда нужно понять:</p>
@@ -1394,7 +1964,7 @@
 <li>какие переходы между фазами допустимы;</li>
 <li>где именно меняется его смысловое состояние.</li>
 </ul>
-<div class="mermaid">stateDiagram-v2
+<div class="language-text highlight"><pre><span></span><code>stateDiagram-v2
     [*] --&gt; FreshContext
 
     FreshContext: SourceData заполнен
@@ -1428,7 +1998,7 @@
     SearchSuccess --&gt; [*]
     CreateFinished --&gt; [*]
     Aborted --&gt; [*]
-</div>
+</code></pre></div>
 <h3 id="_13">Как читать эту диаграмму</h3>
 <ul>
 <li><code>FreshContext</code> — контекст уже создан, но ещё не вошёл в рабочую search-попытку.</li>
@@ -1437,11 +2007,11 @@
 <li><code>NeedCreate</code> — фаза, где контекст перестаёт быть “контекстом поиска” и становится “контекстом создания”.</li>
 <li><code>CreateFinished</code> — финальное состояние после завершения create-сценария.</li>
 </ul>
-<hr/>
+<hr />
 <h2 id="14">14. Как читать контекст при отладке</h2>
 <p>Если нужно быстро понять, что происходит с конкретной записью, удобно читать контекст в таком порядке:</p>
 <h3 id="1-sourcedata">1. <code>SourceData</code></h3>
-<p>Что вообще пришло в запись.<br/>
+<p>Что вообще пришло в запись.<br />
 Без этого дальше нет смысла смотреть попытки и XML.</p>
 <h3 id="2-persontype-attemptid">2. <code>PersonType</code> и <code>AttemptId</code></h3>
 <p>В каком режиме поиска и на какой попытке находится контекст.</p>
@@ -1458,7 +2028,7 @@
 <h3 id="8-create_flags">8. <code>create_flags</code></h3>
 <p>Перешёл ли контекст в create-flow и какие create-операции завершились успешно.</p>
 <p>Такой порядок помогает читать контекст не хаотично, а строго по логике его жизненного цикла.</p>
-<hr/>
+<hr />
 <h2 id="15">15. Когда эта страница закрывает вопрос полностью</h2>
 <p>Эта страница должна полностью отвечать на вопрос:</p>
 <blockquote>
@@ -1478,7 +2048,7 @@
 <li>в <a href="../../reference/api/">API reference</a> — за точными типами и контрактами;</li>
 <li>в код orchestrator-а и шагов — за конкретной реализацией решений.</li>
 </ul>
-<hr/>
+<hr />
 <h2 id="_14">Короткий итог</h2>
 <p><code>ERZL_Context</code> живёт так:</p>
 <ul>
@@ -1496,32 +2066,62 @@
 <li>меняется много раз;</li>
 <li>но остаётся одной и той же точкой истины для всего жизненного цикла обработки записи.</li>
 </ul>
-</article>
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
-</div>
-</main>
-<footer class="md-footer">
-<div class="md-footer-meta md-typeset">
-<div class="md-footer-meta__inner md-grid">
-<div class="md-copyright">
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
   
   
     Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
       Material for MkDocs
     </a>
+  
 </div>
-</div>
-</div>
+      
+    </div>
+  </div>
 </footer>
-</div>
-<div class="md-dialog" data-md-component="dialog">
-<div class="md-dialog__inner md-typeset"></div>
-</div>
-<script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "toc.integrate", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
-<script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
-<script src="../../../assets/javascripts/toc-collapse.js"></script>
-<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
-mermaid.initialize({});</script></body>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "toc.integrate", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../assets/javascripts/toc-collapse.js"></script>
+      
+    
+  </body>
 </html>

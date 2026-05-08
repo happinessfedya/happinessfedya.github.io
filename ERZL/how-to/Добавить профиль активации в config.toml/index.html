@@ -1,0 +1,1084 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%D0%BF%D1%8B%D1%82%D0%BA%D1%83/" rel="prev"/>
+<link href="../%D0%9E%D1%82%D0%BB%D0%B0%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BE%D1%82%D0%B2%D0%B5%D1%82%20ERZL/" rel="next"/>
+<link href="../../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<title>Добавить профиль активации в config.toml - Integration Documentation</title>
+<link href="../../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../assets/_mkdocstrings.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/toc-collapse.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#configtoml">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Integration Documentation" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Integration Documentation">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Integration Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Добавить профиль активации в config.toml
+            
+          </span>
+</div>
+</div>
+</div>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Integration Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Integration Documentation">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    Integration Documentation
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../..">
+<span class="md-ellipsis">
+    
+  
+    Общая структура проекта
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    ERZL
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    ERZL
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../architecture/ERZLcontext-lifestyle-mermaid/">
+<span class="md-ellipsis">
+    
+  
+    Жизненный цикл ERZL_Context
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../architecture/overview/">
+<span class="md-ellipsis">
+    
+  
+    Архитектура системы
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    How to
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    How to
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA/">
+<span class="md-ellipsis">
+    
+  
+    Добавить источник
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%D0%BB%D0%B5%20%D0%BE%D1%82%20%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B0%20%D0%B4%D0%BE%20XML/">
+<span class="md-ellipsis">
+    
+  
+    Добавить поле от источника до XML
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%D0%BF%D1%8B%D1%82%D0%BA%D1%83/">
+<span class="md-ellipsis">
+    
+  
+    Добавить попытку
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Добавить профиль активации в config.toml
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    Добавить профиль активации в config.toml
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
+      
+        Порядок действий
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+<span class="md-ellipsis">
+      
+        1. Выбрать имя профиля
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+<span class="md-ellipsis">
+      
+        2. Добавить блок источника
+      
+    </span>
+</a>
+<nav aria-label="2. Добавить блок источника" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      
+        Изменение
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      
+        Обязательные ключи
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+<span class="md-ellipsis">
+      
+        3. Добавить блок алиасов полей
+      
+    </span>
+</a>
+<nav aria-label="3. Добавить блок алиасов полей" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      
+        Изменение
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      
+        Что должно быть в этом блоке
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+<span class="md-ellipsis">
+      
+        4. Добавить блок попыток
+      
+    </span>
+</a>
+<nav aria-label="4. Добавить блок попыток" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+<span class="md-ellipsis">
+      
+        Изменение
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+<span class="md-ellipsis">
+      
+        Что важно
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-xml-builder">
+<span class="md-ellipsis">
+      
+        5. Добавить блок XML builder
+      
+    </span>
+</a>
+<nav aria-label="5. Добавить блок XML builder" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
+<span class="md-ellipsis">
+      
+        Изменение
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_9">
+<span class="md-ellipsis">
+      
+        Обязательные ключи
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6-namespaces">
+<span class="md-ellipsis">
+      
+        6. Добавить блок namespaces
+      
+    </span>
+</a>
+<nav aria-label="6. Добавить блок namespaces" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_10">
+<span class="md-ellipsis">
+      
+        Изменение
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_11">
+<span class="md-ellipsis">
+      
+        Что важно
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7-client-">
+<span class="md-ellipsis">
+      
+        7. Добавить блок client-данных
+      
+    </span>
+</a>
+<nav aria-label="7. Добавить блок client-данных" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_12">
+<span class="md-ellipsis">
+      
+        Изменение
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#toml">
+<span class="md-ellipsis">
+      
+        Обязательные ключи в TOML
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#env">
+<span class="md-ellipsis">
+      
+        Секреты вынесены в .env
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_13">
+<span class="md-ellipsis">
+      
+        Что важно
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8-client-">
+<span class="md-ellipsis">
+      
+        8. Добавить блок client-контейнера
+      
+    </span>
+</a>
+<nav aria-label="8. Добавить блок client-контейнера" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_14">
+<span class="md-ellipsis">
+      
+        Изменение
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_15">
+<span class="md-ellipsis">
+      
+        Обязательные ключи
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9-transport">
+<span class="md-ellipsis">
+      
+        9. Добавить блок transport
+      
+    </span>
+</a>
+<nav aria-label="9. Добавить блок transport" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_16">
+<span class="md-ellipsis">
+      
+        Изменение
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_17">
+<span class="md-ellipsis">
+      
+        Обязательные ключи
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#10-integrationserzl">
+<span class="md-ellipsis">
+      
+        10. Переключить активный профиль в [integrations.erzl]
+      
+    </span>
+</a>
+<nav aria-label="10. Переключить активный профиль в [integrations.erzl]" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_18">
+<span class="md-ellipsis">
+      
+        Изменение
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_19">
+<span class="md-ellipsis">
+      
+        Что это даст
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11">
+<span class="md-ellipsis">
+      
+        11. Что обязательно проверить после переключения
+      
+    </span>
+</a>
+<nav aria-label="11. Что обязательно проверить после переключения" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-xlsm">
+<span class="md-ellipsis">
+      
+        1. Источник остаётся XLSM
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-attempts-">
+<span class="md-ellipsis">
+      
+        2. В активном attempts-профиле есть оба ключа
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-namespace-">
+<span class="md-ellipsis">
+      
+        3. В активном namespace-профиле есть оба ключа
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-active-client-profile">
+<span class="md-ellipsis">
+      
+        4. В active client profile есть все обязательные поля
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_20">
+<span class="md-ellipsis">
+      
+        Полный шаблон нового профиля
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_21">
+<span class="md-ellipsis">
+      
+        Готовый результат
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%D0%9E%D1%82%D0%BB%D0%B0%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BE%D1%82%D0%B2%D0%B5%D1%82%20ERZL/">
+<span class="md-ellipsis">
+    
+  
+    Отладить ответ ERZL
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/api/">
+<span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="configtoml">Добавить профиль активации в <code>config.toml</code></h1>
+<h2 id="_1">Порядок действий</h2>
+<p>Новый профиль активации в этом проекте задаётся через <code>config/erzl.toml</code>.</p>
+<p>Профиль активации — это набор ссылок в секции:</p>
+<div class="language-toml highlight"><pre><span></span><code><span class="k">[integrations.erzl]</span>
+</code></pre></div>
+<p>Именно эта секция определяет, какие блоки source, alias, attempts, XML builder, namespaces, client и transport будут активны при запуске пайплайна.</p>
+<p>Полный порядок такой:</p>
+<ol>
+<li>выбрать имя нового профиля;</li>
+<li>добавить блок источника;</li>
+<li>добавить блок алиасов полей;</li>
+<li>добавить блок попыток;</li>
+<li>добавить блок XML builder;</li>
+<li>добавить блок namespaces;</li>
+<li>добавить блок client-данных;</li>
+<li>добавить блок client-контейнера;</li>
+<li>добавить блок transport;</li>
+<li>переключить ссылки в <code>[integrations.erzl]</code> на новый профиль;</li>
+<li>проверить, что обязательные ключи профиля совпадают с ожиданиями bootstrap.</li>
+</ol>
+<p>Итоговая схема такая:</p>
+<div class="language-text highlight"><pre><span></span><code>[integrations.erzl]
+-&gt; source_ref
+-&gt; alias_ref
+-&gt; attempts_ref
+-&gt; xml_builder_ref
+-&gt; xml_namespaces_ref
+-&gt; xml_client_cont_ref
+-&gt; xml_client_data_ref
+-&gt; xml_transport_ref
+</code></pre></div>
+<hr/>
+<h2 id="1">1. Выбрать имя профиля</h2>
+<p>Файл: <code>config/erzl.toml</code></p>
+<p>Сначала выберите имя нового профиля. В примере ниже используется имя:</p>
+<div class="language-text highlight"><pre><span></span><code>demo_oms
+</code></pre></div>
+<p>Это имя дальше будет использоваться в названиях всех секций:</p>
+<ul>
+<li><code>sources.xlsm.demo_oms</code></li>
+<li><code>adapters.erzl.person_fields_alias.demo_oms</code></li>
+<li><code>pipeline_steps.erzl.prepare_attempt_keys.demo_oms</code></li>
+<li><code>xml.erzl.builder.demo_oms</code></li>
+<li><code>xml.erzl.namespaces.demo_oms</code></li>
+<li><code>xml.erzl.builder.client.demo_oms</code></li>
+<li><code>xml.erzl.client_container.demo_oms</code></li>
+<li><code>xml.erzl.transport.demo_oms</code></li>
+</ul>
+<hr/>
+<h2 id="2">2. Добавить блок источника</h2>
+<p>Файл: <code>config/erzl.toml</code></p>
+<p>Для текущего bootstrap источник должен быть описан как профиль XLSM-источника.</p>
+<h3 id="_2">Изменение</h3>
+<div class="language-diff highlight"><pre><span></span><code><span class="gi">+ [sources.xlsm.demo_oms]</span>
+<span class="gi">+ XLSMPath = 'W:\Новый профиль\demo_oms.xlsm'</span>
+<span class="gi">+ SheetName = '05_Пациенты'</span>
+</code></pre></div>
+<h3 id="_3">Обязательные ключи</h3>
+<ul>
+<li><code>XLSMPath</code></li>
+<li><code>SheetName</code></li>
+</ul>
+<hr/>
+<h2 id="3">3. Добавить блок алиасов полей</h2>
+<p>Файл: <code>config/erzl.toml</code></p>
+<p>В этом блоке задаётся соответствие между колонками источника и каноническими <code>PersonFields</code>.</p>
+<h3 id="_4">Изменение</h3>
+<div class="language-diff highlight"><pre><span></span><code><span class="gi">+ [adapters.erzl.person_fields_alias.demo_oms]</span>
+<span class="gi">+ surname = ["Пациент Фамилия"]</span>
+<span class="gi">+ namep = ["Пациент Имя"]</span>
+<span class="gi">+ sexId = ["Пациент Пол"]</span>
+<span class="gi">+ citizenship = ["ИД Гражданства ЕРЗЛ"]</span>
+<span class="gi">+ snils = ["Пациент СНИЛС скорректированный"]</span>
+<span class="gi">+ dateBirth = ["Пациент Дата рождения"]</span>
+<span class="gi">+ patronymic = ["Пациент Отчество"]</span>
+<span class="gi">+ policyT = ["Тип полиса по ЕРЗЛ"]</span>
+<span class="gi">+ insurpId = ["Код СМО Объед"]</span>
+<span class="gi">+ sPolicyStatusCode = ["Статус полиса ЕРЗЛ (RefPolicySt)"]</span>
+<span class="gi">+ policy_okatoId = ["ИД региона полиса"]</span>
+<span class="gi">+ policyDateB = ["Полис Дата выдачи"]</span>
+<span class="gi">+ dudlTypeId = ["Тип ДУЛ ЕРЗЛ"]</span>
+<span class="gi">+ countryDudl = ["ИД Страны выдавшей ДУЛ"]</span>
+<span class="gi">+ dudlSer = ["Документ Серия"]</span>
+<span class="gi">+ dudlNom = ["Документ Номер"]</span>
+<span class="gi">+ adrTypeId = ["Тип Адреса"]</span>
+<span class="gi">+ address_okatoId = ["Регион Адреса(Address; okatoId)"]</span>
+</code></pre></div>
+<h3 id="_5">Что должно быть в этом блоке</h3>
+<p>Набор ключей должен покрывать все поля, которые используются:</p>
+<ul>
+<li>в попытках поиска;</li>
+<li>в create XML;</li>
+<li>в XML-маппинге текущего пайплайна.</li>
+</ul>
+<hr/>
+<h2 id="4">4. Добавить блок попыток</h2>
+<p>Файл: <code>config/erzl.toml</code></p>
+<p>Bootstrap текущего проекта ожидает, что в активном профиле попыток будут как минимум ключи:</p>
+<ul>
+<li><code>snils_data</code></li>
+<li><code>dudl_fio_data</code></li>
+</ul>
+<h3 id="_6">Изменение</h3>
+<div class="language-diff highlight"><pre><span></span><code><span class="gi">+ [pipeline_steps.erzl.prepare_attempt_keys.demo_oms]</span>
+<span class="gi">+ snils_data = ["snils"]</span>
+<span class="gi">+ dudl_fio_data = ["surname", "namep", "patronymic", "dudlTypeId", "dudlSer", "dudlNom", "countryDudl"]</span>
+</code></pre></div>
+<h3 id="_7">Что важно</h3>
+<p>Именно эти имена использует <code>config/bootstrap_core_types.py</code> при сборке <code>PrepareAttemptStepCfg</code>.</p>
+<hr/>
+<h2 id="5-xml-builder">5. Добавить блок XML builder</h2>
+<p>Файл: <code>config/erzl.toml</code></p>
+<p>Этот блок задаёт имена XML-prefix для SOAP и service-слоёв.</p>
+<h3 id="_8">Изменение</h3>
+<div class="language-diff highlight"><pre><span></span><code><span class="gi">+ [xml.erzl.builder.demo_oms]</span>
+<span class="gi">+ soap_prefix = "soapenv"</span>
+<span class="gi">+ service_prefix = "ser"</span>
+</code></pre></div>
+<h3 id="_9">Обязательные ключи</h3>
+<ul>
+<li><code>soap_prefix</code></li>
+<li><code>service_prefix</code></li>
+</ul>
+<hr/>
+<h2 id="6-namespaces">6. Добавить блок namespaces</h2>
+<p>Файл: <code>config/erzl.toml</code></p>
+<p>Bootstrap текущего проекта ожидает, что в активном namespace-профиле будут ключи:</p>
+<ul>
+<li><code>soapenv</code></li>
+<li><code>ser</code></li>
+</ul>
+<h3 id="_10">Изменение</h3>
+<div class="language-diff highlight"><pre><span></span><code><span class="gi">+ [xml.erzl.namespaces.demo_oms]</span>
+<span class="gi">+ soapenv = "http://schemas.xmlsoap.org/soap/envelope/"</span>
+<span class="gi">+ ser = "http://erzl.org/services"</span>
+</code></pre></div>
+<h3 id="_11">Что важно</h3>
+<p>Значения <code>soap_prefix</code> и <code>service_prefix</code> из builder-профиля должны существовать и в namespace-профиле.</p>
+<hr/>
+<h2 id="7-client-">7. Добавить блок client-данных</h2>
+<p>Файл: <code>config/erzl.toml</code></p>
+<p>Этот блок заполняет несекретную часть XML-контейнера <code>client</code>.</p>
+<h3 id="_12">Изменение</h3>
+<div class="language-diff highlight"><pre><span></span><code><span class="gi">+ [xml.erzl.builder.client.demo_oms]</span>
+<span class="gi">+ org_code = '811'</span>
+<span class="gi">+ bp_code = '1'</span>
+<span class="gi">+ system = 'МИС'</span>
+</code></pre></div>
+<h3 id="toml">Обязательные ключи в TOML</h3>
+<ul>
+<li><code>org_code</code></li>
+<li><code>bp_code</code></li>
+<li><code>system</code></li>
+</ul>
+<h3 id="env">Секреты вынесены в <code>.env</code></h3>
+<p>Файл: <code>.env</code></p>
+<div class="language-text highlight"><pre><span></span><code>ERZL_XML_USER=demo_user
+ERZL_XML_PASSWORD=demo_password
+</code></pre></div>
+<h3 id="_13">Что важно</h3>
+<p><code>config/bootstrap_core_types.py</code> читает логин и пароль не из <code>config/erzl.toml</code>, а из корневого <code>.env</code>.
+<code>.env</code> должен быть добавлен в <code>.gitignore</code>.</p>
+<hr/>
+<h2 id="8-client-">8. Добавить блок client-контейнера</h2>
+<p>Файл: <code>config/erzl.toml</code></p>
+<p>Этот блок задаёт имя корневого XML-контейнера для client-данных.</p>
+<h3 id="_14">Изменение</h3>
+<div class="language-diff highlight"><pre><span></span><code><span class="gi">+ [xml.erzl.client_container.demo_oms]</span>
+<span class="gi">+ root_container_name = 'client'</span>
+</code></pre></div>
+<h3 id="_15">Обязательные ключи</h3>
+<ul>
+<li><code>root_container_name</code></li>
+</ul>
+<hr/>
+<h2 id="9-transport">9. Добавить блок transport</h2>
+<p>Файл: <code>config/erzl.toml</code></p>
+<p>Этот блок задаёт HTTP-параметры отправки XML.</p>
+<h3 id="_16">Изменение</h3>
+<div class="language-diff highlight"><pre><span></span><code><span class="gi">+ [xml.erzl.transport.demo_oms]</span>
+<span class="gi">+ endpoint = 'http://127.0.0.1:8080/erzlws/policyService'</span>
+<span class="gi">+ timeout_sec = 30</span>
+<span class="gi">+ pool_maxsize = 4</span>
+<span class="gi">+ headers = { "Content-Type" = "text/xml; charset=utf-8" }</span>
+</code></pre></div>
+<h3 id="_17">Обязательные ключи</h3>
+<ul>
+<li><code>endpoint</code></li>
+<li><code>timeout_sec</code></li>
+<li><code>pool_maxsize</code></li>
+<li><code>headers</code></li>
+</ul>
+<hr/>
+<h2 id="10-integrationserzl">10. Переключить активный профиль в <code>[integrations.erzl]</code></h2>
+<p>Файл: <code>config/erzl.toml</code></p>
+<p>После того как все профильные блоки созданы, нужно переключить ссылки в секции активации.</p>
+<h3 id="_18">Изменение</h3>
+<div class="language-diff highlight"><pre><span></span><code><span class="w"> </span>[integrations.erzl]
+<span class="gd">- source_ref = "sources.xlsm.main"</span>
+<span class="gd">- alias_ref = "adapters.erzl.person_fields_alias.main"</span>
+<span class="gd">- attempts_ref = "pipeline_steps.erzl.prepare_attempt_keys"</span>
+<span class="gd">- xml_builder_ref = "xml.erzl.builder.main"</span>
+<span class="gd">- xml_namespaces_ref = "xml.erzl.namespaces"</span>
+<span class="gd">- xml_client_cont_ref = 'xml.erzl.client_container.main'</span>
+<span class="gd">- xml_client_data_ref = 'xml.erzl.builder.client.main'</span>
+<span class="gd">- xml_transport_ref = 'xml.erzl.transport.main'</span>
+<span class="gi">+ source_ref = "sources.xlsm.demo_oms"</span>
+<span class="gi">+ alias_ref = "adapters.erzl.person_fields_alias.demo_oms"</span>
+<span class="gi">+ attempts_ref = "pipeline_steps.erzl.prepare_attempt_keys.demo_oms"</span>
+<span class="gi">+ xml_builder_ref = "xml.erzl.builder.demo_oms"</span>
+<span class="gi">+ xml_namespaces_ref = "xml.erzl.namespaces.demo_oms"</span>
+<span class="gi">+ xml_client_cont_ref = "xml.erzl.client_container.demo_oms"</span>
+<span class="gi">+ xml_client_data_ref = "xml.erzl.builder.client.demo_oms"</span>
+<span class="gi">+ xml_transport_ref = "xml.erzl.transport.demo_oms"</span>
+</code></pre></div>
+<h3 id="_19">Что это даст</h3>
+<p>После этой правки bootstrap начнёт читать именно новый профиль <code>demo_oms</code>.</p>
+<hr/>
+<h2 id="11">11. Что обязательно проверить после переключения</h2>
+<p>Файл проверки логики: <code>config/bootstrap_core_types.py</code></p>
+<p>Новый профиль будет работать без правок Python-кода, если выполняются все условия:</p>
+<h3 id="1-xlsm">1. Источник остаётся XLSM</h3>
+<p>Bootstrap сейчас собирает:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="n">_ERZLMainXLSMSourceCfg</span> <span class="o">=</span> <span class="n">XLSMSourceCfg</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</code></pre></div>
+<p>Значит <code>source_ref</code> должен вести в блок вида:</p>
+<div class="language-toml highlight"><pre><span></span><code><span class="k">[sources.xlsm.</span><span class="err">&lt;профиль&gt;</span><span class="k">]</span>
+</code></pre></div>
+<h3 id="2-attempts-">2. В активном attempts-профиле есть оба ключа</h3>
+<p>Bootstrap сейчас ожидает:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="n">attempts_raw</span><span class="p">[</span><span class="s2">"snils_data"</span><span class="p">]</span>
+<span class="n">attempts_raw</span><span class="p">[</span><span class="s2">"dudl_fio_data"</span><span class="p">]</span>
+</code></pre></div>
+<p>Значит в активном профиле попыток должны быть:</p>
+<ul>
+<li><code>snils_data</code></li>
+<li><code>dudl_fio_data</code></li>
+</ul>
+<h3 id="3-namespace-">3. В активном namespace-профиле есть оба ключа</h3>
+<p>Bootstrap сейчас читает:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="n">xml_namespaces_raw</span><span class="p">[</span><span class="s2">"soapenv"</span><span class="p">]</span>
+<span class="n">xml_namespaces_raw</span><span class="p">[</span><span class="s2">"ser"</span><span class="p">]</span>
+</code></pre></div>
+<p>Значит в активном namespace-профиле должны быть:</p>
+<ul>
+<li><code>soapenv</code></li>
+<li><code>ser</code></li>
+</ul>
+<h3 id="4-active-client-profile">4. В active client profile есть все обязательные поля</h3>
+<p>Bootstrap сейчас читает:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="n">xml_client_data_raw</span><span class="p">[</span><span class="s2">"org_code"</span><span class="p">]</span>
+<span class="n">xml_client_data_raw</span><span class="p">[</span><span class="s2">"bp_code"</span><span class="p">]</span>
+<span class="n">xml_client_data_raw</span><span class="p">[</span><span class="s2">"system"</span><span class="p">]</span>
+<span class="n">_require_env</span><span class="p">(</span><span class="s2">"ERZL_XML_USER"</span><span class="p">)</span>
+<span class="n">_require_env</span><span class="p">(</span><span class="s2">"ERZL_XML_PASSWORD"</span><span class="p">)</span>
+</code></pre></div>
+<p>Значит:</p>
+<ul>
+<li>в <code>xml.erzl.builder.client.&lt;профиль&gt;</code> должны быть заполнены <code>org_code</code>, <code>bp_code</code>, <code>system</code>;</li>
+<li>в корневом <code>.env</code> должны быть заданы <code>ERZL_XML_USER</code> и <code>ERZL_XML_PASSWORD</code>.</li>
+</ul>
+<hr/>
+<h2 id="_20">Полный шаблон нового профиля</h2>
+<p>Ниже готовый шаблон, который можно использовать как основу.</p>
+<div class="language-diff highlight"><pre><span></span><code><span class="gi">+ [sources.xlsm.demo_oms]</span>
+<span class="gi">+ XLSMPath = 'W:\Новый профиль\demo_oms.xlsm'</span>
+<span class="gi">+ SheetName = '05_Пациенты'</span>
+<span class="gi">+</span>
+<span class="gi">+ [adapters.erzl.person_fields_alias.demo_oms]</span>
+<span class="gi">+ surname = ["Пациент Фамилия"]</span>
+<span class="gi">+ namep = ["Пациент Имя"]</span>
+<span class="gi">+ sexId = ["Пациент Пол"]</span>
+<span class="gi">+ citizenship = ["ИД Гражданства ЕРЗЛ"]</span>
+<span class="gi">+ snils = ["Пациент СНИЛС скорректированный"]</span>
+<span class="gi">+ dateBirth = ["Пациент Дата рождения"]</span>
+<span class="gi">+ patronymic = ["Пациент Отчество"]</span>
+<span class="gi">+ policyT = ["Тип полиса по ЕРЗЛ"]</span>
+<span class="gi">+ insurpId = ["Код СМО Объед"]</span>
+<span class="gi">+ sPolicyStatusCode = ["Статус полиса ЕРЗЛ (RefPolicySt)"]</span>
+<span class="gi">+ policy_okatoId = ["ИД региона полиса"]</span>
+<span class="gi">+ policyDateB = ["Полис Дата выдачи"]</span>
+<span class="gi">+ dudlTypeId = ["Тип ДУЛ ЕРЗЛ"]</span>
+<span class="gi">+ countryDudl = ["ИД Страны выдавшей ДУЛ"]</span>
+<span class="gi">+ dudlSer = ["Документ Серия"]</span>
+<span class="gi">+ dudlNom = ["Документ Номер"]</span>
+<span class="gi">+ adrTypeId = ["Тип Адреса"]</span>
+<span class="gi">+ address_okatoId = ["Регион Адреса(Address; okatoId)"]</span>
+<span class="gi">+</span>
+<span class="gi">+ [pipeline_steps.erzl.prepare_attempt_keys.demo_oms]</span>
+<span class="gi">+ snils_data = ["snils"]</span>
+<span class="gi">+ dudl_fio_data = ["surname", "namep", "patronymic", "dudlTypeId", "dudlSer", "dudlNom", "countryDudl"]</span>
+<span class="gi">+</span>
+<span class="gi">+ [xml.erzl.builder.demo_oms]</span>
+<span class="gi">+ soap_prefix = "soapenv"</span>
+<span class="gi">+ service_prefix = "ser"</span>
+<span class="gi">+</span>
+<span class="gi">+ [xml.erzl.namespaces.demo_oms]</span>
+<span class="gi">+ soapenv = "http://schemas.xmlsoap.org/soap/envelope/"</span>
+<span class="gi">+ ser = "http://erzl.org/services"</span>
+<span class="gi">+</span>
+<span class="gi">+ [xml.erzl.builder.client.demo_oms]</span>
+<span class="gi">+ org_code = '811'</span>
+<span class="gi">+ bp_code = '1'</span>
+<span class="gi">+ system = 'МИС'</span>
+<span class="gi">+</span>
+<span class="gi">+ [xml.erzl.client_container.demo_oms]</span>
+<span class="gi">+ root_container_name = 'client'</span>
+<span class="gi">+</span>
+<span class="gi">+ [xml.erzl.transport.demo_oms]</span>
+<span class="gi">+ endpoint = 'http://127.0.0.1:8080/erzlws/policyService'</span>
+<span class="gi">+ timeout_sec = 30</span>
+<span class="gi">+ pool_maxsize = 4</span>
+<span class="gi">+ headers = { "Content-Type" = "text/xml; charset=utf-8" }</span>
+</code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>ERZL_XML_USER=demo_user
+ERZL_XML_PASSWORD=demo_password
+</code></pre></div>
+<hr/>
+<h2 id="_21">Готовый результат</h2>
+<p>После полной настройки профиль активации должен задаваться только через блок:</p>
+<div class="language-toml highlight"><pre><span></span><code><span class="k">[integrations.erzl]</span>
+</code></pre></div>
+<p>Если все ссылки из него указывают на один и тот же профиль, то при старте пайплайн подхватит:</p>
+<ol>
+<li>нужный XLSM-источник;</li>
+<li>нужные алиасы полей;</li>
+<li>нужные search-попытки;</li>
+<li>нужные XML builder prefixes;</li>
+<li>нужные namespaces;</li>
+<li>нужный client-контейнер;</li>
+<li>нужный transport.</li>
+</ol>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "toc.integrate", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../../../assets/javascripts/toc-collapse.js"></script>
+</body>
+</html>

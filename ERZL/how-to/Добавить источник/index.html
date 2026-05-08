@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../../architecture/overview/" rel="prev"/>
-<link href="../%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%D0%BF%D1%8B%D1%82%D0%BA%D1%83/" rel="next"/>
+<link href="../%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%D0%BB%D0%B5%20%D0%BE%D1%82%20%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B0%20%D0%B4%D0%BE%20XML/" rel="next"/>
 <link href="../../../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
 <title>Добавить источник - Integration Documentation</title>
@@ -322,7 +322,7 @@
 <a class="md-nav__link" href="#_5">
 <span class="md-ellipsis">
       
-        Пример
+        Изменение
       
     </span>
 </a>
@@ -344,7 +344,7 @@
 <a class="md-nav__link" href="#_6">
 <span class="md-ellipsis">
       
-        Пример
+        Изменение
       
     </span>
 </a>
@@ -353,7 +353,7 @@
 <a class="md-nav__link" href="#_7">
 <span class="md-ellipsis">
       
-        Пример
+        Изменение
       
     </span>
 </a>
@@ -375,7 +375,7 @@
 <a class="md-nav__link" href="#_8">
 <span class="md-ellipsis">
       
-        Пример
+        Изменение
       
     </span>
 </a>
@@ -397,7 +397,7 @@
 <a class="md-nav__link" href="#_9">
 <span class="md-ellipsis">
       
-        Пример
+        Изменение
       
     </span>
 </a>
@@ -440,11 +440,35 @@
 </nav>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%D0%BB%D0%B5%20%D0%BE%D1%82%20%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B0%20%D0%B4%D0%BE%20XML/">
+<span class="md-ellipsis">
+    
+  
+    Добавить поле от источника до XML
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%D0%BF%D1%8B%D1%82%D0%BA%D1%83/">
 <span class="md-ellipsis">
     
   
     Добавить попытку
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D1%84%D0%B8%D0%BB%D1%8C%20%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%B0%D1%86%D0%B8%D0%B8%20%D0%B2%20config.toml/">
+<span class="md-ellipsis">
+    
+  
+    Добавить профиль активации в config.toml
   
 
     
@@ -526,14 +550,14 @@
 <li>передать новый <code>LoadContextStep</code> в orchestrator.</li>
 </ol>
 <p>Итоговая цепочка выглядит так:</p>
-<pre><code class="language-text">Новый Source
+<div class="language-text highlight"><pre><span></span><code>Новый Source
 -&gt; DTO строки источника
 -&gt; RenameToSourceInputAdapter
 -&gt; SourceInput[PersonFields]
 -&gt; ERZLContextFactory
 -&gt; LoadContextStep
 -&gt; ERZLOrchestrator
-</code></pre>
+</code></pre></div>
 <hr/>
 <h2 id="1-dto">1. Добавить DTO и конфиг источника</h2>
 <p>Файл: <code>Source/source_core_types.py</code></p>
@@ -543,104 +567,104 @@
 <li>dataclass одной строки источника.</li>
 </ul>
 <h3 id="csv">Пример для CSV</h3>
-<pre><code class="language-python">from dataclasses import dataclass
-from pathlib import Path
-from typing import Dict
+<div class="language-python highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span>
 
-@dataclass(frozen=True)
-class CSVSourceCfg:
-    PathCSV: Path
-    Encoding: str = "utf-8"
-    Delimiter: str = ";"
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">CSVSourceCfg</span><span class="p">:</span>
+    <span class="n">PathCSV</span><span class="p">:</span> <span class="n">Path</span>
+    <span class="n">Encoding</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"utf-8"</span>
+    <span class="n">Delimiter</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">";"</span>
 
 
-@dataclass(frozen=True)
-class CSVRowDTO:
-    data: Dict[str, SourceValue]
-    index: int
-</code></pre>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">CSVRowDTO</span><span class="p">:</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">SourceValue</span><span class="p">]</span>
+    <span class="n">index</span><span class="p">:</span> <span class="nb">int</span>
+</code></pre></div>
 <h3 id="_3">Что должно получиться</h3>
 <p>После чтения одна строка источника должна выглядеть так:</p>
-<pre><code class="language-python">CSVRowDTO(
-    data={
-        "fam": "Иванов",
-        "im": "Иван",
-        "snils": "123-456-789 00",
-    },
-    index=1,
-)
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span class="n">CSVRowDTO</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">"fam"</span><span class="p">:</span> <span class="s2">"Иванов"</span><span class="p">,</span>
+        <span class="s2">"im"</span><span class="p">:</span> <span class="s2">"Иван"</span><span class="p">,</span>
+        <span class="s2">"snils"</span><span class="p">:</span> <span class="s2">"123-456-789 00"</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="n">index</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
 <hr/>
 <h2 id="2">2. Реализовать класс источника</h2>
 <p>Файл: <code>Source/SourceData.py</code></p>
 <p>Нужно добавить класс, который читает внешний источник и возвращает <code>Iterator[DTO_строки]</code>.</p>
 <h3 id="csv_1">Пример для CSV</h3>
-<pre><code class="language-python">import csv
-from typing import Iterator, Dict
+<div class="language-python highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Iterator</span><span class="p">,</span> <span class="n">Dict</span>
 
-from .source_core_types import CSVSourceCfg, CSVRowDTO, SourceValue
+<span class="kn">from</span> <span class="nn">.source_core_types</span> <span class="kn">import</span> <span class="n">CSVSourceCfg</span><span class="p">,</span> <span class="n">CSVRowDTO</span><span class="p">,</span> <span class="n">SourceValue</span>
 
 
-class CSVSource:
-    def __init__(self, cfg: CSVSourceCfg):
-        self._cfg = cfg
+<span class="k">class</span> <span class="nc">CSVSource</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cfg</span><span class="p">:</span> <span class="n">CSVSourceCfg</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_cfg</span> <span class="o">=</span> <span class="n">cfg</span>
 
-    def _getData(self) -&gt; Iterator[CSVRowDTO]:
-        with open(self._cfg.PathCSV, "r", encoding=self._cfg.Encoding, newline="") as f:
-            reader = csv.DictReader(f, delimiter=self._cfg.Delimiter)
+    <span class="k">def</span> <span class="nf">_getData</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">CSVRowDTO</span><span class="p">]:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cfg</span><span class="o">.</span><span class="n">PathCSV</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_cfg</span><span class="o">.</span><span class="n">Encoding</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s2">""</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_cfg</span><span class="o">.</span><span class="n">Delimiter</span><span class="p">)</span>
 
-            row_idx = 1
-            for row in reader:
-                data: Dict[str, SourceValue] = {}
+            <span class="n">row_idx</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+                <span class="n">data</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">SourceValue</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
 
-                for key, value in row.items():
-                    if key is None or value is None:
-                        continue
+                <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">row</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                    <span class="k">if</span> <span class="n">key</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="k">continue</span>
 
-                    value = value.strip()
-                    if value == "":
-                        continue
+                    <span class="n">value</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                    <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="s2">""</span><span class="p">:</span>
+                        <span class="k">continue</span>
 
-                    data[key] = value
+                    <span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
 
-                if data:
-                    yield CSVRowDTO(data=data, index=row_idx)
+                <span class="k">if</span> <span class="n">data</span><span class="p">:</span>
+                    <span class="k">yield</span> <span class="n">CSVRowDTO</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">row_idx</span><span class="p">)</span>
 
-                row_idx += 1
+                <span class="n">row_idx</span> <span class="o">+=</span> <span class="mi">1</span>
 
-    def run_getData(self) -&gt; Iterator[CSVRowDTO]:
-        yield from self._getData()
-</code></pre>
+    <span class="k">def</span> <span class="nf">run_getData</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">CSVRowDTO</span><span class="p">]:</span>
+        <span class="k">yield from</span> <span class="bp">self</span><span class="o">.</span><span class="n">_getData</span><span class="p">()</span>
+</code></pre></div>
 <h3 id="_4">Что важно сохранить</h3>
 <p>Источник должен возвращать DTO строки в формате:</p>
-<pre><code class="language-python">dto.data
-dto.index
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span class="n">dto</span><span class="o">.</span><span class="n">data</span>
+<span class="n">dto</span><span class="o">.</span><span class="n">index</span>
+</code></pre></div>
 <p>Это позволит сразу использовать существующий <code>RenameToSourceInputAdapter</code>.</p>
 <hr/>
 <h2 id="3-personfields">3. Подготовить маппинг колонок источника в <code>PersonFields</code></h2>
 <p>Файл: <code>config/erzl.toml</code></p>
 <p>Нужно описать соответствие между полями нового источника и <code>PersonFields</code>.</p>
-<h3 id="_5">Пример</h3>
-<pre><code class="language-toml">[source_aliases.csv_main]
-fam = "SURNAME"
-im = "NAME"
-otch = "PATRONYMIC"
-dr = "DATE_BIRTH"
-snils = "SNILS"
-sex = "SEX_ID"
-citizenship = "CITIZEN_CODE"
-</code></pre>
+<h3 id="_5">Изменение</h3>
+<div class="language-diff highlight"><pre><span></span><code><span class="gi">+ [source_aliases.csv_main]</span>
+<span class="gi">+ fam = "SURNAME"</span>
+<span class="gi">+ im = "NAME"</span>
+<span class="gi">+ otch = "PATRONYMIC"</span>
+<span class="gi">+ dr = "DATE_BIRTH"</span>
+<span class="gi">+ snils = "SNILS"</span>
+<span class="gi">+ sex = "SEX_ID"</span>
+<span class="gi">+ citizenship = "CITIZEN_CODE"</span>
+</code></pre></div>
 <p>После такого маппинга адаптер сможет превратить строку источника:</p>
-<pre><code class="language-python">{"fam": "Иванов", "im": "Иван", "snils": "123-456-789 00"}
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span class="p">{</span><span class="s2">"fam"</span><span class="p">:</span> <span class="s2">"Иванов"</span><span class="p">,</span> <span class="s2">"im"</span><span class="p">:</span> <span class="s2">"Иван"</span><span class="p">,</span> <span class="s2">"snils"</span><span class="p">:</span> <span class="s2">"123-456-789 00"</span><span class="p">}</span>
+</code></pre></div>
 <p>в канонический набор:</p>
-<pre><code class="language-python">{
-    PersonFields.SURNAME: "Иванов",
-    PersonFields.NAME: "Иван",
-    PersonFields.SNILS: "123-456-789 00",
-}
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">:</span> <span class="s2">"Иванов"</span><span class="p">,</span>
+    <span class="n">PersonFields</span><span class="o">.</span><span class="n">NAME</span><span class="p">:</span> <span class="s2">"Иван"</span><span class="p">,</span>
+    <span class="n">PersonFields</span><span class="o">.</span><span class="n">SNILS</span><span class="p">:</span> <span class="s2">"123-456-789 00"</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div>
 <hr/>
 <h2 id="4-bootstrap-">4. Собрать bootstrap-конфиг</h2>
 <p>Файл: <code>config/bootstrap_core_types.py</code></p>
@@ -649,28 +673,28 @@ citizenship = "CITIZEN_CODE"
 <li>собрать конфиг нового источника;</li>
 <li>собрать <code>RenameToSourceInputAdapterCfg</code>.</li>
 </ul>
-<h3 id="_6">Пример</h3>
-<pre><code class="language-python">_CSVMainSourceCfg = CSVSourceCfg(
-    PathCSV=Path(source_raw["PathCSV"]),
-    Encoding=source_raw.get("Encoding", "utf-8"),
-    Delimiter=source_raw.get("Delimiter", ";"),
-)
-
-_CSVMainRenameToSourceInputAdapterCfg = RenameToSourceInputAdapterCfg.field_from_alias(
-    alias_by_field=alias_raw,
-    field_enum=PersonFields,
-)
-</code></pre>
+<h3 id="_6">Изменение</h3>
+<div class="language-diff highlight"><pre><span></span><code><span class="gi">+ _CSVMainSourceCfg = CSVSourceCfg(</span>
+<span class="gi">+     PathCSV=Path(source_raw["PathCSV"]),</span>
+<span class="gi">+     Encoding=source_raw.get("Encoding", "utf-8"),</span>
+<span class="gi">+     Delimiter=source_raw.get("Delimiter", ";"),</span>
+<span class="gi">+ )</span>
+<span class="gi">+</span>
+<span class="gi">+ _CSVMainRenameToSourceInputAdapterCfg = RenameToSourceInputAdapterCfg.field_from_alias(</span>
+<span class="gi">+     alias_by_field=alias_raw,</span>
+<span class="gi">+     field_enum=PersonFields,</span>
+<span class="gi">+ )</span>
+</code></pre></div>
 <p>Потом конфиг нужно положить в <code>BootstrapCfg</code>.</p>
-<h3 id="_7">Пример</h3>
-<pre><code class="language-python">class BootstrapCfg:
-    class ERZL:
-        class Source:
-            CSV = _CSVMainSourceCfg
+<h3 id="_7">Изменение</h3>
+<div class="language-diff highlight"><pre><span></span><code><span class="w"> </span> class BootstrapCfg:
+<span class="w"> </span>     class ERZL:
+<span class="w"> </span>         class Source:
+<span class="gi">+             CSV = _CSVMainSourceCfg</span>
 
-        class Adapters:
-            RenameToSourceInput = _CSVMainRenameToSourceInputAdapterCfg
-</code></pre>
+<span class="w"> </span>         class Adapters:
+<span class="gi">+             RenameToSourceInput = _CSVMainRenameToSourceInputAdapterCfg</span>
+</code></pre></div>
 <hr/>
 <h2 id="5-loadcontextstep">5. Подключить источник в <code>LoadContextStep</code></h2>
 <p>Файл: <code>config/bootstrap.py</code></p>
@@ -681,44 +705,45 @@ _CSVMainRenameToSourceInputAdapterCfg = RenameToSourceInputAdapterCfg.field_from
 <li>использовать <code>ERZLContextFactory</code>;</li>
 <li>собрать <code>LoadContextStep</code>.</li>
 </ol>
-<h3 id="_8">Пример</h3>
-<pre><code class="language-python">from Source.SourceData import CSVSource
-from Source.source_core_types import CSVRowDTO, PersonFields, ERZL_Context
-from Adapters.Adapters import RenameToSourceInputAdapter
-from Source.ContextBuilder import ERZLContextFactory
-from Pipeline.pipeline_protocols import LoadContextStep
-
-
-csv_source = CSVSource(BootstrapCfg.ERZL.Source.CSV)
-
-rename_to_source_input_adapter = RenameToSourceInputAdapter[PersonFields](
-    BootstrapCfg.ERZL.Adapters.RenameToSourceInput
-)
-
-context_factory = ERZLContextFactory()
-
-load_ctx_csv_person_erzl = LoadContextStep[CSVRowDTO, PersonFields, ERZL_Context](
-    csv_source,
-    rename_to_source_input_adapter,
-    context_factory,
-)
-</code></pre>
+<h3 id="_8">Изменение</h3>
+<div class="language-diff highlight"><pre><span></span><code><span class="gi">+ from Source.SourceData import CSVSource</span>
+<span class="gi">+ from Source.source_core_types import CSVRowDTO, PersonFields, ERZL_Context</span>
+<span class="gi">+ from Adapters.Adapters import RenameToSourceInputAdapter</span>
+<span class="gi">+ from Source.ContextBuilder import ERZLContextFactory</span>
+<span class="gi">+ from Pipeline.pipeline_protocols import LoadContextStep</span>
+<span class="gi">+</span>
+<span class="gi">+</span>
+<span class="gi">+ csv_source = CSVSource(BootstrapCfg.ERZL.Source.CSV)</span>
+<span class="gi">+</span>
+<span class="gi">+ rename_to_source_input_adapter = RenameToSourceInputAdapter[PersonFields](</span>
+<span class="gi">+     BootstrapCfg.ERZL.Adapters.RenameToSourceInput</span>
+<span class="gi">+ )</span>
+<span class="gi">+</span>
+<span class="gi">+ context_factory = ERZLContextFactory()</span>
+<span class="gi">+</span>
+<span class="gi">+ load_ctx_csv_person_erzl = LoadContextStep[CSVRowDTO, PersonFields, ERZL_Context](</span>
+<span class="gi">+     csv_source,</span>
+<span class="gi">+     rename_to_source_input_adapter,</span>
+<span class="gi">+     context_factory,</span>
+<span class="gi">+ )</span>
+</code></pre></div>
 <hr/>
 <h2 id="6-orchestrator">6. Передать новый шаг загрузки контекста в orchestrator</h2>
 <p>Файл: <code>config/bootstrap.py</code></p>
 <p>После того как появился новый <code>LoadContextStep</code>, его нужно передать в orchestrator.</p>
-<h3 id="_9">Пример</h3>
-<pre><code class="language-python">ERZLOrchestrator_CSV_PersonFields_Main = ERZLOrchestrator(
-    get_context=load_ctx_csv_person_erzl,
-    get_attempt_data=get_attempt_data_step_person,
-    build_search_xml=build_search_xml_step_person,
-    build_create_xml=create_person_step,
-    adapter_base=AdapterBase(),
-    erzl_adapter=ERZLAdapter(),
-    transport=transport_step,
-    get_answer=answer_decision_step,
-)
-</code></pre>
+<h3 id="_9">Изменение</h3>
+<div class="language-diff highlight"><pre><span></span><code><span class="w"> </span> ERZLOrchestrator_CSV_PersonFields_Main = ERZLOrchestrator(
+<span class="gd">-     get_context=load_ctx_xlsm_person_erzl,</span>
+<span class="gi">+     get_context=load_ctx_csv_person_erzl,</span>
+<span class="w"> </span>     get_attempt_data=get_attempt_data_step_person,
+<span class="w"> </span>     build_search_xml=build_search_xml_step_person,
+<span class="w"> </span>     build_create_xml=create_person_step,
+<span class="w"> </span>     adapter_base=AdapterBase(),
+<span class="w"> </span>     erzl_adapter=ERZLAdapter(),
+<span class="w"> </span>     transport=transport_step,
+<span class="w"> </span>     get_answer=answer_decision_step,
+<span class="w"> </span> )
+</code></pre></div>
 <hr/>
 <h2 id="_10">Минимальный набор файлов</h2>
 <p>При добавлении нового источника обычно меняются:</p>
@@ -740,15 +765,15 @@ load_ctx_csv_person_erzl = LoadContextStep[CSVRowDTO, PersonFields, ERZL_Context
 <li>дальше запускается стандартный ERZL-пайплайн.</li>
 </ol>
 <h3 id="_12">Пример промежуточного результата после адаптера</h3>
-<pre><code class="language-python">SourceInput[PersonFields](
-    attributes={
-        PersonFields.SURNAME: "Иванов",
-        PersonFields.NAME: "Иван",
-        PersonFields.SNILS: "123-456-789 00",
-    },
-    index=1,
-)
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span class="n">SourceInput</span><span class="p">[</span><span class="n">PersonFields</span><span class="p">](</span>
+    <span class="n">attributes</span><span class="o">=</span><span class="p">{</span>
+        <span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">:</span> <span class="s2">"Иванов"</span><span class="p">,</span>
+        <span class="n">PersonFields</span><span class="o">.</span><span class="n">NAME</span><span class="p">:</span> <span class="s2">"Иван"</span><span class="p">,</span>
+        <span class="n">PersonFields</span><span class="o">.</span><span class="n">SNILS</span><span class="p">:</span> <span class="s2">"123-456-789 00"</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="n">index</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
