@@ -132,7 +132,7 @@
 <a class="md-nav__link" href="#_2">
 <span class="md-ellipsis">
       
-        Структура модулей
+        Как читать документацию
       
     </span>
 </a>
@@ -141,10 +141,86 @@
 <a class="md-nav__link" href="#_3">
 <span class="md-ellipsis">
       
-        Структура типов данных
+        Карта страниц
       
     </span>
 </a>
+<nav aria-label="Карта страниц" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#erzlarchitectureoverviewmd">
+<span class="md-ellipsis">
+      
+        ERZL/architecture/overview.md
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#erzlarchitectureerzlcontext-lifestyle-mermaidmd">
+<span class="md-ellipsis">
+      
+        ERZL/architecture/ERZLcontext-lifestyle-mermaid.md
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#erzlreferenceapimd">
+<span class="md-ellipsis">
+      
+        ERZL/reference/api.md
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#erzlhow-to-md">
+<span class="md-ellipsis">
+      
+        ERZL/how-to/Добавить источник.md
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#erzlhow-to-xmlmd">
+<span class="md-ellipsis">
+      
+        ERZL/how-to/Добавить поле от источника до XML.md
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#erzlhow-to-md_1">
+<span class="md-ellipsis">
+      
+        ERZL/how-to/Добавить попытку.md
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#erzlhow-to-configtomlmd">
+<span class="md-ellipsis">
+      
+        ERZL/how-to/Добавить профиль активации в config.toml.md
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#erzlhow-to-erzlmd">
+<span class="md-ellipsis">
+      
+        ERZL/how-to/Отладить ответ ERZL.md
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -357,140 +433,95 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="_1">Общая структура проекта</h1>
-<h2 id="_2">Структура модулей</h2>
+<p>Текущая документация описывает ERZL-пайплайн в трех плоскостях:</p>
 <ul>
-<li><code>Общие модули</code> (Source, DataSelector, XMLBuilder и прочее) должны быть максимально простыми для их универсальности. Не должны совершать никаких доменных преобразований данных. Только технические преобразования. Не служат фильтром данных за исключением проверок на битые данные. Например: Source просто отдает данные из источника. Adapter отвечает за преобразование данных таким образом, который подойдет для дальнейшей работы с пайплайном.  </li>
-<li><code>Адаптеры</code> - Отвечают за изменение данных, как в примере выше. В т.ч. за изменение контекста. Изменением контекста считается также и присваивание переменной контексту (adapter.put_bytes()). В проекте никогда не должно быть изменения контекста не через адаптер (<s>context.attempt_id + 1</s>; adapter.attempt_plus_one()).  </li>
-<li><code>Пайплайн</code> - Служит объединением общих модулей и адаптеров в шаги. Шагом считается микро-задача, финалом которой считается любое изменение контекста. Возвращать шаг должен StepRslt.ok\error\abort с StepRslt.decision, соответствующим конкретному шагу. Набор decision прописывается внутри protocols_core_types.py  </li>
-<li><code>Оркестратор</code> - Служит объединением шагов, где в соответствии с разным StepRslt.decision определяется какое будет следующее действие. Здесь зашита исключительно бизнес логика.  </li>
+<li><code>Architecture</code> объясняет границы слоев и жизненный цикл <code>ERZL_Context</code>.</li>
+<li><code>Reference</code> дает точные API-контракты Python-модулей.</li>
+<li><code>How to</code> показывает пошаговые изменения конфигурации, полей, попыток и сценарии отладки.</li>
 </ul>
-<h2 id="_3">Структура типов данных</h2>
-<p><strong>Проект использует статическую типизацию Python (type hints + mypy) с применением generics, Protocol (структурной типизации) и типизированных DTO для построения модульного пайплайна.</strong><br/>
-<code>*_core_types.py</code> - В подобных файлах объявляются и хранятся типы данных, кроме тех, которые исползуются в моменте для конкретного метода и не предвидится использований этого же типа. В таком случае объявляем прямо над методотом\классом, где используется этот тип.  </p>
-<p><code>Возвращаемые данные</code> - Все возвращаемые типы должны быть четко прописаны как <em>@dataclass</em>.  </p>
-<p><code>Анти-паттерны</code> - В коде не должно быть\должен быть минимум непонятно откуда взятых str, int и т.д. Все они должны быть отдельно объявлены и использоваться через ссылку на объявление.  </p>
-<h1 id="_4">Документация проекта</h1>
-<p>Документация описывает текущую архитектуру модульного интеграционного пайплайна и правила его расширения.</p>
-<p>Сейчас в репозитории реализован ERZL-пайплайн:
-- источник читает строки из XLSM;
-- adapter переводит данные в канонические поля;
-- создаётся <code>ERZL_Context</code>;
-- pipeline steps подготавливают попытки, XML и ответ;
-- orchestrator управляет search-flow и create-flow.</p>
-<hr/>
-<h2 id="_5">Как читать эту документацию</h2>
+<p>Сейчас в <code>docs</code> задокументирован именно ERZL-пайплайн. Основная reference-страница одна: <code>ERZL/reference/api.md</code>.</p>
+<h2 id="_2">Как читать документацию</h2>
 <ul>
-<li>Если нужно понять систему целиком — начни с <code>architecture/overview.md</code>.</li>
-<li>Если нужно понять жизненный цикл context — читай <code>architecture/context-lifecycle.md</code>.</li>
-<li>Если нужно изменить поведение пайплайна — смотри <code>how-to/</code>.</li>
-<li>Если нужен точный контракт типов, шагов или конфигов — смотри <code>reference/</code>.</li>
-<li>Если нужно понять причины архитектурных решений — смотри <code>adr/</code>.</li>
+<li>Если нужно понять общую архитектуру и границы ответственности слоев, начни с <code>ERZL/architecture/overview.md</code>.</li>
+<li>Если нужно понять, как рождается, меняется и завершается <code>ERZL_Context</code>, открой <code>ERZL/architecture/ERZLcontext-lifestyle-mermaid.md</code>.</li>
+<li>Если нужен точный контракт DTO, Protocol, step-классов, bootstrap-конфига или run-утилит, смотри <code>ERZL/reference/api.md</code>.</li>
+<li>Если нужно внести точечное изменение в пайплайн, используй страницы из <code>ERZL/how-to/</code>.</li>
 </ul>
-<hr/>
-<h2 id="_6">Страницы документации</h2>
-<h3 id="architectureoverviewmd">architecture/overview.md</h3>
+<h2 id="_3">Карта страниц</h2>
+<h3 id="erzlarchitectureoverviewmd">ERZL/architecture/overview.md</h3>
 <p>Главная архитектурная страница проекта.</p>
-<p>Для чего нужна:
-- объясняет общую структуру системы;
-- показывает границы ответственности между Source, Adapters, ContextFactory, DataSelector, Pipeline steps, XML-layer и Orchestrator;
-- помогает понять, в каком слое должна жить новая логика.</p>
-<p>Когда читать:
-- при первом знакомстве с проектом;
-- перед архитектурными изменениями;
-- если непонятно, куда добавлять новый код.</p>
-<h3 id="architecturecontext-lifecyclemd">architecture/context-lifecycle.md</h3>
-<p>Описание жизненного цикла <code>ERZL_Context</code>.</p>
-<p>Для чего нужна:
-- показывает, кто и когда создаёт context;
-- объясняет, какие поля context заполняются на разных этапах;
-- фиксирует, какие модули имеют право изменять конкретные поля.</p>
-<p>Когда читать:
-- если меняется состав context;
-- если нужно понять, откуда взялось текущее состояние;
-- если есть риск смешать ответственность orchestrator и adapter.</p>
-<h3 id="architecturepipeline-flowmd">architecture/pipeline-flow.md</h3>
-<p>Подробное описание выполнения одного context.</p>
-<p>Для чего нужна:
-- показывает последовательность шагов search-flow;
-- описывает переход в create-flow;
-- объясняет retry-логику и ветвления orchestrator.</p>
-<p>Когда читать:
-- если нужно понять реальный runtime flow;
-- если меняется логика попыток, поиска или создания.</p>
-<h3 id="referencecore-typesmd">reference/core-types.md</h3>
-<p>Справка по основным DTO, dataclass и enum.</p>
-<p>Для чего нужна:
-- фиксирует ключевые типы проекта;
-- помогает быстро понять, какой объект что содержит;
-- служит опорой для типизации и docstring.</p>
-<p>Когда читать:
-- если нужно быстро посмотреть структуру DTO;
-- если добавляется новый тип;
-- если меняется контракт между слоями.</p>
-<h3 id="referenceconfig-erzlmd">reference/config-erzl.md</h3>
-<p>Справка по bootstrap-конфигу ERZL.</p>
-<p>Для чего нужна:
-- объясняет структуру <code>erzl.toml</code>;
-- показывает, как конфиг превращается в runtime-объекты;
-- фиксирует назначение source, aliases, attempts, XML и transport settings.</p>
-<p>Когда читать:
-- если меняется конфиг;
-- если добавляется новый профиль;
-- если нужно понять, откуда берутся зависимости в bootstrap.</p>
-<h3 id="referencepipeline-stepsmd">reference/pipeline-steps.md</h3>
-<p>Справка по шагам пайплайна.</p>
-<p>Для чего нужна:
-- описывает, что принимает и возвращает каждый step;
-- фиксирует, какие step-result и decision используются;
-- помогает не смешивать step-логику и orchestrator-логику.</p>
-<p>Когда читать:
-- если меняется конкретный step;
-- если нужно добавить новый шаг;
-- если нужно понять контракты <code>StepRslt</code> и decision enum.</p>
-<h3 id="referencexml-layermd">reference/xml-layer.md</h3>
-<p>Справка по XML-слою.</p>
-<p>Для чего нужна:
-- описывает builder, transport и parser ответа;
-- показывает границы между подготовкой XML, отправкой и разбором ответа;
-- помогает локализовать изменения XML-протокола.</p>
-<p>Когда читать:
-- если меняется XML-схема;
-- если нужно добавить новый XML request;
-- если нужно отлаживать transport или parser.</p>
-<h3 id="how-toadd-new-sourcemd">how-to/add-new-source.md</h3>
-<p>Практическая инструкция по добавлению нового источника данных.</p>
-<p>Для чего нужна:
-- описывает, что нужно добавить в Source;
-- объясняет, какой DTO должен вернуть источник;
-- показывает, какой adapter нужен после source.</p>
-<p>Когда читать:
-- если нужно подключить новый источник вместо XLSM;
-- если добавляется другой формат загрузки.</p>
-<h3 id="how-toadd-new-attempt-strategymd">how-to/add-new-attempt-strategy.md</h3>
-<p>Практическая инструкция по изменению логики попыток.</p>
-<p>Для чего нужна:
-- объясняет, как связаны <code>AttemptId</code>, <code>PrepareAttemptStepCfg</code>, <code>DataSelector</code> и orchestrator;
-- показывает, что можно менять в конфиге, а что должно жить в orchestrator.</p>
-<p>Когда читать:
-- если меняются наборы полей для поиска;
-- если добавляется новая стратегия попыток.</p>
-<h3 id="how-todebug-erzl-responsemd">how-to/debug-erzl-response.md</h3>
+<p>Что дает:</p>
+<ul>
+<li>показывает слои <code>Source -&gt; Adapters -&gt; ContextFactory -&gt; DataSelector -&gt; XML -&gt; Pipeline -&gt; Orchestrator</code>;</li>
+<li>объясняет, где должна жить новая логика;</li>
+<li>помогает не смешивать source-, adapter-, XML- и orchestration-ответственности.</li>
+</ul>
+<h3 id="erzlarchitectureerzlcontext-lifestyle-mermaidmd">ERZL/architecture/ERZLcontext-lifestyle-mermaid.md</h3>
+<p>Подробная страница про жизненный цикл <code>ERZL_Context</code>.</p>
+<p>Что дает:</p>
+<ul>
+<li>объясняет, что именно хранит <code>ERZL_Context</code>;</li>
+<li>показывает переходы между <code>search-flow</code> и <code>create-flow</code>;</li>
+<li>фиксирует инварианты контекста и правила его изменения;</li>
+<li>помогает читать состояние контекста при отладке.</li>
+</ul>
+<h3 id="erzlreferenceapimd">ERZL/reference/api.md</h3>
+<p>Единая API reference-страница по Python-модулям проекта.</p>
+<p>Сейчас покрывает:</p>
+<ul>
+<li><code>Source</code></li>
+<li><code>Adapters</code></li>
+<li><code>XML</code></li>
+<li><code>Pipeline</code></li>
+<li><code>Orchestrator</code></li>
+<li><code>config</code> bootstrap-слой</li>
+<li><code>run</code> утилиты запуска</li>
+</ul>
+<p>Важно:</p>
+<ul>
+<li><code>config/erzl.toml</code> не является Python-модулем и поэтому не рендерится через <code>mkdocstrings</code>;</li>
+<li>структура TOML и логика активных профилей описаны в how-to странице <code>ERZL/how-to/Добавить профиль активации в config.toml.md</code>.</li>
+</ul>
+<h3 id="erzlhow-to-md">ERZL/how-to/Добавить источник.md</h3>
+<p>Пошаговая инструкция по добавлению нового источника данных.</p>
+<p>Что дает:</p>
+<ul>
+<li>показывает, какие DTO и cfg нужны новому source;</li>
+<li>объясняет, как подключить новый source в bootstrap;</li>
+<li>показывает, где именно меняется <code>LoadContextStep</code>.</li>
+</ul>
+<h3 id="erzlhow-to-xmlmd">ERZL/how-to/Добавить поле от источника до XML.md</h3>
+<p>Пошаговая инструкция по прокидыванию нового поля через весь пайплайн.</p>
+<p>Что дает:</p>
+<ul>
+<li>показывает путь поля от alias источника до XML;</li>
+<li>фиксирует точки изменения в <code>PersonFields</code>, alias config, attempt config и XML mapping;</li>
+<li>помогает не пропустить слой между источником и builder-ом.</li>
+</ul>
+<h3 id="erzlhow-to-md_1">ERZL/how-to/Добавить попытку.md</h3>
+<p>Пошаговая инструкция по добавлению новой search-попытки.</p>
+<p>Что дает:</p>
+<ul>
+<li>показывает связь <code>config/erzl.toml -&gt; bootstrap -&gt; PrepareAttemptStepCfg -&gt; Orchestrator</code>;</li>
+<li>помогает корректно встроить новую попытку в текущий цикл поиска;</li>
+<li>фиксирует минимальный набор затрагиваемых файлов.</li>
+</ul>
+<h3 id="erzlhow-to-configtomlmd">ERZL/how-to/Добавить профиль активации в config.toml.md</h3>
+<p>Пошаговая инструкция по добавлению нового активного профиля в <code>config/erzl.toml</code>.</p>
+<p>Что дает:</p>
+<ul>
+<li>описывает структуру <code>[integrations.erzl]</code> и связанных ref-блоков;</li>
+<li>показывает, какие ключи обязательны для bootstrap;</li>
+<li>помогает безопасно переключить активный профиль.</li>
+</ul>
+<h3 id="erzlhow-to-erzlmd">ERZL/how-to/Отладить ответ ERZL.md</h3>
 <p>Практическая инструкция по разбору проблемных ответов ERZL.</p>
-<p>Для чего нужна:
-- помогает понять, проблема в builder, transport или parser;
-- показывает, где искать <code>xml_bytes</code>, <code>response_bytes</code> и <code>rslt_container</code>;
-- помогает различать retry, skip context и create-flow.</p>
-<p>Когда читать:
-- если пайплайн работает нестабильно;
-- если ответ приходит, но не распознаётся корректно.</p>
-<h3 id="adr">adr/</h3>
-<p>Архитектурные решения проекта.</p>
-<p>Для чего нужен раздел:
-- фиксирует спорные или важные проектные решения;
-- хранит не только “что сделали”, но и “почему сделали именно так”.</p>
-<p>Когда читать:
-- если хочется поменять базовые правила проекта;
-- если нужно понять причины текущей архитектуры.</p>
+<p>Что дает:</p>
+<ul>
+<li>показывает порядок проверки <code>xml_bytes</code>, <code>response_bytes</code>, <code>rslt_container</code> и <code>ERZL_id</code>;</li>
+<li>помогает локализовать проблему в builder, transport, parser или orchestration;</li>
+<li>дает готовые сценарии быстрой диагностики.</li>
+</ul>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
