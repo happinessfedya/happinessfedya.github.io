@@ -248,6 +248,24 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#erzltestscontainer_fields_sectionmd">
+<span class="md-ellipsis">
+      
+        ERZL/tests/container_fields_section.md
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#erzltestssearch_query_sectionmd">
+<span class="md-ellipsis">
+      
+        ERZL/tests/search_query_section.md
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#erzltestsxml_builder_basemd">
 <span class="md-ellipsis">
       
@@ -935,6 +953,18 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="ERZL/tests/XML/search_query_section/">
+<span class="md-ellipsis">
+    
+  
+    Тесты SearchQuerySection
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="ERZL/tests/XML/xml_builder_base/">
 <span class="md-ellipsis">
     
@@ -1004,6 +1034,8 @@
 <li><a href="ERZL/tests/Adapters/erzl_adapter/">ERZL/tests/erzl_adapter.md</a> — contract-страница для <code>ERZLAdapter</code>.</li>
 <li><a href="ERZL/tests/Adapters/get_xml_answer_adapter/">ERZL/tests/get_xml_answer_adapter.md</a> — наглядные сценарии для <code>GetXMLAnswerAdapter</code>.</li>
 <li><a href="ERZL/tests/XML/client_section/">ERZL/tests/client_section.md</a> — сценарии и архитектурные проверки для <code>ClientSection</code>.</li>
+<li><a href="ERZL/tests/XML/container_fields_section/">ERZL/tests/container_fields_section.md</a> — сценарии и архитектурные проверки для <code>ContainerFieldsSection</code>.</li>
+<li><a href="ERZL/tests/XML/search_query_section/">ERZL/tests/search_query_section.md</a> — сценарии и архитектурные проверки для <code>SearchQuerySection</code>.</li>
 <li><a href="ERZL/tests/XML/xml_builder_base/">ERZL/tests/xml_builder_base.md</a> — contract-страница для <code>XMLBuilderBase</code>.</li>
 <li><a href="ERZL/tests/Pipeline/load_context_step/">ERZL/tests/load_context_step.md</a> — сценарии и архитектурные проверки для <code>LoadContextStep</code>.</li>
 <li><a href="ERZL/tests/Pipeline/prepare_attempt_step/">ERZL/tests/prepare_attempt_step.md</a> — сценарии и архитектурные проверки для <code>PrepareAttemptStep</code>.</li>
@@ -1132,6 +1164,28 @@
 <li>показывает controlled ошибки <code>XMLBuilderFailError</code> и <code>XMLBuilderRetryError</code>;</li>
 <li>показывает, какие runtime-ошибки секция не скрывает;</li>
 <li>показывает архитектурные guard-тесты и минимальные сигнатуры <code>__init__</code>, <code>_build_client</code>, <code>_maybe_build_client</code> и <code>append</code>.</li>
+</ul>
+<h3 id="erzltestscontainer_fields_sectionmd">ERZL/tests/container_fields_section.md</h3>
+<p>Страница с тестами для <code>ContainerFieldsSection</code>.</p>
+<p>Что дает:</p>
+<ul>
+<li>показывает запись <code>XMLKVPairs</code> в готовый namespaced-контейнер без изменения порядка полей;</li>
+<li>фиксирует поведение на пустых <code>pairs</code>, пустых строках и дублирующихся именах полей;</li>
+<li>показывает интеграцию с реальным <code>XMLBuilder_CreatePerson</code>;</li>
+<li>показывает controlled <code>XMLBuilderFailError</code> для контейнера без namespace;</li>
+<li>показывает, какие low-level ошибки формы <code>pairs</code> и типов значений секция не скрывает;</li>
+<li>показывает архитектурные guard-тесты и минимальную сигнатуру <code>append(container, pairs)</code>.</li>
+</ul>
+<h3 id="erzltestssearch_query_sectionmd">ERZL/tests/search_query_section.md</h3>
+<p>Страница с тестами для <code>SearchQuerySection</code>.</p>
+<p>Что дает:</p>
+<ul>
+<li>показывает построение блоков <code>searchQuery -&gt; code/value</code> из <code>search_pairs</code>;</li>
+<li>фиксирует поведение на одной паре, дублирующихся <code>code</code> и пустом <code>value</code>;</li>
+<li>показывает независимость результата секции от <code>RequestType</code>;</li>
+<li>показывает интеграцию с реальным <code>XMLBuilder_FindPersons</code>;</li>
+<li>показывает controlled <code>XMLBuilderRetryError</code> для пустых <code>search_pairs</code> и parent без namespace;</li>
+<li>показывает архитектурные guard-тесты и минимальную сигнатуру <code>append(parent, dto)</code>.</li>
 </ul>
 <h3 id="erzltestsxml_builder_basemd">ERZL/tests/xml_builder_base.md</h3>
 <p>Страница с тестами для <code>XMLBuilderBase</code>.</p>

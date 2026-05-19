@@ -618,10 +618,19 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#dto">
+<span class="md-ellipsis">
+      
+        Зачем этот DTO
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#_1">
 <span class="md-ellipsis">
       
-        Докстринг модуля
+        Первый тест: сохранение данных источника и индекса
       
     </span>
 </a>
@@ -630,142 +639,46 @@
 <a class="md-nav__link" href="#_2">
 <span class="md-ellipsis">
       
-        Зачем этот класс
+        Второй тест: пустые данные и граничный индекс
       
     </span>
 </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#payload-index">
-<span class="md-ellipsis">
-      
-        Первый тест: payload и index сохраняются как есть
-      
-    </span>
-</a>
-<nav aria-label="Первый тест: payload и index сохраняются как есть" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_3">
-<span class="md-ellipsis">
-      
-        Докстринг теста
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#index">
-<span class="md-ellipsis">
-      
-        Второй тест: пустой словарь и нулевой index допустимы
-      
-    </span>
-</a>
-<nav aria-label="Второй тест: пустой словарь и нулевой index допустимы" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_4">
-<span class="md-ellipsis">
-      
-        Докстринг теста
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#frozen">
 <span class="md-ellipsis">
       
-        Третий тест: frozen запрещает переназначение атрибутов
-      
-    </span>
-</a>
-<nav aria-label="Третий тест: frozen запрещает переназначение атрибутов" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_5">
-<span class="md-ellipsis">
-      
-        Докстринг теста
+        Третий тест: frozen запрещает переназначение полей
       
     </span>
 </a>
 </li>
-</ul>
-</nav>
-</li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_6">
+<a class="md-nav__link" href="#_3">
 <span class="md-ellipsis">
       
-        Четвертый тест: вложенный словарь остается изменяемым
-      
-    </span>
-</a>
-<nav aria-label="Четвертый тест: вложенный словарь остается изменяемым" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_7">
-<span class="md-ellipsis">
-      
-        Докстринг теста
+        Четвёртый тест: вложенный словарь остаётся изменяемым
       
     </span>
 </a>
 </li>
-</ul>
-</nav>
-</li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_8">
+<a class="md-nav__link" href="#_4">
 <span class="md-ellipsis">
       
-        Пятый тест: контракт полей остается минимальным
-      
-    </span>
-</a>
-<nav aria-label="Пятый тест: контракт полей остается минимальным" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_9">
-<span class="md-ellipsis">
-      
-        Докстринг теста
+        Пятый тест: строковые ключи источника и только два поля
       
     </span>
 </a>
 </li>
-</ul>
-</nav>
-</li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#dto-adapter-xml-">
+<a class="md-nav__link" href="#xml-">
 <span class="md-ellipsis">
       
-        Шестой тест: в DTO нет adapter- и XML-терминов
+        Шестой тест: отсутствие адаптерных и XML-терминов в теле класса
       
     </span>
 </a>
-<nav aria-label="Шестой тест: в DTO нет adapter- и XML-терминов" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_10">
-<span class="md-ellipsis">
-      
-        Докстринг теста
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -821,6 +734,18 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../XML/search_query_section/">
+<span class="md-ellipsis">
+    
+  
+    Тесты SearchQuerySection
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../XML/xml_builder_base/">
 <span class="md-ellipsis">
     
@@ -849,79 +774,24 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="xlsmrowdto">Тесты XLSMRowDTO</h1>
-<p>Эта страница показывает contract-тесты из общего test-файла. Команда, на
-которой основаны сценарии:</p>
+<p>Эта страница показывает contract-тесты для <code>XLSMRowDTO</code> как документацию контракта. В браузере
+Python не запускается: блоки <code>Показать вызов</code> раскрывают сценарий и ожидаемое поведение, которое
+проверяет команда:</p>
 <div class="language-powershell highlight"><pre><span></span><code><span class="n">python</span> <span class="n">-m</span> <span class="n">pytest</span> <span class="n">-vv</span> <span class="n">-s</span> <span class="n">tests</span><span class="p">/</span><span class="n">source</span><span class="p">/</span><span class="n">test_xlsm_row_dto</span><span class="p">.</span><span class="n">py</span>
 </code></pre></div>
-<p>Флаг <code>-s</code> здесь не добавляет пользовательского вывода: тесты не печатают
-дополнительных строк, поэтому в консоли видны только имена сценариев и
-статусы <code>PASSED</code>. Ниже раскрыто, какое именно состояние DTO фиксирует каждый
-тест.</p>
-<h2 id="_1">Докстринг модуля</h2>
-<div class="language-python highlight"><pre><span></span><code><span class="n">Контрактные</span> <span class="n">тесты</span> <span class="n">для</span> <span class="err">`</span><span class="n">Source</span><span class="o">.</span><span class="n">source_core_types</span><span class="o">.</span><span class="n">XLSMRowDTO</span><span class="err">`</span><span class="o">.</span>
-
-<span class="n">Модуль</span> <span class="n">проверяет</span> <span class="n">структуру</span> <span class="err">`</span><span class="n">XLSMRowDTO</span><span class="err">`</span><span class="p">,</span> <span class="n">сохранение</span> <span class="n">исходного</span> <span class="n">payload</span><span class="p">,</span>
-<span class="n">поведение</span> <span class="n">frozen</span><span class="o">-</span><span class="n">датакласса</span><span class="p">,</span> <span class="n">типовой</span> <span class="n">контракт</span> <span class="n">полей</span> <span class="n">и</span> <span class="n">отсутствие</span> <span class="n">примесей</span>
-<span class="n">из</span> <span class="n">downstream</span><span class="o">-</span><span class="n">слоев</span><span class="o">.</span>
-
-<span class="n">Тесты</span> <span class="n">нужны</span> <span class="n">для</span> <span class="n">защиты</span> <span class="n">DTO</span> <span class="n">границы</span> <span class="n">source</span><span class="o">-</span><span class="n">слоя</span><span class="p">,</span> <span class="n">который</span> <span class="n">должен</span> <span class="n">хранить</span> <span class="n">сырые</span>
-<span class="n">данные</span> <span class="n">строки</span> <span class="n">XLSM</span> <span class="n">без</span> <span class="n">доменной</span> <span class="n">или</span> <span class="n">XML</span><span class="o">-</span><span class="n">специфичной</span> <span class="n">логики</span><span class="o">.</span>
+<p>Флаг <code>-s</code> нужен, чтобы <code>pytest</code> не скрывал вывод успешно прошедших тестов.</p>
+<h2 id="dto">Зачем этот DTO</h2>
+<p><code>XLSMRowDTO</code> стоит на выходе слоя Source. <code>SourceData.run_getData()</code> читает XLSM-файл и возвращает
+объекты <code>XLSMRowDTO</code> — по одному на строку. Адаптер <code>RenameToSourceInputAdapter</code> принимает
+<code>XLSMRowDTO</code> и конвертирует его в <code>SourceInput</code> для слоя Adapters.</p>
+<div class="language-python highlight"><pre><span></span><code><span class="n">dto</span> <span class="o">=</span> <span class="n">XLSMRowDTO</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">"</span><span class="se">\u0424\u0430\u043c\u0438\u043b\u0438\u044f</span><span class="s2">"</span><span class="p">:</span> <span class="s2">"</span><span class="se">\u0418\u0432\u0430\u043d\u043e\u0432</span><span class="s2">"</span><span class="p">,</span> <span class="o">...</span><span class="p">},</span> <span class="n">index</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">dto</span><span class="o">.</span><span class="n">data</span>   <span class="c1"># → {"\u0424\u0430\u043c\u0438\u043b\u0438\u044f": "\u0418\u0432\u0430\u043d\u043e\u0432", ...}</span>
+<span class="n">dto</span><span class="o">.</span><span class="n">index</span>  <span class="c1"># → 5</span>
 </code></pre></div>
-<p>Исходный код больше не вынесен в один общий блок сверху. Ниже у каждого
-сценария есть отдельный раскрывающийся блок с кодом именно того теста,
-который документируется.</p>
-<h2 id="_2">Зачем этот класс</h2>
-<p><code>XLSMRowDTO</code> — это замороженный DTO одной строки источника. Он находится на
-самой границе Source-слоя и хранит ровно две вещи: сырой словарь значений
-ячеек и индекс строки.</p>
-<p>Этот DTO:</p>
-<ul>
-<li>упаковывает строку XLSM в типизированную форму;</li>
-<li>сохраняет исходный payload без доменной нормализации;</li>
-<li>переносит индекс строки дальше по пайплайну.</li>
-</ul>
-<p>Этот DTO не:</p>
-<ul>
-<li>не переименовывает поля;</li>
-<li>не валидирует бизнес-смысл значений;</li>
-<li>не знает ничего о <code>PersonFields</code>, XML и context-слое.</li>
-</ul>
-<h2 id="payload-index">Первый тест: payload и index сохраняются как есть</h2>
-<h3 id="_3">Докстринг теста</h3>
-<div class="language-python highlight"><pre><span></span><code><span class="n">Проверяет</span> <span class="n">сохранение</span> <span class="n">исходного</span> <span class="n">payload</span> <span class="n">и</span> <span class="n">индекса</span> <span class="n">строки</span><span class="o">.</span>
-</code></pre></div>
-<p>Первый тест показывает главный контракт DTO: входной словарь не копируется и
-не пересобирается, а индекс строки просто сохраняется рядом с ним.</p>
-<p>У теста вывод именно такой потому что <code>XLSMRowDTO</code> должен оставаться простым
-контейнером source-данных, а не слоем преобразования.</p>
-<details class="docs-test-case">
-<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
-<div class="docs-test-panel">
-<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_xlsm_row_dto_preserves_source_payload_and_index</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""Проверяет сохранение исходного payload и индекса строки."""</span>
-    <span class="c1"># Arrange</span>
-    <span class="n">source_data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">SourceValue</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">"Surname"</span><span class="p">:</span> <span class="s2">"Ivanov"</span><span class="p">,</span>
-        <span class="s2">"IndexInt"</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
-        <span class="s2">"FloatValue"</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span>
-        <span class="s2">"BoolValue"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-        <span class="s2">"DateValue"</span><span class="p">:</span> <span class="n">date</span><span class="p">(</span><span class="mi">1990</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span>
-        <span class="s2">"DateTimeValue"</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2026</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>
-        <span class="s2">"TimeValue"</span><span class="p">:</span> <span class="n">time</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">45</span><span class="p">),</span>
-        <span class="s2">"DeltaValue"</span><span class="p">:</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">minutes</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span>
-        <span class="s2">"EmptyCell"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
-    <span class="p">}</span>
-
-    <span class="c1"># Act</span>
-    <span class="n">dto</span> <span class="o">=</span> <span class="n">XLSMRowDTO</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">source_data</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-
-    <span class="c1"># Assert</span>
-    <span class="k">assert</span> <span class="n">dto</span><span class="o">.</span><span class="n">data</span> <span class="ow">is</span> <span class="n">source_data</span>
-    <span class="k">assert</span> <span class="n">dto</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="n">source_data</span>
-    <span class="k">assert</span> <span class="n">dto</span><span class="o">.</span><span class="n">index</span> <span class="o">==</span> <span class="mi">2</span>
-</code></pre></div>
-</div>
-</details>
+<h2 id="_1">Первый тест: сохранение данных источника и индекса</h2>
+<p>Первый тест показывает нам, что <code>XLSMRowDTO</code> хранит тот же объект словаря и тот же индекс строки,
+которые были переданы при создании. У теста вывод именно такой потому что <code>data</code> — это ссылка на
+переданный словарь (<code>dto.data is source_data</code>), а не копия; <code>index</code> — простое целочисленное поле.</p>
 <details class="docs-test-case">
 <summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
 <div class="docs-test-panel">
@@ -929,17 +799,16 @@
 #### Вход
 
 <pre><code>source_data = {
-    "Surname": "Ivanov",
-    "IndexInt": 7,
-    "FloatValue": 1.5,
-    "BoolValue": True,
-    "DateValue": date(1990, 1, 20),
-    "DateTimeValue": datetime(2026, 5, 14, 10, 30),
-    "TimeValue": time(8, 45),
-    "DeltaValue": timedelta(days=2, minutes=5),
-    "EmptyCell": None,
-}
-index = 2</code></pre>
+    'Surname':       'Ivanov',
+    'IndexInt':      7,
+    'FloatValue':    1.5,
+    'BoolValue':     True,
+    'DateValue':     date(1990, 1, 20),
+    'DateTimeValue': datetime(2026, 5, 14, 10, 30),
+    'TimeValue':     time(8, 45),
+    'DeltaValue':    timedelta(days=2, minutes=5),
+    'EmptyCell':     None,
+}</code></pre>
 
 #### Вызов
 
@@ -947,49 +816,24 @@ index = 2</code></pre>
 
 #### Вывод
 
-<pre><code>Тест ничего не печатает.
-Проверяется состояние:
-dto.data is source_data
-dto.data == source_data
-dto.index = 2
+<pre><code>dto.data is source_data → True
+dto.data == source_data → True
+dto.index               → 2
 
-tests/source/test_xlsm_row_dto.py::test_xlsm_row_dto_preserves_source_payload_and_index PASSED</code></pre>
+PASSED</code></pre>
 </div>
 </details>
-<h2 id="index">Второй тест: пустой словарь и нулевой index допустимы</h2>
-<h3 id="_4">Докстринг теста</h3>
-<div class="language-python highlight"><pre><span></span><code><span class="n">Проверяет</span><span class="p">,</span> <span class="n">что</span> <span class="n">валидация</span> <span class="n">пустых</span> <span class="n">данных</span> <span class="n">и</span> <span class="n">граничного</span> <span class="n">индекса</span> <span class="n">не</span> <span class="n">встроена</span> <span class="n">в</span> <span class="n">DTO</span><span class="o">.</span>
-</code></pre></div>
-<p>Второй тест показывает, что <code>XLSMRowDTO</code> не берет на себя лишнюю валидацию.
-Пустой <code>data={}</code> и <code>index=0</code> считаются допустимым runtime-состоянием самого
-DTO.</p>
-<p>Это важно, потому что решение о том, валидна ли строка источника, должно
-оставаться в Source-логике, а не в контейнере данных.</p>
-<details class="docs-test-case">
-<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
-<div class="docs-test-panel">
-<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_xlsm_row_dto_allows_empty_data_and_boundary_index</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""Проверяет, что валидация пустых данных и граничного индекса не встроена в DTO."""</span>
-    <span class="c1"># Arrange</span>
-    <span class="n">source_data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">SourceValue</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
-
-    <span class="c1"># Act</span>
-    <span class="n">dto</span> <span class="o">=</span> <span class="n">XLSMRowDTO</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">source_data</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-
-    <span class="c1"># Assert</span>
-    <span class="k">assert</span> <span class="n">dto</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="p">{}</span>
-    <span class="k">assert</span> <span class="n">dto</span><span class="o">.</span><span class="n">index</span> <span class="o">==</span> <span class="mi">0</span>
-</code></pre></div>
-</div>
-</details>
+<h2 id="_2">Второй тест: пустые данные и граничный индекс</h2>
+<p>Второй тест показывает нам, что <code>XLSMRowDTO</code> не валидирует данные — пустой словарь и индекс 0
+принимаются без ошибок. У теста вывод именно такой потому что DTO — тупой контейнер; проверка
+корректности строк — ответственность слоя Source.</p>
 <details class="docs-test-case">
 <summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
 <div class="docs-test-panel">
 
 #### Вход
 
-<pre><code>source_data = {}
-index = 0</code></pre>
+<pre><code>source_data = {}</code></pre>
 
 #### Вызов
 
@@ -997,39 +841,16 @@ index = 0</code></pre>
 
 #### Вывод
 
-<pre><code>Тест ничего не печатает.
-Проверяется состояние:
-dto.data == {}
-dto.index = 0
+<pre><code>dto.data  == {} → True
+dto.index       → 0
 
-tests/source/test_xlsm_row_dto.py::test_xlsm_row_dto_allows_empty_data_and_boundary_index PASSED</code></pre>
+PASSED</code></pre>
 </div>
 </details>
-<h2 id="frozen">Третий тест: frozen запрещает переназначение атрибутов</h2>
-<h3 id="_5">Докстринг теста</h3>
-<div class="language-python highlight"><pre><span></span><code><span class="n">Проверяет</span> <span class="n">запрет</span> <span class="n">переназначения</span> <span class="n">атрибутов</span> <span class="n">благодаря</span> <span class="err">`</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="err">`</span><span class="o">.</span>
-</code></pre></div>
-<p>Третий тест защищает immutability-контракт самого объекта. После создания
-нельзя переприсвоить <code>dto.index</code> или весь <code>dto.data</code> целиком.</p>
-<p>Это не делает вложенный словарь неизменяемым, но защищает верхний слой DTO от
-случайной подмены атрибутов.</p>
-<details class="docs-test-case">
-<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
-<div class="docs-test-panel">
-<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_xlsm_row_dto_is_frozen_for_attribute_reassignment</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""Проверяет запрет переназначения атрибутов благодаря `frozen=True`."""</span>
-    <span class="c1"># Arrange</span>
-    <span class="n">dto</span> <span class="o">=</span> <span class="n">XLSMRowDTO</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">"Surname"</span><span class="p">:</span> <span class="s2">"Ivanov"</span><span class="p">},</span> <span class="n">index</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-
-    <span class="c1"># Act / Assert</span>
-    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="n">FrozenInstanceError</span><span class="p">):</span>
-        <span class="n">dto</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="mi">3</span>
-
-    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="n">FrozenInstanceError</span><span class="p">):</span>
-        <span class="n">dto</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"Surname"</span><span class="p">:</span> <span class="s2">"Petrov"</span><span class="p">}</span>
-</code></pre></div>
-</div>
-</details>
+<h2 id="frozen">Третий тест: frozen запрещает переназначение полей</h2>
+<p>Третий тест показывает нам, что <code>@dataclass(frozen=True)</code> блокирует попытку переназначить поля
+<code>index</code> и <code>data</code>. У теста вывод именно такой потому что <code>frozen=True</code> генерирует <code>__setattr__</code>
+и <code>__delattr__</code>, которые всегда поднимают <code>FrozenInstanceError</code>.</p>
 <details class="docs-test-case">
 <summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
 <div class="docs-test-panel">
@@ -1040,46 +861,21 @@ tests/source/test_xlsm_row_dto.py::test_xlsm_row_dto_allows_empty_data_and_bound
 
 #### Вызов
 
-<pre><code>with pytest.raises(FrozenInstanceError):
-    dto.index = 3
-
-with pytest.raises(FrozenInstanceError):
-    dto.data = {"Surname": "Petrov"}</code></pre>
+<pre><code>dto.index = 3
+dto.data  = {"Surname": "Petrov"}</code></pre>
 
 #### Ошибка
 
-<pre><code>Тест ничего не печатает.
-Проверяется только тип исключения: FrozenInstanceError
-для обеих операций переназначения.
+<pre><code>FrozenInstanceError: cannot assign to field 'index'
+FrozenInstanceError: cannot assign to field 'data'
 
-tests/source/test_xlsm_row_dto.py::test_xlsm_row_dto_is_frozen_for_attribute_reassignment PASSED</code></pre>
+PASSED</code></pre>
 </div>
 </details>
-<h2 id="_6">Четвертый тест: вложенный словарь остается изменяемым</h2>
-<h3 id="_7">Докстринг теста</h3>
-<div class="language-python highlight"><pre><span></span><code><span class="n">Проверяет</span><span class="p">,</span> <span class="n">что</span> <span class="n">вложенный</span> <span class="n">словарь</span> <span class="n">данных</span> <span class="n">остается</span> <span class="n">изменяемым</span><span class="o">.</span>
-</code></pre></div>
-<p>Четвертый тест специально показывает, что <code>frozen=True</code> не превращает
-вложенный <code>dict</code> в immutable-структуру. Сам DTO заморожен, но объект словаря
-внутри него остается обычным изменяемым словарем.</p>
-<p>У теста вывод именно такой потому что это явная часть контракта текущей модели
-данных, а не побочный эффект.</p>
-<details class="docs-test-case">
-<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
-<div class="docs-test-panel">
-<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_xlsm_row_dto_keeps_nested_dict_mutability_explicit</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""Проверяет, что вложенный словарь данных остается изменяемым."""</span>
-    <span class="c1"># Arrange</span>
-    <span class="n">dto</span> <span class="o">=</span> <span class="n">XLSMRowDTO</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">"Surname"</span><span class="p">:</span> <span class="s2">"Ivanov"</span><span class="p">},</span> <span class="n">index</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-
-    <span class="c1"># Act</span>
-    <span class="n">dto</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="s2">"GivenName"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"Ivan"</span>
-
-    <span class="c1"># Assert</span>
-    <span class="k">assert</span> <span class="n">dto</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="p">{</span><span class="s2">"Surname"</span><span class="p">:</span> <span class="s2">"Ivanov"</span><span class="p">,</span> <span class="s2">"GivenName"</span><span class="p">:</span> <span class="s2">"Ivan"</span><span class="p">}</span>
-</code></pre></div>
-</div>
-</details>
+<h2 id="_3">Четвёртый тест: вложенный словарь остаётся изменяемым</h2>
+<p>Четвёртый тест показывает нам, что <code>frozen=True</code> защищает только привязку атрибутов DTO, но не
+делает вложенный словарь иммутабельным. У теста вывод именно такой потому что <code>dto.data</code> — это
+обычный <code>dict</code>, и <code>frozen</code> не рекурсивно замораживает его содержимое.</p>
 <details class="docs-test-case">
 <summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
 <div class="docs-test-panel">
@@ -1094,46 +890,16 @@ tests/source/test_xlsm_row_dto.py::test_xlsm_row_dto_is_frozen_for_attribute_rea
 
 #### Вывод
 
-<pre><code>Тест ничего не печатает.
-Проверяется состояние:
-dto.data == {"Surname": "Ivanov", "GivenName": "Ivan"}
+<pre><code>dto.data == {"Surname": "Ivanov", "GivenName": "Ivan"} → True
 
-tests/source/test_xlsm_row_dto.py::test_xlsm_row_dto_keeps_nested_dict_mutability_explicit PASSED</code></pre>
+PASSED</code></pre>
 </div>
 </details>
-<h2 id="_8">Пятый тест: контракт полей остается минимальным</h2>
-<h3 id="_9">Докстринг теста</h3>
-<div class="language-python highlight"><pre><span></span><code><span class="n">Проверяет</span> <span class="n">сырой</span> <span class="n">строковый</span> <span class="n">ключ</span> <span class="n">данных</span> <span class="n">и</span> <span class="n">минимальный</span> <span class="n">контракт</span> <span class="n">полей</span> <span class="n">DTO</span><span class="o">.</span>
-</code></pre></div>
-<p>Пятый тест защищает форму DTO через <code>fields()</code> и <code>type_hints</code>. Он проверяет,
-что у класса по-прежнему только два поля, что <code>data</code> использует строковые
-ключи и что тип значений совпадает с union <code>SourceValue</code>.</p>
-<p>Это важно, потому что DTO должен оставаться универсальной упаковкой строки
-источника, а не превращаться в доменно-нормализованную структуру.</p>
-<details class="docs-test-case">
-<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
-<div class="docs-test-panel">
-<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_xlsm_row_dto_uses_raw_source_string_keys_and_only_two_fields</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""Проверяет сырой строковый ключ данных и минимальный контракт полей DTO."""</span>
-    <span class="c1"># Arrange</span>
-    <span class="n">dto_fields</span> <span class="o">=</span> <span class="n">fields</span><span class="p">(</span><span class="n">XLSMRowDTO</span><span class="p">)</span>
-    <span class="n">type_hints</span> <span class="o">=</span> <span class="n">get_type_hints</span><span class="p">(</span><span class="n">XLSMRowDTO</span><span class="p">)</span>
-    <span class="n">data_hint</span> <span class="o">=</span> <span class="n">type_hints</span><span class="p">[</span><span class="s2">"data"</span><span class="p">]</span>
-
-    <span class="c1"># Act</span>
-    <span class="n">data_origin</span> <span class="o">=</span> <span class="n">get_origin</span><span class="p">(</span><span class="n">data_hint</span><span class="p">)</span>
-    <span class="n">key_type</span><span class="p">,</span> <span class="n">value_type</span> <span class="o">=</span> <span class="n">get_args</span><span class="p">(</span><span class="n">data_hint</span><span class="p">)</span>
-    <span class="n">field_names</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">field</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">dto_fields</span><span class="p">)</span>
-
-    <span class="c1"># Assert</span>
-    <span class="k">assert</span> <span class="n">field_names</span> <span class="o">==</span> <span class="p">(</span><span class="s2">"data"</span><span class="p">,</span> <span class="s2">"index"</span><span class="p">)</span>
-    <span class="k">assert</span> <span class="n">data_origin</span> <span class="ow">is</span> <span class="nb">dict</span>
-    <span class="k">assert</span> <span class="n">key_type</span> <span class="ow">is</span> <span class="nb">str</span>
-    <span class="k">assert</span> <span class="nb">set</span><span class="p">(</span><span class="n">get_args</span><span class="p">(</span><span class="n">value_type</span><span class="p">))</span> <span class="o">==</span> <span class="nb">set</span><span class="p">(</span><span class="n">get_args</span><span class="p">(</span><span class="n">SourceValue</span><span class="p">))</span>
-    <span class="k">assert</span> <span class="n">type_hints</span><span class="p">[</span><span class="s2">"index"</span><span class="p">]</span> <span class="ow">is</span> <span class="nb">int</span>
-</code></pre></div>
-</div>
-</details>
+<h2 id="_4">Пятый тест: строковые ключи источника и только два поля</h2>
+<p>Пятый тест показывает нам, что <code>XLSMRowDTO</code> хранит только два поля (<code>data</code> и <code>index</code>), а словарь
+данных типизирован как <code>dict[str, SourceValue]</code>. У теста вывод именно такой потому что
+сырые имена колонок XLSM — это строки, и DTO специально не использует <code>PersonFields</code> для ключей,
+чтобы не смешивать слои.</p>
 <details class="docs-test-case">
 <summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
 <div class="docs-test-panel">
@@ -1142,68 +908,36 @@ tests/source/test_xlsm_row_dto.py::test_xlsm_row_dto_keeps_nested_dict_mutabilit
 
 <pre><code>dto_fields = fields(XLSMRowDTO)
 type_hints = get_type_hints(XLSMRowDTO)
-data_hint = type_hints["data"]</code></pre>
+data_hint  = type_hints["data"]</code></pre>
 
 #### Вызов
 
-<pre><code>data_origin = get_origin(data_hint)
+<pre><code>data_origin          = get_origin(data_hint)
 key_type, value_type = get_args(data_hint)
-field_names = tuple(field.name for field in dto_fields)</code></pre>
+field_names          = tuple(field.name for field in dto_fields)</code></pre>
 
 #### Вывод
 
-<pre><code>Тест ничего не печатает.
-Проверяется контракт:
-field_names == ("data", "index")
-data_origin is dict
-key_type is str
-set(get_args(value_type)) == set(get_args(SourceValue))
-type_hints["index"] is int
+<pre><code>field_names == ("data", "index")                          → True
+data_origin is dict                                       → True
+key_type    is str                                        → True
+set(get_args(value_type)) == set(get_args(SourceValue))   → True
+type_hints["index"] is int                                → True
 
-tests/source/test_xlsm_row_dto.py::test_xlsm_row_dto_uses_raw_source_string_keys_and_only_two_fields PASSED</code></pre>
+PASSED</code></pre>
 </div>
 </details>
-<h2 id="dto-adapter-xml-">Шестой тест: в DTO нет adapter- и XML-терминов</h2>
-<h3 id="_10">Докстринг теста</h3>
-<div class="language-python highlight"><pre><span></span><code><span class="n">Проверяет</span><span class="p">,</span> <span class="n">что</span> <span class="err">`</span><span class="n">XLSMRowDTO</span><span class="err">`</span> <span class="n">не</span> <span class="n">встраивает</span> <span class="n">adapter</span><span class="o">-</span> <span class="n">или</span> <span class="n">XML</span><span class="o">-</span><span class="n">логику</span><span class="o">.</span>
-</code></pre></div>
-<p>Последний тест защищает архитектурную чистоту Source-слоя. В теле <code>XLSMRowDTO</code>
-не должно быть терминов вроде <code>PersonType</code>, <code>xml_bytes</code> или
-<code>RenameToSourceInputAdapter</code>.</p>
-<p>Именно поэтому анализируется исходный код класса, а не только его поля и
-значения после создания экземпляра.</p>
-<details class="docs-test-case">
-<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
-<div class="docs-test-panel">
-<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_xlsm_row_dto_class_body_does_not_embed_adapter_or_xml_terms</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""Проверяет, что `XLSMRowDTO` не встраивает adapter- или XML-логику."""</span>
-    <span class="c1"># Arrange</span>
-    <span class="n">class_source</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span><span class="n">XLSMRowDTO</span><span class="p">)</span>
-    <span class="n">forbidden_terms</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="s2">"PersonType"</span><span class="p">,</span>
-        <span class="s2">"AttemptId"</span><span class="p">,</span>
-        <span class="s2">"xml_bytes"</span><span class="p">,</span>
-        <span class="s2">"response_bytes"</span><span class="p">,</span>
-        <span class="s2">"rslt_container"</span><span class="p">,</span>
-        <span class="s2">"XMLFields"</span><span class="p">,</span>
-        <span class="s2">"RenameToSourceInputAdapter"</span><span class="p">,</span>
-    <span class="p">)</span>
-
-    <span class="c1"># Act</span>
-    <span class="n">unexpected_terms</span> <span class="o">=</span> <span class="p">[</span><span class="n">term</span> <span class="k">for</span> <span class="n">term</span> <span class="ow">in</span> <span class="n">forbidden_terms</span> <span class="k">if</span> <span class="n">term</span> <span class="ow">in</span> <span class="n">class_source</span><span class="p">]</span>
-
-    <span class="c1"># Assert</span>
-    <span class="k">assert</span> <span class="n">unexpected_terms</span> <span class="o">==</span> <span class="p">[]</span>
-</code></pre></div>
-</div>
-</details>
+<h2 id="xml-">Шестой тест: отсутствие адаптерных и XML-терминов в теле класса</h2>
+<p>Шестой тест показывает нам, что <code>XLSMRowDTO</code> остаётся чистым source-DTO без прямого знания
+о downstream-слоях. У теста вывод именно такой потому что наличие символов <code>PersonType</code>,
+<code>xml_bytes</code> или <code>XMLFields</code> в теле класса означало бы нарушение слоевых границ.</p>
 <details class="docs-test-case">
 <summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
 <div class="docs-test-panel">
 
 #### Вход
 
-<pre><code>class_source = inspect.getsource(XLSMRowDTO)
+<pre><code>class_source    = inspect.getsource(XLSMRowDTO)
 forbidden_terms = (
     "PersonType",
     "AttemptId",
@@ -1220,11 +954,9 @@ forbidden_terms = (
 
 #### Вывод
 
-<pre><code>Тест ничего не печатает.
-Проверяется состояние:
-unexpected_terms == []
+<pre><code>unexpected_terms == [] → True
 
-tests/source/test_xlsm_row_dto.py::test_xlsm_row_dto_class_body_does_not_embed_adapter_or_xml_terms PASSED</code></pre>
+PASSED</code></pre>
 </div>
 </details>
 </article>

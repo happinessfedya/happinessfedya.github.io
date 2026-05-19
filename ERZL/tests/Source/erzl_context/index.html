@@ -597,7 +597,7 @@
 <a class="md-nav__link" href="#_1">
 <span class="md-ellipsis">
       
-        Докстринг модуля
+        Зачем этот класс
       
     </span>
 </a>
@@ -606,7 +606,7 @@
 <a class="md-nav__link" href="#_2">
 <span class="md-ellipsis">
       
-        Зачем этот класс
+        Первый тест: поля и значения по умолчанию
       
     </span>
 </a>
@@ -615,111 +615,37 @@
 <a class="md-nav__link" href="#_3">
 <span class="md-ellipsis">
       
-        Первый тест: ожидаемые поля и стартовые значения
+        Второй тест: слоты запрещают неизвестные поля
       
     </span>
 </a>
-<nav aria-label="Первый тест: ожидаемые поля и стартовые значения" class="md-nav">
-<ul class="md-nav__list">
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_4">
 <span class="md-ellipsis">
       
-        Докстринг теста
+        Третий тест: независимые фабричные объекты у разных контекстов
       
     </span>
 </a>
 </li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#slotted-context">
-<span class="md-ellipsis">
-      
-        Второй тест: slotted-context запрещает неизвестные поля
-      
-    </span>
-</a>
-<nav aria-label="Второй тест: slotted-context запрещает неизвестные поля" class="md-nav">
-<ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_5">
 <span class="md-ellipsis">
       
-        Докстринг теста
+        Четвёртый тест: фабрика создаёт контекст с каноническим начальным состоянием
       
     </span>
 </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#default_factory-context-">
-<span class="md-ellipsis">
-      
-        Третий тест: default_factory объекты независимы между context-ами
-      
-    </span>
-</a>
-<nav aria-label="Третий тест: default_factory объекты независимы между context-ами" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_6">
-<span class="md-ellipsis">
-      
-        Докстринг теста
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#context">
-<span class="md-ellipsis">
-      
-        Четвертый тест: фабрика создает ожидаемый стартовый context
-      
-    </span>
-</a>
-<nav aria-label="Четвертый тест: фабрика создает ожидаемый стартовый context" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_7">
-<span class="md-ellipsis">
-      
-        Докстринг теста
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#runtime-">
 <span class="md-ellipsis">
       
-        Пятый тест: runtime-поля заполняются через адаптерный слой
+        Пятый тест: runtime-поля записываются через адаптеры
       
     </span>
 </a>
-<nav aria-label="Пятый тест: runtime-поля заполняются через адаптерный слой" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_8">
-<span class="md-ellipsis">
-      
-        Докстринг теста
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -799,6 +725,18 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../XML/search_query_section/">
+<span class="md-ellipsis">
+    
+  
+    Тесты SearchQuerySection
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../XML/xml_builder_base/">
 <span class="md-ellipsis">
     
@@ -827,106 +765,32 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="erzl_context">Тесты ERZL_Context</h1>
-<p>Эта страница показывает contract-тесты из общего test-файла. Команда, на
-которой основаны сценарии:</p>
+<p>Эта страница показывает contract-тесты для <code>ERZL_Context</code> как документацию контракта. В браузере
+Python не запускается: блоки <code>Показать вызов</code> раскрывают сценарий и ожидаемое поведение, которое
+проверяет команда:</p>
 <div class="language-powershell highlight"><pre><span></span><code><span class="n">python</span> <span class="n">-m</span> <span class="n">pytest</span> <span class="n">-vv</span> <span class="n">-s</span> <span class="n">tests</span><span class="p">/</span><span class="n">source</span><span class="p">/</span><span class="n">test_erzl_context</span><span class="p">.</span><span class="n">py</span>
 </code></pre></div>
-<p>Флаг <code>-s</code> здесь оставлен для единообразия. Тесты не печатают собственных
-сценарных блоков, поэтому в консоли видны только имена тестов и статусы
-<code>PASSED</code>. Ниже раскрыто, какое состояние <code>ERZL_Context</code> проверяет каждый тест.</p>
-<h2 id="_1">Докстринг модуля</h2>
-<div class="language-python highlight"><pre><span></span><code><span class="n">Контрактные</span> <span class="n">тесты</span> <span class="n">для</span> <span class="err">`</span><span class="n">Source</span><span class="o">.</span><span class="n">source_core_types</span><span class="o">.</span><span class="n">ERZL_Context</span><span class="err">`</span><span class="o">.</span>
-
-<span class="n">Модуль</span> <span class="n">проверяет</span> <span class="n">состав</span> <span class="n">полей</span> <span class="err">`</span><span class="n">ERZL_Context</span><span class="err">`</span><span class="p">,</span> <span class="n">стартовые</span> <span class="n">runtime</span><span class="o">-</span><span class="n">значения</span><span class="p">,</span>
-<span class="n">независимость</span> <span class="n">default</span><span class="o">-</span><span class="n">factory</span> <span class="n">объектов</span> <span class="n">и</span> <span class="n">корректность</span> <span class="n">обновления</span> <span class="n">контекста</span>
-<span class="n">через</span> <span class="n">адаптерный</span> <span class="n">слой</span><span class="o">.</span>
-
-<span class="n">Тесты</span> <span class="n">нужны</span> <span class="n">для</span> <span class="n">защиты</span> <span class="n">контракта</span> <span class="n">базового</span> <span class="n">context</span><span class="o">-</span><span class="n">DTO</span><span class="p">,</span> <span class="n">который</span> <span class="n">проходит</span> <span class="n">через</span>
-<span class="n">pipeline</span><span class="p">,</span> <span class="n">adapters</span> <span class="n">и</span> <span class="n">XML</span><span class="o">-</span><span class="n">взаимодействие</span><span class="o">.</span>
+<p>Флаг <code>-s</code> нужен, чтобы <code>pytest</code> не скрывал вывод успешно прошедших тестов.</p>
+<h2 id="_1">Зачем этот класс</h2>
+<p><code>ERZL_Context</code> стоит на границе <code>Source → Adapters → XML → Orchestrator</code>. Он создаётся один раз
+на строку источника и несёт в себе все данные, которые наполняются по мере прохождения через
+шаги пайплайна.</p>
+<p>Контекст создаётся через фабрику:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="n">factory</span> <span class="o">=</span> <span class="n">ERZLContextFactory</span><span class="p">()</span>
+<span class="n">context</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">create_context</span><span class="p">(</span><span class="n">source_input</span><span class="p">)</span>
 </code></pre></div>
-<p>Исходный код больше не вынесен в один общий блок сверху. Ниже у каждого
-сценария есть отдельный раскрывающийся блок с кодом именно того теста,
-который документируется.</p>
-<h2 id="_2">Зачем этот класс</h2>
-<p><code>ERZL_Context</code> — это основной runtime-контекст одной персоны в ERZL-пайплайне.
-Его создает <code>ERZLContextFactory</code>, а затем его поэтапно наполняют Source-,
-Adapter-, XML- и Pipeline-шаги.</p>
-<p>Этот context:</p>
-<ul>
-<li>хранит нормализованные <code>SourceData</code> и индекс строки;</li>
-<li>держит текущую search/create runtime-информацию;</li>
-<li>накапливает <code>xml_bytes</code>, <code>response_bytes</code>, <code>rslt_container</code>, <code>ERZL_id</code> и <code>create_flags</code>.</li>
-</ul>
-<p>Этот context не:</p>
-<ul>
-<li>не принимает orchestration-решения сам;</li>
-<li>не строит XML и не парсит ответ собственными методами;</li>
-<li>не должен делить mutable-состояние между разными экземплярами.</li>
-</ul>
-<h2 id="_3">Первый тест: ожидаемые поля и стартовые значения</h2>
-<h3 id="_4">Докстринг теста</h3>
-<div class="language-python highlight"><pre><span></span><code><span class="n">Проверяет</span> <span class="n">состав</span> <span class="n">полей</span> <span class="err">`</span><span class="n">ERZL_Context</span><span class="err">`</span> <span class="n">и</span> <span class="n">его</span> <span class="n">стартовое</span> <span class="n">runtime</span><span class="o">-</span><span class="n">состояние</span><span class="o">.</span>
-</code></pre></div>
-<p>Первый тест защищает одновременно shape и начальное состояние контекста. Он
-проверяет не только имена полей, но и то, какие значения должны стоять в
-<code>DataAttemptStr</code>, <code>xml_bytes</code>, <code>response_bytes</code>, <code>rslt_container</code>, <code>ERZL_id</code>
-и <code>create_flags</code> сразу после создания.</p>
-<p>Это важно, потому что все следующие шаги пайплайна рассчитывают именно на
-такую стартовую конфигурацию.</p>
-<details class="docs-test-case">
-<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
-<div class="docs-test-panel">
-<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_erzl_context_exposes_expected_fields_and_defaults</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""Проверяет состав полей `ERZL_Context` и его стартовое runtime-состояние."""</span>
-    <span class="c1"># Arrange</span>
-    <span class="n">source_data</span> <span class="o">=</span> <span class="p">{</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">:</span> <span class="s2">"Ivanov"</span><span class="p">}</span>
-
-    <span class="c1"># Act</span>
-    <span class="n">context</span> <span class="o">=</span> <span class="n">ERZL_Context</span><span class="p">(</span>
-        <span class="n">SourceData</span><span class="o">=</span><span class="n">source_data</span><span class="p">,</span>
-        <span class="n">index</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-        <span class="n">PersonType</span><span class="o">=</span><span class="n">AllXMLFields</span><span class="o">.</span><span class="n">ERZL</span><span class="o">.</span><span class="n">OperationsStr</span><span class="o">.</span><span class="n">FindPersonsType</span><span class="o">.</span><span class="n">MOSCOW</span><span class="p">,</span>
-        <span class="n">AttemptId</span><span class="o">=</span><span class="n">ATTEMPT_ID_START</span><span class="p">,</span>
-    <span class="p">)</span>
-    <span class="n">field_names</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">field</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">fields</span><span class="p">(</span><span class="n">ERZL_Context</span><span class="p">))</span>
-
-    <span class="c1"># Assert</span>
-    <span class="k">assert</span> <span class="n">field_names</span> <span class="o">==</span> <span class="p">(</span>
-        <span class="s2">"SourceData"</span><span class="p">,</span>
-        <span class="s2">"index"</span><span class="p">,</span>
-        <span class="s2">"PersonType"</span><span class="p">,</span>
-        <span class="s2">"AttemptId"</span><span class="p">,</span>
-        <span class="s2">"DataAttemptStr"</span><span class="p">,</span>
-        <span class="s2">"xml_bytes"</span><span class="p">,</span>
-        <span class="s2">"response_bytes"</span><span class="p">,</span>
-        <span class="s2">"rslt_container"</span><span class="p">,</span>
-        <span class="s2">"ERZL_id"</span><span class="p">,</span>
-        <span class="s2">"create_flags"</span><span class="p">,</span>
-    <span class="p">)</span>
-    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">SourceData</span> <span class="ow">is</span> <span class="n">source_data</span>
-    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">index</span> <span class="o">==</span> <span class="mi">1</span>
-    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">PersonType</span> <span class="ow">is</span> <span class="n">AllXMLFields</span><span class="o">.</span><span class="n">ERZL</span><span class="o">.</span><span class="n">OperationsStr</span><span class="o">.</span><span class="n">FindPersonsType</span><span class="o">.</span><span class="n">MOSCOW</span>
-    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">AttemptId</span> <span class="o">==</span> <span class="n">ATTEMPT_ID_START</span>
-    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">DataAttemptStr</span> <span class="o">==</span> <span class="p">()</span>
-    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">xml_bytes</span> <span class="ow">is</span> <span class="kc">None</span>
-    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">response_bytes</span> <span class="ow">is</span> <span class="kc">None</span>
-    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">rslt_container</span><span class="o">.</span><span class="n">result</span> <span class="o">==</span> <span class="p">[]</span>
-    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">rslt_container</span><span class="o">.</span><span class="n">mistakes</span> <span class="o">==</span> <span class="p">[]</span>
-    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">ERZL_id</span> <span class="ow">is</span> <span class="kc">None</span>
-    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">create_flags</span> <span class="o">==</span> <span class="n">CreateFlags</span><span class="p">()</span>
-</code></pre></div>
-</div>
-</details>
+<h2 id="_2">Первый тест: поля и значения по умолчанию</h2>
+<p>Первый тест показывает нам полный набор полей <code>ERZL_Context</code> и их начальные значения: обязательные
+поля задаются при создании, а runtime-поля инициализируются в безопасные дефолты. У теста вывод
+именно такой потому что <code>@dataclass(slots=True)</code> фиксирует список полей, а <code>default_factory</code>
+обеспечивает свежие объекты при каждом создании контекста.</p>
 <details class="docs-test-case">
 <summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
 <div class="docs-test-panel">
 
 #### Вход
 
-<pre><code>source_data = {PersonFields.SURNAME: "Ivanov"}
-index = 1
-PersonType = AllXMLFields.ERZL.OperationsStr.FindPersonsType.MOSCOW
-AttemptId = ATTEMPT_ID_START</code></pre>
+<pre><code>source_data = {PersonFields.SURNAME: 'Ivanov'}</code></pre>
 
 #### Вызов
 
@@ -935,197 +799,106 @@ AttemptId = ATTEMPT_ID_START</code></pre>
     index=1,
     PersonType=AllXMLFields.ERZL.OperationsStr.FindPersonsType.MOSCOW,
     AttemptId=ATTEMPT_ID_START,
-)
-field_names = tuple(field.name for field in fields(ERZL_Context))</code></pre>
+)</code></pre>
 
 #### Вывод
 
-<pre><code>Тест ничего не печатает.
-Проверяется контракт:
-field_names = (
-    "SourceData",
-    "index",
-    "PersonType",
-    "AttemptId",
-    "DataAttemptStr",
-    "xml_bytes",
-    "response_bytes",
-    "rslt_container",
-    "ERZL_id",
-    "create_flags",
+<pre><code>field_names == (
+    'SourceData', 'index', 'PersonType', 'AttemptId',
+    'DataAttemptStr', 'xml_bytes', 'response_bytes',
+    'rslt_container', 'ERZL_id', 'create_flags',
 )
-context.SourceData is source_data
-context.index = 1
-context.PersonType is AllXMLFields.ERZL.OperationsStr.FindPersonsType.MOSCOW
-context.AttemptId = ATTEMPT_ID_START
-context.DataAttemptStr == ()
-context.xml_bytes is None
-context.response_bytes is None
-context.rslt_container.result == []
-context.rslt_container.mistakes == []
-context.ERZL_id is None
-context.create_flags == CreateFlags()
+context.SourceData is source_data     → True
+context.index                         → 1
+context.AttemptId                     → ATTEMPT_ID_START
+context.DataAttemptStr                → ()
+context.xml_bytes                     → None
+context.response_bytes                → None
+context.rslt_container.result         → []
+context.rslt_container.mistakes       → []
+context.ERZL_id                       → None
+context.create_flags == CreateFlags() → True
 
-tests/source/test_erzl_context.py::test_erzl_context_exposes_expected_fields_and_defaults PASSED</code></pre>
+PASSED</code></pre>
 </div>
 </details>
-<h2 id="slotted-context">Второй тест: slotted-context запрещает неизвестные поля</h2>
-<h3 id="_5">Докстринг теста</h3>
-<div class="language-python highlight"><pre><span></span><code><span class="n">Проверяет</span> <span class="n">запрет</span> <span class="n">неизвестных</span> <span class="n">runtime</span><span class="o">-</span><span class="n">полей</span> <span class="n">у</span> <span class="n">slotted</span><span class="o">-</span><span class="n">контекста</span><span class="o">.</span>
-</code></pre></div>
-<p>Второй тест защищает форму runtime-контекста. <code>ERZL_Context</code> не должен
-незаметно получать произвольные дополнительные атрибуты в ходе выполнения.</p>
-<p>Именно поэтому тест проверяет не бизнес-значение поля, а сам факт
-невозможности записать <code>unknown_runtime_field</code>.</p>
-<details class="docs-test-case">
-<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
-<div class="docs-test-panel">
-<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_erzl_context_slots_forbid_unknown_runtime_field</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""Проверяет запрет неизвестных runtime-полей у slotted-контекста."""</span>
-    <span class="c1"># Arrange</span>
-    <span class="n">context</span> <span class="o">=</span> <span class="n">_make_context</span><span class="p">()</span>
-
-    <span class="c1"># Act / Assert</span>
-    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">):</span>
-        <span class="n">context</span><span class="o">.</span><span class="n">unknown_runtime_field</span> <span class="o">=</span> <span class="s2">"unexpected"</span>
-</code></pre></div>
-</div>
-</details>
+<h2 id="_3">Второй тест: слоты запрещают неизвестные поля</h2>
+<p>Второй тест показывает нам, что <code>@dataclass(slots=True)</code> не позволяет присвоить произвольное
+runtime-поле снаружи класса. У теста вывод именно такой потому что <code>__slots__</code> не содержит имя
+<code>unknown_runtime_field</code>, и Python поднимает <code>AttributeError</code>.</p>
 <details class="docs-test-case">
 <summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
 <div class="docs-test-panel">
 
 #### Вход
 
-<pre><code>context = _make_context()</code></pre>
+<pre><code>context = ERZL_Context(
+    SourceData={PersonFields.SURNAME: 'Ivanov'},
+    index=1,
+    PersonType=AllXMLFields.ERZL.OperationsStr.FindPersonsType.MOSCOW,
+    AttemptId=ATTEMPT_ID_START,
+)</code></pre>
 
 #### Вызов
 
-<pre><code>with pytest.raises(AttributeError):
-    context.unknown_runtime_field = "unexpected"</code></pre>
+<pre><code>context.unknown_runtime_field = "unexpected"</code></pre>
 
 #### Ошибка
 
-<pre><code>Тест ничего не печатает.
-Проверяется только тип исключения: AttributeError.
-Текст ошибки тестом не фиксируется.
+<pre><code>AttributeError: 'ERZL_Context' object has no attribute 'unknown_runtime_field'
 
-tests/source/test_erzl_context.py::test_erzl_context_slots_forbid_unknown_runtime_field PASSED</code></pre>
+PASSED</code></pre>
 </div>
 </details>
-<h2 id="default_factory-context-">Третий тест: default_factory объекты независимы между context-ами</h2>
-<h3 id="_6">Докстринг теста</h3>
-<div class="language-python highlight"><pre><span></span><code><span class="n">Проверяет</span> <span class="n">независимость</span> <span class="n">default</span><span class="o">-</span><span class="n">factory</span> <span class="n">объектов</span> <span class="n">между</span> <span class="n">экземплярами</span> <span class="n">context</span><span class="o">.</span>
-</code></pre></div>
-<p>Третий тест показывает, что <code>rslt_container</code> и <code>create_flags</code> должны создаваться
-заново для каждого экземпляра контекста. Иначе состояние одной персоны
-просачивалось бы в другую.</p>
-<p>Поэтому после модификации <code>left_context</code> отдельно проверяется, что
-<code>right_context</code> остался в стартовом состоянии.</p>
-<details class="docs-test-case">
-<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
-<div class="docs-test-panel">
-<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_erzl_context_default_factories_are_independent_between_instances</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""Проверяет независимость default-factory объектов между экземплярами context."""</span>
-    <span class="c1"># Arrange</span>
-    <span class="n">left_context</span> <span class="o">=</span> <span class="n">_make_context</span><span class="p">()</span>
-    <span class="n">right_context</span> <span class="o">=</span> <span class="n">_make_context</span><span class="p">()</span>
-
-    <span class="c1"># Act</span>
-    <span class="n">left_context</span><span class="o">.</span><span class="n">rslt_container</span><span class="o">.</span><span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-        <span class="n">XMLFieldValDTO</span><span class="p">(</span>
-            <span class="n">response_name</span><span class="o">=</span><span class="s2">"findPersonsResponse"</span><span class="p">,</span>
-            <span class="n">container</span><span class="o">=</span><span class="p">[</span><span class="n">XMLOneFieldVal</span><span class="p">(</span><span class="n">container_name</span><span class="o">=</span><span class="s2">"erzlId"</span><span class="p">,</span> <span class="n">container_val</span><span class="o">=</span><span class="s2">"123"</span><span class="p">)],</span>
-        <span class="p">)</span>
-    <span class="p">)</span>
-    <span class="n">left_context</span><span class="o">.</span><span class="n">create_flags</span><span class="o">.</span><span class="n">need_create</span> <span class="o">=</span> <span class="kc">True</span>
-
-    <span class="c1"># Assert</span>
-    <span class="k">assert</span> <span class="n">left_context</span><span class="o">.</span><span class="n">rslt_container</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">right_context</span><span class="o">.</span><span class="n">rslt_container</span>
-    <span class="k">assert</span> <span class="n">left_context</span><span class="o">.</span><span class="n">create_flags</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">right_context</span><span class="o">.</span><span class="n">create_flags</span>
-    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">left_context</span><span class="o">.</span><span class="n">rslt_container</span><span class="o">.</span><span class="n">result</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
-    <span class="k">assert</span> <span class="n">right_context</span><span class="o">.</span><span class="n">rslt_container</span><span class="o">.</span><span class="n">result</span> <span class="o">==</span> <span class="p">[]</span>
-    <span class="k">assert</span> <span class="n">left_context</span><span class="o">.</span><span class="n">create_flags</span><span class="o">.</span><span class="n">need_create</span> <span class="ow">is</span> <span class="kc">True</span>
-    <span class="k">assert</span> <span class="n">right_context</span><span class="o">.</span><span class="n">create_flags</span><span class="o">.</span><span class="n">need_create</span> <span class="ow">is</span> <span class="kc">False</span>
-</code></pre></div>
-</div>
-</details>
+<h2 id="_4">Третий тест: независимые фабричные объекты у разных контекстов</h2>
+<p>Третий тест показывает нам, что <code>rslt_container</code> и <code>create_flags</code> создаются независимо для каждого
+экземпляра <code>ERZL_Context</code> через <code>default_factory</code>. У теста вывод именно такой потому что если бы
+<code>default</code> использовался вместо <code>default_factory</code>, все контексты разделяли бы один контейнер и
+одни флаги.</p>
 <details class="docs-test-case">
 <summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
 <div class="docs-test-panel">
 
 #### Вход
 
-<pre><code>left_context = _make_context()
-right_context = _make_context()</code></pre>
+<pre><code>left_context  = ERZL_Context(SourceData={PersonFields.SURNAME: 'Ivanov'}, index=1, ...)
+right_context = ERZL_Context(SourceData={PersonFields.SURNAME: 'Ivanov'}, index=1, ...)</code></pre>
 
 #### Вызов
 
 <pre><code>left_context.rslt_container.result.append(
     XMLFieldValDTO(
-        response_name="findPersonsResponse",
-        container=[XMLOneFieldVal(container_name="erzlId", container_val="123")],
+        response_name='findPersonsResponse',
+        container=[XMLOneFieldVal(container_name='erzlId', container_val='123')],
     )
 )
 left_context.create_flags.need_create = True</code></pre>
 
 #### Вывод
 
-<pre><code>Тест ничего не печатает.
-Проверяется состояние:
-left_context.rslt_container is not right_context.rslt_container
-left_context.create_flags is not right_context.create_flags
-len(left_context.rslt_container.result) == 1
-right_context.rslt_container.result == []
-left_context.create_flags.need_create = True
-right_context.create_flags.need_create = False
+<pre><code>left_context.rslt_container is not right_context.rslt_container → True
+left_context.create_flags   is not right_context.create_flags   → True
+len(left_context.rslt_container.result)                         → 1
+right_context.rslt_container.result                             → []
+left_context.create_flags.need_create                           → True
+right_context.create_flags.need_create                          → False
 
-tests/source/test_erzl_context.py::test_erzl_context_default_factories_are_independent_between_instances PASSED</code></pre>
+PASSED</code></pre>
 </div>
 </details>
-<h2 id="context">Четвертый тест: фабрика создает ожидаемый стартовый context</h2>
-<h3 id="_7">Докстринг теста</h3>
-<div class="language-python highlight"><pre><span></span><code><span class="n">Проверяет</span> <span class="n">создание</span> <span class="err">`</span><span class="n">ERZL_Context</span><span class="err">`</span> <span class="n">фабрикой</span> <span class="n">с</span> <span class="n">каноническими</span> <span class="n">стартовыми</span> <span class="n">значениями</span><span class="o">.</span>
-</code></pre></div>
-<p>Четвертый тест уже смотрит не только на dataclass, но и на <code>ERZLContextFactory</code>.
-Он проверяет, что фабрика переносит <code>SourceInput</code> в <code>ERZL_Context</code> без искажений
-и сразу выставляет стартовые значения для первого шага пайплайна.</p>
-<p>У теста вывод именно такой потому что <code>ContextBuilder</code> отвечает только за
-создание context и значения по умолчанию, а не за бизнес-логику.</p>
-<details class="docs-test-case">
-<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
-<div class="docs-test-panel">
-<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_erzl_context_factory_builds_expected_start_state</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""Проверяет создание `ERZL_Context` фабрикой с каноническими стартовыми значениями."""</span>
-    <span class="c1"># Arrange</span>
-    <span class="n">source_data</span> <span class="o">=</span> <span class="p">{</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">:</span> <span class="s2">"Ivanov"</span><span class="p">,</span> <span class="n">PersonFields</span><span class="o">.</span><span class="n">NAME</span><span class="p">:</span> <span class="s2">"Ivan"</span><span class="p">}</span>
-    <span class="n">input_data</span> <span class="o">=</span> <span class="n">SourceInput</span><span class="p">(</span><span class="n">attributes</span><span class="o">=</span><span class="n">source_data</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-    <span class="n">factory</span> <span class="o">=</span> <span class="n">ERZLContextFactory</span><span class="p">()</span>
-
-    <span class="c1"># Act</span>
-    <span class="n">context</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">create_context</span><span class="p">(</span><span class="n">input_data</span><span class="p">)</span>
-
-    <span class="c1"># Assert</span>
-    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">SourceData</span> <span class="ow">is</span> <span class="n">source_data</span>
-    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">index</span> <span class="o">==</span> <span class="mi">5</span>
-    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">PersonType</span> <span class="ow">is</span> <span class="n">AllXMLFields</span><span class="o">.</span><span class="n">ERZL</span><span class="o">.</span><span class="n">OperationsStr</span><span class="o">.</span><span class="n">FindPersonsType</span><span class="o">.</span><span class="n">MOSCOW</span>
-    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">AttemptId</span> <span class="o">==</span> <span class="n">ATTEMPT_ID_START</span>
-    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">DataAttemptStr</span> <span class="o">==</span> <span class="p">()</span>
-    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">xml_bytes</span> <span class="ow">is</span> <span class="kc">None</span>
-    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">response_bytes</span> <span class="ow">is</span> <span class="kc">None</span>
-    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">ERZL_id</span> <span class="ow">is</span> <span class="kc">None</span>
-</code></pre></div>
-</div>
-</details>
+<h2 id="_5">Четвёртый тест: фабрика создаёт контекст с каноническим начальным состоянием</h2>
+<p>Четвёртый тест показывает нам, что <code>ERZLContextFactory</code> правильно инициализирует <code>ERZL_Context</code>
+из <code>SourceInput</code>. У теста вывод именно такой потому что фабрика устанавливает <code>PersonType</code> в
+<code>MOSCOW</code> и <code>AttemptId</code> в <code>ATTEMPT_ID_START</code> по умолчанию — именно так требует начало ERZL-пайплайна.</p>
 <details class="docs-test-case">
 <summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
 <div class="docs-test-panel">
 
 #### Вход
 
-<pre><code>source_data = {PersonFields.SURNAME: "Ivanov", PersonFields.NAME: "Ivan"}
-input_data = SourceInput(attributes=source_data, index=5)
-factory = ERZLContextFactory()</code></pre>
+<pre><code>source_data = {PersonFields.SURNAME: 'Ivanov', PersonFields.NAME: 'Ivan'}
+input_data  = SourceInput(attributes=source_data, index=5)
+factory     = ERZLContextFactory()</code></pre>
 
 #### Вызов
 
@@ -1133,105 +906,42 @@ factory = ERZLContextFactory()</code></pre>
 
 #### Вывод
 
-<pre><code>Тест ничего не печатает.
-Проверяется состояние:
-context.SourceData is source_data
-context.index = 5
-context.PersonType is AllXMLFields.ERZL.OperationsStr.FindPersonsType.MOSCOW
-context.AttemptId = ATTEMPT_ID_START
-context.DataAttemptStr == ()
-context.xml_bytes is None
-context.response_bytes is None
-context.ERZL_id is None
+<pre><code>context.SourceData is source_data                                               → True
+context.index                                                                   → 5
+context.PersonType is AllXMLFields.ERZL.OperationsStr.FindPersonsType.MOSCOW    → True
+context.AttemptId                                                               → ATTEMPT_ID_START
+context.DataAttemptStr                                                          → ()
+context.xml_bytes                                                               → None
+context.response_bytes                                                          → None
+context.ERZL_id                                                                 → None
 
-tests/source/test_erzl_context.py::test_erzl_context_factory_builds_expected_start_state PASSED</code></pre>
+PASSED</code></pre>
 </div>
 </details>
-<h2 id="runtime-">Пятый тест: runtime-поля заполняются через адаптерный слой</h2>
-<h3 id="_8">Докстринг теста</h3>
-<div class="language-python highlight"><pre><span></span><code><span class="n">Проверяет</span> <span class="n">обновление</span> <span class="n">runtime</span><span class="o">-</span><span class="n">полей</span> <span class="err">`</span><span class="n">ERZL_Context</span><span class="err">`</span> <span class="n">через</span> <span class="n">адаптерный</span> <span class="n">слой</span><span class="o">.</span>
-</code></pre></div>
-<p>Последний тест показывает архитектурную роль context в живой цепочке записей.
-<code>ERZL_Context</code> сам ничего не обновляет, но его runtime-поля последовательно
-заполняются через <code>ColumnSelectorAdapter</code>, <code>AdapterPutBytes</code>,
-<code>TransportAdapter</code>, <code>GetXMLAnswerAdapter</code> и <code>ERZLAdapter</code>.</p>
-<p>Это важно, потому что тест защищает не только поля DTO, но и сам принцип:
-изменения context происходят через отдельные специализированные адаптеры.</p>
-<details class="docs-test-case">
-<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
-<div class="docs-test-panel">
-<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_erzl_context_runtime_fields_are_written_through_adapters</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""Проверяет обновление runtime-полей `ERZL_Context` через адаптерный слой."""</span>
-    <span class="c1"># Arrange</span>
-    <span class="n">context</span> <span class="o">=</span> <span class="n">_make_context</span><span class="p">()</span>
-    <span class="n">column_adapter</span> <span class="o">=</span> <span class="n">ColumnSelectorAdapter</span><span class="p">[</span><span class="n">PersonFields</span><span class="p">]()</span>
-    <span class="n">bytes_adapter</span> <span class="o">=</span> <span class="n">AdapterPutBytes</span><span class="p">()</span>
-    <span class="n">transport_adapter</span> <span class="o">=</span> <span class="n">TransportAdapter</span><span class="p">()</span>
-    <span class="n">answer_adapter</span> <span class="o">=</span> <span class="n">GetXMLAnswerAdapter</span><span class="p">()</span>
-    <span class="n">erzl_adapter</span> <span class="o">=</span> <span class="n">ERZLAdapter</span><span class="p">()</span>
-    <span class="n">selector_result</span> <span class="o">=</span> <span class="n">TupleDataSelectorRslt</span><span class="p">(</span>
-        <span class="n">selected_columns</span><span class="o">=</span><span class="p">(</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">,)</span>
-    <span class="p">)</span>
-    <span class="n">parsed_result</span> <span class="o">=</span> <span class="n">XMLRsltContainer</span><span class="p">(</span>
-        <span class="n">result</span><span class="o">=</span><span class="p">[</span>
-            <span class="n">XMLFieldValDTO</span><span class="p">(</span>
-                <span class="n">response_name</span><span class="o">=</span><span class="s2">"findPersonsResponse"</span><span class="p">,</span>
-                <span class="n">container</span><span class="o">=</span><span class="p">[</span>
-                    <span class="n">XMLOneFieldVal</span><span class="p">(</span><span class="n">container_name</span><span class="o">=</span><span class="s2">"ERZL_ID"</span><span class="p">,</span> <span class="n">container_val</span><span class="o">=</span><span class="s2">"ERZL-42"</span><span class="p">)</span>
-                <span class="p">],</span>
-            <span class="p">)</span>
-        <span class="p">],</span>
-        <span class="n">mistakes</span><span class="o">=</span><span class="p">[</span>
-            <span class="n">XMLErrorDTO</span><span class="p">(</span>
-                <span class="n">response_name</span><span class="o">=</span><span class="s2">"findPersonsResponse"</span><span class="p">,</span>
-                <span class="n">container</span><span class="o">=</span><span class="p">[</span><span class="n">XMLErrorVal</span><span class="p">(</span><span class="n">error_code</span><span class="o">=</span><span class="s2">"W01"</span><span class="p">,</span> <span class="n">error_val</span><span class="o">=</span><span class="s2">"warning"</span><span class="p">)],</span>
-            <span class="p">)</span>
-        <span class="p">],</span>
-    <span class="p">)</span>
-
-    <span class="c1"># Act</span>
-    <span class="n">column_adapter</span><span class="o">.</span><span class="n">input_DataSelectorRslt</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">selector_result</span><span class="p">)</span>
-    <span class="n">bytes_adapter</span><span class="o">.</span><span class="n">put_bytes</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="sa">b</span><span class="s2">"&lt;xml /&gt;"</span><span class="p">)</span>
-    <span class="n">transport_adapter</span><span class="o">.</span><span class="n">answer_bytes_to_ctx</span><span class="p">(</span>
-        <span class="n">TransportResponseDTO</span><span class="p">(</span><span class="n">output_bytes</span><span class="o">=</span><span class="sa">b</span><span class="s2">"&lt;response /&gt;"</span><span class="p">,</span> <span class="n">status_code</span><span class="o">=</span><span class="mi">200</span><span class="p">),</span>
-        <span class="n">context</span><span class="p">,</span>
-    <span class="p">)</span>
-    <span class="n">answer_adapter</span><span class="o">.</span><span class="n">rslt_container_to_ctx</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">parsed_result</span><span class="p">)</span>
-    <span class="n">erzl_adapter</span><span class="o">.</span><span class="n">set_ERZL_id</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="s2">"ERZL-42"</span><span class="p">)</span>
-    <span class="n">erzl_adapter</span><span class="o">.</span><span class="n">set_need_create</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
-    <span class="n">erzl_adapter</span><span class="o">.</span><span class="n">set_good_create_base</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
-
-    <span class="c1"># Assert</span>
-    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">DataAttemptStr</span> <span class="o">==</span> <span class="p">(</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">,)</span>
-    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">xml_bytes</span> <span class="o">==</span> <span class="sa">b</span><span class="s2">"&lt;xml /&gt;"</span>
-    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">response_bytes</span> <span class="o">==</span> <span class="sa">b</span><span class="s2">"&lt;response /&gt;"</span>
-    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">rslt_container</span><span class="o">.</span><span class="n">result</span> <span class="o">==</span> <span class="n">parsed_result</span><span class="o">.</span><span class="n">result</span>
-    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">rslt_container</span><span class="o">.</span><span class="n">mistakes</span> <span class="o">==</span> <span class="n">parsed_result</span><span class="o">.</span><span class="n">mistakes</span>
-    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">ERZL_id</span> <span class="o">==</span> <span class="s2">"ERZL-42"</span>
-    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">create_flags</span><span class="o">.</span><span class="n">need_create</span> <span class="ow">is</span> <span class="kc">True</span>
-    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">create_flags</span><span class="o">.</span><span class="n">good_create_base</span> <span class="ow">is</span> <span class="kc">True</span>
-</code></pre></div>
-</div>
-</details>
+<h2 id="runtime-">Пятый тест: runtime-поля записываются через адаптеры</h2>
+<p>Пятый тест показывает нам полный цикл записи runtime-данных в контекст через адаптерный слой.
+У теста вывод именно такой потому что <code>ERZL_Context</code> принимает обновления только через адаптеры,
+и каждый адаптер отвечает строго за своё поле: <code>xml_bytes</code>, <code>response_bytes</code>, <code>rslt_container</code>,
+<code>ERZL_id</code>, <code>create_flags</code>.</p>
 <details class="docs-test-case">
 <summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
 <div class="docs-test-panel">
 
 #### Вход
 
-<pre><code>context = _make_context()
+<pre><code>context         = ERZL_Context(SourceData={PersonFields.SURNAME: 'Ivanov'}, index=1, ...)
 selector_result = TupleDataSelectorRslt(selected_columns=(PersonFields.SURNAME,))
-parsed_result = XMLRsltContainer(
+parsed_result   = XMLRsltContainer(
     result=[
         XMLFieldValDTO(
-            response_name="findPersonsResponse",
-            container=[XMLOneFieldVal(container_name="ERZL_ID", container_val="ERZL-42")],
+            response_name='findPersonsResponse',
+            container=[XMLOneFieldVal(container_name='ERZL_ID', container_val='ERZL-42')],
         )
     ],
     mistakes=[
         XMLErrorDTO(
-            response_name="findPersonsResponse",
-            container=[XMLErrorVal(error_code="W01", error_val="warning")],
+            response_name='findPersonsResponse',
+            container=[XMLErrorVal(error_code='W01', error_val='warning')],
         )
     ],
 )</code></pre>
@@ -1251,18 +961,16 @@ erzl_adapter.set_good_create_base(context)</code></pre>
 
 #### Вывод
 
-<pre><code>Тест ничего не печатает.
-Проверяется состояние:
-context.DataAttemptStr == (PersonFields.SURNAME,)
-context.xml_bytes == b"&lt;xml /&gt;"
-context.response_bytes == b"&lt;response /&gt;"
-context.rslt_container.result == parsed_result.result
-context.rslt_container.mistakes == parsed_result.mistakes
-context.ERZL_id == "ERZL-42"
-context.create_flags.need_create = True
-context.create_flags.good_create_base = True
+<pre><code>context.DataAttemptStr              == (PersonFields.SURNAME,) → True
+context.xml_bytes                   == b"&lt;xml /&gt;"              → True
+context.response_bytes              == b"&lt;response /&gt;"         → True
+context.rslt_container.result       == parsed_result.result    → True
+context.rslt_container.mistakes     == parsed_result.mistakes  → True
+context.ERZL_id                     == "ERZL-42"               → True
+context.create_flags.need_create    is True                    → True
+context.create_flags.good_create_base is True                  → True
 
-tests/source/test_erzl_context.py::test_erzl_context_runtime_fields_are_written_through_adapters PASSED</code></pre>
+PASSED</code></pre>
 </div>
 </details>
 </article>

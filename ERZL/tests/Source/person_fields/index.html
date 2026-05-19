@@ -606,10 +606,28 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#enum">
+<span class="md-ellipsis">
+      
+        Зачем этот enum
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#_1">
 <span class="md-ellipsis">
       
-        Докстринг модуля
+        Первый тест: канонические значения всех полей
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#strenum">
+<span class="md-ellipsis">
+      
+        Второй тест: поведение StrEnum
       
     </span>
 </a>
@@ -618,120 +636,28 @@
 <a class="md-nav__link" href="#_2">
 <span class="md-ellipsis">
       
-        Зачем этот класс
+        Третий тест: уникальность и корректность значений
       
     </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#alias-">
-<span class="md-ellipsis">
-      
-        Первый тест: стабильный набор alias-значений
-      
-    </span>
-</a>
-<nav aria-label="Первый тест: стабильный набор alias-значений" class="md-nav">
-<ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_3">
 <span class="md-ellipsis">
       
-        Докстринг теста
+        Четвёртый тест: отклонение неизвестного значения
       
     </span>
 </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#enum-str">
+<a class="md-nav__link" href="#xml-">
 <span class="md-ellipsis">
       
-        Второй тест: enum ведет себя как str
+        Пятый тест: отсутствие XML-терминов в теле класса
       
     </span>
 </a>
-<nav aria-label="Второй тест: enum ведет себя как str" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_4">
-<span class="md-ellipsis">
-      
-        Докстринг теста
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_5">
-<span class="md-ellipsis">
-      
-        Третий тест: значения уникальны, непусты и без лишних пробелов
-      
-    </span>
-</a>
-<nav aria-label="Третий тест: значения уникальны, непусты и без лишних пробелов" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_6">
-<span class="md-ellipsis">
-      
-        Докстринг теста
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_7">
-<span class="md-ellipsis">
-      
-        Четвертый тест: неизвестное значение отвергается
-      
-    </span>
-</a>
-<nav aria-label="Четвертый тест: неизвестное значение отвергается" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_8">
-<span class="md-ellipsis">
-      
-        Докстринг теста
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#enum-xml-">
-<span class="md-ellipsis">
-      
-        Пятый тест: в теле enum нет XML-логики
-      
-    </span>
-</a>
-<nav aria-label="Пятый тест: в теле enum нет XML-логики" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_9">
-<span class="md-ellipsis">
-      
-        Докстринг теста
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -799,6 +725,18 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../XML/search_query_section/">
+<span class="md-ellipsis">
+    
+  
+    Тесты SearchQuerySection
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../XML/xml_builder_base/">
 <span class="md-ellipsis">
     
@@ -827,86 +765,24 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="personfields">Тесты PersonFields</h1>
-<p>Эта страница показывает contract-тесты из общего test-файла. Команда, на
-которой основаны сценарии:</p>
+<p>Эта страница показывает contract-тесты для <code>PersonFields</code> как документацию контракта. В браузере
+Python не запускается: блоки <code>Показать вызов</code> раскрывают сценарий и ожидаемое поведение, которое
+проверяет команда:</p>
 <div class="language-powershell highlight"><pre><span></span><code><span class="n">python</span> <span class="n">-m</span> <span class="n">pytest</span> <span class="n">-vv</span> <span class="n">-s</span> <span class="n">tests</span><span class="p">/</span><span class="n">source</span><span class="p">/</span><span class="n">test_person_fields</span><span class="p">.</span><span class="n">py</span>
 </code></pre></div>
-<p>Флаг <code>-s</code> здесь не добавляет пользовательской печати: модуль не выводит
-дополнительные строки, поэтому в консоли видны только имена тестов и статусы
-<code>PASSED</code>. Ниже раскрывается, какие свойства enum на самом деле защищают эти
-проверки.</p>
-<h2 id="_1">Докстринг модуля</h2>
-<div class="language-python highlight"><pre><span></span><code><span class="n">Контрактные</span> <span class="n">тесты</span> <span class="n">для</span> <span class="err">`</span><span class="n">Source</span><span class="o">.</span><span class="n">source_core_types</span><span class="o">.</span><span class="n">PersonFields</span><span class="err">`</span><span class="o">.</span>
-
-<span class="n">Модуль</span> <span class="n">проверяет</span> <span class="n">состав</span> <span class="n">значений</span> <span class="err">`</span><span class="n">PersonFields</span><span class="err">`</span><span class="p">,</span> <span class="n">поведение</span> <span class="n">enum</span> <span class="n">как</span> <span class="n">строкового</span>
-<span class="n">типа</span><span class="p">,</span> <span class="n">уникальность</span> <span class="n">и</span> <span class="n">корректность</span> <span class="n">его</span> <span class="n">alias</span><span class="o">-</span><span class="n">значений</span><span class="p">,</span> <span class="n">а</span> <span class="n">также</span> <span class="n">отсутствие</span>
-<span class="n">зависимости</span> <span class="n">от</span> <span class="n">XML</span><span class="o">-</span><span class="n">слоя</span><span class="o">.</span>
-
-<span class="n">Тесты</span> <span class="n">нужны</span> <span class="n">для</span> <span class="n">защиты</span> <span class="n">контракта</span> <span class="n">source</span><span class="o">-</span><span class="n">уровня</span><span class="p">,</span> <span class="n">где</span> <span class="err">`</span><span class="n">PersonFields</span><span class="err">`</span> <span class="n">должен</span>
-<span class="n">оставаться</span> <span class="n">стабильным</span> <span class="n">перечислением</span> <span class="n">канонических</span> <span class="n">полей</span> <span class="n">источника</span><span class="o">.</span>
+<p>Флаг <code>-s</code> нужен, чтобы <code>pytest</code> не скрывал вывод успешно прошедших тестов.</p>
+<h2 id="enum">Зачем этот enum</h2>
+<p><code>PersonFields</code> стоит на границе Source и Adapters. Он определяет канонические алиасы полей
+источника данных (XLSM-файла): ключи словаря <code>SourceInput.attributes</code> — это всегда значения
+<code>PersonFields</code>.</p>
+<p>Пример использования:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span>      <span class="c1"># → 'surname'</span>
+<span class="n">PersonFields</span><span class="p">(</span><span class="s2">"surname"</span><span class="p">)</span>   <span class="c1"># → PersonFields.SURNAME</span>
 </code></pre></div>
-<p>Исходный код больше не вынесен в один общий блок сверху. Ниже у каждого
-сценария есть отдельный раскрывающийся блок с кодом именно того теста,
-который документируется.</p>
-<h2 id="_2">Зачем этот класс</h2>
-<p><code>PersonFields</code> — это канонический enum Source-слоя. Он задает стабильные имена
-полей персоны, которыми уже оперируют адаптеры, контекст и селектор попыток.</p>
-<p>Этот enum:</p>
-<ul>
-<li>дает единый набор canonical alias-значений;</li>
-<li>ведет себя как строковый тип, поэтому подходит для словарей и сериализации;</li>
-<li>отделяет source-уровень от XML-слоя.</li>
-</ul>
-<p>Этот enum не:</p>
-<ul>
-<li>не хранит XML-ключи и XML-маппинг;</li>
-<li>не знает про транспорт, orchestrator и runtime-контекст;</li>
-<li>не валидирует значения пациента, он описывает только имена полей.</li>
-</ul>
-<h2 id="alias-">Первый тест: стабильный набор alias-значений</h2>
-<h3 id="_3">Докстринг теста</h3>
-<div class="language-python highlight"><pre><span></span><code><span class="n">Проверяет</span> <span class="n">стабильный</span> <span class="n">набор</span> <span class="n">канонических</span> <span class="n">alias</span><span class="o">-</span><span class="n">значений</span> <span class="err">`</span><span class="n">PersonFields</span><span class="err">`</span><span class="o">.</span>
-</code></pre></div>
-<p>Первый тест защищает самый важный внешний контракт enum: точный набор имен и
-строковых значений. Если одно из них незаметно изменится, downstream-слои
-перестанут находить нужные ключи.</p>
-<p>Поэтому тест сравнивает не отдельные элементы, а сразу весь словарь
-<code>{field.name: field.value}</code>.</p>
-<details class="docs-test-case">
-<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
-<div class="docs-test-panel">
-<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_person_fields_exposes_expected_canonical_values</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""Проверяет стабильный набор канонических alias-значений `PersonFields`."""</span>
-    <span class="c1"># Arrange</span>
-    <span class="n">expected_values</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">"SURNAME"</span><span class="p">:</span> <span class="s2">"surname"</span><span class="p">,</span>
-        <span class="s2">"NAME"</span><span class="p">:</span> <span class="s2">"namep"</span><span class="p">,</span>
-        <span class="s2">"SEX_ID"</span><span class="p">:</span> <span class="s2">"sexId"</span><span class="p">,</span>
-        <span class="s2">"CITIZEN_CODE"</span><span class="p">:</span> <span class="s2">"citizenship"</span><span class="p">,</span>
-        <span class="s2">"SNILS"</span><span class="p">:</span> <span class="s2">"snils"</span><span class="p">,</span>
-        <span class="s2">"DATE_BIRTH"</span><span class="p">:</span> <span class="s2">"dateBirth"</span><span class="p">,</span>
-        <span class="s2">"PATRONYMIC"</span><span class="p">:</span> <span class="s2">"patronymic"</span><span class="p">,</span>
-        <span class="s2">"POLICY_TYPE"</span><span class="p">:</span> <span class="s2">"policyT"</span><span class="p">,</span>
-        <span class="s2">"INSURP_ID"</span><span class="p">:</span> <span class="s2">"insurpId"</span><span class="p">,</span>
-        <span class="s2">"POLICY_STATUS"</span><span class="p">:</span> <span class="s2">"sPolicyStatusCode"</span><span class="p">,</span>
-        <span class="s2">"POLICY_OKATO_ID"</span><span class="p">:</span> <span class="s2">"policy_okatoId"</span><span class="p">,</span>
-        <span class="s2">"POLICY_DATE_BEGIN"</span><span class="p">:</span> <span class="s2">"policyDateB"</span><span class="p">,</span>
-        <span class="s2">"DUDL_TYPE"</span><span class="p">:</span> <span class="s2">"dudlTypeId"</span><span class="p">,</span>
-        <span class="s2">"OKSM_ID"</span><span class="p">:</span> <span class="s2">"countryDudl"</span><span class="p">,</span>
-        <span class="s2">"DUDL_SERIES"</span><span class="p">:</span> <span class="s2">"dudlSer"</span><span class="p">,</span>
-        <span class="s2">"DUDL_NUMBER"</span><span class="p">:</span> <span class="s2">"dudlNom"</span><span class="p">,</span>
-        <span class="s2">"ADDRESS_TYPE"</span><span class="p">:</span> <span class="s2">"adrTypeId"</span><span class="p">,</span>
-        <span class="s2">"ADDRESS_OKATO_ID"</span><span class="p">:</span> <span class="s2">"address_okatoId"</span><span class="p">,</span>
-    <span class="p">}</span>
-
-    <span class="c1"># Act</span>
-    <span class="n">actual_values</span> <span class="o">=</span> <span class="p">{</span><span class="n">field</span><span class="o">.</span><span class="n">name</span><span class="p">:</span> <span class="n">field</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">PersonFields</span><span class="p">}</span>
-
-    <span class="c1"># Assert</span>
-    <span class="k">assert</span> <span class="n">actual_values</span> <span class="o">==</span> <span class="n">expected_values</span>
-</code></pre></div>
-</div>
-</details>
+<h2 id="_1">Первый тест: канонические значения всех полей</h2>
+<p>Первый тест показывает нам, что <code>PersonFields</code> содержит ровно 18 полей с точными строковыми
+значениями. У теста вывод именно такой потому что эти алиасы используются как ключи в адаптерах
+и XML-маппинге, и любое изменение должно сопровождаться явным обновлением этой фиксации.</p>
 <details class="docs-test-case">
 <summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
 <div class="docs-test-panel">
@@ -914,11 +790,24 @@
 #### Вход
 
 <pre><code>expected_values = {
-    "SURNAME": "surname",
-    "NAME": "namep",
-    "SEX_ID": "sexId",
-    ...
-    "ADDRESS_OKATO_ID": "address_okatoId",
+    'SURNAME':           'surname',
+    'NAME':              'namep',
+    'SEX_ID':            'sexId',
+    'CITIZEN_CODE':      'citizenship',
+    'SNILS':             'snils',
+    'DATE_BIRTH':        'dateBirth',
+    'PATRONYMIC':        'patronymic',
+    'POLICY_TYPE':       'policyT',
+    'INSURP_ID':         'insurpId',
+    'POLICY_STATUS':     'sPolicyStatusCode',
+    'POLICY_OKATO_ID':   'policy_okatoId',
+    'POLICY_DATE_BEGIN': 'policyDateB',
+    'DUDL_TYPE':         'dudlTypeId',
+    'OKSM_ID':           'countryDudl',
+    'DUDL_SERIES':       'dudlSer',
+    'DUDL_NUMBER':       'dudlNom',
+    'ADDRESS_TYPE':      'adrTypeId',
+    'ADDRESS_OKATO_ID':  'address_okatoId',
 }</code></pre>
 
 #### Вызов
@@ -927,40 +816,16 @@
 
 #### Вывод
 
-<pre><code>Тест ничего не печатает.
-Проверяется точное совпадение:
-actual_values == expected_values
+<pre><code>actual_values == expected_values → True
 
-tests/source/test_person_fields.py::test_person_fields_exposes_expected_canonical_values PASSED</code></pre>
+PASSED</code></pre>
 </div>
 </details>
-<h2 id="enum-str">Второй тест: enum ведет себя как str</h2>
-<h3 id="_4">Докстринг теста</h3>
-<div class="language-python highlight"><pre><span></span><code><span class="n">Проверяет</span> <span class="n">строковое</span> <span class="n">поведение</span> <span class="n">enum</span> <span class="n">и</span> <span class="n">восстановление</span> <span class="n">по</span> <span class="n">значению</span><span class="o">.</span>
-</code></pre></div>
-<p>Второй тест показывает две стороны одного контракта: элемент enum должен
-нормально представляться как строка и должен восстанавливаться по своему
-alias-значению.</p>
-<p>Это важно, потому что <code>PersonFields</code> используется и как enum в Python-коде, и
-как строковый ключ в словарях и преобразованиях.</p>
-<details class="docs-test-case">
-<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
-<div class="docs-test-panel">
-<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_person_fields_behaves_as_str_enum</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""Проверяет строковое поведение enum и восстановление по значению."""</span>
-    <span class="c1"># Arrange</span>
-    <span class="n">field</span> <span class="o">=</span> <span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span>
-
-    <span class="c1"># Act</span>
-    <span class="n">field_as_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">field</span><span class="p">)</span>
-    <span class="n">restored_field</span> <span class="o">=</span> <span class="n">PersonFields</span><span class="p">(</span><span class="s2">"surname"</span><span class="p">)</span>
-
-    <span class="c1"># Assert</span>
-    <span class="k">assert</span> <span class="n">field_as_str</span> <span class="o">==</span> <span class="s2">"surname"</span>
-    <span class="k">assert</span> <span class="n">restored_field</span> <span class="ow">is</span> <span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span>
-</code></pre></div>
-</div>
-</details>
+<h2 id="strenum">Второй тест: поведение StrEnum</h2>
+<p>Второй тест показывает нам, что <code>PersonFields</code> поддерживает строковое преобразование и
+value-based lookup. У теста вывод именно такой потому что <code>PersonFields</code> наследует <code>StrEnum</code>:
+<code>str(field)</code> возвращает значение, а конструктор <code>PersonFields("surname")</code> восстанавливает
+конкретный элемент enum.</p>
 <details class="docs-test-case">
 <summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
 <div class="docs-test-panel">
@@ -971,46 +836,21 @@ alias-значению.</p>
 
 #### Вызов
 
-<pre><code>field_as_str = str(field)
+<pre><code>field_as_str   = str(field)
 restored_field = PersonFields("surname")</code></pre>
 
 #### Вывод
 
-<pre><code>Тест ничего не печатает.
-Проверяется состояние:
-field_as_str = "surname"
-restored_field is PersonFields.SURNAME
+<pre><code>field_as_str == "surname"               → True
+restored_field is PersonFields.SURNAME  → True
 
-tests/source/test_person_fields.py::test_person_fields_behaves_as_str_enum PASSED</code></pre>
+PASSED</code></pre>
 </div>
 </details>
-<h2 id="_5">Третий тест: значения уникальны, непусты и без лишних пробелов</h2>
-<h3 id="_6">Докстринг теста</h3>
-<div class="language-python highlight"><pre><span></span><code><span class="n">Проверяет</span> <span class="n">уникальность</span><span class="p">,</span> <span class="n">непустоту</span> <span class="n">и</span> <span class="n">отсутствие</span> <span class="n">лишних</span> <span class="n">пробелов</span> <span class="n">в</span> <span class="n">значениях</span><span class="o">.</span>
-</code></pre></div>
-<p>Третий тест защищает качество самих alias-значений. Он нужен не для бизнес-логики,
-а для того, чтобы перечисление не разъехалось дубликатами, пустыми строками и
-случайными пробелами.</p>
-<p>У теста вывод именно такой, потому что все проверки делаются на полном списке
-<code>[field.value for field in PersonFields]</code>, а не на одном выбранном элементе.</p>
-<details class="docs-test-case">
-<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
-<div class="docs-test-panel">
-<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_person_fields_values_are_unique_non_empty_and_trimmed</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""Проверяет уникальность, непустоту и отсутствие лишних пробелов в значениях."""</span>
-    <span class="c1"># Arrange</span>
-    <span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="n">field</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">PersonFields</span><span class="p">]</span>
-
-    <span class="c1"># Act</span>
-    <span class="n">unique_values</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
-
-    <span class="c1"># Assert</span>
-    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">unique_values</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">PersonFields</span><span class="p">)</span>
-    <span class="k">assert</span> <span class="nb">all</span><span class="p">(</span><span class="n">value</span> <span class="o">!=</span> <span class="s2">""</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">values</span><span class="p">)</span>
-    <span class="k">assert</span> <span class="nb">all</span><span class="p">(</span><span class="n">value</span> <span class="o">==</span> <span class="n">value</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">values</span><span class="p">)</span>
-</code></pre></div>
-</div>
-</details>
+<h2 id="_2">Третий тест: уникальность и корректность значений</h2>
+<p>Третий тест показывает нам, что все 18 значений <code>PersonFields</code> уникальны, непусты и не содержат
+пробелов. У теста вывод именно такой потому что дублирующиеся или пустые значения привели бы к
+непредсказуемому поведению адаптеров при маппинге XLSM-колонок.</p>
 <details class="docs-test-case">
 <summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
 <div class="docs-test-panel">
@@ -1025,38 +865,17 @@ tests/source/test_person_fields.py::test_person_fields_behaves_as_str_enum PASSE
 
 #### Вывод
 
-<pre><code>Тест ничего не печатает.
-Проверяются инварианты:
-len(unique_values) == len(PersonFields)
-в values нет ""
-для каждого value выполняется value == value.strip()
+<pre><code>len(unique_values) == len(PersonFields)          → True
+all(value != "" for value in values)             → True
+all(value == value.strip() for value in values)  → True
 
-tests/source/test_person_fields.py::test_person_fields_values_are_unique_non_empty_and_trimmed PASSED</code></pre>
+PASSED</code></pre>
 </div>
 </details>
-<h2 id="_7">Четвертый тест: неизвестное значение отвергается</h2>
-<h3 id="_8">Докстринг теста</h3>
-<div class="language-python highlight"><pre><span></span><code><span class="n">Проверяет</span> <span class="n">отклонение</span> <span class="n">неизвестного</span> <span class="n">alias</span><span class="o">-</span><span class="n">значения</span><span class="o">.</span>
-</code></pre></div>
-<p>Четвертый тест фиксирует отрицательный сценарий: enum должен восстанавливаться
-только по известным строкам, а произвольный alias <code>"unknown"</code> обязан
-завершаться ошибкой.</p>
-<p>Это защищает код, который строит <code>PersonFields</code> из внешних значений и должен
-быстро замечать некорректный alias вместо тихой подстановки.</p>
-<details class="docs-test-case">
-<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
-<div class="docs-test-panel">
-<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_person_fields_rejects_unknown_value</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""Проверяет отклонение неизвестного alias-значения."""</span>
-    <span class="c1"># Arrange</span>
-    <span class="n">invalid_value</span> <span class="o">=</span> <span class="s2">"unknown"</span>
-
-    <span class="c1"># Act / Assert</span>
-    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">):</span>
-        <span class="n">PersonFields</span><span class="p">(</span><span class="n">invalid_value</span><span class="p">)</span>
-</code></pre></div>
-</div>
-</details>
+<h2 id="_3">Четвёртый тест: отклонение неизвестного значения</h2>
+<p>Четвёртый тест показывает нам, что передача несуществующего строкового алиаса в конструктор
+<code>PersonFields</code> вызывает <code>ValueError</code>. У теста вывод именно такой потому что <code>StrEnum</code> не позволяет
+создать элемент из значения, которого нет в определении enum.</p>
 <details class="docs-test-case">
 <summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
 <div class="docs-test-panel">
@@ -1067,51 +886,27 @@ tests/source/test_person_fields.py::test_person_fields_values_are_unique_non_emp
 
 #### Вызов
 
-<pre><code>with pytest.raises(ValueError):
-    PersonFields(invalid_value)</code></pre>
+<pre><code>PersonFields(invalid_value)</code></pre>
 
 #### Ошибка
 
-<pre><code>Тест ничего не печатает.
-Проверяется только тип исключения: ValueError.
-Текст ошибки тестом не фиксируется.
+<pre><code>ValueError: 'unknown' is not a valid PersonFields
 
-tests/source/test_person_fields.py::test_person_fields_rejects_unknown_value PASSED</code></pre>
+PASSED</code></pre>
 </div>
 </details>
-<h2 id="enum-xml-">Пятый тест: в теле enum нет XML-логики</h2>
-<h3 id="_9">Докстринг теста</h3>
-<div class="language-python highlight"><pre><span></span><code><span class="n">Проверяет</span><span class="p">,</span> <span class="n">что</span> <span class="err">`</span><span class="n">PersonFields</span><span class="err">`</span> <span class="n">не</span> <span class="n">встраивает</span> <span class="n">в</span> <span class="n">себя</span> <span class="n">XML</span><span class="o">-</span><span class="n">логику</span><span class="o">.</span>
-</code></pre></div>
-<p>Последний тест смотрит не на значения enum, а на архитектурную границу слоя.
-<code>PersonFields</code> не должен зависеть от <code>XMLFields</code>, <code>XMLKVPairs</code> или
-<code>XML_FIELDS_RENAME</code>.</p>
-<p>Именно поэтому берется исходный код класса через <code>inspect.getsource</code>, а затем
-проверяется отсутствие запрещенных терминов.</p>
-<details class="docs-test-case">
-<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
-<div class="docs-test-panel">
-<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_person_fields_class_body_does_not_embed_xml_mapping_terms</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""Проверяет, что `PersonFields` не встраивает в себя XML-логику."""</span>
-    <span class="c1"># Arrange</span>
-    <span class="n">class_source</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span><span class="n">PersonFields</span><span class="p">)</span>
-    <span class="n">forbidden_terms</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"XMLFields"</span><span class="p">,</span> <span class="s2">"XMLKVPairs"</span><span class="p">,</span> <span class="s2">"XML_FIELDS_RENAME"</span><span class="p">)</span>
-
-    <span class="c1"># Act</span>
-    <span class="n">unexpected_terms</span> <span class="o">=</span> <span class="p">[</span><span class="n">term</span> <span class="k">for</span> <span class="n">term</span> <span class="ow">in</span> <span class="n">forbidden_terms</span> <span class="k">if</span> <span class="n">term</span> <span class="ow">in</span> <span class="n">class_source</span><span class="p">]</span>
-
-    <span class="c1"># Assert</span>
-    <span class="k">assert</span> <span class="n">unexpected_terms</span> <span class="o">==</span> <span class="p">[]</span>
-</code></pre></div>
-</div>
-</details>
+<h2 id="xml-">Пятый тест: отсутствие XML-терминов в теле класса</h2>
+<p>Пятый тест показывает нам, что <code>PersonFields</code> остаётся чистым source-enum и не абсорбирует
+XML-маппинг или adapter-логику. У теста вывод именно такой потому что наличие символов
+<code>XMLFields</code>, <code>XMLKVPairs</code> или <code>XML_FIELDS_RENAME</code> в теле класса означало бы нарушение
+слоевых границ.</p>
 <details class="docs-test-case">
 <summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
 <div class="docs-test-panel">
 
 #### Вход
 
-<pre><code>class_source = inspect.getsource(PersonFields)
+<pre><code>class_source    = inspect.getsource(PersonFields)
 forbidden_terms = ("XMLFields", "XMLKVPairs", "XML_FIELDS_RENAME")</code></pre>
 
 #### Вызов
@@ -1120,11 +915,9 @@ forbidden_terms = ("XMLFields", "XMLKVPairs", "XML_FIELDS_RENAME")</code></pre>
 
 #### Вывод
 
-<pre><code>Тест ничего не печатает.
-Проверяется состояние:
-unexpected_terms == []
+<pre><code>unexpected_terms == [] → True
 
-tests/source/test_person_fields.py::test_person_fields_class_body_does_not_embed_xml_mapping_terms PASSED</code></pre>
+PASSED</code></pre>
 </div>
 </details>
 </article>

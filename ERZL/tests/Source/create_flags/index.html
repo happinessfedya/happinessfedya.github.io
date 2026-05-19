@@ -582,10 +582,19 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#dto">
+<span class="md-ellipsis">
+      
+        Зачем этот DTO
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#_1">
 <span class="md-ellipsis">
       
-        Докстринг модуля
+        Первый тест: значения по умолчанию
       
     </span>
 </a>
@@ -594,7 +603,7 @@
 <a class="md-nav__link" href="#_2">
 <span class="md-ellipsis">
       
-        Зачем этот класс
+        Второй тест: независимое переключение флагов
       
     </span>
 </a>
@@ -603,155 +612,46 @@
 <a class="md-nav__link" href="#_3">
 <span class="md-ellipsis">
       
-        Первый тест: стартовое состояние
+        Третий тест: слоты запрещают неизвестные атрибуты
       
     </span>
 </a>
-<nav aria-label="Первый тест: стартовое состояние" class="md-nav">
-<ul class="md-nav__list">
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#_4">
 <span class="md-ellipsis">
       
-        Докстринг теста
+        Четвёртый тест: частичное и логически несогласованное состояние
       
     </span>
 </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#_5">
+<a class="md-nav__link" href="#dto_1">
 <span class="md-ellipsis">
       
-        Второй тест: независимое переключение полей
-      
-    </span>
-</a>
-<nav aria-label="Второй тест: независимое переключение полей" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_6">
-<span class="md-ellipsis">
-      
-        Докстринг теста
+        Пятый тест: контракт полей DTO зафиксирован
       
     </span>
 </a>
 </li>
-</ul>
-</nav>
-</li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#slotted-">
+<a class="md-nav__link" href="#createflags_1">
 <span class="md-ellipsis">
       
-        Третий тест: slotted-поверхность запрещает лишние поля
-      
-    </span>
-</a>
-<nav aria-label="Третий тест: slotted-поверхность запрещает лишние поля" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_7">
-<span class="md-ellipsis">
-      
-        Докстринг теста
+        Шестой тест: независимые экземпляры CreateFlags у контекстов
       
     </span>
 </a>
 </li>
-</ul>
-</nav>
-</li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#dto-">
+<a class="md-nav__link" href="#reset_create_flags">
 <span class="md-ellipsis">
       
-        Четвертый тест: DTO не валидирует бизнес-логику
+        Седьмой тест: reset_create_flags заменяет объект целиком
       
     </span>
 </a>
-<nav aria-label="Четвертый тест: DTO не валидирует бизнес-логику" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_8">
-<span class="md-ellipsis">
-      
-        Докстринг теста
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_9">
-<span class="md-ellipsis">
-      
-        Пятый тест: контракт полей остается маленьким и булевым
-      
-    </span>
-</a>
-<nav aria-label="Пятый тест: контракт полей остается маленьким и булевым" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_10">
-<span class="md-ellipsis">
-      
-        Докстринг теста
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#context-createflags">
-<span class="md-ellipsis">
-      
-        Шестой тест: у каждого context свой экземпляр CreateFlags
-      
-    </span>
-</a>
-<nav aria-label="Шестой тест: у каждого context свой экземпляр CreateFlags" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_11">
-<span class="md-ellipsis">
-      
-        Докстринг теста
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#reset-dto">
-<span class="md-ellipsis">
-      
-        Седьмой тест: reset заменяет старый DTO новым дефолтным состоянием
-      
-    </span>
-</a>
-<nav aria-label="Седьмой тест: reset заменяет старый DTO новым дефолтным состоянием" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_12">
-<span class="md-ellipsis">
-      
-        Докстринг теста
-      
-    </span>
-</a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -843,6 +743,18 @@
 </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../../XML/search_query_section/">
+<span class="md-ellipsis">
+    
+  
+    Тесты SearchQuerySection
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../../XML/xml_builder_base/">
 <span class="md-ellipsis">
     
@@ -871,135 +783,47 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="createflags">Тесты CreateFlags</h1>
-<p>Эта страница показывает contract-тесты из общего test-файла. Команда, на
-которой основаны сценарии:</p>
+<p>Эта страница показывает contract-тесты для <code>CreateFlags</code> как документацию контракта. В браузере
+Python не запускается: блоки <code>Показать вызов</code> раскрывают сценарий и ожидаемое поведение, которое
+проверяет команда:</p>
 <div class="language-powershell highlight"><pre><span></span><code><span class="n">python</span> <span class="n">-m</span> <span class="n">pytest</span> <span class="n">-vv</span> <span class="n">-s</span> <span class="n">tests</span><span class="p">/</span><span class="n">source</span><span class="p">/</span><span class="n">test_create_flags</span><span class="p">.</span><span class="n">py</span>
 </code></pre></div>
-<p>Флаг <code>-s</code> здесь оставлен для единообразия. Этот модуль сам ничего не печатает,
-поэтому в консоли видны только имена тестов и статусы <code>PASSED</code>. Ниже
-раскрывается, какое именно состояние DTO проверяет каждый тест.</p>
-<h2 id="_1">Докстринг модуля</h2>
-<div class="language-python highlight"><pre><span></span><code><span class="n">Контрактные</span> <span class="n">тесты</span> <span class="n">для</span> <span class="err">`</span><span class="n">Source</span><span class="o">.</span><span class="n">source_core_types</span><span class="o">.</span><span class="n">CreateFlags</span><span class="err">`</span><span class="o">.</span>
-
-<span class="n">Модуль</span> <span class="n">проверяет</span> <span class="n">стартовое</span> <span class="n">состояние</span> <span class="err">`</span><span class="n">CreateFlags</span><span class="err">`</span><span class="p">,</span> <span class="n">независимость</span> <span class="n">его</span> <span class="n">полей</span><span class="p">,</span>
-<span class="n">строгость</span> <span class="n">slotted</span><span class="o">-</span><span class="n">поверхности</span> <span class="n">и</span> <span class="n">характер</span> <span class="err">`</span><span class="n">CreateFlags</span><span class="err">`</span> <span class="n">как</span> <span class="n">простого</span> <span class="n">DTO</span> <span class="n">без</span>
-<span class="n">вшитых</span> <span class="n">бизнес</span><span class="o">-</span><span class="n">ограничений</span><span class="o">.</span>
-
-<span class="n">Тесты</span> <span class="n">нужны</span> <span class="n">для</span> <span class="n">защиты</span> <span class="n">контракта</span> <span class="n">флагов</span> <span class="n">create</span><span class="o">-</span><span class="n">flow</span> <span class="n">и</span> <span class="n">для</span> <span class="n">проверки</span> <span class="n">их</span>
-<span class="n">корректной</span> <span class="n">интеграции</span> <span class="n">с</span> <span class="err">`</span><span class="n">ERZL_Context</span><span class="err">`</span> <span class="n">и</span> <span class="err">`</span><span class="n">ERZLAdapter</span><span class="err">`</span><span class="o">.</span>
+<p>Флаг <code>-s</code> нужен, чтобы <code>pytest</code> не скрывал вывод успешно прошедших тестов.</p>
+<h2 id="dto">Зачем этот DTO</h2>
+<p><code>CreateFlags</code> стоит внутри <code>ERZL_Context</code> на слое Source. Он хранит булевые флаги, которые
+управляют create-flow пайплайна: нужно ли создавать персону, и прошли ли отдельные шаги создания.</p>
+<p><code>CreateFlags</code> создаётся автоматически при инициализации <code>ERZL_Context</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="n">context</span><span class="o">.</span><span class="n">create_flags</span>  <span class="c1"># → CreateFlags()</span>
 </code></pre></div>
-<p>Исходный код больше не вынесен в один общий блок сверху. Ниже у каждого
-сценария есть отдельный раскрывающийся блок с кодом именно того теста,
-который документируется.</p>
-<h2 id="_2">Зачем этот класс</h2>
-<p><code>CreateFlags</code> живет в Source-слое как маленький slotted DTO для состояния
-create-flow. Он входит в <code>ERZL_Context</code>, хранит только булевы флаги и не
-принимает бизнес-решения сам по себе.</p>
-<p>Этот класс:</p>
-<ul>
-<li>хранит факт необходимости создания и отдельные признаки успеха по шагам;</li>
-<li>создается с безопасными значениями по умолчанию;</li>
-<li>может заменяться адаптером целиком при сбросе состояния.</li>
-</ul>
-<p>Этот класс не:</p>
-<ul>
-<li>валидирует логическую согласованность комбинаций флагов;</li>
-<li>не знает про retry, orchestrator или XML;</li>
-<li>не скрывает ошибки через собственные методы, потому что методов у него нет.</li>
-</ul>
-<h2 id="_3">Первый тест: стартовое состояние</h2>
-<h3 id="_4">Докстринг теста</h3>
-<div class="language-python highlight"><pre><span></span><code><span class="n">Проверяет</span><span class="p">,</span> <span class="n">что</span> <span class="err">`</span><span class="n">CreateFlags</span><span class="err">`</span> <span class="n">стартует</span> <span class="n">со</span> <span class="n">всеми</span> <span class="n">выключенными</span> <span class="n">флагами</span><span class="o">.</span>
-</code></pre></div>
-<p>Первый тест показывает самый базовый контракт DTO: новый <code>CreateFlags()</code> не
-должен случайно включать ни один create-флаг.</p>
-<p>Это важно, потому что create-flow должен запускаться только после явного
-решения адаптерного или orchestration-слоя, а не из-за неинициализированного
-runtime-состояния.</p>
-<details class="docs-test-case">
-<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
-<div class="docs-test-panel">
-<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_create_flags_defaults_all_fields_to_false</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""Проверяет, что `CreateFlags` стартует со всеми выключенными флагами."""</span>
-    <span class="c1"># Arrange</span>
-
-    <span class="c1"># Act</span>
-    <span class="n">flags</span> <span class="o">=</span> <span class="n">CreateFlags</span><span class="p">()</span>
-
-    <span class="c1"># Assert</span>
-    <span class="k">assert</span> <span class="n">flags</span><span class="o">.</span><span class="n">need_create</span> <span class="ow">is</span> <span class="kc">False</span>
-    <span class="k">assert</span> <span class="n">flags</span><span class="o">.</span><span class="n">good_create_base</span> <span class="ow">is</span> <span class="kc">False</span>
-    <span class="k">assert</span> <span class="n">flags</span><span class="o">.</span><span class="n">good_create_policy</span> <span class="ow">is</span> <span class="kc">False</span>
-    <span class="k">assert</span> <span class="n">flags</span><span class="o">.</span><span class="n">good_create_DUDL</span> <span class="ow">is</span> <span class="kc">False</span>
-    <span class="k">assert</span> <span class="n">flags</span><span class="o">.</span><span class="n">good_create_address</span> <span class="ow">is</span> <span class="kc">False</span>
-</code></pre></div>
-</div>
-</details>
+<h2 id="_1">Первый тест: значения по умолчанию</h2>
+<p>Первый тест показывает нам стартовое состояние DTO: при создании <code>CreateFlags()</code> без аргументов
+все пять флагов равны <code>False</code>. У теста вывод именно такой потому что каждое поле объявлено с
+<code>default=False</code>, и create-flow считается выключенным до первого явного включения.</p>
 <details class="docs-test-case">
 <summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
 <div class="docs-test-panel">
 
 #### Вход
 
-<pre><code>аргументы конструктора отсутствуют</code></pre>
+<pre><code>flags = CreateFlags()</code></pre>
 
 #### Вызов
 
-<pre><code>flags = CreateFlags()</code></pre>
+<pre><code>assert flags.need_create is False
+assert flags.good_create_base is False
+assert flags.good_create_policy is False
+assert flags.good_create_DUDL is False
+assert flags.good_create_address is False</code></pre>
 
 #### Вывод
 
-<pre><code>Тест ничего не печатает.
-Проверяется состояние:
-flags.need_create = False
-flags.good_create_base = False
-flags.good_create_policy = False
-flags.good_create_DUDL = False
-flags.good_create_address = False
-
-tests/source/test_create_flags.py::test_create_flags_defaults_all_fields_to_false PASSED</code></pre>
+<pre><code>PASSED</code></pre>
 </div>
 </details>
-<h2 id="_5">Второй тест: независимое переключение полей</h2>
-<h3 id="_6">Докстринг теста</h3>
-<div class="language-python highlight"><pre><span></span><code><span class="n">Проверяет</span> <span class="n">независимое</span> <span class="n">переключение</span> <span class="n">каждого</span> <span class="n">поля</span> <span class="err">`</span><span class="n">CreateFlags</span><span class="err">`</span><span class="o">.</span>
-</code></pre></div>
-<p>Второй тест показывает, что каждое поле в <code>CreateFlags</code> существует как
-отдельный бит состояния. Включение одного признака не должно автоматически
-включать соседние поля.</p>
-<p>Именно поэтому в цикле поочередно выставляется <code>True</code> для каждого имени поля,
-а затем проверяется, что остальные остаются <code>False</code>.</p>
-<details class="docs-test-case">
-<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
-<div class="docs-test-panel">
-<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_create_flags_fields_can_toggle_independently</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""Проверяет независимое переключение каждого поля `CreateFlags`."""</span>
-    <span class="c1"># Arrange</span>
-    <span class="n">flags</span> <span class="o">=</span> <span class="n">CreateFlags</span><span class="p">()</span>
-    <span class="n">field_names</span> <span class="o">=</span> <span class="p">(</span>
-        <span class="s2">"need_create"</span><span class="p">,</span>
-        <span class="s2">"good_create_base"</span><span class="p">,</span>
-        <span class="s2">"good_create_policy"</span><span class="p">,</span>
-        <span class="s2">"good_create_DUDL"</span><span class="p">,</span>
-        <span class="s2">"good_create_address"</span><span class="p">,</span>
-    <span class="p">)</span>
-
-    <span class="c1"># Act / Assert</span>
-    <span class="k">for</span> <span class="n">field_name</span> <span class="ow">in</span> <span class="n">field_names</span><span class="p">:</span>
-        <span class="nb">setattr</span><span class="p">(</span><span class="n">flags</span><span class="p">,</span> <span class="n">field_name</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-
-        <span class="k">assert</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">flags</span><span class="p">,</span> <span class="n">field_name</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">True</span>
-        <span class="k">assert</span> <span class="nb">all</span><span class="p">(</span>
-            <span class="nb">getattr</span><span class="p">(</span><span class="n">flags</span><span class="p">,</span> <span class="n">other_name</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">False</span>
-            <span class="k">for</span> <span class="n">other_name</span> <span class="ow">in</span> <span class="n">field_names</span>
-            <span class="k">if</span> <span class="n">other_name</span> <span class="o">!=</span> <span class="n">field_name</span>
-        <span class="p">)</span>
-
-        <span class="nb">setattr</span><span class="p">(</span><span class="n">flags</span><span class="p">,</span> <span class="n">field_name</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-        <span class="k">assert</span> <span class="nb">all</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">flags</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">False</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">field_names</span><span class="p">)</span>
-</code></pre></div>
-</div>
-</details>
+<h2 id="_2">Второй тест: независимое переключение флагов</h2>
+<p>Второй тест показывает нам, что каждое поле можно включить и выключить по отдельности, не
+затрагивая соседние. У теста вывод именно такой потому что поля <code>CreateFlags</code> — независимые
+атрибуты dataclass без взаимных ограничений; изменение одного не влечёт сайд-эффектов для остальных.</p>
 <details class="docs-test-case">
 <summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
 <div class="docs-test-panel">
@@ -1018,42 +842,18 @@ field_names = (
 #### Вызов
 
 <pre><code>for field_name in field_names:
-    setattr(flags, field_name, True)
-    ...
-    setattr(flags, field_name, False)</code></pre>
+    setattr(flags, field_name, True)   # только это поле True
+    setattr(flags, field_name, False)  # снова все False</code></pre>
 
 #### Вывод
 
-<pre><code>Тест ничего не печатает.
-Проверяется инвариант:
-в каждый момент времени True получает только то поле,
-которое сейчас переключается циклом, а остальные остаются False.
-
-tests/source/test_create_flags.py::test_create_flags_fields_can_toggle_independently PASSED</code></pre>
+<pre><code>PASSED</code></pre>
 </div>
 </details>
-<h2 id="slotted-">Третий тест: slotted-поверхность запрещает лишние поля</h2>
-<h3 id="_7">Докстринг теста</h3>
-<div class="language-python highlight"><pre><span></span><code><span class="n">Проверяет</span> <span class="n">запрет</span> <span class="n">неизвестных</span> <span class="n">атрибутов</span> <span class="n">на</span> <span class="n">slotted</span><span class="o">-</span><span class="n">поверхности</span> <span class="n">DTO</span><span class="o">.</span>
-</code></pre></div>
-<p>Третий тест защищает форму DTO. <code>CreateFlags</code> объявлен как <code>@dataclass(slots=True)</code>,
-поэтому в runtime нельзя дописывать в него произвольные поля.</p>
-<p>Это важно, потому что иначе create-состояние могло бы незаметно разрастаться
-неявными атрибутами и перестало бы быть предсказуемым контрактом.</p>
-<details class="docs-test-case">
-<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
-<div class="docs-test-panel">
-<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_create_flags_slots_forbid_unknown_attribute</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""Проверяет запрет неизвестных атрибутов на slotted-поверхности DTO."""</span>
-    <span class="c1"># Arrange</span>
-    <span class="n">flags</span> <span class="o">=</span> <span class="n">CreateFlags</span><span class="p">()</span>
-
-    <span class="c1"># Act / Assert</span>
-    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">):</span>
-        <span class="n">flags</span><span class="o">.</span><span class="n">good_create_unknown</span> <span class="o">=</span> <span class="kc">True</span>
-</code></pre></div>
-</div>
-</details>
+<h2 id="_3">Третий тест: слоты запрещают неизвестные атрибуты</h2>
+<p>Третий тест показывает нам защиту <code>@dataclass(slots=True)</code>: попытка назначить атрибут, которого
+нет в определении класса, немедленно поднимает <code>AttributeError</code>. У теста вывод именно такой потому
+что <code>__slots__</code> не включает имя <code>good_create_unknown</code>, и Python отказывает в создании этого атрибута.</p>
 <details class="docs-test-case">
 <summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
 <div class="docs-test-panel">
@@ -1064,49 +864,20 @@ tests/source/test_create_flags.py::test_create_flags_fields_can_toggle_independe
 
 #### Вызов
 
-<pre><code>with pytest.raises(AttributeError):
-    flags.good_create_unknown = True</code></pre>
+<pre><code>flags.good_create_unknown = True</code></pre>
 
 #### Ошибка
 
-<pre><code>Тест ничего не печатает.
-Проверяется только тип исключения: AttributeError.
-Текст ошибки тестом не фиксируется.
+<pre><code>AttributeError: 'CreateFlags' object has no attribute 'good_create_unknown'
 
-tests/source/test_create_flags.py::test_create_flags_slots_forbid_unknown_attribute PASSED</code></pre>
+PASSED</code></pre>
 </div>
 </details>
-<h2 id="dto-">Четвертый тест: DTO не валидирует бизнес-логику</h2>
-<h3 id="_8">Докстринг теста</h3>
-<div class="language-python highlight"><pre><span></span><code><span class="n">Проверяет</span><span class="p">,</span> <span class="n">что</span> <span class="err">`</span><span class="n">CreateFlags</span><span class="err">`</span> <span class="n">хранит</span> <span class="n">сырой</span> <span class="n">state</span> <span class="n">без</span> <span class="n">бизнес</span><span class="o">-</span><span class="n">валидации</span><span class="o">.</span>
-</code></pre></div>
-<p>Четвертый тест показывает принципиальную границу ответственности класса.
-<code>CreateFlags</code> хранит состояние как есть и не пытается оценивать, логична ли
-комбинация флагов с точки зрения create-flow.</p>
-<p>Поэтому состояние <code>good_create_base=True</code> при <code>need_create=False</code> считается
-допустимым для самого DTO, даже если такая комбинация потом может требовать
-отдельной обработки в другом слое.</p>
-<details class="docs-test-case">
-<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
-<div class="docs-test-panel">
-<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_create_flags_allows_partial_and_logically_inconsistent_states</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""Проверяет, что `CreateFlags` хранит сырой state без бизнес-валидации."""</span>
-    <span class="c1"># Arrange</span>
-    <span class="n">flags</span> <span class="o">=</span> <span class="n">CreateFlags</span><span class="p">()</span>
-
-    <span class="c1"># Act</span>
-    <span class="n">flags</span><span class="o">.</span><span class="n">good_create_base</span> <span class="o">=</span> <span class="kc">True</span>
-    <span class="n">flags</span><span class="o">.</span><span class="n">need_create</span> <span class="o">=</span> <span class="kc">False</span>
-
-    <span class="c1"># Assert</span>
-    <span class="k">assert</span> <span class="n">flags</span><span class="o">.</span><span class="n">good_create_base</span> <span class="ow">is</span> <span class="kc">True</span>
-    <span class="k">assert</span> <span class="n">flags</span><span class="o">.</span><span class="n">need_create</span> <span class="ow">is</span> <span class="kc">False</span>
-    <span class="k">assert</span> <span class="n">flags</span><span class="o">.</span><span class="n">good_create_policy</span> <span class="ow">is</span> <span class="kc">False</span>
-    <span class="k">assert</span> <span class="n">flags</span><span class="o">.</span><span class="n">good_create_DUDL</span> <span class="ow">is</span> <span class="kc">False</span>
-    <span class="k">assert</span> <span class="n">flags</span><span class="o">.</span><span class="n">good_create_address</span> <span class="ow">is</span> <span class="kc">False</span>
-</code></pre></div>
-</div>
-</details>
+<h2 id="_4">Четвёртый тест: частичное и логически несогласованное состояние</h2>
+<p>Четвёртый тест показывает нам, что <code>CreateFlags</code> — чистый DTO без бизнес-валидации: можно
+установить <code>good_create_base = True</code> при <code>need_create = False</code>, и никакого исключения не будет.
+У теста вывод именно такой потому что проверка согласованности флагов — ответственность
+Orchestrator, а не DTO.</p>
 <details class="docs-test-case">
 <summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
 <div class="docs-test-panel">
@@ -1122,49 +893,20 @@ flags.need_create = False</code></pre>
 
 #### Вывод
 
-<pre><code>Тест ничего не печатает.
-Проверяется состояние:
-flags.good_create_base = True
-flags.need_create = False
-flags.good_create_policy = False
-flags.good_create_DUDL = False
-flags.good_create_address = False
+<pre><code>flags.good_create_base    is True   → True
+flags.need_create         is False  → True
+flags.good_create_policy  is False  → True
+flags.good_create_DUDL    is False  → True
+flags.good_create_address is False  → True
 
-tests/source/test_create_flags.py::test_create_flags_allows_partial_and_logically_inconsistent_states PASSED</code></pre>
+PASSED</code></pre>
 </div>
 </details>
-<h2 id="_9">Пятый тест: контракт полей остается маленьким и булевым</h2>
-<h3 id="_10">Докстринг теста</h3>
-<div class="language-python highlight"><pre><span></span><code><span class="n">Проверяет</span> <span class="n">состав</span> <span class="n">полей</span> <span class="err">`</span><span class="n">CreateFlags</span><span class="err">`</span> <span class="n">и</span> <span class="n">их</span> <span class="n">булев</span> <span class="n">тип</span><span class="o">.</span>
-</code></pre></div>
-<p>Пятый тест не смотрит на runtime-значения, а защищает shape DTO. Он проверяет,
-что набор полей не расползся и что все аннотации остались булевыми.</p>
-<p>Это важно, потому что <code>CreateFlags</code> используется как компактное состояние
-create-flow, а не как контейнер для разнородных данных.</p>
-<details class="docs-test-case">
-<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
-<div class="docs-test-panel">
-<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_create_flags_field_contract_stays_small_and_bool_only</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""Проверяет состав полей `CreateFlags` и их булев тип."""</span>
-    <span class="c1"># Arrange</span>
-    <span class="n">dto_fields</span> <span class="o">=</span> <span class="n">fields</span><span class="p">(</span><span class="n">CreateFlags</span><span class="p">)</span>
-    <span class="n">type_hints</span> <span class="o">=</span> <span class="n">get_type_hints</span><span class="p">(</span><span class="n">CreateFlags</span><span class="p">)</span>
-
-    <span class="c1"># Act</span>
-    <span class="n">field_names</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">field</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">dto_fields</span><span class="p">)</span>
-
-    <span class="c1"># Assert</span>
-    <span class="k">assert</span> <span class="n">field_names</span> <span class="o">==</span> <span class="p">(</span>
-        <span class="s2">"need_create"</span><span class="p">,</span>
-        <span class="s2">"good_create_base"</span><span class="p">,</span>
-        <span class="s2">"good_create_policy"</span><span class="p">,</span>
-        <span class="s2">"good_create_DUDL"</span><span class="p">,</span>
-        <span class="s2">"good_create_address"</span><span class="p">,</span>
-    <span class="p">)</span>
-    <span class="k">assert</span> <span class="nb">all</span><span class="p">(</span><span class="n">type_hints</span><span class="p">[</span><span class="n">field_name</span><span class="p">]</span> <span class="ow">is</span> <span class="nb">bool</span> <span class="k">for</span> <span class="n">field_name</span> <span class="ow">in</span> <span class="n">field_names</span><span class="p">)</span>
-</code></pre></div>
-</div>
-</details>
+<h2 id="dto_1">Пятый тест: контракт полей DTO зафиксирован</h2>
+<p>Пятый тест показывает нам, что <code>CreateFlags</code> содержит ровно пять булевых полей с точными именами
+и порядком объявления. У теста вывод именно такой потому что <code>dataclasses.fields()</code> и
+<code>get_type_hints()</code> фиксируют публичный контракт DTO, и тест не позволит добавить или переименовать
+поле без явного обновления этой фиксации.</p>
 <details class="docs-test-case">
 <summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
 <div class="docs-test-panel">
@@ -1180,56 +922,31 @@ type_hints = get_type_hints(CreateFlags)</code></pre>
 
 #### Вывод
 
-<pre><code>Тест ничего не печатает.
-Проверяется контракт:
-field_names = (
-    "need_create",
-    "good_create_base",
-    "good_create_policy",
-    "good_create_DUDL",
-    "good_create_address",
+<pre><code>field_names == (
+    'need_create',
+    'good_create_base',
+    'good_create_policy',
+    'good_create_DUDL',
+    'good_create_address',
 )
-type_hints для всех этих полей = bool
+all(type_hints[name] is bool for name in field_names) → True
 
-tests/source/test_create_flags.py::test_create_flags_field_contract_stays_small_and_bool_only PASSED</code></pre>
+PASSED</code></pre>
 </div>
 </details>
-<h2 id="context-createflags">Шестой тест: у каждого context свой экземпляр CreateFlags</h2>
-<h3 id="_11">Докстринг теста</h3>
-<div class="language-python highlight"><pre><span></span><code><span class="n">Проверяет</span> <span class="n">отдельный</span> <span class="n">экземпляр</span> <span class="err">`</span><span class="n">CreateFlags</span><span class="err">`</span> <span class="n">для</span> <span class="n">каждого</span> <span class="err">`</span><span class="n">ERZL_Context</span><span class="err">`</span><span class="o">.</span>
-</code></pre></div>
-<p>Шестой тест уже смотрит не на сам DTO, а на его использование внутри
-<code>ERZL_Context</code>. Он проверяет, что <code>default_factory</code> выдает разные объекты, а не
-один общий экземпляр на все контексты.</p>
-<p>Поэтому изменение флага у <code>left_context</code> не должно просачиваться в
+<h2 id="createflags_1">Шестой тест: независимые экземпляры CreateFlags у контекстов</h2>
+<p>Шестой тест показывает нам, что каждый <code>ERZL_Context</code> получает собственный независимый объект
+<code>CreateFlags</code> через <code>default_factory</code>. У теста вывод именно такой потому что если бы контексты
+разделяли один объект, изменение <code>left_context.create_flags.need_create</code> повлияло бы и на
 <code>right_context</code>.</p>
-<details class="docs-test-case">
-<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
-<div class="docs-test-panel">
-<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_erzl_context_gets_independent_create_flags_instances</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""Проверяет отдельный экземпляр `CreateFlags` для каждого `ERZL_Context`."""</span>
-    <span class="c1"># Arrange</span>
-    <span class="n">left_context</span> <span class="o">=</span> <span class="n">_make_context</span><span class="p">()</span>
-    <span class="n">right_context</span> <span class="o">=</span> <span class="n">_make_context</span><span class="p">()</span>
-
-    <span class="c1"># Act</span>
-    <span class="n">left_context</span><span class="o">.</span><span class="n">create_flags</span><span class="o">.</span><span class="n">need_create</span> <span class="o">=</span> <span class="kc">True</span>
-
-    <span class="c1"># Assert</span>
-    <span class="k">assert</span> <span class="n">left_context</span><span class="o">.</span><span class="n">create_flags</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">right_context</span><span class="o">.</span><span class="n">create_flags</span>
-    <span class="k">assert</span> <span class="n">left_context</span><span class="o">.</span><span class="n">create_flags</span><span class="o">.</span><span class="n">need_create</span> <span class="ow">is</span> <span class="kc">True</span>
-    <span class="k">assert</span> <span class="n">right_context</span><span class="o">.</span><span class="n">create_flags</span><span class="o">.</span><span class="n">need_create</span> <span class="ow">is</span> <span class="kc">False</span>
-</code></pre></div>
-</div>
-</details>
 <details class="docs-test-case">
 <summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
 <div class="docs-test-panel">
 
 #### Вход
 
-<pre><code>left_context = _make_context()
-right_context = _make_context()</code></pre>
+<pre><code>left_context  = ERZL_Context(SourceData={PersonFields.SURNAME: 'Ivanov'}, index=0, ...)
+right_context = ERZL_Context(SourceData={PersonFields.SURNAME: 'Ivanov'}, index=0, ...)</code></pre>
 
 #### Вызов
 
@@ -1237,45 +954,18 @@ right_context = _make_context()</code></pre>
 
 #### Вывод
 
-<pre><code>Тест ничего не печатает.
-Проверяется состояние:
-left_context.create_flags is not right_context.create_flags
-left_context.create_flags.need_create = True
-right_context.create_flags.need_create = False
+<pre><code>left_context.create_flags is not right_context.create_flags → True
+left_context.create_flags.need_create                       → True
+right_context.create_flags.need_create                      → False
 
-tests/source/test_create_flags.py::test_erzl_context_gets_independent_create_flags_instances PASSED</code></pre>
+PASSED</code></pre>
 </div>
 </details>
-<h2 id="reset-dto">Седьмой тест: reset заменяет старый DTO новым дефолтным состоянием</h2>
-<h3 id="_12">Докстринг теста</h3>
-<div class="language-python highlight"><pre><span></span><code><span class="n">Проверяет</span> <span class="n">сброс</span> <span class="n">флагов</span> <span class="n">на</span> <span class="n">новый</span> <span class="n">DTO</span> <span class="n">с</span> <span class="n">дефолтным</span> <span class="n">состоянием</span><span class="o">.</span>
-</code></pre></div>
-<p>Последний тест показывает реальное место использования <code>CreateFlags</code>:
-<code>ERZLAdapter.reset_create_flags(context)</code> не обнуляет поля по одному, а
-подменяет <code>context.create_flags</code> новым экземпляром.</p>
-<p>Именно поэтому после сброса проверяются сразу две вещи: ссылка на объект
-изменилась и новое состояние полностью совпало с <code>CreateFlags()</code>.</p>
-<details class="docs-test-case">
-<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
-<div class="docs-test-panel">
-<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_erzl_adapter_reset_create_flags_replaces_state_with_new_defaults</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">"""Проверяет сброс флагов на новый DTO с дефолтным состоянием."""</span>
-    <span class="c1"># Arrange</span>
-    <span class="n">adapter</span> <span class="o">=</span> <span class="n">ERZLAdapter</span><span class="p">()</span>
-    <span class="n">context</span> <span class="o">=</span> <span class="n">_make_context</span><span class="p">()</span>
-    <span class="n">context</span><span class="o">.</span><span class="n">create_flags</span><span class="o">.</span><span class="n">need_create</span> <span class="o">=</span> <span class="kc">True</span>
-    <span class="n">context</span><span class="o">.</span><span class="n">create_flags</span><span class="o">.</span><span class="n">good_create_base</span> <span class="o">=</span> <span class="kc">True</span>
-    <span class="n">old_flags</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">create_flags</span>
-
-    <span class="c1"># Act</span>
-    <span class="n">adapter</span><span class="o">.</span><span class="n">reset_create_flags</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
-
-    <span class="c1"># Assert</span>
-    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">create_flags</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">old_flags</span>
-    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">create_flags</span> <span class="o">==</span> <span class="n">CreateFlags</span><span class="p">()</span>
-</code></pre></div>
-</div>
-</details>
+<h2 id="reset_create_flags">Седьмой тест: reset_create_flags заменяет объект целиком</h2>
+<p>Седьмой тест показывает нам, что <code>ERZLAdapter.reset_create_flags()</code> не обнуляет поля по одному,
+а полностью заменяет <code>context.create_flags</code> на новый <code>CreateFlags()</code>. У теста вывод именно такой
+потому что после вызова идентичность объекта меняется (<code>context.create_flags is not old_flags</code>),
+а значения совпадают с дефолтными.</p>
 <details class="docs-test-case">
 <summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
 <div class="docs-test-panel">
@@ -1283,8 +973,8 @@ tests/source/test_create_flags.py::test_erzl_context_gets_independent_create_fla
 #### Вход
 
 <pre><code>adapter = ERZLAdapter()
-context = _make_context()
-context.create_flags.need_create = True
+context = ERZL_Context(SourceData={PersonFields.SURNAME: 'Ivanov'}, index=0, ...)
+context.create_flags.need_create      = True
 context.create_flags.good_create_base = True
 old_flags = context.create_flags</code></pre>
 
@@ -1294,12 +984,10 @@ old_flags = context.create_flags</code></pre>
 
 #### Вывод
 
-<pre><code>Тест ничего не печатает.
-Проверяется состояние:
-context.create_flags is not old_flags
-context.create_flags == CreateFlags()
+<pre><code>context.create_flags is not old_flags → True
+context.create_flags == CreateFlags() → True
 
-tests/source/test_create_flags.py::test_erzl_adapter_reset_create_flags_replaces_state_with_new_defaults PASSED</code></pre>
+PASSED</code></pre>
 </div>
 </details>
 </article>
