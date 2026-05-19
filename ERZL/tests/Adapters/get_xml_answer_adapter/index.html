@@ -1,0 +1,1484 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../erzl_adapter/" rel="prev"/>
+<link href="../rename_to_source_input_adapter/" rel="next"/>
+<link href="../../../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<title>Тесты GetXMLAnswerAdapter - Integration Documentation</title>
+<link href="../../../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../../assets/_mkdocstrings.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/toc-collapse.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/docs-tests.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#getxmlansweradapter">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Integration Documentation" class="md-header__button md-logo" data-md-component="logo" href="../../../.." title="Integration Documentation">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Integration Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Тесты GetXMLAnswerAdapter
+            
+          </span>
+</div>
+</div>
+</div>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Integration Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../../../.." title="Integration Documentation">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    Integration Documentation
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../..">
+<span class="md-ellipsis">
+    
+  
+    Общая структура проекта
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    ERZL
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    ERZL
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../architecture/ERZLcontext-lifestyle-mermaid/">
+<span class="md-ellipsis">
+    
+  
+    Жизненный цикл ERZL_Context
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../architecture/overview/">
+<span class="md-ellipsis">
+    
+  
+    Архитектура системы
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    How to
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    How to
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA/">
+<span class="md-ellipsis">
+    
+  
+    Добавить источник
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%D0%BB%D0%B5%20%D0%BE%D1%82%20%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B0%20%D0%B4%D0%BE%20XML/">
+<span class="md-ellipsis">
+    
+  
+    Добавить поле от источника до XML
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%D0%BF%D1%8B%D1%82%D0%BA%D1%83/">
+<span class="md-ellipsis">
+    
+  
+    Добавить попытку
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D1%84%D0%B8%D0%BB%D1%8C%20%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%B0%D1%86%D0%B8%D0%B8%20%D0%B2%20config.toml/">
+<span class="md-ellipsis">
+    
+  
+    Добавить профиль активации в config.toml
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%9E%D1%82%D0%BB%D0%B0%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BE%D1%82%D0%B2%D0%B5%D1%82%20ERZL/">
+<span class="md-ellipsis">
+    
+  
+    Отладить ответ ERZL
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../reference/api/">
+<span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Tests
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Tests
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_4_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_1" id="__nav_2_4_1_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Adapters
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_4_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Adapters
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../adapter_base/">
+<span class="md-ellipsis">
+    
+  
+    Тесты AdapterBase
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../erzl_adapter/">
+<span class="md-ellipsis">
+    
+  
+    Тесты ERZLAdapter
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Тесты GetXMLAnswerAdapter
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    Тесты GetXMLAnswerAdapter
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
+      
+        Докстринг модуля
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      
+        Зачем этот адаптер
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#response">
+<span class="md-ellipsis">
+      
+        Первый тест: первый успешный response
+      
+    </span>
+</a>
+<nav aria-label="Первый тест: первый успешный response" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#merge-response">
+<span class="md-ellipsis">
+      
+        Второй тест: merge успешного response
+      
+    </span>
+</a>
+<nav aria-label="Второй тест: merge успешного response" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#merge">
+<span class="md-ellipsis">
+      
+        Третий тест: merge серверных ошибок
+      
+    </span>
+</a>
+<nav aria-label="Третий тест: merge серверных ошибок" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#create-responses">
+<span class="md-ellipsis">
+      
+        Четвертый тест: разные create responses
+      
+    </span>
+</a>
+<nav aria-label="Четвертый тест: разные create responses" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#result-mistakes">
+<span class="md-ellipsis">
+      
+        Пятый тест: result и mistakes вместе
+      
+    </span>
+</a>
+<nav aria-label="Пятый тест: result и mistakes вместе" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../rename_to_source_input_adapter/">
+<span class="md-ellipsis">
+    
+  
+    Тесты RenameToSourceInputAdapter
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../rename_to_source_input_adapter_cfg/">
+<span class="md-ellipsis">
+    
+  
+    Тесты RenameToSourceInputAdapterCfg
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../rename_xml_kv_pairs_adapter/">
+<span class="md-ellipsis">
+    
+  
+    Тесты RenameXmlKVPairsAdapter
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_2" id="__nav_2_4_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Pipeline
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Pipeline
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Pipeline/answer_decision_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты AnswerDecisionStep
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Pipeline/build_search_xml_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты BuildSearchXMLStep
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Pipeline/create_person_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты CreatePersonStep
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Pipeline/load_context_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты LoadContextStep
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Pipeline/prepare_attempt_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты PrepareAttemptStep
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Pipeline/transport_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты TransportStep
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_3" id="__nav_2_4_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Source
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Source
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Source/create_flags/">
+<span class="md-ellipsis">
+    
+  
+    Тесты CreateFlags
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Source/erzl_context/">
+<span class="md-ellipsis">
+    
+  
+    Тесты ERZL_Context
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Source/person_fields/">
+<span class="md-ellipsis">
+    
+  
+    Тесты PersonFields
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Source/xlsm_row_dto/">
+<span class="md-ellipsis">
+    
+  
+    Тесты XLSMRowDTO
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_4" id="__nav_2_4_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    XML
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    XML
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../XML/client_section/">
+<span class="md-ellipsis">
+    
+  
+    Тесты ClientSection
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../XML/container_fields_section/">
+<span class="md-ellipsis">
+    
+  
+    Тесты ContainerFieldsSection
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../XML/xml_builder_base/">
+<span class="md-ellipsis">
+    
+  
+    Тесты XMLBuilderBase
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="getxmlansweradapter">Тесты GetXMLAnswerAdapter</h1>
+<p>Эта страница показывает наглядные сценарии из общего test-файла. В браузере
+Python не запускается: блоки <code>Показать вызов</code> раскрывают эталонный вывод,
+который дает команда:</p>
+<div class="language-powershell highlight"><pre><span></span><code><span class="n">python</span> <span class="n">-m</span> <span class="n">pytest</span> <span class="n">-vv</span> <span class="n">-s</span> <span class="n">tests</span><span class="p">/</span><span class="n">adapters</span><span class="p">/</span><span class="n">test_get_xml_answer_adapter</span><span class="p">.</span><span class="n">py</span>
+</code></pre></div>
+<p>Флаг <code>-s</code> нужен, чтобы <code>pytest</code> не скрывал печать сценариев и в документации
+были видны реальные блоки <code>Вход</code>, <code>Вызов</code>, <code>Вывод</code> и <code>Ошибка</code>.</p>
+<h2 id="_1">Докстринг модуля</h2>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Наглядные</span> <span class="n">тесты</span> <span class="n">для</span> <span class="err">`</span><span class="n">GetXMLAnswerAdapter</span><span class="err">`</span><span class="o">.</span>
+
+<span class="n">Модуль</span> <span class="n">показывает</span> <span class="n">типовые</span> <span class="n">сценарии</span> <span class="n">работы</span> <span class="err">`</span><span class="n">rslt_container_to_ctx</span><span class="err">`</span> <span class="n">на</span> <span class="n">простых</span>
+<span class="n">подготовленных</span> <span class="n">DTO</span><span class="p">,</span> <span class="n">печатает</span> <span class="n">состояние</span> <span class="n">контейнера</span> <span class="n">до</span> <span class="n">и</span> <span class="n">после</span> <span class="n">вызова</span> <span class="n">и</span>
+<span class="n">дополнительно</span> <span class="n">фиксирует</span> <span class="n">базовые</span> <span class="n">контрактные</span> <span class="n">ограничения</span> <span class="n">адаптера</span><span class="o">.</span>
+</code></pre></div>
+<p>Исходный код больше не вынесен в один общий блок сверху. Ниже у каждого
+сценария есть отдельный раскрывающийся блок с кодом именно того теста,
+который документируется.</p>
+<h2 id="_2">Зачем этот адаптер</h2>
+<p><code>GetXMLAnswerAdapter</code> стоит после XML parser. Parser возвращает временный
+<code>XMLRsltContainer</code>, а adapter переносит его содержимое в
+<code>context.rslt_container</code>.</p>
+<p>Метод класса:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="n">returned_value</span> <span class="o">=</span> <span class="n">adapter</span><span class="o">.</span><span class="n">rslt_container_to_ctx</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">rslt</span><span class="p">)</span>
+</code></pre></div>
+<p>Метод ничего не возвращает. Его результат — измененный <code>context.rslt_container</code>.</p>
+<p>Важно по типам:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="n">XMLRsltContainer</span><span class="o">.</span><span class="n">result</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">XMLFieldValDTO</span><span class="p">]</span>
+<span class="n">XMLFieldValDTO</span><span class="o">.</span><span class="n">container</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">XMLOneFieldVal</span><span class="p">]</span>
+<span class="n">XMLRsltContainer</span><span class="o">.</span><span class="n">mistakes</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">XMLErrorDTO</span><span class="p">]</span>
+<span class="n">XMLErrorDTO</span><span class="o">.</span><span class="n">container</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">XMLErrorVal</span><span class="p">]</span>
+</code></pre></div>
+<h2 id="response">Первый тест: первый успешный response</h2>
+<h3 id="_3">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Показывает</span> <span class="n">добавление</span> <span class="n">первого</span> <span class="n">успешного</span> <span class="n">response</span> <span class="n">в</span> <span class="n">пустой</span> <span class="n">context</span><span class="o">.</span>
+</code></pre></div>
+<p>Первый тест показывает нам самый простой сценарий: context еще пустой, parser
+вернул один успешный <code>findPersonsResponse</code>, и adapter кладет его в
+<code>context.rslt_container.result</code>.</p>
+<p>У теста вывод именно такой потому что в context еще нет response с именем
+<code>findPersonsResponse</code>, поэтому создается первая верхнеуровневая запись
+<code>XMLFieldValDTO</code>.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_rslt_container_to_ctx_adds_first_success_response</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Показывает добавление первого успешного response в пустой context."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">RsltContainerContextStub</span><span class="p">(</span><span class="n">rslt_container</span><span class="o">=</span><span class="n">XMLRsltContainer</span><span class="p">())</span>
+    <span class="n">incoming</span> <span class="o">=</span> <span class="n">XMLRsltContainer</span><span class="p">(</span>
+        <span class="n">result</span><span class="o">=</span><span class="p">[</span><span class="n">_success_result</span><span class="p">(</span><span class="s2">"findPersonsResponse"</span><span class="p">,</span> <span class="p">[(</span><span class="s2">"id"</span><span class="p">,</span> <span class="s2">"42"</span><span class="p">)])],</span>
+    <span class="p">)</span>
+    <span class="n">adapter</span> <span class="o">=</span> <span class="n">GetXMLAnswerAdapter</span><span class="p">()</span>
+    <span class="n">before</span> <span class="o">=</span> <span class="n">XMLRsltContainer</span><span class="p">()</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">returned_value</span> <span class="o">=</span> <span class="n">adapter</span><span class="o">.</span><span class="n">rslt_container_to_ctx</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">incoming</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">returned_value</span> <span class="ow">is</span> <span class="kc">None</span>
+    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">rslt_container</span> <span class="o">==</span> <span class="n">XMLRsltContainer</span><span class="p">(</span>
+        <span class="n">result</span><span class="o">=</span><span class="p">[</span><span class="n">_success_result</span><span class="p">(</span><span class="s2">"findPersonsResponse"</span><span class="p">,</span> <span class="p">[(</span><span class="s2">"id"</span><span class="p">,</span> <span class="s2">"42"</span><span class="p">)])]</span>
+    <span class="p">)</span>
+
+    <span class="n">_print_case</span><span class="p">(</span>
+        <span class="n">title</span><span class="o">=</span><span class="s2">"GetXMLAnswerAdapter.rslt_container_to_ctx: первый успешный response"</span><span class="p">,</span>
+        <span class="n">before</span><span class="o">=</span><span class="n">before</span><span class="p">,</span>
+        <span class="n">incoming</span><span class="o">=</span><span class="n">incoming</span><span class="p">,</span>
+        <span class="n">after</span><span class="o">=</span><span class="n">context</span><span class="o">.</span><span class="n">rslt_container</span><span class="p">,</span>
+        <span class="n">returned_value</span><span class="o">=</span><span class="n">returned_value</span><span class="p">,</span>
+    <span class="p">)</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>context.rslt_container до вызова =
+XMLRsltContainer(
+    result=[
+    ],
+    mistakes=[
+    ],
+)
+rslt =
+XMLRsltContainer(
+    result=[
+        XMLFieldValDTO(
+            response_name='findPersonsResponse',
+            container=[
+                XMLOneFieldVal(container_name='id', container_val='42'),
+            ],
+        ),
+    ],
+    mistakes=[
+    ],
+)</code></pre>
+
+#### Вызов
+
+<pre><code>returned_value = adapter.rslt_container_to_ctx(context, rslt)</code></pre>
+
+#### Вывод
+
+<pre><code>returned_value = None
+context.rslt_container после вызова =
+XMLRsltContainer(
+    result=[
+        XMLFieldValDTO(
+            response_name='findPersonsResponse',
+            container=[
+                XMLOneFieldVal(container_name='id', container_val='42'),
+            ],
+        ),
+    ],
+    mistakes=[
+    ],
+)
+
+PASSED</code></pre>
+</div>
+</details>
+<h2 id="merge-response">Второй тест: merge успешного response</h2>
+<h3 id="_4">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Показывает</span> <span class="n">накопление</span> <span class="n">успешных</span> <span class="n">полей</span> <span class="n">внутри</span> <span class="n">одного</span> <span class="err">`</span><span class="n">response_name</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<p>Второй тест показывает нам накопление данных по одному response. В context уже
+есть <code>XMLFieldValDTO(response_name='findPersonsResponse')</code> с <code>id</code>, а новый
+parser-result принес еще <code>surnameInitials</code> для того же response.</p>
+<p>У теста вывод именно такой потому что adapter не создает второй
+<code>XMLFieldValDTO</code> с тем же <code>response_name</code>, а дописывает новый <code>XMLOneFieldVal</code>
+в <code>container</code> уже существующего DTO.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_rslt_container_to_ctx_merges_success_response_by_name</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Показывает накопление успешных полей внутри одного `response_name`."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">existing</span> <span class="o">=</span> <span class="n">_success_result</span><span class="p">(</span><span class="s2">"findPersonsResponse"</span><span class="p">,</span> <span class="p">[(</span><span class="s2">"id"</span><span class="p">,</span> <span class="s2">"42"</span><span class="p">)])</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">RsltContainerContextStub</span><span class="p">(</span>
+        <span class="n">rslt_container</span><span class="o">=</span><span class="n">XMLRsltContainer</span><span class="p">(</span><span class="n">result</span><span class="o">=</span><span class="p">[</span><span class="n">existing</span><span class="p">])</span>
+    <span class="p">)</span>
+    <span class="n">incoming</span> <span class="o">=</span> <span class="n">XMLRsltContainer</span><span class="p">(</span>
+        <span class="n">result</span><span class="o">=</span><span class="p">[</span>
+            <span class="n">_success_result</span><span class="p">(</span>
+                <span class="s2">"findPersonsResponse"</span><span class="p">,</span>
+                <span class="p">[(</span><span class="s2">"surnameInitials"</span><span class="p">,</span> <span class="s2">"ИВАНОВ И.И."</span><span class="p">)],</span>
+            <span class="p">)</span>
+        <span class="p">],</span>
+    <span class="p">)</span>
+    <span class="n">adapter</span> <span class="o">=</span> <span class="n">GetXMLAnswerAdapter</span><span class="p">()</span>
+    <span class="n">before</span> <span class="o">=</span> <span class="n">XMLRsltContainer</span><span class="p">(</span>
+        <span class="n">result</span><span class="o">=</span><span class="p">[</span><span class="n">_success_result</span><span class="p">(</span><span class="s2">"findPersonsResponse"</span><span class="p">,</span> <span class="p">[(</span><span class="s2">"id"</span><span class="p">,</span> <span class="s2">"42"</span><span class="p">)])]</span>
+    <span class="p">)</span>
+    <span class="n">existing_id</span> <span class="o">=</span> <span class="nb">id</span><span class="p">(</span><span class="n">existing</span><span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">returned_value</span> <span class="o">=</span> <span class="n">adapter</span><span class="o">.</span><span class="n">rslt_container_to_ctx</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">incoming</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">returned_value</span> <span class="ow">is</span> <span class="kc">None</span>
+    <span class="k">assert</span> <span class="nb">id</span><span class="p">(</span><span class="n">context</span><span class="o">.</span><span class="n">rslt_container</span><span class="o">.</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">==</span> <span class="n">existing_id</span>
+    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">rslt_container</span> <span class="o">==</span> <span class="n">XMLRsltContainer</span><span class="p">(</span>
+        <span class="n">result</span><span class="o">=</span><span class="p">[</span>
+            <span class="n">_success_result</span><span class="p">(</span>
+                <span class="s2">"findPersonsResponse"</span><span class="p">,</span>
+                <span class="p">[(</span><span class="s2">"id"</span><span class="p">,</span> <span class="s2">"42"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"surnameInitials"</span><span class="p">,</span> <span class="s2">"ИВАНОВ И.И."</span><span class="p">)],</span>
+            <span class="p">)</span>
+        <span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="n">_print_case</span><span class="p">(</span>
+        <span class="n">title</span><span class="o">=</span><span class="s2">"GetXMLAnswerAdapter.rslt_container_to_ctx: merge успешного response"</span><span class="p">,</span>
+        <span class="n">before</span><span class="o">=</span><span class="n">before</span><span class="p">,</span>
+        <span class="n">incoming</span><span class="o">=</span><span class="n">incoming</span><span class="p">,</span>
+        <span class="n">after</span><span class="o">=</span><span class="n">context</span><span class="o">.</span><span class="n">rslt_container</span><span class="p">,</span>
+        <span class="n">returned_value</span><span class="o">=</span><span class="n">returned_value</span><span class="p">,</span>
+    <span class="p">)</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>context.rslt_container до вызова =
+XMLRsltContainer(
+    result=[
+        XMLFieldValDTO(
+            response_name='findPersonsResponse',
+            container=[
+                XMLOneFieldVal(container_name='id', container_val='42'),
+            ],
+        ),
+    ],
+    mistakes=[
+    ],
+)
+rslt =
+XMLRsltContainer(
+    result=[
+        XMLFieldValDTO(
+            response_name='findPersonsResponse',
+            container=[
+                XMLOneFieldVal(container_name='surnameInitials', container_val='ИВАНОВ И.И.'),
+            ],
+        ),
+    ],
+    mistakes=[
+    ],
+)</code></pre>
+
+#### Вызов
+
+<pre><code>returned_value = adapter.rslt_container_to_ctx(context, rslt)</code></pre>
+
+#### Вывод
+
+<pre><code>returned_value = None
+context.rslt_container после вызова =
+XMLRsltContainer(
+    result=[
+        XMLFieldValDTO(
+            response_name='findPersonsResponse',
+            container=[
+                XMLOneFieldVal(container_name='id', container_val='42'),
+                XMLOneFieldVal(container_name='surnameInitials', container_val='ИВАНОВ И.И.'),
+            ],
+        ),
+    ],
+    mistakes=[
+    ],
+)
+
+PASSED</code></pre>
+</div>
+</details>
+<h2 id="merge">Третий тест: merge серверных ошибок</h2>
+<h3 id="_5">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Показывает</span> <span class="n">накопление</span> <span class="n">серверных</span> <span class="n">ошибок</span> <span class="n">внутри</span> <span class="n">одного</span> <span class="err">`</span><span class="n">response_name</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<p>Третий тест показывает нам такую же логику для <code>mistakes</code>. В context уже есть
+<code>XMLErrorDTO(response_name='findPersonsResponse')</code> с ошибкой <code>404</code>, а новый
+parser-result принес ошибку <code>422</code> для того же <code>response_name</code>.</p>
+<p>У теста вывод именно такой потому что успешные данные и ошибки хранятся в
+разных списках, но внутри <code>mistakes</code> merge выполняется по тому же
+<code>response_name</code>.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_rslt_container_to_ctx_merges_server_mistakes_by_name</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Показывает накопление серверных ошибок внутри одного `response_name`."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">existing</span> <span class="o">=</span> <span class="n">_mistake_result</span><span class="p">(</span><span class="s2">"findPersonsResponse"</span><span class="p">,</span> <span class="p">[(</span><span class="s2">"404"</span><span class="p">,</span> <span class="s2">"Не найдено"</span><span class="p">)])</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">RsltContainerContextStub</span><span class="p">(</span>
+        <span class="n">rslt_container</span><span class="o">=</span><span class="n">XMLRsltContainer</span><span class="p">(</span><span class="n">mistakes</span><span class="o">=</span><span class="p">[</span><span class="n">existing</span><span class="p">])</span>
+    <span class="p">)</span>
+    <span class="n">incoming</span> <span class="o">=</span> <span class="n">XMLRsltContainer</span><span class="p">(</span>
+        <span class="n">mistakes</span><span class="o">=</span><span class="p">[</span>
+            <span class="n">_mistake_result</span><span class="p">(</span><span class="s2">"findPersonsResponse"</span><span class="p">,</span> <span class="p">[(</span><span class="s2">"422"</span><span class="p">,</span> <span class="s2">"Некорректный id"</span><span class="p">)])</span>
+        <span class="p">],</span>
+    <span class="p">)</span>
+    <span class="n">adapter</span> <span class="o">=</span> <span class="n">GetXMLAnswerAdapter</span><span class="p">()</span>
+    <span class="n">before</span> <span class="o">=</span> <span class="n">XMLRsltContainer</span><span class="p">(</span>
+        <span class="n">mistakes</span><span class="o">=</span><span class="p">[</span><span class="n">_mistake_result</span><span class="p">(</span><span class="s2">"findPersonsResponse"</span><span class="p">,</span> <span class="p">[(</span><span class="s2">"404"</span><span class="p">,</span> <span class="s2">"Не найдено"</span><span class="p">)])]</span>
+    <span class="p">)</span>
+    <span class="n">existing_id</span> <span class="o">=</span> <span class="nb">id</span><span class="p">(</span><span class="n">existing</span><span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">returned_value</span> <span class="o">=</span> <span class="n">adapter</span><span class="o">.</span><span class="n">rslt_container_to_ctx</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">incoming</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">returned_value</span> <span class="ow">is</span> <span class="kc">None</span>
+    <span class="k">assert</span> <span class="nb">id</span><span class="p">(</span><span class="n">context</span><span class="o">.</span><span class="n">rslt_container</span><span class="o">.</span><span class="n">mistakes</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">==</span> <span class="n">existing_id</span>
+    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">rslt_container</span> <span class="o">==</span> <span class="n">XMLRsltContainer</span><span class="p">(</span>
+        <span class="n">mistakes</span><span class="o">=</span><span class="p">[</span>
+            <span class="n">_mistake_result</span><span class="p">(</span>
+                <span class="s2">"findPersonsResponse"</span><span class="p">,</span>
+                <span class="p">[(</span><span class="s2">"404"</span><span class="p">,</span> <span class="s2">"Не найдено"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"422"</span><span class="p">,</span> <span class="s2">"Некорректный id"</span><span class="p">)],</span>
+            <span class="p">)</span>
+        <span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="n">_print_case</span><span class="p">(</span>
+        <span class="n">title</span><span class="o">=</span><span class="s2">"GetXMLAnswerAdapter.rslt_container_to_ctx: merge серверных ошибок"</span><span class="p">,</span>
+        <span class="n">before</span><span class="o">=</span><span class="n">before</span><span class="p">,</span>
+        <span class="n">incoming</span><span class="o">=</span><span class="n">incoming</span><span class="p">,</span>
+        <span class="n">after</span><span class="o">=</span><span class="n">context</span><span class="o">.</span><span class="n">rslt_container</span><span class="p">,</span>
+        <span class="n">returned_value</span><span class="o">=</span><span class="n">returned_value</span><span class="p">,</span>
+    <span class="p">)</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>context.rslt_container до вызова =
+XMLRsltContainer(
+    result=[
+    ],
+    mistakes=[
+        XMLErrorDTO(
+            response_name='findPersonsResponse',
+            container=[
+                XMLErrorVal(error_code='404', error_val='Не найдено'),
+            ],
+        ),
+    ],
+)
+rslt =
+XMLRsltContainer(
+    result=[
+    ],
+    mistakes=[
+        XMLErrorDTO(
+            response_name='findPersonsResponse',
+            container=[
+                XMLErrorVal(error_code='422', error_val='Некорректный id'),
+            ],
+        ),
+    ],
+)</code></pre>
+
+#### Вызов
+
+<pre><code>returned_value = adapter.rslt_container_to_ctx(context, rslt)</code></pre>
+
+#### Вывод
+
+<pre><code>returned_value = None
+context.rslt_container после вызова =
+XMLRsltContainer(
+    result=[
+    ],
+    mistakes=[
+        XMLErrorDTO(
+            response_name='findPersonsResponse',
+            container=[
+                XMLErrorVal(error_code='404', error_val='Не найдено'),
+                XMLErrorVal(error_code='422', error_val='Некорректный id'),
+            ],
+        ),
+    ],
+)
+
+PASSED</code></pre>
+</div>
+</details>
+<h2 id="create-responses">Четвертый тест: разные create responses</h2>
+<h3 id="_6">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Показывает</span> <span class="n">create</span><span class="o">-</span><span class="n">flow</span><span class="p">,</span> <span class="n">где</span> <span class="n">разные</span> <span class="n">response</span> <span class="n">хранятся</span> <span class="n">раздельно</span><span class="o">.</span>
+</code></pre></div>
+<p>Четвертый тест показывает нам create-flow: в context уже есть положительный
+ответ от создания базовой персоны, а потом приходит положительный ответ от
+создания ДУЛ.</p>
+<p>У теста вывод именно такой потому что <code>addUpdateNonresidentPersonResponse</code> и
+<code>addUpdateDudl20211008Response</code> имеют разные <code>response_name</code>. Adapter не
+склеивает их между собой, а хранит как два разных <code>XMLFieldValDTO</code> внутри
+<code>XMLRsltContainer.result</code>.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_rslt_container_to_ctx_keeps_different_create_responses_separate</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Показывает create-flow, где разные response хранятся раздельно."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">RsltContainerContextStub</span><span class="p">(</span>
+        <span class="n">rslt_container</span><span class="o">=</span><span class="n">XMLRsltContainer</span><span class="p">(</span>
+            <span class="n">result</span><span class="o">=</span><span class="p">[</span>
+                <span class="n">_success_result</span><span class="p">(</span>
+                    <span class="s2">"addUpdateNonresidentPersonResponse"</span><span class="p">,</span>
+                    <span class="p">[(</span><span class="s2">"id"</span><span class="p">,</span> <span class="s2">"person-42"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"surname"</span><span class="p">,</span> <span class="s2">"Иванов"</span><span class="p">)],</span>
+                <span class="p">)</span>
+            <span class="p">]</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">incoming</span> <span class="o">=</span> <span class="n">XMLRsltContainer</span><span class="p">(</span>
+        <span class="n">result</span><span class="o">=</span><span class="p">[</span>
+            <span class="n">_success_result</span><span class="p">(</span>
+                <span class="s2">"addUpdateDudl20211008Response"</span><span class="p">,</span>
+                <span class="p">[(</span><span class="s2">"dudlId"</span><span class="p">,</span> <span class="s2">"dudl-77"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"dudlNom"</span><span class="p">,</span> <span class="s2">"123456"</span><span class="p">)],</span>
+            <span class="p">)</span>
+        <span class="p">],</span>
+    <span class="p">)</span>
+    <span class="n">adapter</span> <span class="o">=</span> <span class="n">GetXMLAnswerAdapter</span><span class="p">()</span>
+    <span class="n">before</span> <span class="o">=</span> <span class="n">XMLRsltContainer</span><span class="p">(</span>
+        <span class="n">result</span><span class="o">=</span><span class="p">[</span>
+            <span class="n">_success_result</span><span class="p">(</span>
+                <span class="s2">"addUpdateNonresidentPersonResponse"</span><span class="p">,</span>
+                <span class="p">[(</span><span class="s2">"id"</span><span class="p">,</span> <span class="s2">"person-42"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"surname"</span><span class="p">,</span> <span class="s2">"Иванов"</span><span class="p">)],</span>
+            <span class="p">)</span>
+        <span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">returned_value</span> <span class="o">=</span> <span class="n">adapter</span><span class="o">.</span><span class="n">rslt_container_to_ctx</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">incoming</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">returned_value</span> <span class="ow">is</span> <span class="kc">None</span>
+    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">rslt_container</span> <span class="o">==</span> <span class="n">XMLRsltContainer</span><span class="p">(</span>
+        <span class="n">result</span><span class="o">=</span><span class="p">[</span>
+            <span class="n">_success_result</span><span class="p">(</span>
+                <span class="s2">"addUpdateNonresidentPersonResponse"</span><span class="p">,</span>
+                <span class="p">[(</span><span class="s2">"id"</span><span class="p">,</span> <span class="s2">"person-42"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"surname"</span><span class="p">,</span> <span class="s2">"Иванов"</span><span class="p">)],</span>
+            <span class="p">),</span>
+            <span class="n">_success_result</span><span class="p">(</span>
+                <span class="s2">"addUpdateDudl20211008Response"</span><span class="p">,</span>
+                <span class="p">[(</span><span class="s2">"dudlId"</span><span class="p">,</span> <span class="s2">"dudl-77"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"dudlNom"</span><span class="p">,</span> <span class="s2">"123456"</span><span class="p">)],</span>
+            <span class="p">),</span>
+        <span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="n">_print_case</span><span class="p">(</span>
+        <span class="n">title</span><span class="o">=</span><span class="s2">"GetXMLAnswerAdapter.rslt_container_to_ctx: разные create responses"</span><span class="p">,</span>
+        <span class="n">before</span><span class="o">=</span><span class="n">before</span><span class="p">,</span>
+        <span class="n">incoming</span><span class="o">=</span><span class="n">incoming</span><span class="p">,</span>
+        <span class="n">after</span><span class="o">=</span><span class="n">context</span><span class="o">.</span><span class="n">rslt_container</span><span class="p">,</span>
+        <span class="n">returned_value</span><span class="o">=</span><span class="n">returned_value</span><span class="p">,</span>
+    <span class="p">)</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>context.rslt_container до вызова =
+XMLRsltContainer(
+    result=[
+        XMLFieldValDTO(
+            response_name='addUpdateNonresidentPersonResponse',
+            container=[
+                XMLOneFieldVal(container_name='id', container_val='person-42'),
+                XMLOneFieldVal(container_name='surname', container_val='Иванов'),
+            ],
+        ),
+    ],
+    mistakes=[
+    ],
+)
+rslt =
+XMLRsltContainer(
+    result=[
+        XMLFieldValDTO(
+            response_name='addUpdateDudl20211008Response',
+            container=[
+                XMLOneFieldVal(container_name='dudlId', container_val='dudl-77'),
+                XMLOneFieldVal(container_name='dudlNom', container_val='123456'),
+            ],
+        ),
+    ],
+    mistakes=[
+    ],
+)</code></pre>
+
+#### Вызов
+
+<pre><code>returned_value = adapter.rslt_container_to_ctx(context, rslt)</code></pre>
+
+#### Вывод
+
+<pre><code>returned_value = None
+context.rslt_container после вызова =
+XMLRsltContainer(
+    result=[
+        XMLFieldValDTO(
+            response_name='addUpdateNonresidentPersonResponse',
+            container=[
+                XMLOneFieldVal(container_name='id', container_val='person-42'),
+                XMLOneFieldVal(container_name='surname', container_val='Иванов'),
+            ],
+        ),
+        XMLFieldValDTO(
+            response_name='addUpdateDudl20211008Response',
+            container=[
+                XMLOneFieldVal(container_name='dudlId', container_val='dudl-77'),
+                XMLOneFieldVal(container_name='dudlNom', container_val='123456'),
+            ],
+        ),
+    ],
+    mistakes=[
+    ],
+)
+
+PASSED</code></pre>
+</div>
+</details>
+<h2 id="result-mistakes">Пятый тест: result и mistakes вместе</h2>
+<h3 id="_7">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Показывает</span> <span class="n">независимое</span> <span class="n">накопление</span> <span class="err">`</span><span class="n">result</span><span class="err">`</span> <span class="n">и</span> <span class="err">`</span><span class="n">mistakes</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<p>Пятый тест показывает нам, что adapter может обработать incoming container,
+в котором одновременно есть успешные данные и серверные ошибки.</p>
+<p>У теста вывод именно такой потому что <code>result</code> и <code>mistakes</code> объединяются
+независимо: успешный <code>XMLOneFieldVal(container_name='sexId')</code> дописывается в
+<code>result</code>, а ошибка <code>XMLErrorVal(error_code='200')</code> — в <code>mistakes</code>.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_rslt_container_to_ctx_merges_success_and_mistakes_independently</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Показывает независимое накопление `result` и `mistakes`."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">RsltContainerContextStub</span><span class="p">(</span>
+        <span class="n">rslt_container</span><span class="o">=</span><span class="n">XMLRsltContainer</span><span class="p">(</span>
+            <span class="n">result</span><span class="o">=</span><span class="p">[</span><span class="n">_success_result</span><span class="p">(</span><span class="s2">"findPersonsResponse"</span><span class="p">,</span> <span class="p">[(</span><span class="s2">"id"</span><span class="p">,</span> <span class="s2">"42"</span><span class="p">)])],</span>
+            <span class="n">mistakes</span><span class="o">=</span><span class="p">[</span><span class="n">_mistake_result</span><span class="p">(</span><span class="s2">"findPersonsResponse"</span><span class="p">,</span> <span class="p">[(</span><span class="s2">"100"</span><span class="p">,</span> <span class="s2">"old"</span><span class="p">)])],</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">incoming</span> <span class="o">=</span> <span class="n">XMLRsltContainer</span><span class="p">(</span>
+        <span class="n">result</span><span class="o">=</span><span class="p">[</span><span class="n">_success_result</span><span class="p">(</span><span class="s2">"findPersonsResponse"</span><span class="p">,</span> <span class="p">[(</span><span class="s2">"sexId"</span><span class="p">,</span> <span class="s2">"1"</span><span class="p">)])],</span>
+        <span class="n">mistakes</span><span class="o">=</span><span class="p">[</span><span class="n">_mistake_result</span><span class="p">(</span><span class="s2">"findPersonsResponse"</span><span class="p">,</span> <span class="p">[(</span><span class="s2">"200"</span><span class="p">,</span> <span class="s2">"new"</span><span class="p">)])],</span>
+    <span class="p">)</span>
+    <span class="n">adapter</span> <span class="o">=</span> <span class="n">GetXMLAnswerAdapter</span><span class="p">()</span>
+    <span class="n">before</span> <span class="o">=</span> <span class="n">XMLRsltContainer</span><span class="p">(</span>
+        <span class="n">result</span><span class="o">=</span><span class="p">[</span><span class="n">_success_result</span><span class="p">(</span><span class="s2">"findPersonsResponse"</span><span class="p">,</span> <span class="p">[(</span><span class="s2">"id"</span><span class="p">,</span> <span class="s2">"42"</span><span class="p">)])],</span>
+        <span class="n">mistakes</span><span class="o">=</span><span class="p">[</span><span class="n">_mistake_result</span><span class="p">(</span><span class="s2">"findPersonsResponse"</span><span class="p">,</span> <span class="p">[(</span><span class="s2">"100"</span><span class="p">,</span> <span class="s2">"old"</span><span class="p">)])],</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">returned_value</span> <span class="o">=</span> <span class="n">adapter</span><span class="o">.</span><span class="n">rslt_container_to_ctx</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">incoming</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">returned_value</span> <span class="ow">is</span> <span class="kc">None</span>
+    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">rslt_container</span> <span class="o">==</span> <span class="n">XMLRsltContainer</span><span class="p">(</span>
+        <span class="n">result</span><span class="o">=</span><span class="p">[</span>
+            <span class="n">_success_result</span><span class="p">(</span><span class="s2">"findPersonsResponse"</span><span class="p">,</span> <span class="p">[(</span><span class="s2">"id"</span><span class="p">,</span> <span class="s2">"42"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"sexId"</span><span class="p">,</span> <span class="s2">"1"</span><span class="p">)])</span>
+        <span class="p">],</span>
+        <span class="n">mistakes</span><span class="o">=</span><span class="p">[</span>
+            <span class="n">_mistake_result</span><span class="p">(</span><span class="s2">"findPersonsResponse"</span><span class="p">,</span> <span class="p">[(</span><span class="s2">"100"</span><span class="p">,</span> <span class="s2">"old"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"200"</span><span class="p">,</span> <span class="s2">"new"</span><span class="p">)])</span>
+        <span class="p">],</span>
+    <span class="p">)</span>
+
+    <span class="n">_print_case</span><span class="p">(</span>
+        <span class="n">title</span><span class="o">=</span><span class="s2">"GetXMLAnswerAdapter.rslt_container_to_ctx: result и mistakes вместе"</span><span class="p">,</span>
+        <span class="n">before</span><span class="o">=</span><span class="n">before</span><span class="p">,</span>
+        <span class="n">incoming</span><span class="o">=</span><span class="n">incoming</span><span class="p">,</span>
+        <span class="n">after</span><span class="o">=</span><span class="n">context</span><span class="o">.</span><span class="n">rslt_container</span><span class="p">,</span>
+        <span class="n">returned_value</span><span class="o">=</span><span class="n">returned_value</span><span class="p">,</span>
+    <span class="p">)</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>context.rslt_container до вызова =
+XMLRsltContainer(
+    result=[
+        XMLFieldValDTO(
+            response_name='findPersonsResponse',
+            container=[
+                XMLOneFieldVal(container_name='id', container_val='42'),
+            ],
+        ),
+    ],
+    mistakes=[
+        XMLErrorDTO(
+            response_name='findPersonsResponse',
+            container=[
+                XMLErrorVal(error_code='100', error_val='old'),
+            ],
+        ),
+    ],
+)
+rslt =
+XMLRsltContainer(
+    result=[
+        XMLFieldValDTO(
+            response_name='findPersonsResponse',
+            container=[
+                XMLOneFieldVal(container_name='sexId', container_val='1'),
+            ],
+        ),
+    ],
+    mistakes=[
+        XMLErrorDTO(
+            response_name='findPersonsResponse',
+            container=[
+                XMLErrorVal(error_code='200', error_val='new'),
+            ],
+        ),
+    ],
+)</code></pre>
+
+#### Вызов
+
+<pre><code>returned_value = adapter.rslt_container_to_ctx(context, rslt)</code></pre>
+
+#### Вывод
+
+<pre><code>returned_value = None
+context.rslt_container после вызова =
+XMLRsltContainer(
+    result=[
+        XMLFieldValDTO(
+            response_name='findPersonsResponse',
+            container=[
+                XMLOneFieldVal(container_name='id', container_val='42'),
+                XMLOneFieldVal(container_name='sexId', container_val='1'),
+            ],
+        ),
+    ],
+    mistakes=[
+        XMLErrorDTO(
+            response_name='findPersonsResponse',
+            container=[
+                XMLErrorVal(error_code='100', error_val='old'),
+                XMLErrorVal(error_code='200', error_val='new'),
+            ],
+        ),
+    ],
+)
+
+PASSED</code></pre>
+</div>
+</details>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.sections", "toc.integrate", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../../../../assets/javascripts/toc-collapse.js"></script>
+</body>
+</html>

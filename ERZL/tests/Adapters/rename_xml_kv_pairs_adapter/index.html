@@ -1,0 +1,1327 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../rename_to_source_input_adapter_cfg/" rel="prev"/>
+<link href="../../Pipeline/answer_decision_step/" rel="next"/>
+<link href="../../../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<title>Тесты RenameXmlKVPairsAdapter - Integration Documentation</title>
+<link href="../../../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../../assets/_mkdocstrings.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/toc-collapse.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/docs-tests.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#renamexmlkvpairsadapter">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Integration Documentation" class="md-header__button md-logo" data-md-component="logo" href="../../../.." title="Integration Documentation">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Integration Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Тесты RenameXmlKVPairsAdapter
+            
+          </span>
+</div>
+</div>
+</div>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Integration Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../../../.." title="Integration Documentation">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    Integration Documentation
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../..">
+<span class="md-ellipsis">
+    
+  
+    Общая структура проекта
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    ERZL
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    ERZL
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../architecture/ERZLcontext-lifestyle-mermaid/">
+<span class="md-ellipsis">
+    
+  
+    Жизненный цикл ERZL_Context
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../architecture/overview/">
+<span class="md-ellipsis">
+    
+  
+    Архитектура системы
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    How to
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    How to
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA/">
+<span class="md-ellipsis">
+    
+  
+    Добавить источник
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%D0%BB%D0%B5%20%D0%BE%D1%82%20%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B0%20%D0%B4%D0%BE%20XML/">
+<span class="md-ellipsis">
+    
+  
+    Добавить поле от источника до XML
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%D0%BF%D1%8B%D1%82%D0%BA%D1%83/">
+<span class="md-ellipsis">
+    
+  
+    Добавить попытку
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D1%84%D0%B8%D0%BB%D1%8C%20%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%B0%D1%86%D0%B8%D0%B8%20%D0%B2%20config.toml/">
+<span class="md-ellipsis">
+    
+  
+    Добавить профиль активации в config.toml
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%9E%D1%82%D0%BB%D0%B0%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BE%D1%82%D0%B2%D0%B5%D1%82%20ERZL/">
+<span class="md-ellipsis">
+    
+  
+    Отладить ответ ERZL
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../reference/api/">
+<span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Tests
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Tests
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_4_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_1" id="__nav_2_4_1_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Adapters
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_4_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Adapters
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../adapter_base/">
+<span class="md-ellipsis">
+    
+  
+    Тесты AdapterBase
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../erzl_adapter/">
+<span class="md-ellipsis">
+    
+  
+    Тесты ERZLAdapter
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../get_xml_answer_adapter/">
+<span class="md-ellipsis">
+    
+  
+    Тесты GetXMLAnswerAdapter
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../rename_to_source_input_adapter/">
+<span class="md-ellipsis">
+    
+  
+    Тесты RenameToSourceInputAdapter
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../rename_to_source_input_adapter_cfg/">
+<span class="md-ellipsis">
+    
+  
+    Тесты RenameToSourceInputAdapterCfg
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Тесты RenameXmlKVPairsAdapter
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    Тесты RenameXmlKVPairsAdapter
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
+      
+        Докстринг модуля
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      
+        Зачем этот адаптер
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#xmlkvpairs">
+<span class="md-ellipsis">
+      
+        Первый тест: базовая сборка XMLKVPairs
+      
+    </span>
+</a>
+<nav aria-label="Первый тест: базовая сборка XMLKVPairs" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#xml">
+<span class="md-ellipsis">
+      
+        Второй тест: подготовка значений к XML
+      
+    </span>
+</a>
+<nav aria-label="Второй тест: подготовка значений к XML" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#context">
+<span class="md-ellipsis">
+      
+        Третий тест: сборка из context
+      
+    </span>
+</a>
+<nav aria-label="Третий тест: сборка из context" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source">
+<span class="md-ellipsis">
+      
+        Четвертый тест: выбранного поля нет в source
+      
+    </span>
+</a>
+<nav aria-label="Четвертый тест: выбранного поля нет в source" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#none">
+<span class="md-ellipsis">
+      
+        Пятый тест: значение равно None
+      
+    </span>
+</a>
+<nav aria-label="Пятый тест: значение равно None" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_2" id="__nav_2_4_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Pipeline
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Pipeline
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Pipeline/answer_decision_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты AnswerDecisionStep
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Pipeline/build_search_xml_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты BuildSearchXMLStep
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Pipeline/create_person_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты CreatePersonStep
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Pipeline/load_context_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты LoadContextStep
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Pipeline/prepare_attempt_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты PrepareAttemptStep
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Pipeline/transport_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты TransportStep
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_3" id="__nav_2_4_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Source
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Source
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Source/create_flags/">
+<span class="md-ellipsis">
+    
+  
+    Тесты CreateFlags
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Source/erzl_context/">
+<span class="md-ellipsis">
+    
+  
+    Тесты ERZL_Context
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Source/person_fields/">
+<span class="md-ellipsis">
+    
+  
+    Тесты PersonFields
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Source/xlsm_row_dto/">
+<span class="md-ellipsis">
+    
+  
+    Тесты XLSMRowDTO
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_4" id="__nav_2_4_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    XML
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    XML
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../XML/client_section/">
+<span class="md-ellipsis">
+    
+  
+    Тесты ClientSection
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../XML/container_fields_section/">
+<span class="md-ellipsis">
+    
+  
+    Тесты ContainerFieldsSection
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../XML/xml_builder_base/">
+<span class="md-ellipsis">
+    
+  
+    Тесты XMLBuilderBase
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="renamexmlkvpairsadapter">Тесты RenameXmlKVPairsAdapter</h1>
+<p>Эта страница показывает наглядные сценарии из общего test-файла. В браузере
+Python не запускается: блоки <code>Показать вызов</code> раскрывают эталонный вывод,
+который дает команда:</p>
+<div class="language-powershell highlight"><pre><span></span><code><span class="n">python</span> <span class="n">-m</span> <span class="n">pytest</span> <span class="n">-vv</span> <span class="n">-s</span> <span class="n">tests</span><span class="p">/</span><span class="n">adapters</span><span class="p">/</span><span class="n">test_rename_xml_kv_pairs_adapter</span><span class="p">.</span><span class="n">py</span>
+</code></pre></div>
+<p>Флаг <code>-s</code> нужен, чтобы <code>pytest</code> не скрывал печать сценариев и в документации
+были видны реальные блоки <code>Вход</code>, <code>Вызов</code>, <code>Вывод</code> и <code>Ошибка</code>.</p>
+<h2 id="_1">Докстринг модуля</h2>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Наглядные</span> <span class="n">тесты</span> <span class="n">для</span> <span class="err">`</span><span class="n">RenameXmlKVPairsAdapter</span><span class="err">`</span><span class="o">.</span>
+
+<span class="n">Модуль</span> <span class="n">показывает</span> <span class="n">типовые</span> <span class="n">сценарии</span> <span class="n">работы</span> <span class="n">методов</span>
+<span class="err">`</span><span class="n">build_from_source_fields</span><span class="p">()</span><span class="err">`</span> <span class="n">и</span> <span class="err">`</span><span class="n">rename_XMLKVPairs_from_ctx</span><span class="p">()</span><span class="err">`</span><span class="p">,</span> <span class="n">печатает</span> <span class="n">вход</span><span class="p">,</span>
+<span class="n">вызов</span><span class="p">,</span> <span class="n">результат</span> <span class="n">или</span> <span class="n">ошибку</span> <span class="n">и</span> <span class="n">дополнительно</span> <span class="n">фиксирует</span> <span class="n">базовые</span> <span class="n">контрактные</span>
+<span class="n">границы</span> <span class="n">адаптера</span><span class="o">.</span>
+</code></pre></div>
+<p>Исходный код больше не вынесен в один общий блок сверху. Ниже у каждого
+сценария есть отдельный раскрывающийся блок с кодом именно того теста,
+который документируется.</p>
+<h2 id="_2">Зачем этот адаптер</h2>
+<p><code>RenameXmlKVPairsAdapter</code> стоит на границе <code>Adapters -&gt; XML</code>.
+Он берет уже нормализованные <code>PersonFields</code> из source/context, выбирает поля
+текущей попытки и строит <code>XMLKVPairs</code> для XML builder.</p>
+<p>У класса два рабочих метода:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="n">result</span> <span class="o">=</span> <span class="n">adapter</span><span class="o">.</span><span class="n">build_from_source_fields</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">selected_fields</span><span class="p">)</span>
+</code></pre></div>
+<p>и context-обертка:</p>
+<div class="language-python highlight"><pre><span></span><code><span class="n">result</span> <span class="o">=</span> <span class="n">adapter</span><span class="o">.</span><span class="n">rename_XMLKVPairs_from_ctx</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="xmlkvpairs">Первый тест: базовая сборка XMLKVPairs</h2>
+<h3 id="_3">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Показывает</span> <span class="n">базовый</span> <span class="n">сценарий</span> <span class="n">преобразования</span> <span class="n">выбранных</span> <span class="n">полей</span> <span class="n">в</span> <span class="err">`</span><span class="n">XMLKVPairs</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<p>Первый тест показывает нам основной сценарий: в <code>source</code> есть несколько
+канонических полей, но текущая попытка выбрала только часть из них.
+Адаптер берет только <code>selected_fields</code>, переименовывает их через
+<code>fields_rename</code> и возвращает <code>XMLKVPairs</code>.</p>
+<p>У теста вывод именно такой потому что <code>PersonFields.SURNAME</code> и
+<code>PersonFields.NAME</code> выбраны для текущей попытки, а <code>PersonFields.PATRONYMIC</code>
+лежит в <code>source</code>, но не входит в <code>selected_fields</code>.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_build_from_source_fields_maps_selected_source_fields_to_xml_pairs</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Показывает базовый сценарий преобразования выбранных полей в `XMLKVPairs`."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">source</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">:</span> <span class="s2">"Иванов"</span><span class="p">,</span>
+        <span class="n">PersonFields</span><span class="o">.</span><span class="n">NAME</span><span class="p">:</span> <span class="s2">"Иван"</span><span class="p">,</span>
+        <span class="n">PersonFields</span><span class="o">.</span><span class="n">PATRONYMIC</span><span class="p">:</span> <span class="s2">"Иванович"</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">selected_fields</span> <span class="o">=</span> <span class="p">(</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">,</span> <span class="n">PersonFields</span><span class="o">.</span><span class="n">NAME</span><span class="p">)</span>
+    <span class="n">adapter</span> <span class="o">=</span> <span class="n">_make_adapter</span><span class="p">()</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">adapter</span><span class="o">.</span><span class="n">build_from_source_fields</span><span class="p">(</span>
+        <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span>
+        <span class="n">selected_fields</span><span class="o">=</span><span class="n">selected_fields</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="n">XMLKVPairs</span><span class="p">(</span>
+        <span class="n">pairs</span><span class="o">=</span><span class="p">((</span><span class="s2">"surname"</span><span class="p">,</span> <span class="s2">"Иванов"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"namep"</span><span class="p">,</span> <span class="s2">"Иван"</span><span class="p">))</span>
+    <span class="p">)</span>
+
+    <span class="n">_print_success_case</span><span class="p">(</span>
+        <span class="n">title</span><span class="o">=</span><span class="s2">"RenameXmlKVPairsAdapter.build_from_source_fields: базовая сборка XMLKVPairs"</span><span class="p">,</span>
+        <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span>
+        <span class="n">selected_fields</span><span class="o">=</span><span class="n">selected_fields</span><span class="p">,</span>
+        <span class="n">fields_rename</span><span class="o">=</span><span class="n">XML_FIELDS_RENAME</span><span class="p">,</span>
+        <span class="n">call_text</span><span class="o">=</span><span class="s2">"result = adapter.build_from_source_fields(source, selected_fields)"</span><span class="p">,</span>
+        <span class="n">result</span><span class="o">=</span><span class="n">result</span><span class="p">,</span>
+    <span class="p">)</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>source =
+{
+    PersonFields.SURNAME: 'Иванов',
+    PersonFields.NAME: 'Иван',
+    PersonFields.PATRONYMIC: 'Иванович',
+}
+selected_fields =
+(
+    PersonFields.SURNAME,
+    PersonFields.NAME,
+)
+fields_rename =
+{
+    PersonFields.SURNAME: ERZLBasePersonXMLFields.SURNAME,
+    PersonFields.NAME: ERZLBasePersonXMLFields.NAME,
+}</code></pre>
+
+#### Вызов
+
+<pre><code>result = adapter.build_from_source_fields(source, selected_fields)</code></pre>
+
+#### Вывод
+
+<pre><code>XMLKVPairs(
+    pairs=(
+        ('surname', 'Иванов'),
+        ('namep', 'Иван'),
+    ),
+)
+
+Не попало в XMLKVPairs:
+(
+    PersonFields.PATRONYMIC,
+)
+
+PASSED</code></pre>
+</div>
+</details>
+<h2 id="xml">Второй тест: подготовка значений к XML</h2>
+<h3 id="_4">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Показывает</span> <span class="n">приведение</span> <span class="n">значений</span> <span class="n">к</span> <span class="err">`</span><span class="nb">str</span><span class="err">`</span> <span class="n">и</span> <span class="err">`</span><span class="n">strip</span><span class="p">()</span><span class="err">`</span> <span class="n">перед</span> <span class="n">XML</span><span class="o">-</span><span class="n">слоем</span><span class="o">.</span>
+</code></pre></div>
+<p>Второй тест показывает нам важное отличие от <code>RenameToSourceInputAdapter</code>:
+перед XML-слоем значения уже приводятся к строке и очищаются через <code>strip()</code>.
+Это касается не только фамилии и даты рождения, а всего выбранного набора
+полей текущей попытки.</p>
+<p>У теста вывод именно такой потому что <code>"  Иванов  "</code> превращается в
+<code>"Иванов"</code>, число <code>1</code> становится строкой <code>"1"</code>, <code>False</code> становится
+<code>"False"</code>, <code>datetime</code> и <code>date</code> сериализуются в текст, а <code>timedelta</code>
+превращается в строку <code>"2 days, 0:05:00"</code>.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_build_from_source_fields_strips_and_stringifies_values</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Показывает приведение значений к `str` и `strip()` перед XML-слоем."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">source</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">:</span> <span class="s2">"  Иванов  "</span><span class="p">,</span>
+        <span class="n">PersonFields</span><span class="o">.</span><span class="n">POLICY_TYPE</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="n">PersonFields</span><span class="o">.</span><span class="n">POLICY_STATUS</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">PersonFields</span><span class="o">.</span><span class="n">INSURP_ID</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">,</span>
+        <span class="n">PersonFields</span><span class="o">.</span><span class="n">DATE_BIRTH</span><span class="p">:</span> <span class="n">date</span><span class="p">(</span><span class="mi">1990</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span>
+        <span class="n">PersonFields</span><span class="o">.</span><span class="n">POLICY_DATE_BEGIN</span><span class="p">:</span> <span class="n">datetime</span><span class="p">(</span><span class="mi">2026</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>
+        <span class="n">PersonFields</span><span class="o">.</span><span class="n">DUDL_SERIES</span><span class="p">:</span> <span class="n">time</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">45</span><span class="p">),</span>
+        <span class="n">PersonFields</span><span class="o">.</span><span class="n">DUDL_NUMBER</span><span class="p">:</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">minutes</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span>
+    <span class="p">}</span>
+    <span class="n">selected_fields</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+    <span class="n">adapter</span> <span class="o">=</span> <span class="n">_make_adapter</span><span class="p">()</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">adapter</span><span class="o">.</span><span class="n">build_from_source_fields</span><span class="p">(</span>
+        <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span>
+        <span class="n">selected_fields</span><span class="o">=</span><span class="n">selected_fields</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="n">XMLKVPairs</span><span class="p">(</span>
+        <span class="n">pairs</span><span class="o">=</span><span class="p">(</span>
+            <span class="p">(</span><span class="s2">"surname"</span><span class="p">,</span> <span class="s2">"Иванов"</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">"policyT"</span><span class="p">,</span> <span class="s2">"1"</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">"sPolicyStatusCode"</span><span class="p">,</span> <span class="s2">"False"</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">"insurpId"</span><span class="p">,</span> <span class="s2">"1.5"</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">"dateBirth"</span><span class="p">,</span> <span class="s2">"1990-01-20"</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">"plDateB"</span><span class="p">,</span> <span class="s2">"2026-05-13 10:30:00"</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">"dudlSer"</span><span class="p">,</span> <span class="s2">"08:45:00"</span><span class="p">),</span>
+            <span class="p">(</span><span class="s2">"dudlNom"</span><span class="p">,</span> <span class="s2">"2 days, 0:05:00"</span><span class="p">),</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="n">_print_success_case</span><span class="p">(</span>
+        <span class="n">title</span><span class="o">=</span><span class="s2">"RenameXmlKVPairsAdapter.build_from_source_fields: подготовка значений к XML"</span><span class="p">,</span>
+        <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span>
+        <span class="n">selected_fields</span><span class="o">=</span><span class="n">selected_fields</span><span class="p">,</span>
+        <span class="n">fields_rename</span><span class="o">=</span><span class="n">XML_FIELDS_RENAME</span><span class="p">,</span>
+        <span class="n">call_text</span><span class="o">=</span><span class="s2">"result = adapter.build_from_source_fields(source, selected_fields)"</span><span class="p">,</span>
+        <span class="n">result</span><span class="o">=</span><span class="n">result</span><span class="p">,</span>
+    <span class="p">)</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>source =
+{
+    PersonFields.SURNAME: '  Иванов  ',
+    PersonFields.POLICY_TYPE: 1,
+    PersonFields.POLICY_STATUS: False,
+    PersonFields.INSURP_ID: 1.5,
+    PersonFields.DATE_BIRTH: datetime.date(1990, 1, 20),
+    PersonFields.POLICY_DATE_BEGIN: datetime.datetime(2026, 5, 13, 10, 30),
+    PersonFields.DUDL_SERIES: datetime.time(8, 45),
+    PersonFields.DUDL_NUMBER: datetime.timedelta(days=2, seconds=300),
+}
+selected_fields =
+(
+    PersonFields.SURNAME,
+    PersonFields.POLICY_TYPE,
+    PersonFields.POLICY_STATUS,
+    PersonFields.INSURP_ID,
+    PersonFields.DATE_BIRTH,
+    PersonFields.POLICY_DATE_BEGIN,
+    PersonFields.DUDL_SERIES,
+    PersonFields.DUDL_NUMBER,
+)
+fields_rename =
+{
+    PersonFields.SURNAME: ERZLBasePersonXMLFields.SURNAME,
+    PersonFields.POLICY_TYPE: ERZLPolicyXMLFields.POLICY_TYPE,
+    PersonFields.POLICY_STATUS: ERZLPolicyXMLFields.POLICY_STATUS,
+    PersonFields.INSURP_ID: ERZLPolicyXMLFields.INSURP_ID,
+    PersonFields.DATE_BIRTH: ERZLBasePersonXMLFields.DATE_BIRTH,
+    PersonFields.POLICY_DATE_BEGIN: ERZLPolicyXMLFields.POLICY_DATE_BEGIN,
+    PersonFields.DUDL_SERIES: ERZLDUDLXMLFields.DUDL_SERIES,
+    PersonFields.DUDL_NUMBER: ERZLDUDLXMLFields.DUDL_NUMBER,
+}</code></pre>
+
+#### Вызов
+
+<pre><code>result = adapter.build_from_source_fields(source, selected_fields)</code></pre>
+
+#### Вывод
+
+<pre><code>XMLKVPairs(
+    pairs=(
+        ('surname', 'Иванов'),
+        ('policyT', '1'),
+        ('sPolicyStatusCode', 'False'),
+        ('insurpId', '1.5'),
+        ('dateBirth', '1990-01-20'),
+        ('plDateB', '2026-05-13 10:30:00'),
+        ('dudlSer', '08:45:00'),
+        ('dudlNom', '2 days, 0:05:00'),
+    ),
+)
+
+Не попало в XMLKVPairs:
+()
+
+PASSED</code></pre>
+</div>
+</details>
+<h2 id="context">Третий тест: сборка из context</h2>
+<h3 id="_5">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Показывает</span> <span class="n">context</span><span class="o">-</span><span class="n">обертку</span><span class="p">,</span> <span class="n">удобную</span> <span class="n">для</span> <span class="n">вызова</span> <span class="n">после</span> <span class="err">`</span><span class="n">DataSelector</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<p>Третий тест показывает нам метод <code>rename_XMLKVPairs_from_ctx()</code>. Его удобно
+вызывать после <code>DataSelector</code>: context уже содержит все нормализованные данные
+в <code>SourceData</code> и набор полей текущей попытки в <code>DataAttemptStr</code>.</p>
+<p>У теста вывод именно такой потому что context-метод является тонкой оберткой
+над <code>build_from_source_fields()</code> и передает туда <code>context.SourceData</code> вместе с
+<code>context.DataAttemptStr</code>.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_rename_xml_kv_pairs_from_ctx_uses_context_source_and_attempt</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Показывает context-обертку, удобную для вызова после `DataSelector`."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">DataSelectorContextStub</span><span class="p">(</span>
+        <span class="n">SourceData</span><span class="o">=</span><span class="p">{</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">:</span> <span class="s2">"Иванов"</span><span class="p">,</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">NAME</span><span class="p">:</span> <span class="s2">"Иван"</span><span class="p">,</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">DATE_BIRTH</span><span class="p">:</span> <span class="s2">"1990-01-20"</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="n">DataAttemptStr</span><span class="o">=</span><span class="p">(</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">,</span> <span class="n">PersonFields</span><span class="o">.</span><span class="n">DATE_BIRTH</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="n">adapter</span> <span class="o">=</span> <span class="n">_make_adapter</span><span class="p">()</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">adapter</span><span class="o">.</span><span class="n">rename_XMLKVPairs_from_ctx</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="n">XMLKVPairs</span><span class="p">(</span>
+        <span class="n">pairs</span><span class="o">=</span><span class="p">((</span><span class="s2">"surname"</span><span class="p">,</span> <span class="s2">"Иванов"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"dateBirth"</span><span class="p">,</span> <span class="s2">"1990-01-20"</span><span class="p">))</span>
+    <span class="p">)</span>
+
+    <span class="n">_print_context_success_case</span><span class="p">(</span>
+        <span class="n">title</span><span class="o">=</span><span class="s2">"RenameXmlKVPairsAdapter.rename_XMLKVPairs_from_ctx: сборка из context"</span><span class="p">,</span>
+        <span class="n">context</span><span class="o">=</span><span class="n">context</span><span class="p">,</span>
+        <span class="n">fields_rename</span><span class="o">=</span><span class="n">XML_FIELDS_RENAME</span><span class="p">,</span>
+        <span class="n">result</span><span class="o">=</span><span class="n">result</span><span class="p">,</span>
+    <span class="p">)</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>context.SourceData =
+{
+    PersonFields.SURNAME: 'Иванов',
+    PersonFields.NAME: 'Иван',
+    PersonFields.DATE_BIRTH: '1990-01-20',
+}
+context.DataAttemptStr =
+(
+    PersonFields.SURNAME,
+    PersonFields.DATE_BIRTH,
+)
+fields_rename =
+{
+    PersonFields.SURNAME: ERZLBasePersonXMLFields.SURNAME,
+    PersonFields.DATE_BIRTH: ERZLBasePersonXMLFields.DATE_BIRTH,
+}</code></pre>
+
+#### Вызов
+
+<pre><code>result = adapter.rename_XMLKVPairs_from_ctx(context)</code></pre>
+
+#### Вывод
+
+<pre><code>XMLKVPairs(
+    pairs=(
+        ('surname', 'Иванов'),
+        ('dateBirth', '1990-01-20'),
+    ),
+)
+
+PASSED</code></pre>
+</div>
+</details>
+<h2 id="source">Четвертый тест: выбранного поля нет в source</h2>
+<h3 id="_6">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Показывает</span> <span class="n">ошибку</span><span class="p">,</span> <span class="n">если</span> <span class="n">выбранного</span> <span class="n">поля</span> <span class="n">нет</span> <span class="n">в</span> <span class="err">`</span><span class="n">SourceData</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<p>Четвертый тест показывает нам controlled error: <code>DataAttemptStr</code> попросил поле,
+которого нет в <code>SourceData</code>. В таком состоянии нельзя строить XML, потому что
+XML builder получил бы неполный набор данных.</p>
+<p>У теста вывод именно такой потому что <code>PersonFields.DATE_BIRTH</code> есть в
+<code>selected_fields</code>, но отсутствует в <code>source</code>.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_build_from_source_fields_shows_missing_source_key_error</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Показывает ошибку, если выбранного поля нет в `SourceData`."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">source</span> <span class="o">=</span> <span class="p">{</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">:</span> <span class="s2">"Иванов"</span><span class="p">}</span>
+    <span class="n">selected_fields</span> <span class="o">=</span> <span class="p">(</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">,</span> <span class="n">PersonFields</span><span class="o">.</span><span class="n">DATE_BIRTH</span><span class="p">)</span>
+    <span class="n">adapter</span> <span class="o">=</span> <span class="n">_make_adapter</span><span class="p">()</span>
+
+    <span class="c1"># Act / Assert</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="n">RenameAndBuildXmlKVPairsError</span><span class="p">,</span> <span class="n">match</span><span class="o">=</span><span class="s2">"не найден в source"</span><span class="p">)</span> <span class="k">as</span> <span class="n">exc_info</span><span class="p">:</span>
+        <span class="n">adapter</span><span class="o">.</span><span class="n">build_from_source_fields</span><span class="p">(</span>
+            <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span>
+            <span class="n">selected_fields</span><span class="o">=</span><span class="n">selected_fields</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="n">_print_error_case</span><span class="p">(</span>
+        <span class="n">title</span><span class="o">=</span><span class="s2">"RenameXmlKVPairsAdapter.build_from_source_fields: выбранного поля нет в source"</span><span class="p">,</span>
+        <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span>
+        <span class="n">selected_fields</span><span class="o">=</span><span class="n">selected_fields</span><span class="p">,</span>
+        <span class="n">fields_rename</span><span class="o">=</span><span class="n">XML_FIELDS_RENAME</span><span class="p">,</span>
+        <span class="n">call_text</span><span class="o">=</span><span class="s2">"result = adapter.build_from_source_fields(source, selected_fields)"</span><span class="p">,</span>
+        <span class="n">error</span><span class="o">=</span><span class="n">exc_info</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+    <span class="p">)</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>source =
+{
+    PersonFields.SURNAME: 'Иванов',
+}
+selected_fields =
+(
+    PersonFields.SURNAME,
+    PersonFields.DATE_BIRTH,
+)
+fields_rename =
+{
+    PersonFields.SURNAME: ERZLBasePersonXMLFields.SURNAME,
+    PersonFields.DATE_BIRTH: ERZLBasePersonXMLFields.DATE_BIRTH,
+}</code></pre>
+
+#### Вызов
+
+<pre><code>result = adapter.build_from_source_fields(source, selected_fields)</code></pre>
+
+#### Ошибка
+
+<pre><code>RenameAndBuildXmlKVPairsError: Ключ 'dateBirth' не найден в source
+
+PASSED</code></pre>
+</div>
+</details>
+<h2 id="none">Пятый тест: значение равно None</h2>
+<h3 id="_7">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Показывает</span> <span class="n">ошибку</span><span class="p">,</span> <span class="n">если</span> <span class="n">выбранное</span> <span class="n">значение</span> <span class="n">равно</span> <span class="err">`</span><span class="kc">None</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<p>Пятый тест показывает нам controlled error для невалидного значения. Если поле
+выбрано для XML, но значение равно <code>None</code>, адаптер останавливает сборку
+<code>XMLKVPairs</code>.</p>
+<p>У теста вывод именно такой потому что <code>PersonFields.DATE_BIRTH</code> присутствует в
+<code>source</code>, но его значение равно <code>None</code>.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_build_from_source_fields_shows_none_value_error</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Показывает ошибку, если выбранное значение равно `None`."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">source</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">:</span> <span class="s2">"Иванов"</span><span class="p">,</span>
+        <span class="n">PersonFields</span><span class="o">.</span><span class="n">DATE_BIRTH</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">selected_fields</span> <span class="o">=</span> <span class="p">(</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">,</span> <span class="n">PersonFields</span><span class="o">.</span><span class="n">DATE_BIRTH</span><span class="p">)</span>
+    <span class="n">adapter</span> <span class="o">=</span> <span class="n">_make_adapter</span><span class="p">()</span>
+
+    <span class="c1"># Act / Assert</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="n">RenameAndBuildXmlKVPairsError</span><span class="p">,</span> <span class="n">match</span><span class="o">=</span><span class="s2">"равно None"</span><span class="p">)</span> <span class="k">as</span> <span class="n">exc_info</span><span class="p">:</span>
+        <span class="n">adapter</span><span class="o">.</span><span class="n">build_from_source_fields</span><span class="p">(</span>
+            <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span>
+            <span class="n">selected_fields</span><span class="o">=</span><span class="n">selected_fields</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="n">_print_error_case</span><span class="p">(</span>
+        <span class="n">title</span><span class="o">=</span><span class="s2">"RenameXmlKVPairsAdapter.build_from_source_fields: значение равно None"</span><span class="p">,</span>
+        <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span>
+        <span class="n">selected_fields</span><span class="o">=</span><span class="n">selected_fields</span><span class="p">,</span>
+        <span class="n">fields_rename</span><span class="o">=</span><span class="n">XML_FIELDS_RENAME</span><span class="p">,</span>
+        <span class="n">call_text</span><span class="o">=</span><span class="s2">"result = adapter.build_from_source_fields(source, selected_fields)"</span><span class="p">,</span>
+        <span class="n">error</span><span class="o">=</span><span class="n">exc_info</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+    <span class="p">)</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>source =
+{
+    PersonFields.SURNAME: 'Иванов',
+    PersonFields.DATE_BIRTH: None,
+}
+selected_fields =
+(
+    PersonFields.SURNAME,
+    PersonFields.DATE_BIRTH,
+)
+fields_rename =
+{
+    PersonFields.SURNAME: ERZLBasePersonXMLFields.SURNAME,
+    PersonFields.DATE_BIRTH: ERZLBasePersonXMLFields.DATE_BIRTH,
+}</code></pre>
+
+#### Вызов
+
+<pre><code>result = adapter.build_from_source_fields(source, selected_fields)</code></pre>
+
+#### Ошибка
+
+<pre><code>RenameAndBuildXmlKVPairsError: Значение для ключа 'dateBirth' равно None — нельзя построить XMLKVPairs
+
+PASSED</code></pre>
+</div>
+</details>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.sections", "toc.integrate", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../../../../assets/javascripts/toc-collapse.js"></script>
+</body>
+</html>

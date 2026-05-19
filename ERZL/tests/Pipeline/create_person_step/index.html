@@ -1,0 +1,2299 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../build_search_xml_step/" rel="prev"/>
+<link href="../load_context_step/" rel="next"/>
+<link href="../../../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<title>Тесты CreatePersonStep - Integration Documentation</title>
+<link href="../../../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../../assets/_mkdocstrings.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/toc-collapse.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/docs-tests.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#createpersonstep">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Integration Documentation" class="md-header__button md-logo" data-md-component="logo" href="../../../.." title="Integration Documentation">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Integration Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Тесты CreatePersonStep
+            
+          </span>
+</div>
+</div>
+</div>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Integration Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../../../.." title="Integration Documentation">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    Integration Documentation
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../..">
+<span class="md-ellipsis">
+    
+  
+    Общая структура проекта
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    ERZL
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    ERZL
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../architecture/ERZLcontext-lifestyle-mermaid/">
+<span class="md-ellipsis">
+    
+  
+    Жизненный цикл ERZL_Context
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../architecture/overview/">
+<span class="md-ellipsis">
+    
+  
+    Архитектура системы
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    How to
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    How to
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA/">
+<span class="md-ellipsis">
+    
+  
+    Добавить источник
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%D0%BB%D0%B5%20%D0%BE%D1%82%20%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B0%20%D0%B4%D0%BE%20XML/">
+<span class="md-ellipsis">
+    
+  
+    Добавить поле от источника до XML
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%D0%BF%D1%8B%D1%82%D0%BA%D1%83/">
+<span class="md-ellipsis">
+    
+  
+    Добавить попытку
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D1%84%D0%B8%D0%BB%D1%8C%20%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%B0%D1%86%D0%B8%D0%B8%20%D0%B2%20config.toml/">
+<span class="md-ellipsis">
+    
+  
+    Добавить профиль активации в config.toml
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%9E%D1%82%D0%BB%D0%B0%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BE%D1%82%D0%B2%D0%B5%D1%82%20ERZL/">
+<span class="md-ellipsis">
+    
+  
+    Отладить ответ ERZL
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../reference/api/">
+<span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Tests
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Tests
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_1" id="__nav_2_4_1_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Adapters
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Adapters
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Adapters/adapter_base/">
+<span class="md-ellipsis">
+    
+  
+    Тесты AdapterBase
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Adapters/erzl_adapter/">
+<span class="md-ellipsis">
+    
+  
+    Тесты ERZLAdapter
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Adapters/get_xml_answer_adapter/">
+<span class="md-ellipsis">
+    
+  
+    Тесты GetXMLAnswerAdapter
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Adapters/rename_to_source_input_adapter/">
+<span class="md-ellipsis">
+    
+  
+    Тесты RenameToSourceInputAdapter
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Adapters/rename_to_source_input_adapter_cfg/">
+<span class="md-ellipsis">
+    
+  
+    Тесты RenameToSourceInputAdapterCfg
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Adapters/rename_xml_kv_pairs_adapter/">
+<span class="md-ellipsis">
+    
+  
+    Тесты RenameXmlKVPairsAdapter
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_4_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_2" id="__nav_2_4_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Pipeline
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_4_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Pipeline
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../answer_decision_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты AnswerDecisionStep
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../build_search_xml_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты BuildSearchXMLStep
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Тесты CreatePersonStep
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    Тесты CreatePersonStep
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
+      
+        Докстринг модуля
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      
+        Зачем этот класс
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#builder-adapter-bytes-adapter-selector">
+<span class="md-ellipsis">
+      
+        Первый тест: конструктор сохраняет builder, adapter, bytes-adapter и selector
+      
+    </span>
+</a>
+<nav aria-label="Первый тест: конструктор сохраняет builder, adapter, bytes-adapter и selector" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#base-dto-xml-context">
+<span class="md-ellipsis">
+      
+        Второй тест: базовая ветка собирает BASE DTO и пишет xml в context
+      
+    </span>
+</a>
+<nav aria-label="Второй тест: базовая ветка собирает BASE DTO и пишет xml в context" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#not-base-op-erzl_id-context">
+<span class="md-ellipsis">
+      
+        Третий блок: not-base ветка использует текущий op и ERZL_id из context
+      
+    </span>
+</a>
+<nav aria-label="Третий блок: not-base ветка использует текущий op и ERZL_id из context" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#erzl_id-none">
+<span class="md-ellipsis">
+      
+        Четвертый тест: пустая строка ERZL_id не превращается в None
+      
+    </span>
+</a>
+<nav aria-label="Четвертый тест: пустая строка ERZL_id не превращается в None" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#erzl_id-not-base-errorabort">
+<span class="md-ellipsis">
+      
+        Пятый тест: отсутствие ERZL_id в not-base ветке дает ERROR/ABORT до любых вызовов
+      
+    </span>
+</a>
+<nav aria-label="Пятый тест: отсутствие ERZL_id в not-base ветке дает ERROR/ABORT до любых вызовов" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#base-errorabort">
+<span class="md-ellipsis">
+      
+        Шестой блок: контролируемые ошибки base-ветки становятся ERROR/ABORT
+      
+    </span>
+</a>
+<nav aria-label="Шестой блок: контролируемые ошибки base-ветки становятся ERROR/ABORT" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_no_required_key_error_becomes_error_abort">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_no_required_key_error_becomes_error_abort
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_rename_error_becomes_error_abort">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_rename_error_becomes_error_abort
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_builder_retry_error_becomes_error_abort">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_builder_retry_error_becomes_error_abort
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_builder_fail_error_becomes_error_abort">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_builder_fail_error_becomes_error_abort
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#context">
+<span class="md-ellipsis">
+      
+        Седьмой блок: отсутствие обязательных атрибутов context не скрывается
+      
+    </span>
+</a>
+<nav aria-label="Седьмой блок: отсутствие обязательных атрибутов context не скрывается" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_missing_source_data_raises_attribute_error">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_missing_source_data_raises_attribute_error
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_missing_erzl_id_attribute_raises_attribute_error">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_missing_erzl_id_attribute_raises_attribute_error
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#collaborators">
+<span class="md-ellipsis">
+      
+        Восьмой блок: отсутствие обязательных методов collaborators не скрывается
+      
+    </span>
+</a>
+<nav aria-label="Восьмой блок: отсутствие обязательных методов collaborators не скрывается" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_missing_selector_method_raises_attribute_error">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_missing_selector_method_raises_attribute_error
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_missing_rename_method_raises_attribute_error">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_missing_rename_method_raises_attribute_error
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_missing_build_xml_method_raises_attribute_error">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_missing_build_xml_method_raises_attribute_error
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_missing_put_bytes_method_raises_attribute_error">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_missing_put_bytes_method_raises_attribute_error
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#runtime-collaborators">
+<span class="md-ellipsis">
+      
+        Девятый блок: неожиданные runtime-ошибки collaborators пробрасываются
+      
+    </span>
+</a>
+<nav aria-label="Девятый блок: неожиданные runtime-ошибки collaborators пробрасываются" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_unexpected_runtime_error_from_selector_propagates">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_unexpected_runtime_error_from_selector_propagates
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_unexpected_runtime_error_from_adapter_propagates">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_unexpected_runtime_error_from_adapter_propagates
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_unexpected_runtime_error_from_builder_propagates">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_unexpected_runtime_error_from_builder_propagates
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#search-">
+<span class="md-ellipsis">
+      
+        Десятый блок: тело класса изолировано от search-символов
+      
+    </span>
+</a>
+<nav aria-label="Десятый блок: тело класса изолировано от search-символов" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#transport-">
+<span class="md-ellipsis">
+      
+        Одиннадцатый блок: тело класса изолировано от transport-слоя
+      
+    </span>
+</a>
+<nav aria-label="Одиннадцатый блок: тело класса изолировано от transport-слоя" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_9">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#controlled-error-error-stop">
+<span class="md-ellipsis">
+      
+        Двенадцатый тест: controlled error-ветки используют error, а не stop
+      
+    </span>
+</a>
+<nav aria-label="Двенадцатый тест: controlled error-ветки используют error, а не stop" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_10">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#create-">
+<span class="md-ellipsis">
+      
+        Тринадцатый блок: сигнатуры create-методов остаются компактными и синхронными
+      
+    </span>
+</a>
+<nav aria-label="Тринадцатый блок: сигнатуры create-методов остаются компактными и синхронными" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_init_signature_contains_only_expected_parameters">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_init_signature_contains_only_expected_parameters
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_create_person_base_signature_contains_only_context">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_create_person_base_signature_contains_only_context
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_create_person_not_base_signature_contains_context_and_op">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_create_person_not_base_signature_contains_context_and_op
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../load_context_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты LoadContextStep
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../prepare_attempt_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты PrepareAttemptStep
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../transport_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты TransportStep
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_3" id="__nav_2_4_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Source
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Source
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Source/create_flags/">
+<span class="md-ellipsis">
+    
+  
+    Тесты CreateFlags
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Source/erzl_context/">
+<span class="md-ellipsis">
+    
+  
+    Тесты ERZL_Context
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Source/person_fields/">
+<span class="md-ellipsis">
+    
+  
+    Тесты PersonFields
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Source/xlsm_row_dto/">
+<span class="md-ellipsis">
+    
+  
+    Тесты XLSMRowDTO
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_4" id="__nav_2_4_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    XML
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    XML
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../XML/client_section/">
+<span class="md-ellipsis">
+    
+  
+    Тесты ClientSection
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../XML/container_fields_section/">
+<span class="md-ellipsis">
+    
+  
+    Тесты ContainerFieldsSection
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../XML/xml_builder_base/">
+<span class="md-ellipsis">
+    
+  
+    Тесты XMLBuilderBase
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="createpersonstep">Тесты CreatePersonStep</h1>
+<p>Эта страница показывает тесты из общего test-файла. Команда, на которой
+основаны сценарии:</p>
+<div class="language-powershell highlight"><pre><span></span><code><span class="n">python</span> <span class="n">-m</span> <span class="n">pytest</span> <span class="n">-vv</span> <span class="n">-s</span> <span class="n">tests</span><span class="p">/</span><span class="n">pipeline</span><span class="p">/</span><span class="n">test_create_person_step</span><span class="p">.</span><span class="n">py</span>
+</code></pre></div>
+<p>Флаг <code>-s</code> здесь не добавляет пользовательской печати: модуль не выводит свои
+сценарии, поэтому в <code>pytest</code> видны только имена тестов и статусы <code>PASSED</code>.
+Ниже раскрыто, как именно проверяются обе create-ветки шага, controlled
+error-сценарии и архитектурные ограничения <code>CreatePersonStep</code>.</p>
+<h2 id="_1">Докстринг модуля</h2>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Тесты</span> <span class="n">для</span> <span class="err">`</span><span class="n">CreatePersonStep</span><span class="err">`</span><span class="o">.</span>
+
+<span class="n">Модуль</span> <span class="n">фиксирует</span> <span class="n">контракт</span> <span class="n">двух</span> <span class="n">create</span><span class="o">-</span><span class="n">веток</span> <span class="n">шага</span><span class="p">:</span> <span class="err">`</span><span class="n">create_person_base</span><span class="err">`</span> <span class="n">и</span>
+<span class="err">`</span><span class="n">create_person_not_base</span><span class="err">`</span><span class="p">,</span> <span class="n">различие</span> <span class="n">в</span> <span class="n">работе</span> <span class="n">с</span> <span class="err">`</span><span class="n">ERZL_id</span><span class="err">`</span><span class="p">,</span> <span class="n">controlled</span> <span class="n">error</span><span class="o">-</span><span class="n">ветки</span>
+<span class="n">через</span> <span class="err">`</span><span class="n">StepRslt</span><span class="o">.</span><span class="n">error</span><span class="err">`</span><span class="p">,</span> <span class="n">а</span> <span class="n">также</span> <span class="n">архитектурную</span> <span class="n">изоляцию</span> <span class="n">от</span> <span class="n">search</span><span class="o">-</span> <span class="n">и</span>
+<span class="n">transport</span><span class="o">-</span><span class="n">логики</span><span class="o">.</span>
+</code></pre></div>
+<p>Исходный код больше не вынесен в один общий блок сверху. Ниже у каждого
+сценария есть отдельный раскрывающийся блок с кодом именно того теста,
+который документируется.</p>
+<h2 id="_2">Зачем этот класс</h2>
+<p><code>CreatePersonStep</code> живет в Pipeline-слое и отвечает за подготовку XML для
+create-flow. У него две публичные ветки:</p>
+<ul>
+<li><code>create_person_base(context)</code> для первого create-запроса, где <code>ERZL_id</code> еще нет;</li>
+<li><code>create_person_not_base(context, op)</code> для следующих операций, где <code>ERZL_id</code> уже должен быть в context.</li>
+</ul>
+<p>Этот шаг связывает четыре зависимости:</p>
+<ul>
+<li><code>data_selector.get_keys_for_xml(...)</code> выбирает required и optional поля для конкретной create-операции;</li>
+<li><code>adapter.build_from_source_fields(...)</code> превращает выбранные поля в <code>XMLKVPairs</code>;</li>
+<li><code>builder.build_xml(dto)</code> строит XML по <code>XMLCreatePersonDTO</code>;</li>
+<li><code>adapter_put_bytes.put_bytes(context, xml_bytes)</code> записывает готовые байты в <code>context.xml_bytes</code>.</li>
+</ul>
+<p>Этот шаг:</p>
+<ul>
+<li>берет <code>SourceData</code> из context;</li>
+<li>для base/not-base веток собирает разные DTO;</li>
+<li>контролирует обязательность <code>ERZL_id</code> только в not-base пути;</li>
+<li>все ожидаемые error-ветки переводит в <code>StepRslt.error(...)</code>.</li>
+</ul>
+<p>Этот шаг не:</p>
+<ul>
+<li>не работает с search-специфичными <code>AttemptId</code> и <code>DataAttemptStr</code> как с управляющими решениями;</li>
+<li>не отправляет XML и не читает <code>response_bytes</code>;</li>
+<li>не скрывает неожиданные runtime-ошибки collaborators;</li>
+<li>не использует <code>StepRslt.stop(...)</code> для контролируемых create-ошибок.</li>
+</ul>
+<h2 id="builder-adapter-bytes-adapter-selector">Первый тест: конструктор сохраняет builder, adapter, bytes-adapter и selector</h2>
+<h3 id="_3">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Конструктор</span> <span class="n">сохраняет</span> <span class="n">все</span> <span class="n">переданные</span> <span class="n">collaborators</span><span class="o">.</span>
+</code></pre></div>
+<p>Этот тест защищает базовую инициализацию шага. Если один из collaborators
+подменится уже в <code>__init__</code>, далее нельзя будет доверять ни base-ветке, ни
+not-base-ветке.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_init_stores_builder_adapter_put_bytes_and_selector</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Конструктор сохраняет все переданные collaborators."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">builder</span> <span class="o">=</span> <span class="n">_BuilderStub</span><span class="p">()</span>
+    <span class="n">adapter</span> <span class="o">=</span> <span class="n">_RenameAdapterStub</span><span class="p">(</span><span class="n">result</span><span class="o">=</span><span class="n">XMLKVPairs</span><span class="p">(()))</span>
+    <span class="n">put_bytes_adapter</span> <span class="o">=</span> <span class="n">_PutBytesAdapterStub</span><span class="p">()</span>
+    <span class="n">selector</span> <span class="o">=</span> <span class="n">_CreateSelectorStub</span><span class="p">(</span><span class="n">result</span><span class="o">=</span><span class="p">())</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="n">CreatePersonStep</span><span class="p">(</span>
+        <span class="n">builder</span><span class="o">=</span><span class="n">builder</span><span class="p">,</span>
+        <span class="n">adapter</span><span class="o">=</span><span class="n">adapter</span><span class="p">,</span>
+        <span class="n">adapter_put_bytes</span><span class="o">=</span><span class="n">put_bytes_adapter</span><span class="p">,</span>
+        <span class="n">data_selector</span><span class="o">=</span><span class="n">selector</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">step</span><span class="o">.</span><span class="n">_builder</span> <span class="ow">is</span> <span class="n">builder</span>
+    <span class="k">assert</span> <span class="n">step</span><span class="o">.</span><span class="n">_adapter</span> <span class="ow">is</span> <span class="n">adapter</span>
+    <span class="k">assert</span> <span class="n">step</span><span class="o">.</span><span class="n">_adapter_put_bytes</span> <span class="ow">is</span> <span class="n">put_bytes_adapter</span>
+    <span class="k">assert</span> <span class="n">step</span><span class="o">.</span><span class="n">_data_selector</span> <span class="ow">is</span> <span class="n">selector</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>builder = _BuilderStub()
+adapter = _RenameAdapterStub(result=XMLKVPairs(()))
+put_bytes_adapter = _PutBytesAdapterStub()
+selector = _CreateSelectorStub(result=())</code></pre>
+
+#### Вызов
+
+<pre><code>step = CreatePersonStep(
+    builder=builder,
+    adapter=adapter,
+    adapter_put_bytes=put_bytes_adapter,
+    data_selector=selector,
+)</code></pre>
+
+#### Вывод
+
+<pre><code>Тест ничего не печатает.
+Проверяется состояние:
+step._builder is builder
+step._adapter is adapter
+step._adapter_put_bytes is put_bytes_adapter
+step._data_selector is selector
+
+tests/pipeline/test_create_person_step.py::TestCreatePersonStepInstantiation::test_init_stores_builder_adapter_put_bytes_and_selector PASSED</code></pre>
+</div>
+</details>
+<h2 id="base-dto-xml-context">Второй тест: базовая ветка собирает BASE DTO и пишет xml в context</h2>
+<h3 id="_4">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Базовая</span> <span class="n">ветка</span> <span class="n">берёт</span> <span class="n">BASE</span><span class="o">-</span><span class="n">поля</span> <span class="n">и</span> <span class="n">передаёт</span> <span class="err">`</span><span class="kc">None</span><span class="err">`</span> <span class="n">как</span> <span class="err">`</span><span class="n">ERZL_id</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<p>Это главный happy-path <code>create_person_base(...)</code>. Он показывает, что шаг берет
+required/optional поля именно из <code>ERZLCreatePersonOp.BASE</code>, строит DTO с
+<code>ERZL_id=None</code> и на успехе кладет XML в <code>context.xml_bytes</code>.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_create_person_base_builds_base_dto_and_writes_xml_bytes</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Базовая ветка берёт BASE-поля и передаёт `None` как `ERZL_id`."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">selected_data</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">,</span>
+        <span class="n">PersonFields</span><span class="o">.</span><span class="n">NAME</span><span class="p">,</span>
+        <span class="n">PersonFields</span><span class="o">.</span><span class="n">SEX_ID</span><span class="p">,</span>
+        <span class="n">PersonFields</span><span class="o">.</span><span class="n">CITIZEN_CODE</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">rename_data</span> <span class="o">=</span> <span class="n">XMLKVPairs</span><span class="p">(((</span><span class="s2">"surname"</span><span class="p">,</span> <span class="s2">"Ivanov"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"namep"</span><span class="p">,</span> <span class="s2">"Ivan"</span><span class="p">)))</span>
+    <span class="n">step</span><span class="p">,</span> <span class="n">selector</span><span class="p">,</span> <span class="n">adapter</span><span class="p">,</span> <span class="n">builder</span><span class="p">,</span> <span class="n">put_bytes_adapter</span> <span class="o">=</span> <span class="n">_make_step</span><span class="p">(</span>
+        <span class="n">selected_data</span><span class="o">=</span><span class="n">selected_data</span><span class="p">,</span>
+        <span class="n">rename_data</span><span class="o">=</span><span class="n">rename_data</span><span class="p">,</span>
+        <span class="n">builder_result</span><span class="o">=</span><span class="sa">b</span><span class="s2">"&lt;base-create/&gt;"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_CreateContextStub</span><span class="p">(</span>
+        <span class="n">SourceData</span><span class="o">=</span><span class="p">{</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">:</span> <span class="s2">"Ivanov"</span><span class="p">,</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">NAME</span><span class="p">:</span> <span class="s2">"Ivan"</span><span class="p">,</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">SEX_ID</span><span class="p">:</span> <span class="s2">"1"</span><span class="p">,</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">CITIZEN_CODE</span><span class="p">:</span> <span class="s2">"643"</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">step</span><span class="o">.</span><span class="n">create_person_base</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="n">StepRslt</span><span class="o">.</span><span class="n">ok</span><span class="p">(</span>
+        <span class="n">CreatePersonDecision_StrEnum</span><span class="o">.</span><span class="n">CONTINUE</span><span class="p">,</span>
+        <span class="s2">"Положили xml создания базы персоны в context"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">assert</span> <span class="n">selector</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[</span>
+        <span class="p">(</span>
+            <span class="n">context</span><span class="o">.</span><span class="n">SourceData</span><span class="p">,</span>
+            <span class="n">ERZLCreatePersonOp</span><span class="o">.</span><span class="n">BASE</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">required</span><span class="p">,</span>
+            <span class="n">ERZLCreatePersonOp</span><span class="o">.</span><span class="n">BASE</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">optional</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="p">]</span>
+    <span class="k">assert</span> <span class="n">adapter</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[(</span><span class="n">context</span><span class="o">.</span><span class="n">SourceData</span><span class="p">,</span> <span class="n">selected_data</span><span class="p">)]</span>
+    <span class="k">assert</span> <span class="n">builder</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[</span>
+        <span class="n">XMLCreatePersonDTO</span><span class="p">(</span><span class="n">ERZLCreatePersonOp</span><span class="o">.</span><span class="n">BASE</span><span class="p">,</span> <span class="n">rename_data</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="k">assert</span> <span class="n">put_bytes_adapter</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[(</span><span class="n">context</span><span class="p">,</span> <span class="sa">b</span><span class="s2">"&lt;base-create/&gt;"</span><span class="p">)]</span>
+    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">xml_bytes</span> <span class="o">==</span> <span class="sa">b</span><span class="s2">"&lt;base-create/&gt;"</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>selected_data = (
+    PersonFields.SURNAME,
+    PersonFields.NAME,
+    PersonFields.SEX_ID,
+    PersonFields.CITIZEN_CODE,
+)
+rename_data = XMLKVPairs((("surname", "Ivanov"), ("namep", "Ivan")))
+context = _CreateContextStub(
+    SourceData={
+        PersonFields.SURNAME: "Ivanov",
+        PersonFields.NAME: "Ivan",
+        PersonFields.SEX_ID: "1",
+        PersonFields.CITIZEN_CODE: "643",
+    }
+)</code></pre>
+
+#### Вызов
+
+<pre><code>result = step.create_person_base(context)</code></pre>
+
+#### Вывод
+
+<pre><code>Тест ничего не печатает.
+Проверяется результат:
+result == StepRslt.ok(
+    CreatePersonDecision_StrEnum.CONTINUE,
+    "Положили xml создания базы персоны в context",
+)
+selector.received == [
+    (
+        context.SourceData,
+        ERZLCreatePersonOp.BASE.value.required,
+        ERZLCreatePersonOp.BASE.value.optional,
+    )
+]
+adapter.received == [(context.SourceData, selected_data)]
+builder.received == [
+    XMLCreatePersonDTO(ERZLCreatePersonOp.BASE, rename_data, None)
+]
+put_bytes_adapter.received == [(context, b"&lt;base-create/&gt;")]
+context.xml_bytes == b"&lt;base-create/&gt;"
+
+tests/pipeline/test_create_person_step.py::TestCreatePersonBaseHappyPath::test_create_person_base_builds_base_dto_and_writes_xml_bytes PASSED</code></pre>
+</div>
+</details>
+<h2 id="not-base-op-erzl_id-context">Третий блок: not-base ветка использует текущий <code>op</code> и <code>ERZL_id</code> из context</h2>
+<h3 id="_5">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Not</span><span class="o">-</span><span class="n">base</span> <span class="n">ветка</span> <span class="n">берёт</span> <span class="n">required</span><span class="o">/</span><span class="n">optional</span> <span class="n">из</span> <span class="err">`</span><span class="n">op</span><span class="err">`</span> <span class="n">и</span> <span class="n">переносит</span> <span class="err">`</span><span class="n">ERZL_id</span><span class="err">`</span> <span class="n">в</span> <span class="n">DTO</span><span class="o">.</span>
+</code></pre></div>
+<p>Это параметризованный happy-path для трех операций <code>POLICY</code>, <code>DUDL</code> и
+<code>ADDRESS</code>. Во всех трех случаях шаг должен взять required/optional поля именно
+из переданного <code>op</code>, а в DTO положить текущий <code>context.ERZL_id</code>.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span>
+    <span class="s2">"op"</span><span class="p">,</span>
+    <span class="p">[</span>
+        <span class="n">ERZLCreatePersonOp</span><span class="o">.</span><span class="n">POLICY</span><span class="p">,</span>
+        <span class="n">ERZLCreatePersonOp</span><span class="o">.</span><span class="n">DUDL</span><span class="p">,</span>
+        <span class="n">ERZLCreatePersonOp</span><span class="o">.</span><span class="n">ADDRESS</span><span class="p">,</span>
+    <span class="p">],</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">test_create_person_not_base_uses_current_op_and_context_erzl_id</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">op</span><span class="p">:</span> <span class="n">ERZLCreatePersonOp</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Not-base ветка берёт required/optional из `op` и переносит `ERZL_id` в DTO."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span><span class="p">,</span> <span class="n">selector</span><span class="p">,</span> <span class="n">adapter</span><span class="p">,</span> <span class="n">builder</span><span class="p">,</span> <span class="n">put_bytes_adapter</span> <span class="o">=</span> <span class="n">_make_step</span><span class="p">(</span>
+        <span class="n">selected_data</span><span class="o">=</span><span class="n">op</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">required</span><span class="p">,</span>
+        <span class="n">rename_data</span><span class="o">=</span><span class="n">XMLKVPairs</span><span class="p">(((</span><span class="s2">"field"</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">),)),</span>
+        <span class="n">builder_result</span><span class="o">=</span><span class="sa">b</span><span class="s2">"&lt;not-base/&gt;"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_CreateContextStub</span><span class="p">(</span>
+        <span class="n">SourceData</span><span class="o">=</span><span class="p">{</span><span class="n">field</span><span class="p">:</span> <span class="s2">"value"</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">op</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">required</span><span class="p">},</span>
+        <span class="n">ERZL_id</span><span class="o">=</span><span class="s2">"erzl-001"</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">step</span><span class="o">.</span><span class="n">create_person_not_base</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">op</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="n">StepRslt</span><span class="o">.</span><span class="n">ok</span><span class="p">(</span>
+        <span class="n">CreatePersonDecision_StrEnum</span><span class="o">.</span><span class="n">CONTINUE</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s2">"Положили xml создания персоны (</span><span class="si">{</span><span class="n">op</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">) в context"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">assert</span> <span class="n">selector</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[</span>
+        <span class="p">(</span><span class="n">context</span><span class="o">.</span><span class="n">SourceData</span><span class="p">,</span> <span class="n">op</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">required</span><span class="p">,</span> <span class="n">op</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">optional</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="k">assert</span> <span class="n">adapter</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[(</span><span class="n">context</span><span class="o">.</span><span class="n">SourceData</span><span class="p">,</span> <span class="n">op</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">required</span><span class="p">)]</span>
+    <span class="k">assert</span> <span class="n">builder</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[</span>
+        <span class="n">XMLCreatePersonDTO</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">XMLKVPairs</span><span class="p">(((</span><span class="s2">"field"</span><span class="p">,</span> <span class="s2">"value"</span><span class="p">),)),</span> <span class="s2">"erzl-001"</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="k">assert</span> <span class="n">put_bytes_adapter</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[(</span><span class="n">context</span><span class="p">,</span> <span class="sa">b</span><span class="s2">"&lt;not-base/&gt;"</span><span class="p">)]</span>
+    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">xml_bytes</span> <span class="o">==</span> <span class="sa">b</span><span class="s2">"&lt;not-base/&gt;"</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>Сценарии:
+op = ERZLCreatePersonOp.POLICY
+op = ERZLCreatePersonOp.DUDL
+op = ERZLCreatePersonOp.ADDRESS
+
+Для каждого op:
+context = _CreateContextStub(
+    SourceData={field: "value" for field in op.value.required},
+    ERZL_id="erzl-001",
+)</code></pre>
+
+#### Вызов
+
+<pre><code>result = step.create_person_not_base(context, op)</code></pre>
+
+#### Вывод
+
+<pre><code>Тесты ничего не печатают.
+Проверяется результат:
+result == StepRslt.ok(
+    CreatePersonDecision_StrEnum.CONTINUE,
+    f"Положили xml создания персоны ({op.name}) в context",
+)
+selector.received == [(context.SourceData, op.value.required, op.value.optional)]
+adapter.received == [(context.SourceData, op.value.required)]
+builder.received == [
+    XMLCreatePersonDTO(op, XMLKVPairs((("field", "value"),)), "erzl-001")
+]
+put_bytes_adapter.received == [(context, b"&lt;not-base/&gt;")]
+context.xml_bytes == b"&lt;not-base/&gt;"
+
+tests/pipeline/test_create_person_step.py::TestCreatePersonNotBaseHappyPath::test_create_person_not_base_uses_current_op_and_context_erzl_id[ERZLCreatePersonOp.POLICY] PASSED
+tests/pipeline/test_create_person_step.py::TestCreatePersonNotBaseHappyPath::test_create_person_not_base_uses_current_op_and_context_erzl_id[ERZLCreatePersonOp.DUDL] PASSED
+tests/pipeline/test_create_person_step.py::TestCreatePersonNotBaseHappyPath::test_create_person_not_base_uses_current_op_and_context_erzl_id[ERZLCreatePersonOp.ADDRESS] PASSED</code></pre>
+</div>
+</details>
+<h2 id="erzl_id-none">Четвертый тест: пустая строка <code>ERZL_id</code> не превращается в <code>None</code></h2>
+<h3 id="_6">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Пустая</span> <span class="n">строка</span> <span class="n">не</span> <span class="n">равна</span> <span class="err">`</span><span class="kc">None</span><span class="err">`</span><span class="p">,</span> <span class="n">поэтому</span> <span class="n">проходит</span> <span class="n">в</span> <span class="ow">not</span><span class="o">-</span><span class="n">base</span> <span class="n">DTO</span> <span class="n">как</span> <span class="n">есть</span><span class="o">.</span>
+</code></pre></div>
+<p>Этот edge-case важен потому, что шаг проверяет not-base ветку только на
+<code>context.ERZL_id is None</code>. Пустая строка формально проходит проверку и поэтому
+попадает в <code>XMLCreatePersonDTO</code> без подмены.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_empty_string_erzl_id_is_forwarded_to_dto</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Пустая строка не равна `None`, поэтому проходит в not-base DTO как есть."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">builder</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">_make_step</span><span class="p">(</span>
+        <span class="n">selected_data</span><span class="o">=</span><span class="n">ERZLCreatePersonOp</span><span class="o">.</span><span class="n">POLICY</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">required</span><span class="p">,</span>
+        <span class="n">rename_data</span><span class="o">=</span><span class="n">XMLKVPairs</span><span class="p">(((</span><span class="s2">"policyT"</span><span class="p">,</span> <span class="s2">"2"</span><span class="p">),)),</span>
+    <span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_CreateContextStub</span><span class="p">(</span>
+        <span class="n">SourceData</span><span class="o">=</span><span class="p">{</span><span class="n">field</span><span class="p">:</span> <span class="s2">"value"</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">ERZLCreatePersonOp</span><span class="o">.</span><span class="n">POLICY</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">required</span><span class="p">},</span>
+        <span class="n">ERZL_id</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">step</span><span class="o">.</span><span class="n">create_person_not_base</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">ERZLCreatePersonOp</span><span class="o">.</span><span class="n">POLICY</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">decision</span> <span class="ow">is</span> <span class="n">CreatePersonDecision_StrEnum</span><span class="o">.</span><span class="n">CONTINUE</span>
+    <span class="k">assert</span> <span class="n">builder</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[</span>
+        <span class="n">XMLCreatePersonDTO</span><span class="p">(</span>
+            <span class="n">ERZLCreatePersonOp</span><span class="o">.</span><span class="n">POLICY</span><span class="p">,</span>
+            <span class="n">XMLKVPairs</span><span class="p">(((</span><span class="s2">"policyT"</span><span class="p">,</span> <span class="s2">"2"</span><span class="p">),)),</span>
+            <span class="s2">""</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="p">]</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>context = _CreateContextStub(
+    SourceData={
+        field: "value"
+        for field in ERZLCreatePersonOp.POLICY.value.required
+    },
+    ERZL_id="",
+)</code></pre>
+
+#### Вызов
+
+<pre><code>result = step.create_person_not_base(context, ERZLCreatePersonOp.POLICY)</code></pre>
+
+#### Вывод
+
+<pre><code>Тест ничего не печатает.
+Проверяется результат:
+result.decision is CreatePersonDecision_StrEnum.CONTINUE
+builder.received == [
+    XMLCreatePersonDTO(
+        ERZLCreatePersonOp.POLICY,
+        XMLKVPairs((("policyT", "2"),)),
+        "",
+    )
+]
+
+tests/pipeline/test_create_person_step.py::TestCreatePersonNotBaseHappyPath::test_empty_string_erzl_id_is_forwarded_to_dto PASSED</code></pre>
+</div>
+</details>
+<h2 id="erzl_id-not-base-errorabort">Пятый тест: отсутствие <code>ERZL_id</code> в not-base ветке дает <code>ERROR/ABORT</code> до любых вызовов</h2>
+<h3 id="_7">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">При</span> <span class="err">`</span><span class="n">ERZL_id</span> <span class="ow">is</span> <span class="kc">None</span><span class="err">`</span> <span class="ow">not</span><span class="o">-</span><span class="n">base</span> <span class="n">ветка</span> <span class="n">завершается</span> <span class="n">до</span> <span class="n">вызова</span> <span class="n">зависимостей</span><span class="o">.</span>
+</code></pre></div>
+<p>Это главный controlled error для not-base ветки. Тест показывает, что шаг
+останавливается еще до selector-а, adapter-а, builder-а и bytes-adapter-а,
+если базовая персона еще не создана и <code>ERZL_id</code> нет.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_create_person_not_base_without_erzl_id_returns_error_before_calls</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""При `ERZL_id is None` not-base ветка завершается до вызова зависимостей."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span><span class="p">,</span> <span class="n">selector</span><span class="p">,</span> <span class="n">adapter</span><span class="p">,</span> <span class="n">builder</span><span class="p">,</span> <span class="n">put_bytes_adapter</span> <span class="o">=</span> <span class="n">_make_step</span><span class="p">()</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_CreateContextStub</span><span class="p">(</span>
+        <span class="n">SourceData</span><span class="o">=</span><span class="p">{</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">:</span> <span class="s2">"Ivanov"</span><span class="p">},</span>
+        <span class="n">ERZL_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">step</span><span class="o">.</span><span class="n">create_person_not_base</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">ERZLCreatePersonOp</span><span class="o">.</span><span class="n">POLICY</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">status</span> <span class="ow">is</span> <span class="n">StepStatus_StrEnum</span><span class="o">.</span><span class="n">ERROR</span>
+    <span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">decision</span> <span class="ow">is</span> <span class="n">CreatePersonDecision_StrEnum</span><span class="o">.</span><span class="n">ABORT</span>
+    <span class="k">assert</span> <span class="s2">"ERZL_id"</span> <span class="ow">in</span> <span class="n">result</span><span class="o">.</span><span class="n">message</span>
+    <span class="k">assert</span> <span class="n">selector</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[]</span>
+    <span class="k">assert</span> <span class="n">adapter</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[]</span>
+    <span class="k">assert</span> <span class="n">builder</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[]</span>
+    <span class="k">assert</span> <span class="n">put_bytes_adapter</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[]</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>context = _CreateContextStub(
+    SourceData={PersonFields.SURNAME: "Ivanov"},
+    ERZL_id=None,
+)</code></pre>
+
+#### Вызов
+
+<pre><code>result = step.create_person_not_base(context, ERZLCreatePersonOp.POLICY)</code></pre>
+
+#### Вывод
+
+<pre><code>Тест ничего не печатает.
+Проверяется результат:
+result.status is StepStatus_StrEnum.ERROR
+result.decision is CreatePersonDecision_StrEnum.ABORT
+"ERZL_id" in result.message
+selector.received == []
+adapter.received == []
+builder.received == []
+put_bytes_adapter.received == []
+
+tests/pipeline/test_create_person_step.py::TestCreatePersonStepControlledErrors::test_create_person_not_base_without_erzl_id_returns_error_before_calls PASSED</code></pre>
+</div>
+</details>
+<h2 id="base-errorabort">Шестой блок: контролируемые ошибки base-ветки становятся <code>ERROR/ABORT</code></h2>
+<h3 id="test_no_required_key_error_becomes_error_abort">Докстринг теста <code>test_no_required_key_error_becomes_error_abort</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="err">`</span><span class="n">NoRequieredKeyError</span><span class="err">`</span> <span class="n">переводится</span> <span class="n">в</span> <span class="err">`</span><span class="n">ERROR</span><span class="o">/</span><span class="n">ABORT</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<h3 id="test_rename_error_becomes_error_abort">Докстринг теста <code>test_rename_error_becomes_error_abort</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="err">`</span><span class="n">RenameAndBuildXmlKVPairsError</span><span class="err">`</span> <span class="n">переводится</span> <span class="n">в</span> <span class="err">`</span><span class="n">ERROR</span><span class="o">/</span><span class="n">ABORT</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<h3 id="test_builder_retry_error_becomes_error_abort">Докстринг теста <code>test_builder_retry_error_becomes_error_abort</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="err">`</span><span class="n">XMLBuilderRetryError</span><span class="err">`</span> <span class="n">не</span> <span class="n">даёт</span> <span class="err">`</span><span class="n">STOP</span><span class="err">`</span><span class="p">,</span> <span class="n">только</span> <span class="err">`</span><span class="n">ERROR</span><span class="o">/</span><span class="n">ABORT</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<h3 id="test_builder_fail_error_becomes_error_abort">Докстринг теста <code>test_builder_fail_error_becomes_error_abort</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="err">`</span><span class="n">XMLBuilderFailError</span><span class="err">`</span> <span class="n">тоже</span> <span class="n">остаётся</span> <span class="err">`</span><span class="n">ERROR</span><span class="o">/</span><span class="n">ABORT</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<p>Этот блок защищает самый важный архитектурный контракт <code>CreatePersonStep</code>: все
+его controlled error-ветки идут через <code>StepRslt.error(...)</code>, а не через
+<code>StepRslt.stop(...)</code>.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код тестов</span><span class="docs-test-hide">Скрыть код тестов</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_no_required_key_error_becomes_error_abort</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`NoRequieredKeyError` переводится в `ERROR/ABORT`."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span><span class="p">,</span> <span class="n">selector</span><span class="p">,</span> <span class="n">adapter</span><span class="p">,</span> <span class="n">builder</span><span class="p">,</span> <span class="n">put_bytes_adapter</span> <span class="o">=</span> <span class="n">_make_step</span><span class="p">()</span>
+    <span class="n">selector</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span class="n">NoRequieredKeyError</span><span class="p">(</span><span class="s2">"required key missing"</span><span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_CreateContextStub</span><span class="p">(</span><span class="n">SourceData</span><span class="o">=</span><span class="p">{})</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">step</span><span class="o">.</span><span class="n">create_person_base</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="n">StepRslt</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+        <span class="n">CreatePersonDecision_StrEnum</span><span class="o">.</span><span class="n">ABORT</span><span class="p">,</span>
+        <span class="s2">"required key missing"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">assert</span> <span class="n">adapter</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[]</span>
+    <span class="k">assert</span> <span class="n">builder</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[]</span>
+    <span class="k">assert</span> <span class="n">put_bytes_adapter</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[]</span>
+
+<span class="k">def</span> <span class="nf">test_rename_error_becomes_error_abort</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`RenameAndBuildXmlKVPairsError` переводится в `ERROR/ABORT`."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">adapter</span><span class="p">,</span> <span class="n">builder</span><span class="p">,</span> <span class="n">put_bytes_adapter</span> <span class="o">=</span> <span class="n">_make_step</span><span class="p">()</span>
+    <span class="n">adapter</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span class="n">RenameAndBuildXmlKVPairsError</span><span class="p">(</span><span class="s2">"rename failed"</span><span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_CreateContextStub</span><span class="p">(</span>
+        <span class="n">SourceData</span><span class="o">=</span><span class="p">{</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">:</span> <span class="s2">"Ivanov"</span><span class="p">,</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">NAME</span><span class="p">:</span> <span class="s2">"Ivan"</span><span class="p">,</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">SEX_ID</span><span class="p">:</span> <span class="s2">"1"</span><span class="p">,</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">CITIZEN_CODE</span><span class="p">:</span> <span class="s2">"643"</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">step</span><span class="o">.</span><span class="n">create_person_base</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">status</span> <span class="ow">is</span> <span class="n">StepStatus_StrEnum</span><span class="o">.</span><span class="n">ERROR</span>
+    <span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">decision</span> <span class="ow">is</span> <span class="n">CreatePersonDecision_StrEnum</span><span class="o">.</span><span class="n">ABORT</span>
+    <span class="k">assert</span> <span class="s2">"rename failed"</span> <span class="ow">in</span> <span class="n">result</span><span class="o">.</span><span class="n">message</span>
+    <span class="k">assert</span> <span class="n">builder</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[]</span>
+    <span class="k">assert</span> <span class="n">put_bytes_adapter</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[]</span>
+
+<span class="k">def</span> <span class="nf">test_builder_retry_error_becomes_error_abort</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`XMLBuilderRetryError` не даёт `STOP`, только `ERROR/ABORT`."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">builder</span><span class="p">,</span> <span class="n">put_bytes_adapter</span> <span class="o">=</span> <span class="n">_make_step</span><span class="p">()</span>
+    <span class="n">builder</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span class="n">XMLBuilderRetryError</span><span class="p">(</span><span class="s2">"retry create"</span><span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_CreateContextStub</span><span class="p">(</span>
+        <span class="n">SourceData</span><span class="o">=</span><span class="p">{</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">:</span> <span class="s2">"Ivanov"</span><span class="p">,</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">NAME</span><span class="p">:</span> <span class="s2">"Ivan"</span><span class="p">,</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">SEX_ID</span><span class="p">:</span> <span class="s2">"1"</span><span class="p">,</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">CITIZEN_CODE</span><span class="p">:</span> <span class="s2">"643"</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">step</span><span class="o">.</span><span class="n">create_person_base</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">status</span> <span class="ow">is</span> <span class="n">StepStatus_StrEnum</span><span class="o">.</span><span class="n">ERROR</span>
+    <span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">decision</span> <span class="ow">is</span> <span class="n">CreatePersonDecision_StrEnum</span><span class="o">.</span><span class="n">ABORT</span>
+    <span class="k">assert</span> <span class="s2">"retry create"</span> <span class="ow">in</span> <span class="n">result</span><span class="o">.</span><span class="n">message</span>
+    <span class="k">assert</span> <span class="n">put_bytes_adapter</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[]</span>
+
+<span class="k">def</span> <span class="nf">test_builder_fail_error_becomes_error_abort</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`XMLBuilderFailError` тоже остаётся `ERROR/ABORT`."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">builder</span><span class="p">,</span> <span class="n">put_bytes_adapter</span> <span class="o">=</span> <span class="n">_make_step</span><span class="p">()</span>
+    <span class="n">builder</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span class="n">XMLBuilderFailError</span><span class="p">(</span><span class="s2">"fatal create"</span><span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_CreateContextStub</span><span class="p">(</span>
+        <span class="n">SourceData</span><span class="o">=</span><span class="p">{</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">:</span> <span class="s2">"Ivanov"</span><span class="p">,</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">NAME</span><span class="p">:</span> <span class="s2">"Ivan"</span><span class="p">,</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">SEX_ID</span><span class="p">:</span> <span class="s2">"1"</span><span class="p">,</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">CITIZEN_CODE</span><span class="p">:</span> <span class="s2">"643"</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">step</span><span class="o">.</span><span class="n">create_person_base</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">status</span> <span class="ow">is</span> <span class="n">StepStatus_StrEnum</span><span class="o">.</span><span class="n">ERROR</span>
+    <span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">decision</span> <span class="ow">is</span> <span class="n">CreatePersonDecision_StrEnum</span><span class="o">.</span><span class="n">ABORT</span>
+    <span class="k">assert</span> <span class="s2">"fatal create"</span> <span class="ow">in</span> <span class="n">result</span><span class="o">.</span><span class="n">message</span>
+    <span class="k">assert</span> <span class="n">put_bytes_adapter</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[]</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>Сценарий 1:
+selector.error = NoRequieredKeyError("required key missing")
+
+Сценарий 2:
+adapter.error = RenameAndBuildXmlKVPairsError("rename failed")
+
+Сценарий 3:
+builder.error = XMLBuilderRetryError("retry create")
+
+Сценарий 4:
+builder.error = XMLBuilderFailError("fatal create")</code></pre>
+
+#### Вызов
+
+<pre><code>result = step.create_person_base(context)</code></pre>
+
+#### Вывод
+
+<pre><code>Тесты ничего не печатают.
+Проверяется результат:
+для NoRequieredKeyError:
+result == StepRslt.error(
+    CreatePersonDecision_StrEnum.ABORT,
+    "required key missing",
+)
+adapter.received == []
+builder.received == []
+put_bytes_adapter.received == []
+
+для RenameAndBuildXmlKVPairsError:
+result.status is StepStatus_StrEnum.ERROR
+result.decision is CreatePersonDecision_StrEnum.ABORT
+"rename failed" in result.message
+builder.received == []
+put_bytes_adapter.received == []
+
+для XMLBuilderRetryError:
+result.status is StepStatus_StrEnum.ERROR
+result.decision is CreatePersonDecision_StrEnum.ABORT
+"retry create" in result.message
+put_bytes_adapter.received == []
+
+для XMLBuilderFailError:
+result.status is StepStatus_StrEnum.ERROR
+result.decision is CreatePersonDecision_StrEnum.ABORT
+"fatal create" in result.message
+put_bytes_adapter.received == []
+
+tests/pipeline/test_create_person_step.py::TestCreatePersonStepControlledErrors::test_no_required_key_error_becomes_error_abort PASSED
+tests/pipeline/test_create_person_step.py::TestCreatePersonStepControlledErrors::test_rename_error_becomes_error_abort PASSED
+tests/pipeline/test_create_person_step.py::TestCreatePersonStepControlledErrors::test_builder_retry_error_becomes_error_abort PASSED
+tests/pipeline/test_create_person_step.py::TestCreatePersonStepControlledErrors::test_builder_fail_error_becomes_error_abort PASSED</code></pre>
+</div>
+</details>
+<h2 id="context">Седьмой блок: отсутствие обязательных атрибутов context не скрывается</h2>
+<h3 id="test_missing_source_data_raises_attribute_error">Докстринг теста <code>test_missing_source_data_raises_attribute_error</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Шаг</span> <span class="n">не</span> <span class="n">маскирует</span> <span class="n">отсутствие</span> <span class="err">`</span><span class="n">SourceData</span><span class="err">`</span> <span class="n">в</span> <span class="n">context</span><span class="o">.</span>
+</code></pre></div>
+<h3 id="test_missing_erzl_id_attribute_raises_attribute_error">Докстринг теста <code>test_missing_erzl_id_attribute_raises_attribute_error</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Not</span><span class="o">-</span><span class="n">base</span> <span class="n">ветка</span> <span class="n">не</span> <span class="n">маскирует</span> <span class="n">отсутствие</span> <span class="n">атрибута</span> <span class="err">`</span><span class="n">ERZL_id</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<p>Эти тесты фиксируют минимальный protocol-контракт обоих create-путей: у base
+ветки обязательно должны быть <code>SourceData</code>, а у not-base ветки вдобавок
+должен существовать атрибут <code>ERZL_id</code>.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код тестов</span><span class="docs-test-hide">Скрыть код тестов</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_missing_source_data_raises_attribute_error</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Шаг не маскирует отсутствие `SourceData` в context."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="n">_make_step</span><span class="p">()</span>
+
+    <span class="c1"># Act / Assert</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">):</span>
+        <span class="n">step</span><span class="o">.</span><span class="n">create_person_base</span><span class="p">(</span><span class="n">_ContextWithoutSourceData</span><span class="p">())</span>
+
+<span class="k">def</span> <span class="nf">test_missing_erzl_id_attribute_raises_attribute_error</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Not-base ветка не маскирует отсутствие атрибута `ERZL_id`."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="n">_make_step</span><span class="p">()</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_ContextWithoutERZLId</span><span class="p">(</span>
+        <span class="n">SourceData</span><span class="o">=</span><span class="p">{</span>
+            <span class="n">field</span><span class="p">:</span> <span class="s2">"value"</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">ERZLCreatePersonOp</span><span class="o">.</span><span class="n">POLICY</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">required</span>
+        <span class="p">}</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act / Assert</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">):</span>
+        <span class="n">step</span><span class="o">.</span><span class="n">create_person_not_base</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">ERZLCreatePersonOp</span><span class="o">.</span><span class="n">POLICY</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>Сценарий 1:
+context = _ContextWithoutSourceData()
+
+Сценарий 2:
+context = _ContextWithoutERZLId(
+    SourceData={
+        field: "value"
+        for field in ERZLCreatePersonOp.POLICY.value.required
+    }
+)</code></pre>
+
+#### Вызов
+
+<pre><code>with pytest.raises(AttributeError):
+    step.create_person_base(context)
+
+with pytest.raises(AttributeError):
+    step.create_person_not_base(context, ERZLCreatePersonOp.POLICY)</code></pre>
+
+#### Ошибка
+
+<pre><code>Тесты ничего не печатают.
+Проверяется только то, что нарушение context-контракта
+приводит к AttributeError.
+
+tests/pipeline/test_create_person_step.py::TestCreatePersonStepContractViolations::test_missing_source_data_raises_attribute_error PASSED
+tests/pipeline/test_create_person_step.py::TestCreatePersonStepContractViolations::test_missing_erzl_id_attribute_raises_attribute_error PASSED</code></pre>
+</div>
+</details>
+<h2 id="collaborators">Восьмой блок: отсутствие обязательных методов collaborators не скрывается</h2>
+<h3 id="test_missing_selector_method_raises_attribute_error">Докстринг теста <code>test_missing_selector_method_raises_attribute_error</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Шаг</span> <span class="n">не</span> <span class="n">маскирует</span> <span class="n">отсутствие</span> <span class="err">`</span><span class="n">get_keys_for_xml</span><span class="err">`</span> <span class="n">у</span> <span class="n">selector</span><span class="o">-</span><span class="n">а</span><span class="o">.</span>
+</code></pre></div>
+<h3 id="test_missing_rename_method_raises_attribute_error">Докстринг теста <code>test_missing_rename_method_raises_attribute_error</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Шаг</span> <span class="n">не</span> <span class="n">маскирует</span> <span class="n">отсутствие</span> <span class="err">`</span><span class="n">build_from_source_fields</span><span class="err">`</span> <span class="n">у</span> <span class="n">adapter</span><span class="o">-</span><span class="n">а</span><span class="o">.</span>
+</code></pre></div>
+<h3 id="test_missing_build_xml_method_raises_attribute_error">Докстринг теста <code>test_missing_build_xml_method_raises_attribute_error</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Шаг</span> <span class="n">не</span> <span class="n">маскирует</span> <span class="n">отсутствие</span> <span class="err">`</span><span class="n">build_xml</span><span class="err">`</span> <span class="n">у</span> <span class="n">builder</span><span class="o">-</span><span class="n">а</span><span class="o">.</span>
+</code></pre></div>
+<h3 id="test_missing_put_bytes_method_raises_attribute_error">Докстринг теста <code>test_missing_put_bytes_method_raises_attribute_error</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Шаг</span> <span class="n">не</span> <span class="n">маскирует</span> <span class="n">отсутствие</span> <span class="err">`</span><span class="n">put_bytes</span><span class="err">`</span> <span class="n">у</span> <span class="nb">bytes</span><span class="o">-</span><span class="n">adapter</span><span class="o">-</span><span class="n">а</span><span class="o">.</span>
+</code></pre></div>
+<p>Эти сценарии защищают structural-контракт всех четырех зависимостей. Шаг
+просто вызывает ожидаемые методы и не делает отдельной interface-проверки.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код тестов</span><span class="docs-test-hide">Скрыть код тестов</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_missing_selector_method_raises_attribute_error</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Шаг не маскирует отсутствие `get_keys_for_xml` у selector-а."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="n">CreatePersonStep</span><span class="p">(</span>
+        <span class="n">builder</span><span class="o">=</span><span class="n">_BuilderStub</span><span class="p">(),</span>
+        <span class="n">adapter</span><span class="o">=</span><span class="n">_RenameAdapterStub</span><span class="p">(</span><span class="n">result</span><span class="o">=</span><span class="n">XMLKVPairs</span><span class="p">(())),</span>
+        <span class="n">adapter_put_bytes</span><span class="o">=</span><span class="n">_PutBytesAdapterStub</span><span class="p">(),</span>
+        <span class="n">data_selector</span><span class="o">=</span><span class="n">_SelectorWithoutMethod</span><span class="p">(),</span>
+    <span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_CreateContextStub</span><span class="p">(</span><span class="n">SourceData</span><span class="o">=</span><span class="p">{</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">:</span> <span class="s2">"Ivanov"</span><span class="p">})</span>
+
+    <span class="c1"># Act / Assert</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">):</span>
+        <span class="n">step</span><span class="o">.</span><span class="n">create_person_base</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">test_missing_rename_method_raises_attribute_error</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Шаг не маскирует отсутствие `build_from_source_fields` у adapter-а."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="n">CreatePersonStep</span><span class="p">(</span>
+        <span class="n">builder</span><span class="o">=</span><span class="n">_BuilderStub</span><span class="p">(),</span>
+        <span class="n">adapter</span><span class="o">=</span><span class="n">_RenameAdapterWithoutMethod</span><span class="p">(),</span>
+        <span class="n">adapter_put_bytes</span><span class="o">=</span><span class="n">_PutBytesAdapterStub</span><span class="p">(),</span>
+        <span class="n">data_selector</span><span class="o">=</span><span class="n">_CreateSelectorStub</span><span class="p">(</span><span class="n">result</span><span class="o">=</span><span class="n">ERZLCreatePersonOp</span><span class="o">.</span><span class="n">BASE</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">required</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_CreateContextStub</span><span class="p">(</span>
+        <span class="n">SourceData</span><span class="o">=</span><span class="p">{</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">:</span> <span class="s2">"Ivanov"</span><span class="p">,</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">NAME</span><span class="p">:</span> <span class="s2">"Ivan"</span><span class="p">,</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">SEX_ID</span><span class="p">:</span> <span class="s2">"1"</span><span class="p">,</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">CITIZEN_CODE</span><span class="p">:</span> <span class="s2">"643"</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act / Assert</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">):</span>
+        <span class="n">step</span><span class="o">.</span><span class="n">create_person_base</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">test_missing_build_xml_method_raises_attribute_error</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Шаг не маскирует отсутствие `build_xml` у builder-а."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="n">CreatePersonStep</span><span class="p">(</span>
+        <span class="n">builder</span><span class="o">=</span><span class="n">_BuilderWithoutMethod</span><span class="p">(),</span>
+        <span class="n">adapter</span><span class="o">=</span><span class="n">_RenameAdapterStub</span><span class="p">(</span><span class="n">result</span><span class="o">=</span><span class="n">XMLKVPairs</span><span class="p">(((</span><span class="s2">"surname"</span><span class="p">,</span> <span class="s2">"Ivanov"</span><span class="p">),))),</span>
+        <span class="n">adapter_put_bytes</span><span class="o">=</span><span class="n">_PutBytesAdapterStub</span><span class="p">(),</span>
+        <span class="n">data_selector</span><span class="o">=</span><span class="n">_CreateSelectorStub</span><span class="p">(</span><span class="n">result</span><span class="o">=</span><span class="n">ERZLCreatePersonOp</span><span class="o">.</span><span class="n">BASE</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">required</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_CreateContextStub</span><span class="p">(</span>
+        <span class="n">SourceData</span><span class="o">=</span><span class="p">{</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">:</span> <span class="s2">"Ivanov"</span><span class="p">,</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">NAME</span><span class="p">:</span> <span class="s2">"Ivan"</span><span class="p">,</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">SEX_ID</span><span class="p">:</span> <span class="s2">"1"</span><span class="p">,</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">CITIZEN_CODE</span><span class="p">:</span> <span class="s2">"643"</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act / Assert</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">):</span>
+        <span class="n">step</span><span class="o">.</span><span class="n">create_person_base</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">test_missing_put_bytes_method_raises_attribute_error</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Шаг не маскирует отсутствие `put_bytes` у bytes-adapter-а."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="n">CreatePersonStep</span><span class="p">(</span>
+        <span class="n">builder</span><span class="o">=</span><span class="n">_BuilderStub</span><span class="p">(),</span>
+        <span class="n">adapter</span><span class="o">=</span><span class="n">_RenameAdapterStub</span><span class="p">(</span><span class="n">result</span><span class="o">=</span><span class="n">XMLKVPairs</span><span class="p">(((</span><span class="s2">"surname"</span><span class="p">,</span> <span class="s2">"Ivanov"</span><span class="p">),))),</span>
+        <span class="n">adapter_put_bytes</span><span class="o">=</span><span class="n">_PutBytesAdapterWithoutMethod</span><span class="p">(),</span>
+        <span class="n">data_selector</span><span class="o">=</span><span class="n">_CreateSelectorStub</span><span class="p">(</span><span class="n">result</span><span class="o">=</span><span class="n">ERZLCreatePersonOp</span><span class="o">.</span><span class="n">BASE</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">required</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_CreateContextStub</span><span class="p">(</span>
+        <span class="n">SourceData</span><span class="o">=</span><span class="p">{</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">:</span> <span class="s2">"Ivanov"</span><span class="p">,</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">NAME</span><span class="p">:</span> <span class="s2">"Ivan"</span><span class="p">,</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">SEX_ID</span><span class="p">:</span> <span class="s2">"1"</span><span class="p">,</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">CITIZEN_CODE</span><span class="p">:</span> <span class="s2">"643"</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act / Assert</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">):</span>
+        <span class="n">step</span><span class="o">.</span><span class="n">create_person_base</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>Сценарий 1:
+data_selector = _SelectorWithoutMethod()
+
+Сценарий 2:
+adapter = _RenameAdapterWithoutMethod()
+
+Сценарий 3:
+builder = _BuilderWithoutMethod()
+
+Сценарий 4:
+adapter_put_bytes = _PutBytesAdapterWithoutMethod()</code></pre>
+
+#### Вызов
+
+<pre><code>with pytest.raises(AttributeError):
+    step.create_person_base(context)</code></pre>
+
+#### Ошибка
+
+<pre><code>Тесты ничего не печатают.
+Проверяется только то, что отсутствие ожидаемого collaborator-метода
+приводит к AttributeError.
+
+tests/pipeline/test_create_person_step.py::TestCreatePersonStepContractViolations::test_missing_selector_method_raises_attribute_error PASSED
+tests/pipeline/test_create_person_step.py::TestCreatePersonStepContractViolations::test_missing_rename_method_raises_attribute_error PASSED
+tests/pipeline/test_create_person_step.py::TestCreatePersonStepContractViolations::test_missing_build_xml_method_raises_attribute_error PASSED
+tests/pipeline/test_create_person_step.py::TestCreatePersonStepContractViolations::test_missing_put_bytes_method_raises_attribute_error PASSED</code></pre>
+</div>
+</details>
+<h2 id="runtime-collaborators">Девятый блок: неожиданные runtime-ошибки collaborators пробрасываются</h2>
+<h3 id="test_unexpected_runtime_error_from_selector_propagates">Докстринг теста <code>test_unexpected_runtime_error_from_selector_propagates</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Неожиданная</span> <span class="n">runtime</span><span class="o">-</span><span class="n">ошибка</span> <span class="n">selector</span><span class="o">-</span><span class="n">а</span> <span class="n">пробрасывается</span> <span class="n">наружу</span><span class="o">.</span>
+</code></pre></div>
+<h3 id="test_unexpected_runtime_error_from_adapter_propagates">Докстринг теста <code>test_unexpected_runtime_error_from_adapter_propagates</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Неожиданная</span> <span class="n">runtime</span><span class="o">-</span><span class="n">ошибка</span> <span class="n">rename</span><span class="o">-</span><span class="n">adapter</span><span class="o">-</span><span class="n">а</span> <span class="n">пробрасывается</span> <span class="n">наружу</span><span class="o">.</span>
+</code></pre></div>
+<h3 id="test_unexpected_runtime_error_from_builder_propagates">Докстринг теста <code>test_unexpected_runtime_error_from_builder_propagates</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Неожиданная</span> <span class="n">runtime</span><span class="o">-</span><span class="n">ошибка</span> <span class="n">builder</span><span class="o">-</span><span class="n">а</span> <span class="n">пробрасывается</span> <span class="n">наружу</span><span class="o">.</span>
+</code></pre></div>
+<p>Этот блок защищает шаг от превращения в широкий wrapper над любым exception.
+<code>CreatePersonStep</code> должен переводить в <code>StepRslt.error(...)</code> только ожидаемые
+типы controlled errors.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код тестов</span><span class="docs-test-hide">Скрыть код тестов</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_unexpected_runtime_error_from_selector_propagates</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Неожиданная runtime-ошибка selector-а пробрасывается наружу."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span><span class="p">,</span> <span class="n">selector</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">_make_step</span><span class="p">()</span>
+    <span class="n">selector</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">"selector exploded"</span><span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_CreateContextStub</span><span class="p">(</span><span class="n">SourceData</span><span class="o">=</span><span class="p">{</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">:</span> <span class="s2">"Ivanov"</span><span class="p">})</span>
+
+    <span class="c1"># Act / Assert</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">RuntimeError</span><span class="p">,</span> <span class="n">match</span><span class="o">=</span><span class="s2">"selector exploded"</span><span class="p">):</span>
+        <span class="n">step</span><span class="o">.</span><span class="n">create_person_base</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">test_unexpected_runtime_error_from_adapter_propagates</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Неожиданная runtime-ошибка rename-adapter-а пробрасывается наружу."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">adapter</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">_make_step</span><span class="p">()</span>
+    <span class="n">adapter</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">"adapter exploded"</span><span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_CreateContextStub</span><span class="p">(</span>
+        <span class="n">SourceData</span><span class="o">=</span><span class="p">{</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">:</span> <span class="s2">"Ivanov"</span><span class="p">,</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">NAME</span><span class="p">:</span> <span class="s2">"Ivan"</span><span class="p">,</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">SEX_ID</span><span class="p">:</span> <span class="s2">"1"</span><span class="p">,</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">CITIZEN_CODE</span><span class="p">:</span> <span class="s2">"643"</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act / Assert</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">RuntimeError</span><span class="p">,</span> <span class="n">match</span><span class="o">=</span><span class="s2">"adapter exploded"</span><span class="p">):</span>
+        <span class="n">step</span><span class="o">.</span><span class="n">create_person_base</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">test_unexpected_runtime_error_from_builder_propagates</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Неожиданная runtime-ошибка builder-а пробрасывается наружу."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">builder</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">_make_step</span><span class="p">()</span>
+    <span class="n">builder</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">"builder exploded"</span><span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_CreateContextStub</span><span class="p">(</span>
+        <span class="n">SourceData</span><span class="o">=</span><span class="p">{</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">:</span> <span class="s2">"Ivanov"</span><span class="p">,</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">NAME</span><span class="p">:</span> <span class="s2">"Ivan"</span><span class="p">,</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">SEX_ID</span><span class="p">:</span> <span class="s2">"1"</span><span class="p">,</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">CITIZEN_CODE</span><span class="p">:</span> <span class="s2">"643"</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act / Assert</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">RuntimeError</span><span class="p">,</span> <span class="n">match</span><span class="o">=</span><span class="s2">"builder exploded"</span><span class="p">):</span>
+        <span class="n">step</span><span class="o">.</span><span class="n">create_person_base</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>Сценарий 1:
+selector.error = RuntimeError("selector exploded")
+
+Сценарий 2:
+adapter.error = RuntimeError("adapter exploded")
+
+Сценарий 3:
+builder.error = RuntimeError("builder exploded")</code></pre>
+
+#### Вызов
+
+<pre><code>with pytest.raises(RuntimeError, match=...):
+    step.create_person_base(context)</code></pre>
+
+#### Ошибка
+
+<pre><code>Тесты ничего не печатают.
+Проверяются ошибки:
+RuntimeError("selector exploded")
+RuntimeError("adapter exploded")
+RuntimeError("builder exploded")
+
+tests/pipeline/test_create_person_step.py::TestCreatePersonStepContractViolations::test_unexpected_runtime_error_from_selector_propagates PASSED
+tests/pipeline/test_create_person_step.py::TestCreatePersonStepContractViolations::test_unexpected_runtime_error_from_adapter_propagates PASSED
+tests/pipeline/test_create_person_step.py::TestCreatePersonStepContractViolations::test_unexpected_runtime_error_from_builder_propagates PASSED</code></pre>
+</div>
+</details>
+<h2 id="search-">Десятый блок: тело класса изолировано от search-символов</h2>
+<h3 id="_8">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Create</span><span class="o">-</span><span class="n">flow</span> <span class="n">шаг</span> <span class="n">не</span> <span class="n">должен</span> <span class="n">зависеть</span> <span class="n">от</span> <span class="n">search</span><span class="o">-</span><span class="n">специфичных</span> <span class="n">символов</span><span class="o">.</span>
+</code></pre></div>
+<p>Это параметризованный guard-тест по тексту класса. Он защищает границу между
+search-flow и create-flow: в <code>CreatePersonStep</code> не должно быть search-решений и
+search-управляющих символов.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">"symbol"</span><span class="p">,</span> <span class="n">_FORBIDDEN_SEARCH_SYMBOLS</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">test_class_body_does_not_depend_on_search_attempt_symbols</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span> <span class="n">symbol</span><span class="p">:</span> <span class="nb">str</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Create-flow шаг не должен зависеть от search-специфичных символов."""</span>
+    <span class="c1"># Arrange / Act / Assert</span>
+    <span class="k">assert</span> <span class="n">symbol</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_CLASS_SRC</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>symbols = [
+    "AttemptId",
+    "DataAttemptStr",
+    "InputXMLDecision_StrEnum",
+]
+class_source = inspect.getsource(CreatePersonStep)</code></pre>
+
+#### Вызов
+
+<pre><code>assert symbol not in class_source</code></pre>
+
+#### Вывод
+
+<pre><code>Тест ничего не печатает.
+Проверяется условие:
+каждый symbol из списка отсутствует в тексте класса CreatePersonStep
+
+tests/pipeline/test_create_person_step.py::TestCreatePersonStepArchitecture::test_class_body_does_not_depend_on_search_attempt_symbols[AttemptId] PASSED
+tests/pipeline/test_create_person_step.py::TestCreatePersonStepArchitecture::test_class_body_does_not_depend_on_search_attempt_symbols[DataAttemptStr] PASSED
+tests/pipeline/test_create_person_step.py::TestCreatePersonStepArchitecture::test_class_body_does_not_depend_on_search_attempt_symbols[InputXMLDecision_StrEnum] PASSED</code></pre>
+</div>
+</details>
+<h2 id="transport-">Одиннадцатый блок: тело класса изолировано от transport-слоя</h2>
+<h3 id="_9">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Шаг</span> <span class="n">подготовки</span> <span class="n">create</span><span class="o">-</span><span class="n">XML</span> <span class="n">не</span> <span class="n">должен</span> <span class="n">зависеть</span> <span class="n">от</span> <span class="n">transport</span><span class="o">-</span><span class="n">слоя</span><span class="o">.</span>
+</code></pre></div>
+<p>Этот параметризованный guard-тест нужен, чтобы create-step не начал смешивать
+сборку XML с отправкой или разбором ответов.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">"symbol"</span><span class="p">,</span> <span class="n">_FORBIDDEN_TRANSPORT_SYMBOLS</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">test_class_body_does_not_depend_on_transport_symbols</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span> <span class="n">symbol</span><span class="p">:</span> <span class="nb">str</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Шаг подготовки create-XML не должен зависеть от transport-слоя."""</span>
+    <span class="c1"># Arrange / Act / Assert</span>
+    <span class="k">assert</span> <span class="n">symbol</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_CLASS_SRC</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>symbols = [
+    "TransportResponseDTO",
+    "xml_transport",
+    "response_bytes",
+]
+class_source = inspect.getsource(CreatePersonStep)</code></pre>
+
+#### Вызов
+
+<pre><code>assert symbol not in class_source</code></pre>
+
+#### Вывод
+
+<pre><code>Тест ничего не печатает.
+Проверяется условие:
+каждый symbol из списка отсутствует в тексте класса CreatePersonStep
+
+tests/pipeline/test_create_person_step.py::TestCreatePersonStepArchitecture::test_class_body_does_not_depend_on_transport_symbols[TransportResponseDTO] PASSED
+tests/pipeline/test_create_person_step.py::TestCreatePersonStepArchitecture::test_class_body_does_not_depend_on_transport_symbols[xml_transport] PASSED
+tests/pipeline/test_create_person_step.py::TestCreatePersonStepArchitecture::test_class_body_does_not_depend_on_transport_symbols[response_bytes] PASSED</code></pre>
+</div>
+</details>
+<h2 id="controlled-error-error-stop">Двенадцатый тест: controlled error-ветки используют <code>error</code>, а не <code>stop</code></h2>
+<h3 id="_10">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Перехватываемые</span> <span class="n">ошибки</span> <span class="n">переводятся</span> <span class="n">в</span> <span class="err">`</span><span class="n">StepRslt</span><span class="o">.</span><span class="n">error</span><span class="err">`</span><span class="p">,</span> <span class="n">а</span> <span class="n">не</span> <span class="n">в</span> <span class="err">`</span><span class="n">stop</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<p>Этот архитектурный тест не проверяет данные сценариев, а смотрит на текст
+класса целиком. Он особенно важен для <code>CreatePersonStep</code>, потому что именно
+здесь зафиксировано отличие от <code>BuildSearchXMLStep</code>: controlled create-ошибки
+не должны становиться <code>STOP</code>.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_controlled_error_branches_use_error_not_stop</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Перехватываемые ошибки переводятся в `StepRslt.error`, а не в `stop`."""</span>
+    <span class="c1"># Arrange / Act / Assert</span>
+    <span class="k">assert</span> <span class="s2">"StepRslt.stop"</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_CLASS_SRC</span>
+    <span class="k">assert</span> <span class="s2">"StepRslt.error"</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_CLASS_SRC</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>class_source = inspect.getsource(CreatePersonStep)</code></pre>
+
+#### Вызов
+
+<pre><code>assert "StepRslt.stop" not in class_source
+assert "StepRslt.error" in class_source</code></pre>
+
+#### Вывод
+
+<pre><code>Тест ничего не печатает.
+Проверяется условие:
+"StepRslt.stop" отсутствует в тексте класса
+"StepRslt.error" присутствует в тексте класса
+
+tests/pipeline/test_create_person_step.py::TestCreatePersonStepArchitecture::test_controlled_error_branches_use_error_not_stop PASSED</code></pre>
+</div>
+</details>
+<h2 id="create-">Тринадцатый блок: сигнатуры create-методов остаются компактными и синхронными</h2>
+<h3 id="test_init_signature_contains_only_expected_parameters">Докстринг теста <code>test_init_signature_contains_only_expected_parameters</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="err">`</span><span class="fm">__init__</span><span class="err">`</span> <span class="n">принимает</span> <span class="n">builder</span><span class="p">,</span> <span class="n">rename</span><span class="o">-</span><span class="n">adapter</span><span class="p">,</span> <span class="nb">bytes</span><span class="o">-</span><span class="n">adapter</span> <span class="n">и</span> <span class="n">selector</span><span class="o">.</span>
+</code></pre></div>
+<h3 id="test_create_person_base_signature_contains_only_context">Докстринг теста <code>test_create_person_base_signature_contains_only_context</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="err">`</span><span class="n">create_person_base</span><span class="err">`</span> <span class="n">остаётся</span> <span class="n">синхронным</span> <span class="n">методом</span> <span class="n">с</span> <span class="n">одним</span> <span class="n">context</span><span class="o">.</span>
+</code></pre></div>
+<h3 id="test_create_person_not_base_signature_contains_context_and_op">Докстринг теста <code>test_create_person_not_base_signature_contains_context_and_op</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="err">`</span><span class="n">create_person_not_base</span><span class="err">`</span> <span class="n">принимает</span> <span class="n">только</span> <span class="n">context</span> <span class="n">и</span> <span class="err">`</span><span class="n">op</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<p>Эти тесты работают как API-guard для обеих create-веток. Они фиксируют
+ожидаемую компактность сигнатур и то, что create-step остается синхронным
+orchestration-слоем, а не превращается в <code>async</code> или перегруженный параметрами
+сервис.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код тестов</span><span class="docs-test-hide">Скрыть код тестов</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_init_signature_contains_only_expected_parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`__init__` принимает builder, rename-adapter, bytes-adapter и selector."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">signature</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="n">CreatePersonStep</span><span class="o">.</span><span class="fm">__init__</span><span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">signature</span><span class="o">.</span><span class="n">parameters</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">params</span> <span class="o">==</span> <span class="p">[</span>
+        <span class="s2">"self"</span><span class="p">,</span>
+        <span class="s2">"builder"</span><span class="p">,</span>
+        <span class="s2">"adapter"</span><span class="p">,</span>
+        <span class="s2">"adapter_put_bytes"</span><span class="p">,</span>
+        <span class="s2">"data_selector"</span><span class="p">,</span>
+    <span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">test_create_person_base_signature_contains_only_context</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`create_person_base` остаётся синхронным методом с одним context."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">signature</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="n">CreatePersonStep</span><span class="o">.</span><span class="n">create_person_base</span><span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">signature</span><span class="o">.</span><span class="n">parameters</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">params</span> <span class="o">==</span> <span class="p">[</span><span class="s2">"self"</span><span class="p">,</span> <span class="s2">"context"</span><span class="p">]</span>
+    <span class="k">assert</span> <span class="ow">not</span> <span class="n">inspect</span><span class="o">.</span><span class="n">iscoroutinefunction</span><span class="p">(</span><span class="n">CreatePersonStep</span><span class="o">.</span><span class="n">create_person_base</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">test_create_person_not_base_signature_contains_context_and_op</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`create_person_not_base` принимает только context и `op`."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">signature</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="n">CreatePersonStep</span><span class="o">.</span><span class="n">create_person_not_base</span><span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">signature</span><span class="o">.</span><span class="n">parameters</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">params</span> <span class="o">==</span> <span class="p">[</span><span class="s2">"self"</span><span class="p">,</span> <span class="s2">"context"</span><span class="p">,</span> <span class="s2">"op"</span><span class="p">]</span>
+    <span class="k">assert</span> <span class="ow">not</span> <span class="n">inspect</span><span class="o">.</span><span class="n">iscoroutinefunction</span><span class="p">(</span><span class="n">CreatePersonStep</span><span class="o">.</span><span class="n">create_person_not_base</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>init_signature = inspect.signature(CreatePersonStep.__init__)
+base_signature = inspect.signature(CreatePersonStep.create_person_base)
+not_base_signature = inspect.signature(CreatePersonStep.create_person_not_base)</code></pre>
+
+#### Вызов
+
+<pre><code>list(init_signature.parameters)
+list(base_signature.parameters)
+list(not_base_signature.parameters)
+inspect.iscoroutinefunction(CreatePersonStep.create_person_base)
+inspect.iscoroutinefunction(CreatePersonStep.create_person_not_base)</code></pre>
+
+#### Вывод
+
+<pre><code>Тесты ничего не печатают.
+Проверяется состояние:
+list(init_signature.parameters) == [
+    "self",
+    "builder",
+    "adapter",
+    "adapter_put_bytes",
+    "data_selector",
+]
+list(base_signature.parameters) == ["self", "context"]
+list(not_base_signature.parameters) == ["self", "context", "op"]
+inspect.iscoroutinefunction(CreatePersonStep.create_person_base) == False
+inspect.iscoroutinefunction(CreatePersonStep.create_person_not_base) == False
+
+tests/pipeline/test_create_person_step.py::TestCreatePersonStepArchitecture::test_init_signature_contains_only_expected_parameters PASSED
+tests/pipeline/test_create_person_step.py::TestCreatePersonStepArchitecture::test_create_person_base_signature_contains_only_context PASSED
+tests/pipeline/test_create_person_step.py::TestCreatePersonStepArchitecture::test_create_person_not_base_signature_contains_context_and_op PASSED</code></pre>
+</div>
+</details>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.sections", "toc.integrate", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../../../../assets/javascripts/toc-collapse.js"></script>
+</body>
+</html>

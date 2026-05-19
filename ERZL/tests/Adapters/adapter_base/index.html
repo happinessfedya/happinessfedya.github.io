@@ -1,0 +1,1393 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../../../reference/api/" rel="prev"/>
+<link href="../erzl_adapter/" rel="next"/>
+<link href="../../../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<title>Тесты AdapterBase - Integration Documentation</title>
+<link href="../../../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../../assets/_mkdocstrings.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/toc-collapse.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/docs-tests.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#adapterbase">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Integration Documentation" class="md-header__button md-logo" data-md-component="logo" href="../../../.." title="Integration Documentation">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Integration Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Тесты AdapterBase
+            
+          </span>
+</div>
+</div>
+</div>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Integration Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../../../.." title="Integration Documentation">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    Integration Documentation
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../..">
+<span class="md-ellipsis">
+    
+  
+    Общая структура проекта
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    ERZL
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    ERZL
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../architecture/ERZLcontext-lifestyle-mermaid/">
+<span class="md-ellipsis">
+    
+  
+    Жизненный цикл ERZL_Context
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../architecture/overview/">
+<span class="md-ellipsis">
+    
+  
+    Архитектура системы
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    How to
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    How to
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA/">
+<span class="md-ellipsis">
+    
+  
+    Добавить источник
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%D0%BB%D0%B5%20%D0%BE%D1%82%20%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B0%20%D0%B4%D0%BE%20XML/">
+<span class="md-ellipsis">
+    
+  
+    Добавить поле от источника до XML
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%D0%BF%D1%8B%D1%82%D0%BA%D1%83/">
+<span class="md-ellipsis">
+    
+  
+    Добавить попытку
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D1%84%D0%B8%D0%BB%D1%8C%20%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%B0%D1%86%D0%B8%D0%B8%20%D0%B2%20config.toml/">
+<span class="md-ellipsis">
+    
+  
+    Добавить профиль активации в config.toml
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%9E%D1%82%D0%BB%D0%B0%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BE%D1%82%D0%B2%D0%B5%D1%82%20ERZL/">
+<span class="md-ellipsis">
+    
+  
+    Отладить ответ ERZL
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../reference/api/">
+<span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Tests
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Tests
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_4_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_1" id="__nav_2_4_1_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Adapters
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_4_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Adapters
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Тесты AdapterBase
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    Тесты AdapterBase
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
+      
+        Докстринг модуля
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      
+        Зачем этот класс
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#attempt_plus_one-attemptid">
+<span class="md-ellipsis">
+      
+        Первый тест: attempt_plus_one увеличивает AttemptId и не трогает другие поля
+      
+    </span>
+</a>
+<nav aria-label="Первый тест: attempt_plus_one увеличивает AttemptId и не трогает другие поля" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reset_attempts">
+<span class="md-ellipsis">
+      
+        Второй тест: reset_attempts возвращает счетчик к стартовому значению
+      
+    </span>
+</a>
+<nav aria-label="Второй тест: reset_attempts возвращает счетчик к стартовому значению" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#adapterbase-dataclass-">
+<span class="md-ellipsis">
+      
+        Третий тест: AdapterBase работает не только с dataclass-контекстом
+      
+    </span>
+</a>
+<nav aria-label="Третий тест: AdapterBase работает не только с dataclass-контекстом" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#attemptid">
+<span class="md-ellipsis">
+      
+        Четвертый тест: отрицательный AttemptId не валидируется по диапазону
+      
+    </span>
+</a>
+<nav aria-label="Четвертый тест: отрицательный AttemptId не валидируется по диапазону" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bool-int">
+<span class="md-ellipsis">
+      
+        Пятый тест: bool принимается как подкласс int
+      
+    </span>
+</a>
+<nav aria-label="Пятый тест: bool принимается как подкласс int" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#attemptid-typeerror">
+<span class="md-ellipsis">
+      
+        Шестой блок: отсутствие AttemptId приводит к раннему TypeError
+      
+    </span>
+</a>
+<nav aria-label="Шестой блок: отсутствие AttemptId приводит к раннему TypeError" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#attemptid-typeerror_1">
+<span class="md-ellipsis">
+      
+        Седьмой блок: неверный тип AttemptId тоже дает TypeError
+      
+    </span>
+</a>
+<nav aria-label="Седьмой блок: неверный тип AttemptId тоже дает TypeError" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_9">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#adapter-context">
+<span class="md-ellipsis">
+      
+        Восьмой тест: базовый adapter не трогает чужие слои context
+      
+    </span>
+</a>
+<nav aria-label="Восьмой тест: базовый adapter не трогает чужие слои context" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_10">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../erzl_adapter/">
+<span class="md-ellipsis">
+    
+  
+    Тесты ERZLAdapter
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../get_xml_answer_adapter/">
+<span class="md-ellipsis">
+    
+  
+    Тесты GetXMLAnswerAdapter
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../rename_to_source_input_adapter/">
+<span class="md-ellipsis">
+    
+  
+    Тесты RenameToSourceInputAdapter
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../rename_to_source_input_adapter_cfg/">
+<span class="md-ellipsis">
+    
+  
+    Тесты RenameToSourceInputAdapterCfg
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../rename_xml_kv_pairs_adapter/">
+<span class="md-ellipsis">
+    
+  
+    Тесты RenameXmlKVPairsAdapter
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_2" id="__nav_2_4_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Pipeline
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Pipeline
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Pipeline/answer_decision_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты AnswerDecisionStep
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Pipeline/build_search_xml_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты BuildSearchXMLStep
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Pipeline/create_person_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты CreatePersonStep
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Pipeline/load_context_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты LoadContextStep
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Pipeline/prepare_attempt_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты PrepareAttemptStep
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Pipeline/transport_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты TransportStep
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_3" id="__nav_2_4_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Source
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Source
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Source/create_flags/">
+<span class="md-ellipsis">
+    
+  
+    Тесты CreateFlags
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Source/erzl_context/">
+<span class="md-ellipsis">
+    
+  
+    Тесты ERZL_Context
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Source/person_fields/">
+<span class="md-ellipsis">
+    
+  
+    Тесты PersonFields
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Source/xlsm_row_dto/">
+<span class="md-ellipsis">
+    
+  
+    Тесты XLSMRowDTO
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_4" id="__nav_2_4_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    XML
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    XML
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../XML/client_section/">
+<span class="md-ellipsis">
+    
+  
+    Тесты ClientSection
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../XML/container_fields_section/">
+<span class="md-ellipsis">
+    
+  
+    Тесты ContainerFieldsSection
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../XML/xml_builder_base/">
+<span class="md-ellipsis">
+    
+  
+    Тесты XMLBuilderBase
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="adapterbase">Тесты AdapterBase</h1>
+<p>Эта страница показывает contract-тесты из общего test-файла. Команда, на
+которой основаны сценарии:</p>
+<div class="language-powershell highlight"><pre><span></span><code><span class="n">python</span> <span class="n">-m</span> <span class="n">pytest</span> <span class="n">-vv</span> <span class="n">-s</span> <span class="n">tests</span><span class="p">/</span><span class="n">adapters</span><span class="p">/</span><span class="n">test_adapter_base</span><span class="p">.</span><span class="n">py</span>
+</code></pre></div>
+<p>Флаг <code>-s</code> здесь не добавляет пользовательской печати: модуль не выводит
+дополнительных строк, поэтому в консоли видны только имена тестов и статусы
+<code>PASSED</code>. Ниже раскрыто, какое именно состояние и какие ошибки фиксируют
+эти тесты.</p>
+<h2 id="_1">Докстринг модуля</h2>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Контрактные</span> <span class="n">тесты</span> <span class="n">для</span> <span class="err">`</span><span class="n">Adapters</span><span class="o">.</span><span class="n">Adapters</span><span class="o">.</span><span class="n">AdapterBase</span><span class="err">`</span><span class="o">.</span>
+
+<span class="n">Модуль</span> <span class="n">проверяет</span> <span class="n">безопасную</span> <span class="n">мутацию</span> <span class="err">`</span><span class="n">AttemptId</span><span class="err">`</span><span class="p">,</span> <span class="n">раннюю</span> <span class="n">runtime</span><span class="o">-</span><span class="n">валидацию</span>
+<span class="n">context</span> <span class="n">и</span> <span class="n">архитектурные</span> <span class="n">границы</span> <span class="n">базового</span> <span class="n">adapter</span><span class="o">-</span><span class="n">слоя</span><span class="o">.</span>
+
+<span class="n">Тесты</span> <span class="n">нужны</span> <span class="n">для</span> <span class="n">защиты</span> <span class="n">минимального</span> <span class="n">контракта</span> <span class="err">`</span><span class="n">AdapterBase</span><span class="err">`</span><span class="p">,</span> <span class="n">который</span> <span class="n">должен</span>
+<span class="n">работать</span> <span class="n">только</span> <span class="n">с</span> <span class="err">`</span><span class="n">AttemptId</span><span class="err">`</span> <span class="n">и</span> <span class="n">не</span> <span class="n">смешивать</span> <span class="n">эту</span> <span class="n">логику</span> <span class="n">с</span> <span class="n">source</span><span class="o">-</span><span class="p">,</span> <span class="n">XML</span><span class="o">-</span> <span class="n">или</span>
+<span class="n">pipeline</span><span class="o">-</span><span class="n">ответственностью</span><span class="o">.</span>
+</code></pre></div>
+<p>Исходный код больше не вынесен в один общий блок сверху. Ниже у каждого
+сценария есть отдельный раскрывающийся блок с кодом именно того теста,
+который документируется.</p>
+<h2 id="_2">Зачем этот класс</h2>
+<p><code>AdapterBase</code> — это минимальный общий adapter-слой для мутаций context, не
+завязанных на конкретную внешнюю систему. В текущем коде он отвечает только за
+работу со счетчиком попыток <code>AttemptId</code>.</p>
+<p>Этот класс:</p>
+<ul>
+<li>увеличивает <code>AttemptId</code> на единицу;</li>
+<li>сбрасывает <code>AttemptId</code> к <code>ATTEMPT_ID_START</code>;</li>
+<li>рано валидирует наличие и тип <code>AttemptId</code> в context.</li>
+</ul>
+<p>Этот класс не:</p>
+<ul>
+<li>не работает с <code>SourceData</code>, <code>DataAttemptStr</code>, <code>PersonType</code> или XML-данными;</li>
+<li>не принимает pipeline-решения;</li>
+<li>не требует конкретного dataclass-контекста, ему нужен только structural object с <code>AttemptId</code>.</li>
+</ul>
+<h2 id="attempt_plus_one-attemptid">Первый тест: <code>attempt_plus_one</code> увеличивает AttemptId и не трогает другие поля</h2>
+<h3 id="_3">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Проверяет</span> <span class="n">инкремент</span> <span class="err">`</span><span class="n">AttemptId</span><span class="err">`</span> <span class="n">ровно</span> <span class="n">на</span> <span class="n">единицу</span> <span class="n">без</span> <span class="n">мутации</span> <span class="n">прочих</span> <span class="n">полей</span><span class="o">.</span>
+</code></pre></div>
+<p>Первый тест показывает основной happy-path метода <code>attempt_plus_one()</code>. Он
+должен изменить только <code>AttemptId</code>, а любые посторонние атрибуты context
+обязаны остаться как есть.</p>
+<p>Именно поэтому рядом с <code>AttemptId=3</code> в заглушке есть служебное поле
+<code>marker="stable"</code>.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_attempt_plus_one_increments_attempt_id_and_keeps_other_fields</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Проверяет инкремент `AttemptId` ровно на единицу без мутации прочих полей."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">adapter</span> <span class="o">=</span> <span class="n">AdapterBase</span><span class="p">()</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">AttemptContextStub</span><span class="p">(</span><span class="n">AttemptId</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">"stable"</span><span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">adapter</span><span class="o">.</span><span class="n">attempt_plus_one</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">AttemptId</span> <span class="o">==</span> <span class="mi">4</span>
+    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">marker</span> <span class="o">==</span> <span class="s2">"stable"</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>adapter = AdapterBase()
+context = AttemptContextStub(AttemptId=3, marker="stable")</code></pre>
+
+#### Вызов
+
+<pre><code>adapter.attempt_plus_one(context)</code></pre>
+
+#### Вывод
+
+<pre><code>Тест ничего не печатает.
+Проверяется состояние:
+context.AttemptId == 4
+context.marker == "stable"
+
+tests/adapters/test_adapter_base.py::test_attempt_plus_one_increments_attempt_id_and_keeps_other_fields PASSED</code></pre>
+</div>
+</details>
+<h2 id="reset_attempts">Второй тест: <code>reset_attempts</code> возвращает счетчик к стартовому значению</h2>
+<h3 id="_4">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Проверяет</span> <span class="n">сброс</span> <span class="err">`</span><span class="n">AttemptId</span><span class="err">`</span> <span class="n">к</span> <span class="err">`</span><span class="n">ATTEMPT_ID_START</span><span class="err">`</span> <span class="n">независимо</span> <span class="n">от</span> <span class="n">прошлого</span> <span class="n">значения</span><span class="o">.</span>
+</code></pre></div>
+<p>Второй тест фиксирует контракт <code>reset_attempts()</code>: какое бы число ни стояло в
+<code>AttemptId</code>, после вызова должен получиться именно <code>ATTEMPT_ID_START</code>.</p>
+<p>У теста вывод именно такой потому что метод не вычисляет новый диапазон и не
+уменьшает счетчик по шагам, а сразу подставляет константу старта.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_reset_attempts_sets_attempt_id_to_attempt_id_start</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Проверяет сброс `AttemptId` к `ATTEMPT_ID_START` независимо от прошлого значения."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">adapter</span> <span class="o">=</span> <span class="n">AdapterBase</span><span class="p">()</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">AttemptContextStub</span><span class="p">(</span><span class="n">AttemptId</span><span class="o">=</span><span class="mi">999</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">"stable"</span><span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">adapter</span><span class="o">.</span><span class="n">reset_attempts</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">AttemptId</span> <span class="o">==</span> <span class="n">ATTEMPT_ID_START</span>
+    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">marker</span> <span class="o">==</span> <span class="s2">"stable"</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>adapter = AdapterBase()
+context = AttemptContextStub(AttemptId=999, marker="stable")</code></pre>
+
+#### Вызов
+
+<pre><code>adapter.reset_attempts(context)</code></pre>
+
+#### Вывод
+
+<pre><code>Тест ничего не печатает.
+Проверяется состояние:
+context.AttemptId == ATTEMPT_ID_START
+context.marker == "stable"
+
+tests/adapters/test_adapter_base.py::test_reset_attempts_sets_attempt_id_to_attempt_id_start PASSED</code></pre>
+</div>
+</details>
+<h2 id="adapterbase-dataclass-">Третий тест: AdapterBase работает не только с dataclass-контекстом</h2>
+<h3 id="_5">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Проверяет</span> <span class="n">работу</span> <span class="n">с</span> <span class="n">любым</span> <span class="n">mutable</span> <span class="nb">object</span><span class="p">,</span> <span class="n">а</span> <span class="n">не</span> <span class="n">только</span> <span class="n">с</span> <span class="n">dataclass</span><span class="o">-</span><span class="n">контекстом</span><span class="o">.</span>
+</code></pre></div>
+<p>Третий тест показывает, что <code>AdapterBase</code> опирается на structural-контракт:
+ему нужен объект с <code>AttemptId</code>, а не конкретный dataclass или наследование.</p>
+<p>Именно поэтому в тесте используется <code>PlainContextObject</code>, а не привычная
+заглушка-датакласс.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_adapter_base_works_with_plain_structural_context_object</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Проверяет работу с любым mutable object, а не только с dataclass-контекстом."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">adapter</span> <span class="o">=</span> <span class="n">AdapterBase</span><span class="p">()</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">PlainContextObject</span><span class="p">(</span><span class="n">attempt_id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">"plain-object"</span><span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">adapter</span><span class="o">.</span><span class="n">attempt_plus_one</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+    <span class="n">adapter</span><span class="o">.</span><span class="n">reset_attempts</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">AttemptId</span> <span class="o">==</span> <span class="n">ATTEMPT_ID_START</span>
+    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">marker</span> <span class="o">==</span> <span class="s2">"plain-object"</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>adapter = AdapterBase()
+context = PlainContextObject(attempt_id=1, marker="plain-object")</code></pre>
+
+#### Вызов
+
+<pre><code>adapter.attempt_plus_one(context)
+adapter.reset_attempts(context)</code></pre>
+
+#### Вывод
+
+<pre><code>Тест ничего не печатает.
+Проверяется состояние:
+context.AttemptId == ATTEMPT_ID_START
+context.marker == "plain-object"
+
+tests/adapters/test_adapter_base.py::test_adapter_base_works_with_plain_structural_context_object PASSED</code></pre>
+</div>
+</details>
+<h2 id="attemptid">Четвертый тест: отрицательный AttemptId не валидируется по диапазону</h2>
+<h3 id="_6">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Проверяет</span> <span class="n">текущее</span> <span class="n">поведение</span> <span class="n">для</span> <span class="n">отрицательного</span> <span class="err">`</span><span class="n">AttemptId</span><span class="err">`</span> <span class="n">без</span> <span class="n">доп</span><span class="o">.</span> <span class="n">валидации</span> <span class="n">диапазона</span><span class="o">.</span>
+</code></pre></div>
+<p>Четвертый тест специально фиксирует текущее поведение, а не желаемую
+бизнес-логику. Если в context уже стоит <code>AttemptId=-3</code>, метод просто делает
+<code>+1</code> и получает <code>-2</code>.</p>
+<p>Это важно, потому что тест показывает: <code>AdapterBase</code> проверяет тип, но не
+контролирует допустимый диапазон значений.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_attempt_plus_one_keeps_negative_attempt_id_without_range_validation</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Проверяет текущее поведение для отрицательного `AttemptId` без доп. валидации диапазона."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">adapter</span> <span class="o">=</span> <span class="n">AdapterBase</span><span class="p">()</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">AttemptContextStub</span><span class="p">(</span><span class="n">AttemptId</span><span class="o">=-</span><span class="mi">3</span><span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">adapter</span><span class="o">.</span><span class="n">attempt_plus_one</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">AttemptId</span> <span class="o">==</span> <span class="o">-</span><span class="mi">2</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>adapter = AdapterBase()
+context = AttemptContextStub(AttemptId=-3)</code></pre>
+
+#### Вызов
+
+<pre><code>adapter.attempt_plus_one(context)</code></pre>
+
+#### Вывод
+
+<pre><code>Тест ничего не печатает.
+Проверяется состояние:
+context.AttemptId == -2
+
+tests/adapters/test_adapter_base.py::test_attempt_plus_one_keeps_negative_attempt_id_without_range_validation PASSED</code></pre>
+</div>
+</details>
+<h2 id="bool-int">Пятый тест: <code>bool</code> принимается как подкласс <code>int</code></h2>
+<h3 id="_7">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Фиксирует</span> <span class="n">текущее</span> <span class="n">поведение</span> <span class="n">Python</span><span class="p">:</span> <span class="err">`</span><span class="nb">bool</span><span class="err">`</span> <span class="n">проходит</span> <span class="n">проверку</span> <span class="err">`</span><span class="nb">isinstance</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<p>Пятый тест фиксирует очень конкретный Python-runtime нюанс. Поскольку
+<code>isinstance(True, int)</code> возвращает <code>True</code>, текущая проверка типа в
+<code>AdapterBase</code> принимает <code>bool</code>.</p>
+<p>Поэтому <code>True</code> читается как <code>1</code>, после инкремента превращается в <code>2</code>, и тест
+закрепляет именно это поведение.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_attempt_plus_one_accepts_bool_as_int_subclass</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Фиксирует текущее поведение Python: `bool` проходит проверку `isinstance(..., int)`."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">adapter</span> <span class="o">=</span> <span class="n">AdapterBase</span><span class="p">()</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">AttemptContextStub</span><span class="p">(</span><span class="n">AttemptId</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">adapter</span><span class="o">.</span><span class="n">attempt_plus_one</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">AttemptId</span> <span class="o">==</span> <span class="mi">2</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>adapter = AdapterBase()
+context = AttemptContextStub(AttemptId=True)</code></pre>
+
+#### Вызов
+
+<pre><code>adapter.attempt_plus_one(context)</code></pre>
+
+#### Вывод
+
+<pre><code>Тест ничего не печатает.
+Проверяется состояние:
+context.AttemptId == 2
+
+tests/adapters/test_adapter_base.py::test_attempt_plus_one_accepts_bool_as_int_subclass PASSED</code></pre>
+</div>
+</details>
+<h2 id="attemptid-typeerror">Шестой блок: отсутствие <code>AttemptId</code> приводит к раннему TypeError</h2>
+<h3 id="_8">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Проверяет</span> <span class="n">ранний</span> <span class="err">`</span><span class="ne">TypeError</span><span class="err">`</span><span class="p">,</span> <span class="n">если</span> <span class="n">context</span> <span class="n">не</span> <span class="n">содержит</span> <span class="err">`</span><span class="n">AttemptId</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<p>Этот параметризованный тест показывает, что и <code>attempt_plus_one</code>, и
+<code>reset_attempts</code> одинаково рано падают на context без обязательного атрибута
+<code>AttemptId</code>.</p>
+<p>У теста вывод именно такой потому что реализация перехватывает
+<code>AttributeError</code> доступа к полю и преобразует его в <code>TypeError</code> с упоминанием
+<code>AttemptId</code>.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">"method_name"</span><span class="p">,</span> <span class="p">(</span><span class="s2">"attempt_plus_one"</span><span class="p">,</span> <span class="s2">"reset_attempts"</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">test_methods_raise_type_error_when_context_has_no_attempt_id</span><span class="p">(</span>
+    <span class="n">method_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Проверяет ранний `TypeError`, если context не содержит `AttemptId`."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">adapter</span> <span class="o">=</span> <span class="n">AdapterBase</span><span class="p">()</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">ContextWithoutAttemptId</span><span class="p">()</span>
+
+    <span class="c1"># Act / Assert</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">)</span> <span class="k">as</span> <span class="n">exc_info</span><span class="p">:</span>
+        <span class="nb">getattr</span><span class="p">(</span><span class="n">adapter</span><span class="p">,</span> <span class="n">method_name</span><span class="p">)(</span><span class="n">context</span><span class="p">)</span>
+
+    <span class="k">assert</span> <span class="s2">"AttemptId"</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">exc_info</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>adapter = AdapterBase()
+context = ContextWithoutAttemptId()
+method_name in ("attempt_plus_one", "reset_attempts")</code></pre>
+
+#### Вызов
+
+<pre><code>with pytest.raises(TypeError) as exc_info:
+    getattr(adapter, method_name)(context)</code></pre>
+
+#### Ошибка
+
+<pre><code>Тест ничего не печатает.
+Проверяются два случая:
+тип исключения = TypeError
+"AttemptId" in str(exc_info.value)
+
+tests/adapters/test_adapter_base.py::test_methods_raise_type_error_when_context_has_no_attempt_id[attempt_plus_one] PASSED
+tests/adapters/test_adapter_base.py::test_methods_raise_type_error_when_context_has_no_attempt_id[reset_attempts] PASSED</code></pre>
+</div>
+</details>
+<h2 id="attemptid-typeerror_1">Седьмой блок: неверный тип AttemptId тоже дает TypeError</h2>
+<h3 id="_9">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Проверяет</span> <span class="err">`</span><span class="ne">TypeError</span><span class="err">`</span><span class="p">,</span> <span class="n">если</span> <span class="err">`</span><span class="n">AttemptId</span><span class="err">`</span> <span class="n">существует</span><span class="p">,</span> <span class="n">но</span> <span class="n">не</span> <span class="n">является</span> <span class="err">`</span><span class="nb">int</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<p>Этот параметризованный тест защищает вторую часть runtime-валидации:
+<code>AttemptId</code> может существовать, но если это <code>"1"</code>, <code>1.5</code> или <code>None</code>, метод не
+должен продолжать вычисления.</p>
+<p>Поэтому тест прогоняет оба метода на трех заведомо неподходящих значениях и
+проверяет, что в тексте ошибки фигурирует слово <code>int</code>.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">"method_name"</span><span class="p">,</span> <span class="p">(</span><span class="s2">"attempt_plus_one"</span><span class="p">,</span> <span class="s2">"reset_attempts"</span><span class="p">))</span>
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">"bad_attempt_id"</span><span class="p">,</span> <span class="p">(</span><span class="s2">"1"</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">test_methods_raise_type_error_when_attempt_id_is_not_int</span><span class="p">(</span>
+    <span class="n">method_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">bad_attempt_id</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Проверяет `TypeError`, если `AttemptId` существует, но не является `int`."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">adapter</span> <span class="o">=</span> <span class="n">AdapterBase</span><span class="p">()</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">AttemptContextStub</span><span class="p">(</span><span class="n">AttemptId</span><span class="o">=</span><span class="n">bad_attempt_id</span><span class="p">)</span>
+
+    <span class="c1"># Act / Assert</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">)</span> <span class="k">as</span> <span class="n">exc_info</span><span class="p">:</span>
+        <span class="nb">getattr</span><span class="p">(</span><span class="n">adapter</span><span class="p">,</span> <span class="n">method_name</span><span class="p">)(</span><span class="n">context</span><span class="p">)</span>
+
+    <span class="k">assert</span> <span class="s2">"int"</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">exc_info</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>adapter = AdapterBase()
+bad_attempt_id in ("1", 1.5, None)
+method_name in ("attempt_plus_one", "reset_attempts")</code></pre>
+
+#### Вызов
+
+<pre><code>with pytest.raises(TypeError) as exc_info:
+    getattr(adapter, method_name)(context)</code></pre>
+
+#### Ошибка
+
+<pre><code>Тест ничего не печатает.
+Проверяются шесть случаев:
+тип исключения = TypeError
+"int" in str(exc_info.value)
+
+tests/adapters/test_adapter_base.py::test_methods_raise_type_error_when_attempt_id_is_not_int[1-attempt_plus_one] PASSED
+tests/adapters/test_adapter_base.py::test_methods_raise_type_error_when_attempt_id_is_not_int[1-reset_attempts] PASSED
+tests/adapters/test_adapter_base.py::test_methods_raise_type_error_when_attempt_id_is_not_int[1.5-attempt_plus_one] PASSED
+tests/adapters/test_adapter_base.py::test_methods_raise_type_error_when_attempt_id_is_not_int[1.5-reset_attempts] PASSED
+tests/adapters/test_adapter_base.py::test_methods_raise_type_error_when_attempt_id_is_not_int[None-attempt_plus_one] PASSED
+tests/adapters/test_adapter_base.py::test_methods_raise_type_error_when_attempt_id_is_not_int[None-reset_attempts] PASSED</code></pre>
+</div>
+</details>
+<h2 id="adapter-context">Восьмой тест: базовый adapter не трогает чужие слои context</h2>
+<h3 id="_10">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Проверяет</span><span class="p">,</span> <span class="n">что</span> <span class="err">`</span><span class="n">AdapterBase</span><span class="err">`</span> <span class="n">не</span> <span class="n">влезает</span> <span class="n">в</span> <span class="n">XML</span><span class="p">,</span> <span class="n">source</span><span class="o">-</span><span class="n">данные</span> <span class="n">и</span> <span class="n">pipeline</span> <span class="n">branching</span><span class="o">.</span>
+</code></pre></div>
+<p>Последний тест защищает архитектурную границу класса. В теле <code>AdapterBase</code>
+не должно быть терминов вроде <code>SourceData</code>, <code>xml_bytes</code>, <code>StepRslt</code> или
+<code>NEXT_ATTEMPT</code>, потому что базовый adapter обязан работать только со счетчиком
+попыток.</p>
+<p>Именно поэтому тест анализирует исходный код класса через <code>inspect.getsource</code>.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_adapter_base_class_body_does_not_touch_other_context_layers</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Проверяет, что `AdapterBase` не влезает в XML, source-данные и pipeline branching."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">class_source</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getsource</span><span class="p">(</span><span class="n">AdapterBase</span><span class="p">)</span>
+    <span class="n">forbidden_terms</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">"DataAttemptStr"</span><span class="p">,</span>
+        <span class="s2">"SourceData"</span><span class="p">,</span>
+        <span class="s2">"PersonType"</span><span class="p">,</span>
+        <span class="s2">"create_flags"</span><span class="p">,</span>
+        <span class="s2">"xml_bytes"</span><span class="p">,</span>
+        <span class="s2">"response_bytes"</span><span class="p">,</span>
+        <span class="s2">"StepRslt"</span><span class="p">,</span>
+        <span class="s2">"NEXT_ATTEMPT"</span><span class="p">,</span>
+        <span class="s2">"NO_MORE_ATTEMPTS"</span><span class="p">,</span>
+        <span class="s2">"ABORT"</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">unexpected_terms</span> <span class="o">=</span> <span class="p">[</span><span class="n">term</span> <span class="k">for</span> <span class="n">term</span> <span class="ow">in</span> <span class="n">forbidden_terms</span> <span class="k">if</span> <span class="n">term</span> <span class="ow">in</span> <span class="n">class_source</span><span class="p">]</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">unexpected_terms</span> <span class="o">==</span> <span class="p">[]</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>class_source = inspect.getsource(AdapterBase)
+forbidden_terms = (
+    "DataAttemptStr",
+    "SourceData",
+    "PersonType",
+    "create_flags",
+    "xml_bytes",
+    "response_bytes",
+    "StepRslt",
+    "NEXT_ATTEMPT",
+    "NO_MORE_ATTEMPTS",
+    "ABORT",
+)</code></pre>
+
+#### Вызов
+
+<pre><code>unexpected_terms = [term for term in forbidden_terms if term in class_source]</code></pre>
+
+#### Вывод
+
+<pre><code>Тест ничего не печатает.
+Проверяется состояние:
+unexpected_terms == []
+
+tests/adapters/test_adapter_base.py::test_adapter_base_class_body_does_not_touch_other_context_layers PASSED</code></pre>
+</div>
+</details>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.sections", "toc.integrate", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../../../../assets/javascripts/toc-collapse.js"></script>
+</body>
+</html>

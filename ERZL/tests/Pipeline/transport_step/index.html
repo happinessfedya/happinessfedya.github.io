@@ -1,0 +1,1947 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../prepare_attempt_step/" rel="prev"/>
+<link href="../../Source/create_flags/" rel="next"/>
+<link href="../../../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<title>Тесты TransportStep - Integration Documentation</title>
+<link href="../../../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../../assets/_mkdocstrings.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/toc-collapse.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/docs-tests.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#transportstep">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Integration Documentation" class="md-header__button md-logo" data-md-component="logo" href="../../../.." title="Integration Documentation">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Integration Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Тесты TransportStep
+            
+          </span>
+</div>
+</div>
+</div>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Integration Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../../../.." title="Integration Documentation">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    Integration Documentation
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../..">
+<span class="md-ellipsis">
+    
+  
+    Общая структура проекта
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    ERZL
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    ERZL
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../architecture/ERZLcontext-lifestyle-mermaid/">
+<span class="md-ellipsis">
+    
+  
+    Жизненный цикл ERZL_Context
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../architecture/overview/">
+<span class="md-ellipsis">
+    
+  
+    Архитектура системы
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    How to
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    How to
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA/">
+<span class="md-ellipsis">
+    
+  
+    Добавить источник
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%D0%BB%D0%B5%20%D0%BE%D1%82%20%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B0%20%D0%B4%D0%BE%20XML/">
+<span class="md-ellipsis">
+    
+  
+    Добавить поле от источника до XML
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%D0%BF%D1%8B%D1%82%D0%BA%D1%83/">
+<span class="md-ellipsis">
+    
+  
+    Добавить попытку
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D1%84%D0%B8%D0%BB%D1%8C%20%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%B0%D1%86%D0%B8%D0%B8%20%D0%B2%20config.toml/">
+<span class="md-ellipsis">
+    
+  
+    Добавить профиль активации в config.toml
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%9E%D1%82%D0%BB%D0%B0%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BE%D1%82%D0%B2%D0%B5%D1%82%20ERZL/">
+<span class="md-ellipsis">
+    
+  
+    Отладить ответ ERZL
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../reference/api/">
+<span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Tests
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Tests
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_1" id="__nav_2_4_1_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Adapters
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Adapters
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Adapters/adapter_base/">
+<span class="md-ellipsis">
+    
+  
+    Тесты AdapterBase
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Adapters/erzl_adapter/">
+<span class="md-ellipsis">
+    
+  
+    Тесты ERZLAdapter
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Adapters/get_xml_answer_adapter/">
+<span class="md-ellipsis">
+    
+  
+    Тесты GetXMLAnswerAdapter
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Adapters/rename_to_source_input_adapter/">
+<span class="md-ellipsis">
+    
+  
+    Тесты RenameToSourceInputAdapter
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Adapters/rename_to_source_input_adapter_cfg/">
+<span class="md-ellipsis">
+    
+  
+    Тесты RenameToSourceInputAdapterCfg
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Adapters/rename_xml_kv_pairs_adapter/">
+<span class="md-ellipsis">
+    
+  
+    Тесты RenameXmlKVPairsAdapter
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_4_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_2" id="__nav_2_4_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Pipeline
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_4_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Pipeline
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../answer_decision_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты AnswerDecisionStep
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../build_search_xml_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты BuildSearchXMLStep
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../create_person_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты CreatePersonStep
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../load_context_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты LoadContextStep
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../prepare_attempt_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты PrepareAttemptStep
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Тесты TransportStep
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    Тесты TransportStep
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
+      
+        Докстринг модуля
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      
+        Зачем этот класс
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#transport-adapter">
+<span class="md-ellipsis">
+      
+        Первый тест: конструктор сохраняет transport и adapter
+      
+    </span>
+</a>
+<nav aria-label="Первый тест: конструктор сохраняет transport и adapter" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#async-path-succes-response-context">
+<span class="md-ellipsis">
+      
+        Второй тест: штатный async-path дает SUCCES и пишет response в context
+      
+    </span>
+</a>
+<nav aria-label="Второй тест: штатный async-path дает SUCCES и пишет response в context" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bytes">
+<span class="md-ellipsis">
+      
+        Третий тест: пустые bytes отправляются как есть
+      
+    </span>
+</a>
+<nav aria-label="Третий тест: пустые bytes отправляются как есть" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#http-status-code">
+<span class="md-ellipsis">
+      
+        Четвертый блок: HTTP status code не проверяется локально
+      
+    </span>
+</a>
+<nav aria-label="Четвертый блок: HTTP status code не проверяется локально" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#per-call-local-guard-async-with">
+<span class="md-ellipsis">
+      
+        Пятый блок: шаг не хранит внутреннее per-call состояние и не требует local guard до async with
+      
+    </span>
+</a>
+<nav aria-label="Пятый блок: шаг не хранит внутреннее per-call состояние и не требует local guard до async with" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_multiple_calls_within_same_async_with_keep_no_internal_per_call_state">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_multiple_calls_within_same_async_with_keep_no_internal_per_call_state
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_send_without_async_with_has_no_local_guard_in_step">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_send_without_async_with_has_no_local_guard_in_step
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#controlled-fail-stopfail">
+<span class="md-ellipsis">
+      
+        Шестой блок: controlled fail-ветки дают stop(FAIL)
+      
+    </span>
+</a>
+<nav aria-label="Шестой блок: controlled fail-ветки дают stop(FAIL)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_none_xml_bytes_returns_stop_fail_without_touching_dependencies">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_none_xml_bytes_returns_stop_fail_without_touching_dependencies
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_transport_retry_error_returns_stop_fail_and_skips_adapter">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_transport_retry_error_returns_stop_fail_and_skips_adapter
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#contract-violations-runtime-">
+<span class="md-ellipsis">
+      
+        Седьмой блок: contract violations и неожиданные runtime-ошибки не скрываются
+      
+    </span>
+</a>
+<nav aria-label="Седьмой блок: contract violations и неожиданные runtime-ошибки не скрываются" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_async_with_still_calls_transport_exit_when_inner_error_escapes">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_async_with_still_calls_transport_exit_when_inner_error_escapes
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_context_without_xml_bytes_attribute_raises_attribute_error">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_context_without_xml_bytes_attribute_raises_attribute_error
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_missing_response_bytes_slot_error_from_adapter_propagates">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_missing_response_bytes_slot_error_from_adapter_propagates
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_transport_without_send_method_raises_attribute_error">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_transport_without_send_method_raises_attribute_error
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_async_with_transport_without_context_manager_raises_attribute_error">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_async_with_transport_without_context_manager_raises_attribute_error
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_adapter_without_answer_method_raises_attribute_error">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_adapter_without_answer_method_raises_attribute_error
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_transport_runtime_error_propagates_as_is">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_transport_runtime_error_propagates_as_is
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_transport_retry_error_from_adapter_is_not_caught_by_step">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_transport_retry_error_from_adapter_is_not_caught_by_step
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source-xml-building">
+<span class="md-ellipsis">
+      
+        Восьмой блок: тело класса изолировано от source-слоя и XML-building
+      
+    </span>
+</a>
+<nav aria-label="Восьмой блок: тело класса изолировано от source-слоя и XML-building" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_class_body_does_not_depend_on_source_symbols">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_class_body_does_not_depend_on_source_symbols
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_class_body_does_not_depend_on_xml_building_symbols">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_class_body_does_not_depend_on_xml_building_symbols
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#async-">
+<span class="md-ellipsis">
+      
+        Девятый блок: async-сигнатуры шага остаются стабильными
+      
+    </span>
+</a>
+<nav aria-label="Девятый блок: async-сигнатуры шага остаются стабильными" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_init_signature_contains_only_expected_parameters">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_init_signature_contains_only_expected_parameters
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_aenter_signature_and_async_contract_are_stable">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_aenter_signature_and_async_contract_are_stable
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_aexit_signature_and_async_contract_are_stable">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_aexit_signature_and_async_contract_are_stable
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_send_and_get_response_bytes_signature_contains_only_ctx">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_send_and_get_response_bytes_signature_contains_only_ctx
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_3" id="__nav_2_4_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Source
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Source
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Source/create_flags/">
+<span class="md-ellipsis">
+    
+  
+    Тесты CreateFlags
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Source/erzl_context/">
+<span class="md-ellipsis">
+    
+  
+    Тесты ERZL_Context
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Source/person_fields/">
+<span class="md-ellipsis">
+    
+  
+    Тесты PersonFields
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Source/xlsm_row_dto/">
+<span class="md-ellipsis">
+    
+  
+    Тесты XLSMRowDTO
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_4" id="__nav_2_4_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    XML
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    XML
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../XML/client_section/">
+<span class="md-ellipsis">
+    
+  
+    Тесты ClientSection
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../XML/container_fields_section/">
+<span class="md-ellipsis">
+    
+  
+    Тесты ContainerFieldsSection
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../XML/xml_builder_base/">
+<span class="md-ellipsis">
+    
+  
+    Тесты XMLBuilderBase
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="transportstep">Тесты TransportStep</h1>
+<p>Эта страница показывает тесты из общего test-файла. Команда, на которой
+основаны сценарии:</p>
+<div class="language-powershell highlight"><pre><span></span><code><span class="n">python</span> <span class="n">-m</span> <span class="n">pytest</span> <span class="n">-vv</span> <span class="n">-s</span> <span class="n">tests</span><span class="p">/</span><span class="n">pipeline</span><span class="p">/</span><span class="n">test_transport_step</span><span class="p">.</span><span class="n">py</span>
+</code></pre></div>
+<p>Флаг <code>-s</code> здесь не добавляет пользовательской печати: модуль не выводит свои
+сценарии, поэтому в <code>pytest</code> видны только имена тестов и статусы <code>PASSED</code>.
+Ниже раскрыто, какие именно async-сценарии, controlled fail-ветки и
+архитектурные ограничения стоят за этими статусами.</p>
+<h2 id="_1">Докстринг модуля</h2>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Тесты</span> <span class="n">для</span> <span class="err">`</span><span class="n">Pipeline</span><span class="o">.</span><span class="n">pipeline_protocols</span><span class="o">.</span><span class="n">TransportStep</span><span class="err">`</span><span class="o">.</span>
+
+<span class="n">Модуль</span> <span class="n">фиксирует</span> <span class="k">async</span><span class="o">-</span><span class="n">контракт</span> <span class="n">транспортного</span> <span class="n">шага</span><span class="p">:</span> <span class="n">controlled</span> <span class="n">fail</span><span class="o">-</span><span class="n">ветки</span><span class="p">,</span>
+<span class="n">делегирование</span> <span class="n">lifecycle</span> <span class="n">в</span> <span class="n">transport</span> <span class="n">и</span> <span class="n">изоляцию</span> <span class="n">от</span> <span class="n">source</span><span class="o">/</span><span class="n">XML</span> <span class="n">parsing</span> <span class="n">логики</span><span class="o">.</span>
+
+<span class="n">Тесты</span> <span class="n">нужны</span> <span class="n">для</span> <span class="n">защиты</span> <span class="n">шага</span><span class="p">,</span> <span class="n">который</span> <span class="n">отправляет</span> <span class="n">подготовленный</span> <span class="n">XML</span> <span class="n">через</span>
+<span class="n">transport</span><span class="p">,</span> <span class="n">записывает</span> <span class="n">ответ</span> <span class="n">в</span> <span class="n">context</span> <span class="n">через</span> <span class="n">adapter</span> <span class="n">и</span> <span class="n">не</span> <span class="n">смешивает</span> <span class="n">эту</span> <span class="n">логику</span>
+<span class="n">с</span> <span class="n">source</span><span class="o">-</span><span class="p">,</span> <span class="n">XML</span><span class="o">-</span><span class="n">building</span><span class="o">-</span> <span class="n">или</span> <span class="n">parser</span><span class="o">-</span><span class="n">ответственностью</span><span class="o">.</span>
+</code></pre></div>
+<p>Исходный код больше не вынесен в один общий блок сверху. Ниже у каждого
+сценария есть отдельный раскрывающийся блок с кодом именно того теста,
+который документируется.</p>
+<h2 id="_2">Зачем этот класс</h2>
+<p><code>TransportStep</code> живет в Pipeline-слое и отвечает только за границу отправки
+готового XML и записи сырого ответа обратно в context. Он связывает две
+зависимости:</p>
+<ul>
+<li><code>transport.send(xml_bytes)</code> отправляет XML и возвращает <code>TransportResponseDTO</code>;</li>
+<li><code>trans_adapter.answer_bytes_to_ctx(resp, ctx)</code> пишет <code>resp.output_bytes</code> в <code>ctx.response_bytes</code>.</li>
+</ul>
+<p>Этот шаг:</p>
+<ul>
+<li>читает <code>ctx.xml_bytes</code>;</li>
+<li>как <code>async context manager</code> делегирует <code>__aenter__</code> и <code>__aexit__</code> во внутренний transport;</li>
+<li>возвращает <code>StepRslt.ok(SUCCES)</code> на штатном пути;</li>
+<li>controlled fail-сценарии переводит в <code>StepRslt.stop(FAIL)</code>.</li>
+</ul>
+<p>Этот шаг не:</p>
+<ul>
+<li>не строит XML и не знает о builder-ошибках;</li>
+<li>не знает ничего о <code>AttemptId</code>, <code>SourceData</code> и логике попыток;</li>
+<li>не парсит ответ;</li>
+<li>не скрывает неожиданные runtime-ошибки transport-а и adapter-а.</li>
+</ul>
+<h2 id="transport-adapter">Первый тест: конструктор сохраняет transport и adapter</h2>
+<h3 id="_3">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Конструктор</span> <span class="n">сохраняет</span> <span class="n">transport</span> <span class="n">и</span> <span class="n">adapter</span> <span class="n">без</span> <span class="n">изменений</span><span class="o">.</span>
+</code></pre></div>
+<p>Этот тест защищает базовую DI-инициализацию шага. Если один из collaborators
+подменится уже в <code>__init__</code>, дальше нельзя будет доверять ни lifecycle, ни
+send-path.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_init_stores_transport_and_adapter</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Конструктор сохраняет transport и adapter без изменений."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">transport</span> <span class="o">=</span> <span class="n">_TransportStub</span><span class="p">()</span>
+    <span class="n">adapter</span> <span class="o">=</span> <span class="n">_TransportAdapterStub</span><span class="p">()</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="n">TransportStep</span><span class="p">(</span><span class="n">transport</span><span class="o">=</span><span class="n">transport</span><span class="p">,</span> <span class="n">trans_adapter</span><span class="o">=</span><span class="n">adapter</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">step</span><span class="o">.</span><span class="n">_transport</span> <span class="ow">is</span> <span class="n">transport</span>
+    <span class="k">assert</span> <span class="n">step</span><span class="o">.</span><span class="n">_trans_adapter</span> <span class="ow">is</span> <span class="n">adapter</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>transport = _TransportStub()
+adapter = _TransportAdapterStub()</code></pre>
+
+#### Вызов
+
+<pre><code>step = TransportStep(transport=transport, trans_adapter=adapter)</code></pre>
+
+#### Вывод
+
+<pre><code>Тест ничего не печатает.
+Проверяется состояние:
+step._transport is transport
+step._trans_adapter is adapter
+
+tests/pipeline/test_transport_step.py::TestTransportStepInstantiation::test_init_stores_transport_and_adapter PASSED</code></pre>
+</div>
+</details>
+<h2 id="async-path-succes-response-context">Второй тест: штатный async-path дает <code>SUCCES</code> и пишет response в context</h2>
+<h3 id="_4">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Шаг</span> <span class="n">отправляет</span> <span class="err">`</span><span class="n">xml_bytes</span><span class="err">`</span><span class="p">,</span> <span class="n">делегирует</span> <span class="n">запись</span> <span class="n">adapter</span><span class="o">-</span><span class="n">у</span> <span class="n">и</span> <span class="n">возвращает</span> <span class="err">`</span><span class="n">SUCCES</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<p>Это главный happy-path <code>TransportStep</code>. Он показывает сразу три контракта:</p>
+<ul>
+<li><code>async with step</code> делегирует lifecycle во внутренний transport;</li>
+<li><code>send_and_get_response_bytes(...)</code> передает <code>ctx.xml_bytes</code> в <code>transport.send(...)</code>;</li>
+<li>ответ transport-а передается в adapter и записывается в <code>context.response_bytes</code>.</li>
+</ul>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_send_and_get_response_bytes_returns_success_and_writes_response</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Шаг отправляет `xml_bytes`, делегирует запись adapter-у и возвращает `SUCCES`."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">transport</span> <span class="o">=</span> <span class="n">_TransportStub</span><span class="p">(</span>
+        <span class="n">response</span><span class="o">=</span><span class="n">TransportResponseDTO</span><span class="p">(</span>
+            <span class="n">output_bytes</span><span class="o">=</span><span class="sa">b</span><span class="s2">"&lt;reply/&gt;"</span><span class="p">,</span>
+            <span class="n">status_code</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+            <span class="n">time_spend</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">adapter</span> <span class="o">=</span> <span class="n">_TransportAdapterStub</span><span class="p">()</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="n">TransportStep</span><span class="p">(</span><span class="n">transport</span><span class="o">=</span><span class="n">transport</span><span class="p">,</span> <span class="n">trans_adapter</span><span class="o">=</span><span class="n">adapter</span><span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_TransportContextStub</span><span class="p">(</span><span class="n">xml_bytes</span><span class="o">=</span><span class="sa">b</span><span class="s2">"&lt;xml/&gt;"</span><span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">_scenario</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">object</span><span class="p">:</span>
+        <span class="k">async</span> <span class="k">with</span> <span class="n">step</span> <span class="k">as</span> <span class="n">entered_step</span><span class="p">:</span>
+            <span class="k">return</span> <span class="k">await</span> <span class="n">entered_step</span><span class="o">.</span><span class="n">send_and_get_response_bytes</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">_run</span><span class="p">(</span><span class="n">_scenario</span><span class="p">())</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="n">StepRslt</span><span class="o">.</span><span class="n">ok</span><span class="p">(</span>
+        <span class="n">TransportXMLDecision_StrEnum</span><span class="o">.</span><span class="n">SUCCES</span><span class="p">,</span>
+        <span class="s2">"Успешно записали ответ в ctx"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">assert</span> <span class="n">transport</span><span class="o">.</span><span class="n">enter_calls</span> <span class="o">==</span> <span class="mi">1</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">transport</span><span class="o">.</span><span class="n">exit_calls</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+    <span class="k">assert</span> <span class="n">transport</span><span class="o">.</span><span class="n">exit_calls</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="kc">None</span>
+    <span class="k">assert</span> <span class="n">transport</span><span class="o">.</span><span class="n">send_calls</span> <span class="o">==</span> <span class="p">[</span><span class="sa">b</span><span class="s2">"&lt;xml/&gt;"</span><span class="p">]</span>
+    <span class="k">assert</span> <span class="n">adapter</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[(</span><span class="n">transport</span><span class="o">.</span><span class="n">response</span><span class="p">,</span> <span class="n">context</span><span class="p">)]</span>
+    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">response_bytes</span> <span class="o">==</span> <span class="sa">b</span><span class="s2">"&lt;reply/&gt;"</span>
+    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">marker</span> <span class="o">==</span> <span class="s2">"keep"</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>transport = _TransportStub(
+    response=TransportResponseDTO(
+        output_bytes=b"&lt;reply/&gt;",
+        status_code=200,
+        time_spend=0.25,
+    )
+)
+adapter = _TransportAdapterStub()
+context = _TransportContextStub(xml_bytes=b"&lt;xml/&gt;")</code></pre>
+
+#### Вызов
+
+<pre><code>async with step as entered_step:
+    result = await entered_step.send_and_get_response_bytes(context)</code></pre>
+
+#### Вывод
+
+<pre><code>Тест ничего не печатает.
+Проверяется результат:
+result == StepRslt.ok(
+    TransportXMLDecision_StrEnum.SUCCES,
+    "Успешно записали ответ в ctx",
+)
+transport.enter_calls == 1
+len(transport.exit_calls) == 1
+transport.exit_calls[0][0] is None
+transport.send_calls == [b"&lt;xml/&gt;"]
+adapter.received == [(transport.response, context)]
+context.response_bytes == b"&lt;reply/&gt;"
+context.marker == "keep"
+
+tests/pipeline/test_transport_step.py::TestTransportStepHappyPath::test_send_and_get_response_bytes_returns_success_and_writes_response PASSED</code></pre>
+</div>
+</details>
+<h2 id="bytes">Третий тест: пустые bytes отправляются как есть</h2>
+<h3 id="_5">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Пустые</span> <span class="nb">bytes</span> <span class="n">не</span> <span class="n">считаются</span> <span class="n">отсутствующим</span> <span class="n">XML</span> <span class="n">и</span> <span class="n">передаются</span> <span class="n">в</span> <span class="n">transport</span> <span class="n">как</span> <span class="n">есть</span><span class="o">.</span>
+</code></pre></div>
+<p>Это полезный edge-case: шаг проверяет только <code>xml_bytes is None</code>, а не
+содержательную непустоту байтов. Поэтому пустая последовательность должна
+идти в <code>transport.send(...)</code> без локальной блокировки.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_empty_xml_bytes_are_sent_as_is</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Пустые bytes не считаются отсутствующим XML и передаются в transport как есть."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">transport</span> <span class="o">=</span> <span class="n">_TransportStub</span><span class="p">()</span>
+    <span class="n">adapter</span> <span class="o">=</span> <span class="n">_TransportAdapterStub</span><span class="p">()</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="n">TransportStep</span><span class="p">(</span><span class="n">transport</span><span class="o">=</span><span class="n">transport</span><span class="p">,</span> <span class="n">trans_adapter</span><span class="o">=</span><span class="n">adapter</span><span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_TransportContextStub</span><span class="p">(</span><span class="n">xml_bytes</span><span class="o">=</span><span class="sa">b</span><span class="s2">""</span><span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">_run</span><span class="p">(</span><span class="n">step</span><span class="o">.</span><span class="n">send_and_get_response_bytes</span><span class="p">(</span><span class="n">context</span><span class="p">))</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="n">StepRslt</span><span class="o">.</span><span class="n">ok</span><span class="p">(</span>
+        <span class="n">TransportXMLDecision_StrEnum</span><span class="o">.</span><span class="n">SUCCES</span><span class="p">,</span>
+        <span class="s2">"Успешно записали ответ в ctx"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">assert</span> <span class="n">transport</span><span class="o">.</span><span class="n">send_calls</span> <span class="o">==</span> <span class="p">[</span><span class="sa">b</span><span class="s2">""</span><span class="p">]</span>
+    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">response_bytes</span> <span class="o">==</span> <span class="sa">b</span><span class="s2">"&lt;ok/&gt;"</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>context = _TransportContextStub(xml_bytes=b"")</code></pre>
+
+#### Вызов
+
+<pre><code>result = _run(step.send_and_get_response_bytes(context))</code></pre>
+
+#### Вывод
+
+<pre><code>Тест ничего не печатает.
+Проверяется результат:
+result == StepRslt.ok(
+    TransportXMLDecision_StrEnum.SUCCES,
+    "Успешно записали ответ в ctx",
+)
+transport.send_calls == [b""]
+context.response_bytes == b"&lt;ok/&gt;"
+
+tests/pipeline/test_transport_step.py::TestTransportStepHappyPath::test_empty_xml_bytes_are_sent_as_is PASSED</code></pre>
+</div>
+</details>
+<h2 id="http-status-code">Четвертый блок: HTTP status code не проверяется локально</h2>
+<h3 id="_6">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Шаг</span> <span class="n">не</span> <span class="n">валидирует</span> <span class="n">HTTP</span><span class="o">-</span><span class="n">статус</span> <span class="n">сам</span> <span class="n">и</span> <span class="n">всегда</span> <span class="n">передаёт</span> <span class="n">ответ</span> <span class="n">adapter</span><span class="o">-</span><span class="n">у</span> <span class="n">как</span> <span class="n">есть</span><span class="o">.</span>
+</code></pre></div>
+<p>Это параметризованный сценарий для <code>200</code>, <code>404</code> и <code>500</code>. Он нужен, чтобы
+зафиксировать: <code>TransportStep</code> не интерпретирует HTTP status code сам, а
+делегирует DTO transport-adapter-у независимо от числа.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">"status_code"</span><span class="p">,</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">404</span><span class="p">,</span> <span class="mi">500</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">test_transport_status_code_is_forwarded_to_adapter_without_local_checks</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">status_code</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Шаг не валидирует HTTP-статус сам и всегда передаёт ответ adapter-у как есть."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">TransportResponseDTO</span><span class="p">(</span><span class="n">output_bytes</span><span class="o">=</span><span class="sa">b</span><span class="s2">"&lt;reply/&gt;"</span><span class="p">,</span> <span class="n">status_code</span><span class="o">=</span><span class="n">status_code</span><span class="p">)</span>
+    <span class="n">transport</span> <span class="o">=</span> <span class="n">_TransportStub</span><span class="p">(</span><span class="n">response</span><span class="o">=</span><span class="n">response</span><span class="p">)</span>
+    <span class="n">adapter</span> <span class="o">=</span> <span class="n">_TransportAdapterStub</span><span class="p">()</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="n">TransportStep</span><span class="p">(</span><span class="n">transport</span><span class="o">=</span><span class="n">transport</span><span class="p">,</span> <span class="n">trans_adapter</span><span class="o">=</span><span class="n">adapter</span><span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_TransportContextStub</span><span class="p">(</span><span class="n">xml_bytes</span><span class="o">=</span><span class="sa">b</span><span class="s2">"&lt;xml/&gt;"</span><span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">_run</span><span class="p">(</span><span class="n">step</span><span class="o">.</span><span class="n">send_and_get_response_bytes</span><span class="p">(</span><span class="n">context</span><span class="p">))</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="n">StepRslt</span><span class="o">.</span><span class="n">ok</span><span class="p">(</span>
+        <span class="n">TransportXMLDecision_StrEnum</span><span class="o">.</span><span class="n">SUCCES</span><span class="p">,</span>
+        <span class="s2">"Успешно записали ответ в ctx"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">assert</span> <span class="n">adapter</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[(</span><span class="n">response</span><span class="p">,</span> <span class="n">context</span><span class="p">)]</span>
+    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">response_bytes</span> <span class="o">==</span> <span class="sa">b</span><span class="s2">"&lt;reply/&gt;"</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>status_codes = [200, 404, 500]
+response = TransportResponseDTO(
+    output_bytes=b"&lt;reply/&gt;",
+    status_code=status_code,
+)</code></pre>
+
+#### Вызов
+
+<pre><code>result = _run(step.send_and_get_response_bytes(context))</code></pre>
+
+#### Вывод
+
+<pre><code>Тесты ничего не печатают.
+Проверяется результат:
+result == StepRslt.ok(
+    TransportXMLDecision_StrEnum.SUCCES,
+    "Успешно записали ответ в ctx",
+)
+adapter.received == [(response, context)]
+context.response_bytes == b"&lt;reply/&gt;"
+
+tests/pipeline/test_transport_step.py::TestTransportStepHappyPath::test_transport_status_code_is_forwarded_to_adapter_without_local_checks[200] PASSED
+tests/pipeline/test_transport_step.py::TestTransportStepHappyPath::test_transport_status_code_is_forwarded_to_adapter_without_local_checks[404] PASSED
+tests/pipeline/test_transport_step.py::TestTransportStepHappyPath::test_transport_status_code_is_forwarded_to_adapter_without_local_checks[500] PASSED</code></pre>
+</div>
+</details>
+<h2 id="per-call-local-guard-async-with">Пятый блок: шаг не хранит внутреннее per-call состояние и не требует local guard до <code>async with</code></h2>
+<h3 id="test_multiple_calls_within_same_async_with_keep_no_internal_per_call_state">Докстринг теста <code>test_multiple_calls_within_same_async_with_keep_no_internal_per_call_state</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Несколько</span> <span class="n">вызовов</span> <span class="n">подряд</span> <span class="n">внутри</span> <span class="n">одного</span> <span class="err">`</span><span class="k">async</span> <span class="k">with</span><span class="err">`</span> <span class="n">каждый</span> <span class="n">раз</span> <span class="n">читают</span> <span class="n">текущий</span> <span class="err">`</span><span class="n">ctx</span><span class="o">.</span><span class="n">xml_bytes</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<h3 id="test_send_without_async_with_has_no_local_guard_in_step">Докстринг теста <code>test_send_without_async_with_has_no_local_guard_in_step</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Шаг</span> <span class="n">не</span> <span class="n">запрещает</span> <span class="n">вызов</span> <span class="n">вне</span> <span class="err">`</span><span class="k">async</span> <span class="k">with</span><span class="err">`</span><span class="p">,</span> <span class="n">если</span> <span class="n">сам</span> <span class="n">transport</span> <span class="n">способен</span> <span class="n">отработать</span> <span class="n">напрямую</span><span class="o">.</span>
+</code></pre></div>
+<p>Первый тест показывает отсутствие локального накопленного состояния между
+вызовами <code>send_and_get_response_bytes(...)</code>. Второй фиксирует, что у шага нет
+собственного runtime-guard против вызова без <code>async with</code>: если transport
+способен работать напрямую, шаг не мешает этому.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код тестов</span><span class="docs-test-hide">Скрыть код тестов</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_multiple_calls_within_same_async_with_keep_no_internal_per_call_state</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Несколько вызовов подряд внутри одного `async with` каждый раз читают текущий `ctx.xml_bytes`."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">transport</span> <span class="o">=</span> <span class="n">_TransportStub</span><span class="p">()</span>
+    <span class="n">adapter</span> <span class="o">=</span> <span class="n">_TransportAdapterStub</span><span class="p">()</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="n">TransportStep</span><span class="p">(</span><span class="n">transport</span><span class="o">=</span><span class="n">transport</span><span class="p">,</span> <span class="n">trans_adapter</span><span class="o">=</span><span class="n">adapter</span><span class="p">)</span>
+    <span class="n">first_context</span> <span class="o">=</span> <span class="n">_TransportContextStub</span><span class="p">(</span><span class="n">xml_bytes</span><span class="o">=</span><span class="sa">b</span><span class="s2">"&lt;one/&gt;"</span><span class="p">)</span>
+    <span class="n">second_context</span> <span class="o">=</span> <span class="n">_TransportContextStub</span><span class="p">(</span><span class="n">xml_bytes</span><span class="o">=</span><span class="sa">b</span><span class="s2">"&lt;two/&gt;"</span><span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">_scenario</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">object</span><span class="p">,</span> <span class="nb">object</span><span class="p">]:</span>
+        <span class="k">async</span> <span class="k">with</span> <span class="n">step</span> <span class="k">as</span> <span class="n">entered_step</span><span class="p">:</span>
+            <span class="n">first_result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">entered_step</span><span class="o">.</span><span class="n">send_and_get_response_bytes</span><span class="p">(</span><span class="n">first_context</span><span class="p">)</span>
+            <span class="n">second_result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">entered_step</span><span class="o">.</span><span class="n">send_and_get_response_bytes</span><span class="p">(</span><span class="n">second_context</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">first_result</span><span class="p">,</span> <span class="n">second_result</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">first_result</span><span class="p">,</span> <span class="n">second_result</span> <span class="o">=</span> <span class="n">_run</span><span class="p">(</span><span class="n">_scenario</span><span class="p">())</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">first_result</span> <span class="o">==</span> <span class="n">StepRslt</span><span class="o">.</span><span class="n">ok</span><span class="p">(</span>
+        <span class="n">TransportXMLDecision_StrEnum</span><span class="o">.</span><span class="n">SUCCES</span><span class="p">,</span>
+        <span class="s2">"Успешно записали ответ в ctx"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">assert</span> <span class="n">second_result</span> <span class="o">==</span> <span class="n">StepRslt</span><span class="o">.</span><span class="n">ok</span><span class="p">(</span>
+        <span class="n">TransportXMLDecision_StrEnum</span><span class="o">.</span><span class="n">SUCCES</span><span class="p">,</span>
+        <span class="s2">"Успешно записали ответ в ctx"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">assert</span> <span class="n">transport</span><span class="o">.</span><span class="n">send_calls</span> <span class="o">==</span> <span class="p">[</span><span class="sa">b</span><span class="s2">"&lt;one/&gt;"</span><span class="p">,</span> <span class="sa">b</span><span class="s2">"&lt;two/&gt;"</span><span class="p">]</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">adapter</span><span class="o">.</span><span class="n">received</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
+
+<span class="k">def</span> <span class="nf">test_send_without_async_with_has_no_local_guard_in_step</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Шаг не запрещает вызов вне `async with`, если сам transport способен отработать напрямую."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">transport</span> <span class="o">=</span> <span class="n">_TransportStub</span><span class="p">()</span>
+    <span class="n">adapter</span> <span class="o">=</span> <span class="n">_TransportAdapterStub</span><span class="p">()</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="n">TransportStep</span><span class="p">(</span><span class="n">transport</span><span class="o">=</span><span class="n">transport</span><span class="p">,</span> <span class="n">trans_adapter</span><span class="o">=</span><span class="n">adapter</span><span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_TransportContextStub</span><span class="p">(</span><span class="n">xml_bytes</span><span class="o">=</span><span class="sa">b</span><span class="s2">"&lt;xml/&gt;"</span><span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">_run</span><span class="p">(</span><span class="n">step</span><span class="o">.</span><span class="n">send_and_get_response_bytes</span><span class="p">(</span><span class="n">context</span><span class="p">))</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="n">StepRslt</span><span class="o">.</span><span class="n">ok</span><span class="p">(</span>
+        <span class="n">TransportXMLDecision_StrEnum</span><span class="o">.</span><span class="n">SUCCES</span><span class="p">,</span>
+        <span class="s2">"Успешно записали ответ в ctx"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">assert</span> <span class="n">transport</span><span class="o">.</span><span class="n">enter_calls</span> <span class="o">==</span> <span class="mi">0</span>
+    <span class="k">assert</span> <span class="n">transport</span><span class="o">.</span><span class="n">exit_calls</span> <span class="o">==</span> <span class="p">[]</span>
+    <span class="k">assert</span> <span class="n">transport</span><span class="o">.</span><span class="n">send_calls</span> <span class="o">==</span> <span class="p">[</span><span class="sa">b</span><span class="s2">"&lt;xml/&gt;"</span><span class="p">]</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>Сценарий 1:
+first_context = _TransportContextStub(xml_bytes=b"&lt;one/&gt;")
+second_context = _TransportContextStub(xml_bytes=b"&lt;two/&gt;")
+
+Сценарий 2:
+context = _TransportContextStub(xml_bytes=b"&lt;xml/&gt;")</code></pre>
+
+#### Вызов
+
+<pre><code>async with step:
+    await step.send_and_get_response_bytes(first_context)
+    await step.send_and_get_response_bytes(second_context)
+
+result = _run(step.send_and_get_response_bytes(context))</code></pre>
+
+#### Вывод
+
+<pre><code>Тесты ничего не печатают.
+Проверяется состояние:
+в сценарии 1:
+first_result == StepRslt.ok(TransportXMLDecision_StrEnum.SUCCES, "Успешно записали ответ в ctx")
+second_result == StepRslt.ok(TransportXMLDecision_StrEnum.SUCCES, "Успешно записали ответ в ctx")
+transport.send_calls == [b"&lt;one/&gt;", b"&lt;two/&gt;"]
+len(adapter.received) == 2
+
+в сценарии 2:
+result == StepRslt.ok(TransportXMLDecision_StrEnum.SUCCES, "Успешно записали ответ в ctx")
+transport.enter_calls == 0
+transport.exit_calls == []
+transport.send_calls == [b"&lt;xml/&gt;"]
+
+tests/pipeline/test_transport_step.py::TestTransportStepHappyPath::test_multiple_calls_within_same_async_with_keep_no_internal_per_call_state PASSED
+tests/pipeline/test_transport_step.py::TestTransportStepHappyPath::test_send_without_async_with_has_no_local_guard_in_step PASSED</code></pre>
+</div>
+</details>
+<h2 id="controlled-fail-stopfail">Шестой блок: controlled fail-ветки дают <code>stop(FAIL)</code></h2>
+<h3 id="test_none_xml_bytes_returns_stop_fail_without_touching_dependencies">Докстринг теста <code>test_none_xml_bytes_returns_stop_fail_without_touching_dependencies</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="err">`</span><span class="n">xml_bytes</span> <span class="ow">is</span> <span class="kc">None</span><span class="err">`</span> <span class="n">завершает</span> <span class="n">шаг</span> <span class="n">через</span> <span class="err">`</span><span class="n">stop</span><span class="p">(</span><span class="n">FAIL</span><span class="p">)</span><span class="err">`</span> <span class="n">до</span> <span class="n">вызова</span> <span class="n">transport</span> <span class="n">и</span> <span class="n">adapter</span><span class="o">.</span>
+</code></pre></div>
+<h3 id="test_transport_retry_error_returns_stop_fail_and_skips_adapter">Докстринг теста <code>test_transport_retry_error_returns_stop_fail_and_skips_adapter</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="err">`</span><span class="n">TransportRetryError</span><span class="err">`</span> <span class="n">из</span> <span class="err">`</span><span class="n">transport</span><span class="o">.</span><span class="n">send</span><span class="err">`</span> <span class="n">конвертируется</span> <span class="n">в</span> <span class="n">управляемый</span> <span class="err">`</span><span class="n">FAIL</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<p>Это две встроенные controlled fail-ветки <code>TransportStep</code>. В первой шаг даже не
+идет в transport. Во второй transport уже вызван, но retry-ошибка превращается
+в <code>StepRslt.stop(...)</code>, а adapter не вызывается.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код тестов</span><span class="docs-test-hide">Скрыть код тестов</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_none_xml_bytes_returns_stop_fail_without_touching_dependencies</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`xml_bytes is None` завершает шаг через `stop(FAIL)` до вызова transport и adapter."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">transport</span> <span class="o">=</span> <span class="n">_TransportStub</span><span class="p">()</span>
+    <span class="n">adapter</span> <span class="o">=</span> <span class="n">_TransportAdapterStub</span><span class="p">()</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="n">TransportStep</span><span class="p">(</span><span class="n">transport</span><span class="o">=</span><span class="n">transport</span><span class="p">,</span> <span class="n">trans_adapter</span><span class="o">=</span><span class="n">adapter</span><span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_TransportContextStub</span><span class="p">(</span><span class="n">xml_bytes</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">_run</span><span class="p">(</span><span class="n">step</span><span class="o">.</span><span class="n">send_and_get_response_bytes</span><span class="p">(</span><span class="n">context</span><span class="p">))</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="n">StepRslt</span><span class="o">.</span><span class="n">stop</span><span class="p">(</span>
+        <span class="n">TransportXMLDecision_StrEnum</span><span class="o">.</span><span class="n">FAIL</span><span class="p">,</span>
+        <span class="s2">"Не найдены xml_bytes в context"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">assert</span> <span class="n">transport</span><span class="o">.</span><span class="n">send_calls</span> <span class="o">==</span> <span class="p">[]</span>
+    <span class="k">assert</span> <span class="n">adapter</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[]</span>
+    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">response_bytes</span> <span class="ow">is</span> <span class="kc">None</span>
+
+<span class="k">def</span> <span class="nf">test_transport_retry_error_returns_stop_fail_and_skips_adapter</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`TransportRetryError` из `transport.send` конвертируется в управляемый `FAIL`."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">transport</span> <span class="o">=</span> <span class="n">_TransportStub</span><span class="p">(</span><span class="n">error</span><span class="o">=</span><span class="n">TransportRetryError</span><span class="p">(</span><span class="s2">"network timeout"</span><span class="p">))</span>
+    <span class="n">adapter</span> <span class="o">=</span> <span class="n">_TransportAdapterStub</span><span class="p">()</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="n">TransportStep</span><span class="p">(</span><span class="n">transport</span><span class="o">=</span><span class="n">transport</span><span class="p">,</span> <span class="n">trans_adapter</span><span class="o">=</span><span class="n">adapter</span><span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_TransportContextStub</span><span class="p">(</span><span class="n">xml_bytes</span><span class="o">=</span><span class="sa">b</span><span class="s2">"&lt;xml/&gt;"</span><span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">_run</span><span class="p">(</span><span class="n">step</span><span class="o">.</span><span class="n">send_and_get_response_bytes</span><span class="p">(</span><span class="n">context</span><span class="p">))</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="n">StepRslt</span><span class="o">.</span><span class="n">stop</span><span class="p">(</span>
+        <span class="n">TransportXMLDecision_StrEnum</span><span class="o">.</span><span class="n">FAIL</span><span class="p">,</span>
+        <span class="s2">"Не удалось отправить xml: network timeout"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">assert</span> <span class="n">transport</span><span class="o">.</span><span class="n">send_calls</span> <span class="o">==</span> <span class="p">[</span><span class="sa">b</span><span class="s2">"&lt;xml/&gt;"</span><span class="p">]</span>
+    <span class="k">assert</span> <span class="n">adapter</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[]</span>
+    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">response_bytes</span> <span class="ow">is</span> <span class="kc">None</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>Сценарий 1:
+context = _TransportContextStub(xml_bytes=None)
+
+Сценарий 2:
+transport = _TransportStub(error=TransportRetryError("network timeout"))
+context = _TransportContextStub(xml_bytes=b"&lt;xml/&gt;")</code></pre>
+
+#### Вызов
+
+<pre><code>result = _run(step.send_and_get_response_bytes(context))</code></pre>
+
+#### Вывод
+
+<pre><code>Тесты ничего не печатают.
+Проверяется результат:
+в сценарии 1:
+result == StepRslt.stop(
+    TransportXMLDecision_StrEnum.FAIL,
+    "Не найдены xml_bytes в context",
+)
+transport.send_calls == []
+adapter.received == []
+context.response_bytes is None
+
+в сценарии 2:
+result == StepRslt.stop(
+    TransportXMLDecision_StrEnum.FAIL,
+    "Не удалось отправить xml: network timeout",
+)
+transport.send_calls == [b"&lt;xml/&gt;"]
+adapter.received == []
+context.response_bytes is None
+
+tests/pipeline/test_transport_step.py::TestTransportStepControlledFail::test_none_xml_bytes_returns_stop_fail_without_touching_dependencies PASSED
+tests/pipeline/test_transport_step.py::TestTransportStepControlledFail::test_transport_retry_error_returns_stop_fail_and_skips_adapter PASSED</code></pre>
+</div>
+</details>
+<h2 id="contract-violations-runtime-">Седьмой блок: contract violations и неожиданные runtime-ошибки не скрываются</h2>
+<h3 id="test_async_with_still_calls_transport_exit_when_inner_error_escapes">Докстринг теста <code>test_async_with_still_calls_transport_exit_when_inner_error_escapes</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="err">`</span><span class="n">TransportStep</span><span class="err">`</span> <span class="n">не</span> <span class="n">подавляет</span> <span class="n">исключения</span> <span class="n">внутри</span> <span class="err">`</span><span class="k">async</span> <span class="k">with</span><span class="err">`</span> <span class="n">и</span> <span class="n">всё</span> <span class="n">равно</span> <span class="n">делегирует</span> <span class="err">`</span><span class="fm">__aexit__</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<h3 id="test_context_without_xml_bytes_attribute_raises_attribute_error">Докстринг теста <code>test_context_without_xml_bytes_attribute_raises_attribute_error</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Отсутствие</span> <span class="err">`</span><span class="n">xml_bytes</span><span class="err">`</span> <span class="n">не</span> <span class="n">маскируется</span> <span class="n">шагом</span><span class="o">.</span>
+</code></pre></div>
+<h3 id="test_missing_response_bytes_slot_error_from_adapter_propagates">Докстринг теста <code>test_missing_response_bytes_slot_error_from_adapter_propagates</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Ошибка</span> <span class="n">записи</span> <span class="err">`</span><span class="n">response_bytes</span><span class="err">`</span> <span class="n">пробрасывается</span> <span class="n">как</span> <span class="n">runtime</span><span class="o">-</span><span class="n">contract</span> <span class="n">ошибка</span> <span class="n">adapter</span><span class="o">-</span><span class="n">слоя</span><span class="o">.</span>
+</code></pre></div>
+<h3 id="test_transport_without_send_method_raises_attribute_error">Докстринг теста <code>test_transport_without_send_method_raises_attribute_error</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Transport</span> <span class="n">без</span> <span class="err">`</span><span class="n">send</span><span class="err">`</span> <span class="n">не</span> <span class="n">поддерживается</span> <span class="n">и</span> <span class="n">ошибка</span> <span class="n">не</span> <span class="n">перехватывается</span><span class="o">.</span>
+</code></pre></div>
+<h3 id="test_async_with_transport_without_context_manager_raises_attribute_error">Докстринг теста <code>test_async_with_transport_without_context_manager_raises_attribute_error</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Отсутствие</span> <span class="err">`</span><span class="fm">__aenter__</span><span class="err">`</span><span class="o">/</span><span class="err">`</span><span class="fm">__aexit__</span><span class="err">`</span> <span class="n">у</span> <span class="n">transport</span><span class="o">-</span><span class="n">а</span> <span class="n">приводит</span> <span class="n">к</span> <span class="n">прямому</span> <span class="err">`</span><span class="ne">AttributeError</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<h3 id="test_adapter_without_answer_method_raises_attribute_error">Докстринг теста <code>test_adapter_without_answer_method_raises_attribute_error</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Adapter</span> <span class="n">без</span> <span class="err">`</span><span class="n">answer_bytes_to_ctx</span><span class="err">`</span> <span class="n">не</span> <span class="n">обрабатывается</span> <span class="n">шагом</span> <span class="n">специально</span><span class="o">.</span>
+</code></pre></div>
+<h3 id="test_transport_runtime_error_propagates_as_is">Докстринг теста <code>test_transport_runtime_error_propagates_as_is</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Исключение</span> <span class="n">transport</span><span class="o">-</span><span class="n">а</span><span class="p">,</span> <span class="n">отличное</span> <span class="n">от</span> <span class="err">`</span><span class="n">TransportRetryError</span><span class="err">`</span><span class="p">,</span> <span class="n">не</span> <span class="n">превращается</span> <span class="n">в</span> <span class="err">`</span><span class="n">StepRslt</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<h3 id="test_transport_retry_error_from_adapter_is_not_caught_by_step">Докстринг теста <code>test_transport_retry_error_from_adapter_is_not_caught_by_step</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="err">`</span><span class="n">TransportRetryError</span><span class="err">`</span> <span class="n">из</span> <span class="n">adapter</span><span class="o">-</span><span class="n">а</span> <span class="n">не</span> <span class="n">попадает</span> <span class="n">под</span> <span class="n">transport</span><span class="o">-</span><span class="n">specific</span> <span class="err">`</span><span class="k">except</span><span class="err">`</span> <span class="n">шага</span><span class="o">.</span>
+</code></pre></div>
+<p>Этот блок нужен, чтобы зафиксировать узкую область <code>except</code> внутри шага.
+<code>TransportStep</code> перехватывает только <code>TransportRetryError</code> именно из
+<code>transport.send(...)</code>. Все остальные нарушения contract и неожиданные runtime-
+ошибки должны выходить наружу как есть.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код тестов</span><span class="docs-test-hide">Скрыть код тестов</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_async_with_still_calls_transport_exit_when_inner_error_escapes</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`TransportStep` не подавляет исключения внутри `async with` и всё равно делегирует `__aexit__`."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">transport</span> <span class="o">=</span> <span class="n">_TransportStub</span><span class="p">()</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="n">TransportStep</span><span class="p">(</span><span class="n">transport</span><span class="o">=</span><span class="n">transport</span><span class="p">,</span> <span class="n">trans_adapter</span><span class="o">=</span><span class="n">_TransportAdapterStub</span><span class="p">())</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">_scenario</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">async</span> <span class="k">with</span> <span class="n">step</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"boom inside block"</span><span class="p">)</span>
+
+    <span class="c1"># Act / Assert</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="n">match</span><span class="o">=</span><span class="s2">"boom inside block"</span><span class="p">):</span>
+        <span class="n">_run</span><span class="p">(</span><span class="n">_scenario</span><span class="p">())</span>
+
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">transport</span><span class="o">.</span><span class="n">exit_calls</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+    <span class="k">assert</span> <span class="n">transport</span><span class="o">.</span><span class="n">exit_calls</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="ow">is</span> <span class="ne">ValueError</span>
+    <span class="k">assert</span> <span class="nb">str</span><span class="p">(</span><span class="n">transport</span><span class="o">.</span><span class="n">exit_calls</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="o">==</span> <span class="s2">"boom inside block"</span>
+
+<span class="k">def</span> <span class="nf">test_context_without_xml_bytes_attribute_raises_attribute_error</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Отсутствие `xml_bytes` не маскируется шагом."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="n">TransportStep</span><span class="p">(</span>
+        <span class="n">transport</span><span class="o">=</span><span class="n">_TransportStub</span><span class="p">(),</span>
+        <span class="n">trans_adapter</span><span class="o">=</span><span class="n">_TransportAdapterStub</span><span class="p">(),</span>
+    <span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_ContextWithoutXmlBytes</span><span class="p">()</span>
+
+    <span class="c1"># Act / Assert</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">):</span>
+        <span class="n">_run</span><span class="p">(</span><span class="n">step</span><span class="o">.</span><span class="n">send_and_get_response_bytes</span><span class="p">(</span><span class="n">context</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">test_missing_response_bytes_slot_error_from_adapter_propagates</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Ошибка записи `response_bytes` пробрасывается как runtime-contract ошибка adapter-слоя."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="n">TransportStep</span><span class="p">(</span>
+        <span class="n">transport</span><span class="o">=</span><span class="n">_TransportStub</span><span class="p">(),</span>
+        <span class="n">trans_adapter</span><span class="o">=</span><span class="n">_TransportAdapterStub</span><span class="p">(),</span>
+    <span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_ContextWithoutResponseBytes</span><span class="p">(</span><span class="n">xml_bytes</span><span class="o">=</span><span class="sa">b</span><span class="s2">"&lt;xml/&gt;"</span><span class="p">)</span>
+
+    <span class="c1"># Act / Assert</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">):</span>
+        <span class="n">_run</span><span class="p">(</span><span class="n">step</span><span class="o">.</span><span class="n">send_and_get_response_bytes</span><span class="p">(</span><span class="n">context</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">test_transport_without_send_method_raises_attribute_error</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Transport без `send` не поддерживается и ошибка не перехватывается."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="n">TransportStep</span><span class="p">(</span>
+        <span class="n">transport</span><span class="o">=</span><span class="n">_TransportWithoutSend</span><span class="p">(),</span>
+        <span class="n">trans_adapter</span><span class="o">=</span><span class="n">_TransportAdapterStub</span><span class="p">(),</span>
+    <span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_TransportContextStub</span><span class="p">(</span><span class="n">xml_bytes</span><span class="o">=</span><span class="sa">b</span><span class="s2">"&lt;xml/&gt;"</span><span class="p">)</span>
+
+    <span class="c1"># Act / Assert</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">):</span>
+        <span class="n">_run</span><span class="p">(</span><span class="n">step</span><span class="o">.</span><span class="n">send_and_get_response_bytes</span><span class="p">(</span><span class="n">context</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">test_async_with_transport_without_context_manager_raises_attribute_error</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Отсутствие `__aenter__`/`__aexit__` у transport-а приводит к прямому `AttributeError`."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="n">TransportStep</span><span class="p">(</span>
+        <span class="n">transport</span><span class="o">=</span><span class="n">_TransportWithoutContextManager</span><span class="p">(),</span>
+        <span class="n">trans_adapter</span><span class="o">=</span><span class="n">_TransportAdapterStub</span><span class="p">(),</span>
+    <span class="p">)</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">_scenario</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">async</span> <span class="k">with</span> <span class="n">step</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="c1"># Act / Assert</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">):</span>
+        <span class="n">_run</span><span class="p">(</span><span class="n">_scenario</span><span class="p">())</span>
+
+<span class="k">def</span> <span class="nf">test_adapter_without_answer_method_raises_attribute_error</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Adapter без `answer_bytes_to_ctx` не обрабатывается шагом специально."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="n">TransportStep</span><span class="p">(</span>
+        <span class="n">transport</span><span class="o">=</span><span class="n">_TransportStub</span><span class="p">(),</span>
+        <span class="n">trans_adapter</span><span class="o">=</span><span class="n">_AdapterWithoutMethod</span><span class="p">(),</span>
+    <span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_TransportContextStub</span><span class="p">(</span><span class="n">xml_bytes</span><span class="o">=</span><span class="sa">b</span><span class="s2">"&lt;xml/&gt;"</span><span class="p">)</span>
+
+    <span class="c1"># Act / Assert</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">):</span>
+        <span class="n">_run</span><span class="p">(</span><span class="n">step</span><span class="o">.</span><span class="n">send_and_get_response_bytes</span><span class="p">(</span><span class="n">context</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">test_transport_runtime_error_propagates_as_is</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Исключение transport-а, отличное от `TransportRetryError`, не превращается в `StepRslt`."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="n">TransportStep</span><span class="p">(</span>
+        <span class="n">transport</span><span class="o">=</span><span class="n">_TransportStub</span><span class="p">(</span><span class="n">error</span><span class="o">=</span><span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">"transport exploded"</span><span class="p">)),</span>
+        <span class="n">trans_adapter</span><span class="o">=</span><span class="n">_TransportAdapterStub</span><span class="p">(),</span>
+    <span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_TransportContextStub</span><span class="p">(</span><span class="n">xml_bytes</span><span class="o">=</span><span class="sa">b</span><span class="s2">"&lt;xml/&gt;"</span><span class="p">)</span>
+
+    <span class="c1"># Act / Assert</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">RuntimeError</span><span class="p">,</span> <span class="n">match</span><span class="o">=</span><span class="s2">"transport exploded"</span><span class="p">):</span>
+        <span class="n">_run</span><span class="p">(</span><span class="n">step</span><span class="o">.</span><span class="n">send_and_get_response_bytes</span><span class="p">(</span><span class="n">context</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">test_transport_retry_error_from_adapter_is_not_caught_by_step</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`TransportRetryError` из adapter-а не попадает под transport-specific `except` шага."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="n">TransportStep</span><span class="p">(</span>
+        <span class="n">transport</span><span class="o">=</span><span class="n">_TransportStub</span><span class="p">(),</span>
+        <span class="n">trans_adapter</span><span class="o">=</span><span class="n">_TransportAdapterStub</span><span class="p">(</span>
+            <span class="n">error</span><span class="o">=</span><span class="n">TransportRetryError</span><span class="p">(</span><span class="s2">"adapter retry error"</span><span class="p">)</span>
+        <span class="p">),</span>
+    <span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_TransportContextStub</span><span class="p">(</span><span class="n">xml_bytes</span><span class="o">=</span><span class="sa">b</span><span class="s2">"&lt;xml/&gt;"</span><span class="p">)</span>
+
+    <span class="c1"># Act / Assert</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="n">TransportRetryError</span><span class="p">,</span> <span class="n">match</span><span class="o">=</span><span class="s2">"adapter retry error"</span><span class="p">):</span>
+        <span class="n">_run</span><span class="p">(</span><span class="n">step</span><span class="o">.</span><span class="n">send_and_get_response_bytes</span><span class="p">(</span><span class="n">context</span><span class="p">))</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>Сценарии:
+1. Внутри async with поднимается ValueError("boom inside block")
+2. context = _ContextWithoutXmlBytes()
+3. context = _ContextWithoutResponseBytes(xml_bytes=b"&lt;xml/&gt;")
+4. transport = _TransportWithoutSend()
+5. transport = _TransportWithoutContextManager()
+6. trans_adapter = _AdapterWithoutMethod()
+7. transport = _TransportStub(error=RuntimeError("transport exploded"))
+8. trans_adapter = _TransportAdapterStub(
+       error=TransportRetryError("adapter retry error")
+   )</code></pre>
+
+#### Вызов
+
+<pre><code>with pytest.raises(...):
+    _run(step.send_and_get_response_bytes(context))
+
+или
+
+with pytest.raises(...):
+    _run(_scenario())</code></pre>
+
+#### Ошибка
+
+<pre><code>Тесты ничего не печатают.
+Проверяются ошибки:
+ValueError("boom inside block"), при этом transport.__aexit__ все равно вызван
+AttributeError для отсутствующего xml_bytes
+AttributeError при невозможности записать response_bytes
+AttributeError при отсутствии send / __aenter__ / __aexit__ / answer_bytes_to_ctx
+RuntimeError("transport exploded")
+TransportRetryError("adapter retry error")
+
+tests/pipeline/test_transport_step.py::TestTransportStepContractViolations::test_async_with_still_calls_transport_exit_when_inner_error_escapes PASSED
+tests/pipeline/test_transport_step.py::TestTransportStepContractViolations::test_context_without_xml_bytes_attribute_raises_attribute_error PASSED
+tests/pipeline/test_transport_step.py::TestTransportStepContractViolations::test_missing_response_bytes_slot_error_from_adapter_propagates PASSED
+tests/pipeline/test_transport_step.py::TestTransportStepContractViolations::test_transport_without_send_method_raises_attribute_error PASSED
+tests/pipeline/test_transport_step.py::TestTransportStepContractViolations::test_async_with_transport_without_context_manager_raises_attribute_error PASSED
+tests/pipeline/test_transport_step.py::TestTransportStepContractViolations::test_adapter_without_answer_method_raises_attribute_error PASSED
+tests/pipeline/test_transport_step.py::TestTransportStepContractViolations::test_transport_runtime_error_propagates_as_is PASSED
+tests/pipeline/test_transport_step.py::TestTransportStepContractViolations::test_transport_retry_error_from_adapter_is_not_caught_by_step PASSED</code></pre>
+</div>
+</details>
+<h2 id="source-xml-building">Восьмой блок: тело класса изолировано от source-слоя и XML-building</h2>
+<h3 id="test_class_body_does_not_depend_on_source_symbols">Докстринг теста <code>test_class_body_does_not_depend_on_source_symbols</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Шаг</span> <span class="n">не</span> <span class="n">знает</span> <span class="n">про</span> <span class="n">source</span><span class="o">-</span><span class="n">layer</span> <span class="n">и</span> <span class="n">управление</span> <span class="n">попытками</span><span class="o">.</span>
+</code></pre></div>
+<h3 id="test_class_body_does_not_depend_on_xml_building_symbols">Докстринг теста <code>test_class_body_does_not_depend_on_xml_building_symbols</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Шаг</span> <span class="n">не</span> <span class="n">знает</span> <span class="n">про</span> <span class="n">сборку</span> <span class="n">XML</span> <span class="n">и</span> <span class="n">работает</span> <span class="n">только</span> <span class="n">на</span> <span class="n">transport</span> <span class="n">boundary</span><span class="o">.</span>
+</code></pre></div>
+<p>Эти два параметризованных guard-теста защищают архитектурную позицию
+<code>TransportStep</code>: он должен жить строго на boundary <code>xml_bytes -&gt; transport -&gt;
+response_bytes</code> и не тянуть в себя search/source или XML-building символы.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код тестов</span><span class="docs-test-hide">Скрыть код тестов</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">"symbol"</span><span class="p">,</span> <span class="n">_FORBIDDEN_SOURCE_SYMBOLS</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">test_class_body_does_not_depend_on_source_symbols</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">symbol</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Шаг не знает про source-layer и управление попытками."""</span>
+    <span class="c1"># Arrange / Act / Assert</span>
+    <span class="k">assert</span> <span class="n">symbol</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_CLASS_SRC</span>
+
+<span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">"symbol"</span><span class="p">,</span> <span class="n">_FORBIDDEN_XML_BUILDING_SYMBOLS</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">test_class_body_does_not_depend_on_xml_building_symbols</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">symbol</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Шаг не знает про сборку XML и работает только на transport boundary."""</span>
+    <span class="c1"># Arrange / Act / Assert</span>
+    <span class="k">assert</span> <span class="n">symbol</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_CLASS_SRC</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>source_symbols = [
+    "AttemptId",
+    "DataAttemptStr",
+    "SourceData",
+    "NoValidRowsError",
+    "DataSelectorNoMatchError",
+]
+xml_building_symbols = [
+    "XMLBuilderRetryError",
+    "XMLBuilderFailError",
+    "RenameAndBuildXmlKVPairsError",
+]
+class_source = inspect.getsource(TransportStep)</code></pre>
+
+#### Вызов
+
+<pre><code>assert symbol not in class_source</code></pre>
+
+#### Вывод
+
+<pre><code>Тесты ничего не печатают.
+Проверяется условие:
+каждый symbol из обоих списков отсутствует в тексте класса TransportStep
+
+tests/pipeline/test_transport_step.py::TestTransportStepArchitecture::test_class_body_does_not_depend_on_source_symbols[AttemptId] PASSED
+tests/pipeline/test_transport_step.py::TestTransportStepArchitecture::test_class_body_does_not_depend_on_source_symbols[DataAttemptStr] PASSED
+tests/pipeline/test_transport_step.py::TestTransportStepArchitecture::test_class_body_does_not_depend_on_source_symbols[SourceData] PASSED
+tests/pipeline/test_transport_step.py::TestTransportStepArchitecture::test_class_body_does_not_depend_on_source_symbols[NoValidRowsError] PASSED
+tests/pipeline/test_transport_step.py::TestTransportStepArchitecture::test_class_body_does_not_depend_on_source_symbols[DataSelectorNoMatchError] PASSED
+tests/pipeline/test_transport_step.py::TestTransportStepArchitecture::test_class_body_does_not_depend_on_xml_building_symbols[XMLBuilderRetryError] PASSED
+tests/pipeline/test_transport_step.py::TestTransportStepArchitecture::test_class_body_does_not_depend_on_xml_building_symbols[XMLBuilderFailError] PASSED
+tests/pipeline/test_transport_step.py::TestTransportStepArchitecture::test_class_body_does_not_depend_on_xml_building_symbols[RenameAndBuildXmlKVPairsError] PASSED</code></pre>
+</div>
+</details>
+<h2 id="async-">Девятый блок: async-сигнатуры шага остаются стабильными</h2>
+<h3 id="test_init_signature_contains_only_expected_parameters">Докстринг теста <code>test_init_signature_contains_only_expected_parameters</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="err">`</span><span class="fm">__init__</span><span class="err">`</span> <span class="n">принимает</span> <span class="n">только</span> <span class="n">transport</span> <span class="n">и</span> <span class="n">transport</span><span class="o">-</span><span class="n">adapter</span><span class="o">.</span>
+</code></pre></div>
+<h3 id="test_aenter_signature_and_async_contract_are_stable">Докстринг теста <code>test_aenter_signature_and_async_contract_are_stable</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="err">`</span><span class="fm">__aenter__</span><span class="err">`</span> <span class="n">остаётся</span> <span class="k">async</span><span class="o">-</span><span class="n">методом</span> <span class="n">без</span> <span class="n">дополнительных</span> <span class="n">параметров</span><span class="o">.</span>
+</code></pre></div>
+<h3 id="test_aexit_signature_and_async_contract_are_stable">Докстринг теста <code>test_aexit_signature_and_async_contract_are_stable</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="err">`</span><span class="fm">__aexit__</span><span class="err">`</span> <span class="n">делегирует</span> <span class="n">стандартный</span> <span class="k">async</span><span class="o">-</span><span class="n">context</span><span class="o">-</span><span class="n">manager</span> <span class="n">контракт</span><span class="o">.</span>
+</code></pre></div>
+<h3 id="test_send_and_get_response_bytes_signature_contains_only_ctx">Докстринг теста <code>test_send_and_get_response_bytes_signature_contains_only_ctx</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="err">`</span><span class="n">send_and_get_response_bytes</span><span class="err">`</span> <span class="n">остаётся</span> <span class="k">async</span><span class="o">-</span><span class="n">методом</span> <span class="n">с</span> <span class="n">одним</span> <span class="err">`</span><span class="n">ctx</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<p>Эти тесты работают как API-guard для async-контракта шага. Они фиксируют, что
+<code>TransportStep</code> остается именно async context manager-оберткой с компактным
+публичным API.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код тестов</span><span class="docs-test-hide">Скрыть код тестов</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_init_signature_contains_only_expected_parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`__init__` принимает только transport и transport-adapter."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">signature</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="n">TransportStep</span><span class="o">.</span><span class="fm">__init__</span><span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">signature</span><span class="o">.</span><span class="n">parameters</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">params</span> <span class="o">==</span> <span class="p">[</span><span class="s2">"self"</span><span class="p">,</span> <span class="s2">"transport"</span><span class="p">,</span> <span class="s2">"trans_adapter"</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">test_aenter_signature_and_async_contract_are_stable</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`__aenter__` остаётся async-методом без дополнительных параметров."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">signature</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="n">TransportStep</span><span class="o">.</span><span class="fm">__aenter__</span><span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">signature</span><span class="o">.</span><span class="n">parameters</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">params</span> <span class="o">==</span> <span class="p">[</span><span class="s2">"self"</span><span class="p">]</span>
+    <span class="k">assert</span> <span class="n">inspect</span><span class="o">.</span><span class="n">iscoroutinefunction</span><span class="p">(</span><span class="n">TransportStep</span><span class="o">.</span><span class="fm">__aenter__</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">test_aexit_signature_and_async_contract_are_stable</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`__aexit__` делегирует стандартный async-context-manager контракт."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">signature</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="n">TransportStep</span><span class="o">.</span><span class="fm">__aexit__</span><span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">signature</span><span class="o">.</span><span class="n">parameters</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">params</span> <span class="o">==</span> <span class="p">[</span><span class="s2">"self"</span><span class="p">,</span> <span class="s2">"exc_type"</span><span class="p">,</span> <span class="s2">"exc_val"</span><span class="p">,</span> <span class="s2">"exc_tb"</span><span class="p">]</span>
+    <span class="k">assert</span> <span class="n">inspect</span><span class="o">.</span><span class="n">iscoroutinefunction</span><span class="p">(</span><span class="n">TransportStep</span><span class="o">.</span><span class="fm">__aexit__</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">test_send_and_get_response_bytes_signature_contains_only_ctx</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`send_and_get_response_bytes` остаётся async-методом с одним `ctx`."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">signature</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="n">TransportStep</span><span class="o">.</span><span class="n">send_and_get_response_bytes</span><span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">signature</span><span class="o">.</span><span class="n">parameters</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">params</span> <span class="o">==</span> <span class="p">[</span><span class="s2">"self"</span><span class="p">,</span> <span class="s2">"ctx"</span><span class="p">]</span>
+    <span class="k">assert</span> <span class="n">inspect</span><span class="o">.</span><span class="n">iscoroutinefunction</span><span class="p">(</span><span class="n">TransportStep</span><span class="o">.</span><span class="n">send_and_get_response_bytes</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>init_signature = inspect.signature(TransportStep.__init__)
+aenter_signature = inspect.signature(TransportStep.__aenter__)
+aexit_signature = inspect.signature(TransportStep.__aexit__)
+send_signature = inspect.signature(TransportStep.send_and_get_response_bytes)</code></pre>
+
+#### Вызов
+
+<pre><code>list(signature.parameters)
+inspect.iscoroutinefunction(...)</code></pre>
+
+#### Вывод
+
+<pre><code>Тесты ничего не печатают.
+Проверяется состояние:
+list(init_signature.parameters) == ["self", "transport", "trans_adapter"]
+list(aenter_signature.parameters) == ["self"]
+inspect.iscoroutinefunction(TransportStep.__aenter__) == True
+list(aexit_signature.parameters) == ["self", "exc_type", "exc_val", "exc_tb"]
+inspect.iscoroutinefunction(TransportStep.__aexit__) == True
+list(send_signature.parameters) == ["self", "ctx"]
+inspect.iscoroutinefunction(TransportStep.send_and_get_response_bytes) == True
+
+tests/pipeline/test_transport_step.py::TestTransportStepArchitecture::test_init_signature_contains_only_expected_parameters PASSED
+tests/pipeline/test_transport_step.py::TestTransportStepArchitecture::test_aenter_signature_and_async_contract_are_stable PASSED
+tests/pipeline/test_transport_step.py::TestTransportStepArchitecture::test_aexit_signature_and_async_contract_are_stable PASSED
+tests/pipeline/test_transport_step.py::TestTransportStepArchitecture::test_send_and_get_response_bytes_signature_contains_only_ctx PASSED</code></pre>
+</div>
+</details>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.sections", "toc.integrate", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../../../../assets/javascripts/toc-collapse.js"></script>
+</body>
+</html>

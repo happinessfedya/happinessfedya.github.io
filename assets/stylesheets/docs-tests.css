@@ -1,0 +1,53 @@
+.docs-test-case {
+  margin: 1.25rem 0 2rem;
+}
+
+.docs-test-case > summary {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--md-primary-fg-color);
+  font-weight: 700;
+  list-style: none;
+}
+
+.docs-test-case > summary::-webkit-details-marker {
+  display: none;
+}
+
+.docs-test-case > summary::before {
+  content: "▸";
+  font-size: 0.8rem;
+  transition: transform 120ms ease-in-out;
+}
+
+.docs-test-case[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.docs-test-case .docs-test-hide {
+  display: none;
+}
+
+.docs-test-case[open] .docs-test-show {
+  display: none;
+}
+
+.docs-test-case[open] .docs-test-hide {
+  display: inline;
+}
+
+.docs-test-panel {
+  border-left: 3px solid var(--md-primary-fg-color);
+  margin-top: 0.8rem;
+  padding-left: 1rem;
+}
+
+.docs-test-panel h4 {
+  margin: 1rem 0 0.35rem;
+}
+
+.docs-test-panel pre {
+  margin-top: 0.35rem;
+}

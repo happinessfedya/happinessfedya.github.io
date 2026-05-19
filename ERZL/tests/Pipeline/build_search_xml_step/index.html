@@ -1,0 +1,1992 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../answer_decision_step/" rel="prev"/>
+<link href="../create_person_step/" rel="next"/>
+<link href="../../../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<title>Тесты BuildSearchXMLStep - Integration Documentation</title>
+<link href="../../../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../../assets/_mkdocstrings.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/toc-collapse.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/docs-tests.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#buildsearchxmlstep">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Integration Documentation" class="md-header__button md-logo" data-md-component="logo" href="../../../.." title="Integration Documentation">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Integration Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Тесты BuildSearchXMLStep
+            
+          </span>
+</div>
+</div>
+</div>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Integration Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../../../.." title="Integration Documentation">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    Integration Documentation
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../..">
+<span class="md-ellipsis">
+    
+  
+    Общая структура проекта
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    ERZL
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    ERZL
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../architecture/ERZLcontext-lifestyle-mermaid/">
+<span class="md-ellipsis">
+    
+  
+    Жизненный цикл ERZL_Context
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../architecture/overview/">
+<span class="md-ellipsis">
+    
+  
+    Архитектура системы
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    How to
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    How to
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA/">
+<span class="md-ellipsis">
+    
+  
+    Добавить источник
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%D0%BB%D0%B5%20%D0%BE%D1%82%20%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B0%20%D0%B4%D0%BE%20XML/">
+<span class="md-ellipsis">
+    
+  
+    Добавить поле от источника до XML
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%D0%BF%D1%8B%D1%82%D0%BA%D1%83/">
+<span class="md-ellipsis">
+    
+  
+    Добавить попытку
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D1%84%D0%B8%D0%BB%D1%8C%20%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%B0%D1%86%D0%B8%D0%B8%20%D0%B2%20config.toml/">
+<span class="md-ellipsis">
+    
+  
+    Добавить профиль активации в config.toml
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%9E%D1%82%D0%BB%D0%B0%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BE%D1%82%D0%B2%D0%B5%D1%82%20ERZL/">
+<span class="md-ellipsis">
+    
+  
+    Отладить ответ ERZL
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../reference/api/">
+<span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Tests
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Tests
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_1" id="__nav_2_4_1_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Adapters
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Adapters
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Adapters/adapter_base/">
+<span class="md-ellipsis">
+    
+  
+    Тесты AdapterBase
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Adapters/erzl_adapter/">
+<span class="md-ellipsis">
+    
+  
+    Тесты ERZLAdapter
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Adapters/get_xml_answer_adapter/">
+<span class="md-ellipsis">
+    
+  
+    Тесты GetXMLAnswerAdapter
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Adapters/rename_to_source_input_adapter/">
+<span class="md-ellipsis">
+    
+  
+    Тесты RenameToSourceInputAdapter
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Adapters/rename_to_source_input_adapter_cfg/">
+<span class="md-ellipsis">
+    
+  
+    Тесты RenameToSourceInputAdapterCfg
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Adapters/rename_xml_kv_pairs_adapter/">
+<span class="md-ellipsis">
+    
+  
+    Тесты RenameXmlKVPairsAdapter
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_4_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_2" id="__nav_2_4_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Pipeline
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_4_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Pipeline
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../answer_decision_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты AnswerDecisionStep
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Тесты BuildSearchXMLStep
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    Тесты BuildSearchXMLStep
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
+      
+        Докстринг модуля
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      
+        Зачем этот класс
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#builder-adapter-">
+<span class="md-ellipsis">
+      
+        Первый тест: конструктор сохраняет builder и оба adapter-а
+      
+    </span>
+</a>
+<nav aria-label="Первый тест: конструктор сохраняет builder и оба adapter-а" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#xml-continue">
+<span class="md-ellipsis">
+      
+        Второй тест: штатная сборка поискового XML дает CONTINUE
+      
+    </span>
+</a>
+<nav aria-label="Второй тест: штатная сборка поискового XML дает CONTINUE" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#xmlkvpairs-continue">
+<span class="md-ellipsis">
+      
+        Третий тест: пустые XMLKVPairs сами по себе не блокируют CONTINUE
+      
+    </span>
+</a>
+<nav aria-label="Третий тест: пустые XMLKVPairs сами по себе не блокируют CONTINUE" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rename-stopabort">
+<span class="md-ellipsis">
+      
+        Четвертый тест: ошибка rename-адаптера дает STOP/ABORT
+      
+    </span>
+</a>
+<nav aria-label="Четвертый тест: ошибка rename-адаптера дает STOP/ABORT" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#xmlbuilderretryerror-stopabort">
+<span class="md-ellipsis">
+      
+        Пятый тест: XMLBuilderRetryError дает STOP/ABORT
+      
+    </span>
+</a>
+<nav aria-label="Пятый тест: XMLBuilderRetryError дает STOP/ABORT" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#xmlbuilderfailerror-errorabort">
+<span class="md-ellipsis">
+      
+        Шестой тест: XMLBuilderFailError дает ERROR/ABORT
+      
+    </span>
+</a>
+<nav aria-label="Шестой тест: XMLBuilderFailError дает ERROR/ABORT" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#persontype">
+<span class="md-ellipsis">
+      
+        Седьмой блок: отсутствие PersonType не скрывается
+      
+    </span>
+</a>
+<nav aria-label="Седьмой блок: отсутствие PersonType не скрывается" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_9">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rename_xmlkvpairs_from_ctx-adapter-">
+<span class="md-ellipsis">
+      
+        Восьмой блок: отсутствие rename_XMLKVPairs_from_ctx у adapter-а не скрывается
+      
+    </span>
+</a>
+<nav aria-label="Восьмой блок: отсутствие rename_XMLKVPairs_from_ctx у adapter-а не скрывается" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_10">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#build_xml-builder-">
+<span class="md-ellipsis">
+      
+        Девятый блок: отсутствие build_xml у builder-а не скрывается
+      
+    </span>
+</a>
+<nav aria-label="Девятый блок: отсутствие build_xml у builder-а не скрывается" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_11">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#put_bytes-bytes-adapter-">
+<span class="md-ellipsis">
+      
+        Десятый блок: отсутствие put_bytes у bytes-adapter-а не скрывается
+      
+    </span>
+</a>
+<nav aria-label="Десятый блок: отсутствие put_bytes у bytes-adapter-а не скрывается" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_12">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#runtime-rename-">
+<span class="md-ellipsis">
+      
+        Одиннадцатый блок: неожиданная runtime-ошибка rename-адаптера пробрасывается как есть
+      
+    </span>
+</a>
+<nav aria-label="Одиннадцатый блок: неожиданная runtime-ошибка rename-адаптера пробрасывается как есть" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_13">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#runtime-builder-">
+<span class="md-ellipsis">
+      
+        Двенадцатый блок: неожиданная runtime-ошибка builder-а пробрасывается как есть
+      
+    </span>
+</a>
+<nav aria-label="Двенадцатый блок: неожиданная runtime-ошибка builder-а пробрасывается как есть" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_14">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source-">
+<span class="md-ellipsis">
+      
+        Тринадцатый блок: тело класса изолировано от source-ошибок и управления попытками
+      
+    </span>
+</a>
+<nav aria-label="Тринадцатый блок: тело класса изолировано от source-ошибок и управления попытками" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_15">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#transport-">
+<span class="md-ellipsis">
+      
+        Четырнадцатый блок: тело класса изолировано от transport-слоя
+      
+    </span>
+</a>
+<nav aria-label="Четырнадцатый блок: тело класса изолировано от transport-слоя" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_16">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_17">
+<span class="md-ellipsis">
+      
+        Пятнадцатый блок: сигнатуры шага не расползаются
+      
+    </span>
+</a>
+<nav aria-label="Пятнадцатый блок: сигнатуры шага не расползаются" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_init_signature_contains_only_expected_parameters">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_init_signature_contains_only_expected_parameters
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_search_person_signature_contains_only_context">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_search_person_signature_contains_only_context
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../create_person_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты CreatePersonStep
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../load_context_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты LoadContextStep
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../prepare_attempt_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты PrepareAttemptStep
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../transport_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты TransportStep
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_3" id="__nav_2_4_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Source
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Source
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Source/create_flags/">
+<span class="md-ellipsis">
+    
+  
+    Тесты CreateFlags
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Source/erzl_context/">
+<span class="md-ellipsis">
+    
+  
+    Тесты ERZL_Context
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Source/person_fields/">
+<span class="md-ellipsis">
+    
+  
+    Тесты PersonFields
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Source/xlsm_row_dto/">
+<span class="md-ellipsis">
+    
+  
+    Тесты XLSMRowDTO
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_4" id="__nav_2_4_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    XML
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    XML
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../XML/client_section/">
+<span class="md-ellipsis">
+    
+  
+    Тесты ClientSection
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../XML/container_fields_section/">
+<span class="md-ellipsis">
+    
+  
+    Тесты ContainerFieldsSection
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../XML/xml_builder_base/">
+<span class="md-ellipsis">
+    
+  
+    Тесты XMLBuilderBase
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="buildsearchxmlstep">Тесты BuildSearchXMLStep</h1>
+<p>Эта страница показывает тесты из общего test-файла. Команда, на которой
+основаны сценарии:</p>
+<div class="language-powershell highlight"><pre><span></span><code><span class="n">python</span> <span class="n">-m</span> <span class="n">pytest</span> <span class="n">-vv</span> <span class="n">-s</span> <span class="n">tests</span><span class="p">/</span><span class="n">pipeline</span><span class="p">/</span><span class="n">test_build_search_xml_step</span><span class="p">.</span><span class="n">py</span>
+</code></pre></div>
+<p>Флаг <code>-s</code> здесь не добавляет пользовательской печати: модуль не выводит свои
+сценарии, поэтому в <code>pytest</code> видны только имена тестов и статусы <code>PASSED</code>.
+Ниже раскрыто, какие именно входы, возвраты <code>StepRslt</code>, controlled errors и
+архитектурные границы стоят за этими статусами.</p>
+<h2 id="_1">Докстринг модуля</h2>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Тесты</span> <span class="n">для</span> <span class="err">`</span><span class="n">BuildSearchXMLStep</span><span class="err">`</span><span class="o">.</span>
+
+<span class="n">Модуль</span> <span class="n">фиксирует</span> <span class="n">контракт</span> <span class="n">шага</span> <span class="n">сборки</span> <span class="n">поискового</span> <span class="n">XML</span><span class="p">:</span> <span class="n">проброс</span> <span class="n">данных</span> <span class="n">из</span> <span class="n">context</span>
+<span class="n">в</span> <span class="n">rename</span><span class="o">-</span><span class="n">adapter</span> <span class="n">и</span> <span class="n">builder</span><span class="p">,</span> <span class="n">различие</span> <span class="n">между</span> <span class="n">STOP</span> <span class="n">и</span> <span class="n">ERROR</span> <span class="n">статусами</span><span class="p">,</span> <span class="n">а</span> <span class="n">также</span>
+<span class="n">архитектурную</span> <span class="n">изоляцию</span> <span class="n">от</span> <span class="n">source</span><span class="o">-</span> <span class="n">и</span> <span class="n">transport</span><span class="o">-</span><span class="n">слоёв</span><span class="o">.</span>
+
+<span class="n">Тесты</span> <span class="n">нужны</span> <span class="n">для</span> <span class="n">защиты</span> <span class="n">шага</span><span class="p">,</span> <span class="n">который</span> <span class="n">берет</span> <span class="n">данные</span> <span class="n">текущей</span> <span class="n">попытки</span> <span class="n">из</span> <span class="n">context</span><span class="p">,</span>
+<span class="n">строит</span> <span class="n">поисковый</span> <span class="n">XML</span> <span class="n">через</span> <span class="n">adapter</span> <span class="n">и</span> <span class="n">builder</span> <span class="n">и</span> <span class="n">записывает</span> <span class="n">результат</span> <span class="n">обратно</span> <span class="n">в</span>
+<span class="n">context</span><span class="p">,</span> <span class="n">не</span> <span class="n">смешивая</span> <span class="n">эту</span> <span class="n">логику</span> <span class="n">с</span> <span class="n">source</span><span class="o">-</span> <span class="n">или</span> <span class="n">transport</span><span class="o">-</span><span class="n">ответственностью</span><span class="o">.</span>
+</code></pre></div>
+<p>Исходный код больше не вынесен в один общий блок сверху. Ниже у каждого
+сценария есть отдельный раскрывающийся блок с кодом именно того теста,
+который документируется.</p>
+<h2 id="_2">Зачем этот класс</h2>
+<p><code>BuildSearchXMLStep</code> живет в Pipeline-слое и отвечает за сборку поискового XML
+из уже подготовленных данных текущей попытки. Он связывает три зависимости:</p>
+<ul>
+<li><code>adapter_rename.rename_XMLKVPairs_from_ctx(context)</code> берет из context данные попытки и превращает их в <code>XMLKVPairs</code>;</li>
+<li><code>builder.build_xml(dto)</code> строит XML-байты по <code>XMLBuilderSearchDTO</code>;</li>
+<li><code>adapter_put_bytes.put_bytes(context, xml_bytes)</code> записывает готовый XML обратно в <code>context.xml_bytes</code>.</li>
+</ul>
+<p>Этот шаг:</p>
+<ul>
+<li>читает <code>PersonType</code> и данные попытки из context;</li>
+<li>собирает <code>XMLBuilderSearchDTO</code>;</li>
+<li>различает <code>STOP/ABORT</code> и <code>ERROR/ABORT</code> по типу исключения builder-а;</li>
+<li>на успешном пути кладет XML-байты в context.</li>
+</ul>
+<p>Этот шаг не:</p>
+<ul>
+<li>не выбирает данные источника сам;</li>
+<li>не знает о transport-ответах и <code>response_bytes</code>;</li>
+<li>не управляет <code>AttemptId</code> и не принимает решения следующей попытки;</li>
+<li>не скрывает неожиданные runtime-ошибки collaborators.</li>
+</ul>
+<h2 id="builder-adapter-">Первый тест: конструктор сохраняет builder и оба adapter-а</h2>
+<h3 id="_3">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Конструктор</span> <span class="n">сохраняет</span> <span class="n">все</span> <span class="n">переданные</span> <span class="n">collaborators</span> <span class="n">без</span> <span class="n">изменений</span><span class="o">.</span>
+</code></pre></div>
+<p>Этот тест защищает базовую инициализацию шага. Если один из collaborators
+подменится уже в <code>__init__</code>, дальше нельзя будет доверять ни happy-path, ни
+веткам controlled errors.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_init_stores_builder_rename_and_put_bytes</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Конструктор сохраняет все переданные collaborators без изменений."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">builder</span> <span class="o">=</span> <span class="n">_BuilderStub</span><span class="p">()</span>
+    <span class="n">rename_adapter</span> <span class="o">=</span> <span class="n">_RenameAdapterStub</span><span class="p">(</span><span class="n">result</span><span class="o">=</span><span class="n">XMLKVPairs</span><span class="p">(()))</span>
+    <span class="n">put_bytes_adapter</span> <span class="o">=</span> <span class="n">_PutBytesAdapterStub</span><span class="p">()</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="n">BuildSearchXMLStep</span><span class="p">(</span>
+        <span class="n">builder</span><span class="o">=</span><span class="n">builder</span><span class="p">,</span>
+        <span class="n">adapter_rename</span><span class="o">=</span><span class="n">rename_adapter</span><span class="p">,</span>
+        <span class="n">adapter_put_bytes</span><span class="o">=</span><span class="n">put_bytes_adapter</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">step</span><span class="o">.</span><span class="n">_builder</span> <span class="ow">is</span> <span class="n">builder</span>
+    <span class="k">assert</span> <span class="n">step</span><span class="o">.</span><span class="n">_adapter</span> <span class="ow">is</span> <span class="n">rename_adapter</span>
+    <span class="k">assert</span> <span class="n">step</span><span class="o">.</span><span class="n">_adapter_put_bytes</span> <span class="ow">is</span> <span class="n">put_bytes_adapter</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>builder = _BuilderStub()
+rename_adapter = _RenameAdapterStub(result=XMLKVPairs(()))
+put_bytes_adapter = _PutBytesAdapterStub()</code></pre>
+
+#### Вызов
+
+<pre><code>step = BuildSearchXMLStep(
+    builder=builder,
+    adapter_rename=rename_adapter,
+    adapter_put_bytes=put_bytes_adapter,
+)</code></pre>
+
+#### Вывод
+
+<pre><code>Тест ничего не печатает.
+Проверяется состояние:
+step._builder is builder
+step._adapter is rename_adapter
+step._adapter_put_bytes is put_bytes_adapter
+
+tests/pipeline/test_build_search_xml_step.py::TestBuildSearchXMLStepInstantiation::test_init_stores_builder_rename_and_put_bytes PASSED</code></pre>
+</div>
+</details>
+<h2 id="xml-continue">Второй тест: штатная сборка поискового XML дает <code>CONTINUE</code></h2>
+<h3 id="_4">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Шаг</span> <span class="n">передаёт</span> <span class="n">XML</span><span class="o">-</span><span class="n">пары</span> <span class="n">в</span> <span class="n">builder</span> <span class="n">и</span> <span class="n">сохраняет</span> <span class="n">его</span> <span class="n">байты</span> <span class="n">в</span> <span class="n">context</span><span class="o">.</span>
+</code></pre></div>
+<p>Это основной happy-path шага. Он показывает полную цепочку:
+rename-adapter получает context, builder получает DTO с точным <code>PersonType</code> и
+<code>XMLKVPairs</code>, а bytes-adapter записывает итоговые байты в <code>context.xml_bytes</code>.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_search_person_builds_dto_and_writes_bytes_to_context</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Шаг передаёт XML-пары в builder и сохраняет его байты в context."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">rename_data</span> <span class="o">=</span> <span class="n">XMLKVPairs</span><span class="p">(((</span><span class="s2">"surname"</span><span class="p">,</span> <span class="s2">"Иванов"</span><span class="p">),</span> <span class="p">(</span><span class="s2">"namep"</span><span class="p">,</span> <span class="s2">"Иван"</span><span class="p">)))</span>
+    <span class="n">step</span><span class="p">,</span> <span class="n">rename_adapter</span><span class="p">,</span> <span class="n">builder</span><span class="p">,</span> <span class="n">put_bytes_adapter</span> <span class="o">=</span> <span class="n">_make_step</span><span class="p">(</span>
+        <span class="n">rename_data</span><span class="o">=</span><span class="n">rename_data</span><span class="p">,</span>
+        <span class="n">builder_result</span><span class="o">=</span><span class="sa">b</span><span class="s2">"&lt;search/&gt;"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_BuildContextStub</span><span class="p">(</span>
+        <span class="n">PersonType</span><span class="o">=</span><span class="n">AllXMLFields</span><span class="o">.</span><span class="n">ERZL</span><span class="o">.</span><span class="n">OperationsStr</span><span class="o">.</span><span class="n">FindPersonsType</span><span class="o">.</span><span class="n">MOSCOW</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">step</span><span class="o">.</span><span class="n">search_person</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="n">StepRslt</span><span class="o">.</span><span class="n">ok</span><span class="p">(</span>
+        <span class="n">InputXMLDecision_StrEnum</span><span class="o">.</span><span class="n">CONTINUE</span><span class="p">,</span>
+        <span class="s2">"Положили xml поиска персоны в context"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">assert</span> <span class="n">rename_adapter</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[</span><span class="n">context</span><span class="p">]</span>
+    <span class="k">assert</span> <span class="n">builder</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[</span>
+        <span class="n">XMLBuilderSearchDTO</span><span class="p">(</span>
+            <span class="n">RequestType</span><span class="o">=</span><span class="n">AllXMLFields</span><span class="o">.</span><span class="n">ERZL</span><span class="o">.</span><span class="n">OperationsStr</span><span class="o">.</span><span class="n">FindPersonsType</span><span class="o">.</span><span class="n">MOSCOW</span><span class="p">,</span>
+            <span class="n">search_pairs</span><span class="o">=</span><span class="n">rename_data</span><span class="p">,</span>
+        <span class="p">)</span>
+    <span class="p">]</span>
+    <span class="k">assert</span> <span class="n">put_bytes_adapter</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[(</span><span class="n">context</span><span class="p">,</span> <span class="sa">b</span><span class="s2">"&lt;search/&gt;"</span><span class="p">)]</span>
+    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">xml_bytes</span> <span class="o">==</span> <span class="sa">b</span><span class="s2">"&lt;search/&gt;"</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>rename_data = XMLKVPairs((("surname", "Иванов"), ("namep", "Иван")))
+builder_result = b"&lt;search/&gt;"
+context = _BuildContextStub(
+    PersonType=AllXMLFields.ERZL.OperationsStr.FindPersonsType.MOSCOW,
+)</code></pre>
+
+#### Вызов
+
+<pre><code>result = step.search_person(context)</code></pre>
+
+#### Вывод
+
+<pre><code>Тест ничего не печатает.
+Проверяется результат:
+result == StepRslt.ok(
+    InputXMLDecision_StrEnum.CONTINUE,
+    "Положили xml поиска персоны в context",
+)
+rename_adapter.received == [context]
+builder.received == [
+    XMLBuilderSearchDTO(
+        RequestType=AllXMLFields.ERZL.OperationsStr.FindPersonsType.MOSCOW,
+        search_pairs=rename_data,
+    )
+]
+put_bytes_adapter.received == [(context, b"&lt;search/&gt;")]
+context.xml_bytes == b"&lt;search/&gt;"
+
+tests/pipeline/test_build_search_xml_step.py::TestBuildSearchXMLStepHappyPath::test_search_person_builds_dto_and_writes_bytes_to_context PASSED</code></pre>
+</div>
+</details>
+<h2 id="xmlkvpairs-continue">Третий тест: пустые <code>XMLKVPairs</code> сами по себе не блокируют <code>CONTINUE</code></h2>
+<h3 id="_5">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Пустые</span> <span class="err">`</span><span class="n">XMLKVPairs</span><span class="err">`</span> <span class="n">не</span> <span class="n">блокируют</span> <span class="n">шаг</span> <span class="n">сами</span> <span class="n">по</span> <span class="n">себе</span><span class="o">.</span>
+</code></pre></div>
+<p>Этот сценарий важен потому, что шаг не накладывает свою дополнительную
+валидацию на содержимое <code>XMLKVPairs</code>. Если builder принимает пустой набор пар,
+шаг обязан пройти по штатному пути.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_empty_xml_pairs_still_continue_when_builder_accepts_them</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Пустые `XMLKVPairs` не блокируют шаг сами по себе."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">builder</span><span class="p">,</span> <span class="n">put_bytes_adapter</span> <span class="o">=</span> <span class="n">_make_step</span><span class="p">(</span>
+        <span class="n">rename_data</span><span class="o">=</span><span class="n">XMLKVPairs</span><span class="p">(()),</span>
+        <span class="n">builder_result</span><span class="o">=</span><span class="sa">b</span><span class="s2">"&lt;empty/&gt;"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_BuildContextStub</span><span class="p">(</span>
+        <span class="n">PersonType</span><span class="o">=</span><span class="n">AllXMLFields</span><span class="o">.</span><span class="n">ERZL</span><span class="o">.</span><span class="n">OperationsStr</span><span class="o">.</span><span class="n">FindPersonsType</span><span class="o">.</span><span class="n">NONRESIDENT</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">step</span><span class="o">.</span><span class="n">search_person</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">status</span> <span class="ow">is</span> <span class="n">StepStatus_StrEnum</span><span class="o">.</span><span class="n">OK</span>
+    <span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">decision</span> <span class="ow">is</span> <span class="n">InputXMLDecision_StrEnum</span><span class="o">.</span><span class="n">CONTINUE</span>
+    <span class="k">assert</span> <span class="n">builder</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[</span>
+        <span class="n">XMLBuilderSearchDTO</span><span class="p">(</span>
+            <span class="n">RequestType</span><span class="o">=</span><span class="n">AllXMLFields</span><span class="o">.</span><span class="n">ERZL</span><span class="o">.</span><span class="n">OperationsStr</span><span class="o">.</span><span class="n">FindPersonsType</span><span class="o">.</span><span class="n">NONRESIDENT</span><span class="p">,</span>
+            <span class="n">search_pairs</span><span class="o">=</span><span class="n">XMLKVPairs</span><span class="p">(()),</span>
+        <span class="p">)</span>
+    <span class="p">]</span>
+    <span class="k">assert</span> <span class="n">put_bytes_adapter</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[(</span><span class="n">context</span><span class="p">,</span> <span class="sa">b</span><span class="s2">"&lt;empty/&gt;"</span><span class="p">)]</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>rename_data = XMLKVPairs(())
+builder_result = b"&lt;empty/&gt;"
+context = _BuildContextStub(
+    PersonType=AllXMLFields.ERZL.OperationsStr.FindPersonsType.NONRESIDENT,
+)</code></pre>
+
+#### Вызов
+
+<pre><code>result = step.search_person(context)</code></pre>
+
+#### Вывод
+
+<pre><code>Тест ничего не печатает.
+Проверяется результат:
+result.status is StepStatus_StrEnum.OK
+result.decision is InputXMLDecision_StrEnum.CONTINUE
+builder.received == [
+    XMLBuilderSearchDTO(
+        RequestType=AllXMLFields.ERZL.OperationsStr.FindPersonsType.NONRESIDENT,
+        search_pairs=XMLKVPairs(()),
+    )
+]
+put_bytes_adapter.received == [(context, b"&lt;empty/&gt;")]
+
+tests/pipeline/test_build_search_xml_step.py::TestBuildSearchXMLStepHappyPath::test_empty_xml_pairs_still_continue_when_builder_accepts_them PASSED</code></pre>
+</div>
+</details>
+<h2 id="rename-stopabort">Четвертый тест: ошибка rename-адаптера дает <code>STOP/ABORT</code></h2>
+<h3 id="_6">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="err">`</span><span class="n">RenameAndBuildXmlKVPairsError</span><span class="err">`</span> <span class="n">переводится</span> <span class="n">в</span> <span class="err">`</span><span class="n">STOP</span><span class="o">/</span><span class="n">ABORT</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<p>Эта ветка защищает controlled error шага до входа в builder. Если данные
+непригодны уже на этапе переименования и сборки <code>XMLKVPairs</code>, builder и
+bytes-adapter не должны вызываться вообще.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_rename_error_returns_stop_abort_and_skips_builder</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`RenameAndBuildXmlKVPairsError` переводится в `STOP/ABORT`."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span><span class="p">,</span> <span class="n">rename_adapter</span><span class="p">,</span> <span class="n">builder</span><span class="p">,</span> <span class="n">put_bytes_adapter</span> <span class="o">=</span> <span class="n">_make_step</span><span class="p">()</span>
+    <span class="n">rename_adapter</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span class="n">RenameAndBuildXmlKVPairsError</span><span class="p">(</span><span class="s2">"bad source data"</span><span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_BuildContextStub</span><span class="p">(</span>
+        <span class="n">PersonType</span><span class="o">=</span><span class="n">AllXMLFields</span><span class="o">.</span><span class="n">ERZL</span><span class="o">.</span><span class="n">OperationsStr</span><span class="o">.</span><span class="n">FindPersonsType</span><span class="o">.</span><span class="n">MOSCOW</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">step</span><span class="o">.</span><span class="n">search_person</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="n">StepRslt</span><span class="o">.</span><span class="n">stop</span><span class="p">(</span>
+        <span class="n">InputXMLDecision_StrEnum</span><span class="o">.</span><span class="n">ABORT</span><span class="p">,</span>
+        <span class="s2">"bad source data"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">assert</span> <span class="n">builder</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[]</span>
+    <span class="k">assert</span> <span class="n">put_bytes_adapter</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[]</span>
+    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">xml_bytes</span> <span class="ow">is</span> <span class="kc">None</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>rename_adapter.error = RenameAndBuildXmlKVPairsError("bad source data")
+context = _BuildContextStub(
+    PersonType=AllXMLFields.ERZL.OperationsStr.FindPersonsType.MOSCOW,
+)</code></pre>
+
+#### Вызов
+
+<pre><code>result = step.search_person(context)</code></pre>
+
+#### Вывод
+
+<pre><code>Тест ничего не печатает.
+Проверяется результат:
+result == StepRslt.stop(InputXMLDecision_StrEnum.ABORT, "bad source data")
+builder.received == []
+put_bytes_adapter.received == []
+context.xml_bytes is None
+
+tests/pipeline/test_build_search_xml_step.py::TestBuildSearchXMLStepControlledErrors::test_rename_error_returns_stop_abort_and_skips_builder PASSED</code></pre>
+</div>
+</details>
+<h2 id="xmlbuilderretryerror-stopabort">Пятый тест: <code>XMLBuilderRetryError</code> дает <code>STOP/ABORT</code></h2>
+<h3 id="_7">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="err">`</span><span class="n">XMLBuilderRetryError</span><span class="err">`</span> <span class="n">даёт</span> <span class="err">`</span><span class="n">STOP</span><span class="o">/</span><span class="n">ABORT</span><span class="err">`</span><span class="p">,</span> <span class="n">а</span> <span class="n">байты</span> <span class="n">не</span> <span class="n">пишутся</span><span class="o">.</span>
+</code></pre></div>
+<p>Этот controlled error отличается от предыдущего тем, что rename-этап уже
+завершился, DTO уже был собран, но builder сообщил, что XML сейчас нельзя
+построить из-за retry-смысла ошибки. Поэтому status должен остаться <code>STOP</code>, а
+не <code>ERROR</code>.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_builder_retry_error_returns_stop_abort</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`XMLBuilderRetryError` даёт `STOP/ABORT`, а байты не пишутся."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">builder</span><span class="p">,</span> <span class="n">put_bytes_adapter</span> <span class="o">=</span> <span class="n">_make_step</span><span class="p">()</span>
+    <span class="n">builder</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span class="n">XMLBuilderRetryError</span><span class="p">(</span><span class="s2">"retry build"</span><span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_BuildContextStub</span><span class="p">(</span>
+        <span class="n">PersonType</span><span class="o">=</span><span class="n">AllXMLFields</span><span class="o">.</span><span class="n">ERZL</span><span class="o">.</span><span class="n">OperationsStr</span><span class="o">.</span><span class="n">FindPersonsType</span><span class="o">.</span><span class="n">MOSCOW</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">step</span><span class="o">.</span><span class="n">search_person</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="n">StepRslt</span><span class="o">.</span><span class="n">stop</span><span class="p">(</span>
+        <span class="n">InputXMLDecision_StrEnum</span><span class="o">.</span><span class="n">ABORT</span><span class="p">,</span>
+        <span class="s2">"retry build"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">assert</span> <span class="n">put_bytes_adapter</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[]</span>
+    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">xml_bytes</span> <span class="ow">is</span> <span class="kc">None</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>builder.error = XMLBuilderRetryError("retry build")
+context = _BuildContextStub(
+    PersonType=AllXMLFields.ERZL.OperationsStr.FindPersonsType.MOSCOW,
+)</code></pre>
+
+#### Вызов
+
+<pre><code>result = step.search_person(context)</code></pre>
+
+#### Вывод
+
+<pre><code>Тест ничего не печатает.
+Проверяется результат:
+result == StepRslt.stop(InputXMLDecision_StrEnum.ABORT, "retry build")
+put_bytes_adapter.received == []
+context.xml_bytes is None
+
+tests/pipeline/test_build_search_xml_step.py::TestBuildSearchXMLStepControlledErrors::test_builder_retry_error_returns_stop_abort PASSED</code></pre>
+</div>
+</details>
+<h2 id="xmlbuilderfailerror-errorabort">Шестой тест: <code>XMLBuilderFailError</code> дает <code>ERROR/ABORT</code></h2>
+<h3 id="_8">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="err">`</span><span class="n">XMLBuilderFailError</span><span class="err">`</span> <span class="n">даёт</span> <span class="err">`</span><span class="n">ERROR</span><span class="o">/</span><span class="n">ABORT</span><span class="err">`</span><span class="p">,</span> <span class="n">а</span> <span class="n">байты</span> <span class="n">не</span> <span class="n">пишутся</span><span class="o">.</span>
+</code></pre></div>
+<p>Это самая важная error-ветка для различения статусов шага. Decision остается
+тем же <code>ABORT</code>, но status меняется на <code>ERROR</code>, потому что речь идет уже не о
+управляемом retry-сценарии, а о проблеме конфигурации builder-а.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_builder_fail_error_returns_error_abort</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`XMLBuilderFailError` даёт `ERROR/ABORT`, а байты не пишутся."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">builder</span><span class="p">,</span> <span class="n">put_bytes_adapter</span> <span class="o">=</span> <span class="n">_make_step</span><span class="p">()</span>
+    <span class="n">builder</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span class="n">XMLBuilderFailError</span><span class="p">(</span><span class="s2">"broken builder config"</span><span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_BuildContextStub</span><span class="p">(</span>
+        <span class="n">PersonType</span><span class="o">=</span><span class="n">AllXMLFields</span><span class="o">.</span><span class="n">ERZL</span><span class="o">.</span><span class="n">OperationsStr</span><span class="o">.</span><span class="n">FindPersonsType</span><span class="o">.</span><span class="n">MOSCOW</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">step</span><span class="o">.</span><span class="n">search_person</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="n">StepRslt</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+        <span class="n">InputXMLDecision_StrEnum</span><span class="o">.</span><span class="n">ABORT</span><span class="p">,</span>
+        <span class="s2">"broken builder config"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">status</span> <span class="ow">is</span> <span class="n">StepStatus_StrEnum</span><span class="o">.</span><span class="n">ERROR</span>
+    <span class="k">assert</span> <span class="n">put_bytes_adapter</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[]</span>
+    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">xml_bytes</span> <span class="ow">is</span> <span class="kc">None</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>builder.error = XMLBuilderFailError("broken builder config")
+context = _BuildContextStub(
+    PersonType=AllXMLFields.ERZL.OperationsStr.FindPersonsType.MOSCOW,
+)</code></pre>
+
+#### Вызов
+
+<pre><code>result = step.search_person(context)</code></pre>
+
+#### Вывод
+
+<pre><code>Тест ничего не печатает.
+Проверяется результат:
+result == StepRslt.error(InputXMLDecision_StrEnum.ABORT, "broken builder config")
+result.status is StepStatus_StrEnum.ERROR
+put_bytes_adapter.received == []
+context.xml_bytes is None
+
+tests/pipeline/test_build_search_xml_step.py::TestBuildSearchXMLStepControlledErrors::test_builder_fail_error_returns_error_abort PASSED</code></pre>
+</div>
+</details>
+<h2 id="persontype">Седьмой блок: отсутствие <code>PersonType</code> не скрывается</h2>
+<h3 id="_9">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Шаг</span> <span class="n">не</span> <span class="n">скрывает</span> <span class="err">`</span><span class="ne">AttributeError</span><span class="err">`</span><span class="p">,</span> <span class="n">если</span> <span class="n">в</span> <span class="n">context</span> <span class="n">нет</span> <span class="err">`</span><span class="n">PersonType</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<p>Этот тест фиксирует минимальный contract context: шаг сам не подставляет
+тип поиска и не пытается компенсировать отсутствие <code>PersonType</code>.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_missing_person_type_raises_attribute_error</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Шаг не скрывает `AttributeError`, если в context нет `PersonType`."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="n">_make_step</span><span class="p">()</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_ContextWithoutPersonType</span><span class="p">()</span>
+
+    <span class="c1"># Act / Assert</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">):</span>
+        <span class="n">step</span><span class="o">.</span><span class="n">search_person</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>step, *_ = _make_step()
+context = _ContextWithoutPersonType()</code></pre>
+
+#### Вызов
+
+<pre><code>with pytest.raises(AttributeError):
+    step.search_person(context)</code></pre>
+
+#### Ошибка
+
+<pre><code>Тест ничего не печатает.
+Проверяется только то, что чтение `context.PersonType`
+приводит к AttributeError.
+
+tests/pipeline/test_build_search_xml_step.py::TestBuildSearchXMLStepContractViolations::test_missing_person_type_raises_attribute_error PASSED</code></pre>
+</div>
+</details>
+<h2 id="rename_xmlkvpairs_from_ctx-adapter-">Восьмой блок: отсутствие <code>rename_XMLKVPairs_from_ctx</code> у adapter-а не скрывается</h2>
+<h3 id="_10">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Шаг</span> <span class="n">не</span> <span class="n">маскирует</span> <span class="n">отсутствие</span> <span class="err">`</span><span class="n">rename_XMLKVPairs_from_ctx</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<p>Сценарий нужен для защиты structural-контракта rename-адаптера. Шаг просто
+вызывает ожидаемый метод и не пытается сам валидировать интерфейс.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_missing_rename_method_raises_attribute_error</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Шаг не маскирует отсутствие `rename_XMLKVPairs_from_ctx`."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="n">BuildSearchXMLStep</span><span class="p">(</span>
+        <span class="n">builder</span><span class="o">=</span><span class="n">_BuilderStub</span><span class="p">(),</span>
+        <span class="n">adapter_rename</span><span class="o">=</span><span class="n">_RenameAdapterWithoutMethod</span><span class="p">(),</span>
+        <span class="n">adapter_put_bytes</span><span class="o">=</span><span class="n">_PutBytesAdapterStub</span><span class="p">(),</span>
+    <span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_BuildContextStub</span><span class="p">(</span>
+        <span class="n">PersonType</span><span class="o">=</span><span class="n">AllXMLFields</span><span class="o">.</span><span class="n">ERZL</span><span class="o">.</span><span class="n">OperationsStr</span><span class="o">.</span><span class="n">FindPersonsType</span><span class="o">.</span><span class="n">MOSCOW</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act / Assert</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">):</span>
+        <span class="n">step</span><span class="o">.</span><span class="n">search_person</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>step = BuildSearchXMLStep(
+    builder=_BuilderStub(),
+    adapter_rename=_RenameAdapterWithoutMethod(),
+    adapter_put_bytes=_PutBytesAdapterStub(),
+)
+context = _BuildContextStub(
+    PersonType=AllXMLFields.ERZL.OperationsStr.FindPersonsType.MOSCOW,
+)</code></pre>
+
+#### Вызов
+
+<pre><code>with pytest.raises(AttributeError):
+    step.search_person(context)</code></pre>
+
+#### Ошибка
+
+<pre><code>Тест ничего не печатает.
+Проверяется только то, что отсутствие метода
+`rename_XMLKVPairs_from_ctx` приводит к AttributeError.
+
+tests/pipeline/test_build_search_xml_step.py::TestBuildSearchXMLStepContractViolations::test_missing_rename_method_raises_attribute_error PASSED</code></pre>
+</div>
+</details>
+<h2 id="build_xml-builder-">Девятый блок: отсутствие <code>build_xml</code> у builder-а не скрывается</h2>
+<h3 id="_11">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Шаг</span> <span class="n">не</span> <span class="n">маскирует</span> <span class="n">отсутствие</span> <span class="err">`</span><span class="n">build_xml</span><span class="err">`</span> <span class="n">у</span> <span class="n">builder</span><span class="o">-</span><span class="n">а</span><span class="o">.</span>
+</code></pre></div>
+<p>Этот тест показывает, что <code>BuildSearchXMLStep</code> не берет на себя роль runtime-
+валидации builder-interface. Он должен просто вызвать builder и пробросить
+ошибку при нарушении protocol-контракта.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_missing_build_xml_method_raises_attribute_error</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Шаг не маскирует отсутствие `build_xml` у builder-а."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="n">BuildSearchXMLStep</span><span class="p">(</span>
+        <span class="n">builder</span><span class="o">=</span><span class="n">_BuilderWithoutMethod</span><span class="p">(),</span>
+        <span class="n">adapter_rename</span><span class="o">=</span><span class="n">_RenameAdapterStub</span><span class="p">(</span><span class="n">result</span><span class="o">=</span><span class="n">XMLKVPairs</span><span class="p">(())),</span>
+        <span class="n">adapter_put_bytes</span><span class="o">=</span><span class="n">_PutBytesAdapterStub</span><span class="p">(),</span>
+    <span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_BuildContextStub</span><span class="p">(</span>
+        <span class="n">PersonType</span><span class="o">=</span><span class="n">AllXMLFields</span><span class="o">.</span><span class="n">ERZL</span><span class="o">.</span><span class="n">OperationsStr</span><span class="o">.</span><span class="n">FindPersonsType</span><span class="o">.</span><span class="n">MOSCOW</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act / Assert</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">):</span>
+        <span class="n">step</span><span class="o">.</span><span class="n">search_person</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>step = BuildSearchXMLStep(
+    builder=_BuilderWithoutMethod(),
+    adapter_rename=_RenameAdapterStub(result=XMLKVPairs(())),
+    adapter_put_bytes=_PutBytesAdapterStub(),
+)
+context = _BuildContextStub(
+    PersonType=AllXMLFields.ERZL.OperationsStr.FindPersonsType.MOSCOW,
+)</code></pre>
+
+#### Вызов
+
+<pre><code>with pytest.raises(AttributeError):
+    step.search_person(context)</code></pre>
+
+#### Ошибка
+
+<pre><code>Тест ничего не печатает.
+Проверяется только то, что отсутствие метода `build_xml`
+приводит к AttributeError.
+
+tests/pipeline/test_build_search_xml_step.py::TestBuildSearchXMLStepContractViolations::test_missing_build_xml_method_raises_attribute_error PASSED</code></pre>
+</div>
+</details>
+<h2 id="put_bytes-bytes-adapter-">Десятый блок: отсутствие <code>put_bytes</code> у bytes-adapter-а не скрывается</h2>
+<h3 id="_12">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Шаг</span> <span class="n">не</span> <span class="n">маскирует</span> <span class="n">отсутствие</span> <span class="err">`</span><span class="n">put_bytes</span><span class="err">`</span> <span class="n">у</span> <span class="nb">bytes</span><span class="o">-</span><span class="n">adapter</span><span class="o">-</span><span class="n">а</span><span class="o">.</span>
+</code></pre></div>
+<p>Этот сценарий проверяет последнюю boundary точку happy-path: если builder уже
+вернул байты, но bytes-adapter не соответствует контракту, шаг не должен
+скрывать ошибку и притворяться успешным.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_missing_put_bytes_method_raises_attribute_error</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Шаг не маскирует отсутствие `put_bytes` у bytes-adapter-а."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="n">BuildSearchXMLStep</span><span class="p">(</span>
+        <span class="n">builder</span><span class="o">=</span><span class="n">_BuilderStub</span><span class="p">(</span><span class="n">result</span><span class="o">=</span><span class="sa">b</span><span class="s2">"&lt;xml/&gt;"</span><span class="p">),</span>
+        <span class="n">adapter_rename</span><span class="o">=</span><span class="n">_RenameAdapterStub</span><span class="p">(</span><span class="n">result</span><span class="o">=</span><span class="n">XMLKVPairs</span><span class="p">(())),</span>
+        <span class="n">adapter_put_bytes</span><span class="o">=</span><span class="n">_PutBytesAdapterWithoutMethod</span><span class="p">(),</span>
+    <span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_BuildContextStub</span><span class="p">(</span>
+        <span class="n">PersonType</span><span class="o">=</span><span class="n">AllXMLFields</span><span class="o">.</span><span class="n">ERZL</span><span class="o">.</span><span class="n">OperationsStr</span><span class="o">.</span><span class="n">FindPersonsType</span><span class="o">.</span><span class="n">MOSCOW</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act / Assert</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">):</span>
+        <span class="n">step</span><span class="o">.</span><span class="n">search_person</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>step = BuildSearchXMLStep(
+    builder=_BuilderStub(result=b"&lt;xml/&gt;"),
+    adapter_rename=_RenameAdapterStub(result=XMLKVPairs(())),
+    adapter_put_bytes=_PutBytesAdapterWithoutMethod(),
+)
+context = _BuildContextStub(
+    PersonType=AllXMLFields.ERZL.OperationsStr.FindPersonsType.MOSCOW,
+)</code></pre>
+
+#### Вызов
+
+<pre><code>with pytest.raises(AttributeError):
+    step.search_person(context)</code></pre>
+
+#### Ошибка
+
+<pre><code>Тест ничего не печатает.
+Проверяется только то, что отсутствие метода `put_bytes`
+приводит к AttributeError.
+
+tests/pipeline/test_build_search_xml_step.py::TestBuildSearchXMLStepContractViolations::test_missing_put_bytes_method_raises_attribute_error PASSED</code></pre>
+</div>
+</details>
+<h2 id="runtime-rename-">Одиннадцатый блок: неожиданная runtime-ошибка rename-адаптера пробрасывается как есть</h2>
+<h3 id="_13">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Неожиданная</span> <span class="n">runtime</span><span class="o">-</span><span class="n">ошибка</span> <span class="n">rename</span><span class="o">-</span><span class="n">adapter</span><span class="o">-</span><span class="n">а</span> <span class="n">пробрасывается</span> <span class="n">наружу</span><span class="o">.</span>
+</code></pre></div>
+<p>Это защита от слишком широкого <code>except</code> на раннем этапе шага. В <code>StepRslt.stop</code>
+должна превращаться только <code>RenameAndBuildXmlKVPairsError</code>, а не любой
+<code>RuntimeError</code>.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_unexpected_runtime_error_from_rename_adapter_propagates</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Неожиданная runtime-ошибка rename-adapter-а пробрасывается наружу."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span><span class="p">,</span> <span class="n">rename_adapter</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">_make_step</span><span class="p">()</span>
+    <span class="n">rename_adapter</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">"rename exploded"</span><span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_BuildContextStub</span><span class="p">(</span>
+        <span class="n">PersonType</span><span class="o">=</span><span class="n">AllXMLFields</span><span class="o">.</span><span class="n">ERZL</span><span class="o">.</span><span class="n">OperationsStr</span><span class="o">.</span><span class="n">FindPersonsType</span><span class="o">.</span><span class="n">MOSCOW</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act / Assert</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">RuntimeError</span><span class="p">,</span> <span class="n">match</span><span class="o">=</span><span class="s2">"rename exploded"</span><span class="p">):</span>
+        <span class="n">step</span><span class="o">.</span><span class="n">search_person</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>rename_adapter.error = RuntimeError("rename exploded")
+context = _BuildContextStub(
+    PersonType=AllXMLFields.ERZL.OperationsStr.FindPersonsType.MOSCOW,
+)</code></pre>
+
+#### Вызов
+
+<pre><code>with pytest.raises(RuntimeError, match="rename exploded"):
+    step.search_person(context)</code></pre>
+
+#### Ошибка
+
+<pre><code>Тест ничего не печатает.
+Проверяется ошибка:
+RuntimeError("rename exploded")
+
+tests/pipeline/test_build_search_xml_step.py::TestBuildSearchXMLStepContractViolations::test_unexpected_runtime_error_from_rename_adapter_propagates PASSED</code></pre>
+</div>
+</details>
+<h2 id="runtime-builder-">Двенадцатый блок: неожиданная runtime-ошибка builder-а пробрасывается как есть</h2>
+<h3 id="_14">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Неожиданная</span> <span class="n">runtime</span><span class="o">-</span><span class="n">ошибка</span> <span class="n">builder</span><span class="o">-</span><span class="n">а</span> <span class="n">пробрасывается</span> <span class="n">наружу</span><span class="o">.</span>
+</code></pre></div>
+<p>Этот сценарий симметричен предыдущему: <code>BuildSearchXMLStep</code> должен различать
+только <code>XMLBuilderRetryError</code> и <code>XMLBuilderFailError</code>, а произвольные runtime-
+ошибки builder-а не переводить в <code>StepRslt</code>.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_unexpected_runtime_error_from_builder_propagates</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Неожиданная runtime-ошибка builder-а пробрасывается наружу."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">builder</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">_make_step</span><span class="p">()</span>
+    <span class="n">builder</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">"builder exploded"</span><span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_BuildContextStub</span><span class="p">(</span>
+        <span class="n">PersonType</span><span class="o">=</span><span class="n">AllXMLFields</span><span class="o">.</span><span class="n">ERZL</span><span class="o">.</span><span class="n">OperationsStr</span><span class="o">.</span><span class="n">FindPersonsType</span><span class="o">.</span><span class="n">MOSCOW</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act / Assert</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">RuntimeError</span><span class="p">,</span> <span class="n">match</span><span class="o">=</span><span class="s2">"builder exploded"</span><span class="p">):</span>
+        <span class="n">step</span><span class="o">.</span><span class="n">search_person</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>builder.error = RuntimeError("builder exploded")
+context = _BuildContextStub(
+    PersonType=AllXMLFields.ERZL.OperationsStr.FindPersonsType.MOSCOW,
+)</code></pre>
+
+#### Вызов
+
+<pre><code>with pytest.raises(RuntimeError, match="builder exploded"):
+    step.search_person(context)</code></pre>
+
+#### Ошибка
+
+<pre><code>Тест ничего не печатает.
+Проверяется ошибка:
+RuntimeError("builder exploded")
+
+tests/pipeline/test_build_search_xml_step.py::TestBuildSearchXMLStepContractViolations::test_unexpected_runtime_error_from_builder_propagates PASSED</code></pre>
+</div>
+</details>
+<h2 id="source-">Тринадцатый блок: тело класса изолировано от source-ошибок и управления попытками</h2>
+<h3 id="_15">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Шаг</span> <span class="n">не</span> <span class="n">знает</span> <span class="n">о</span> <span class="n">source</span><span class="o">-</span><span class="n">ошибках</span> <span class="n">и</span> <span class="n">управлении</span> <span class="n">попытками</span><span class="o">.</span>
+</code></pre></div>
+<p>Это параметризованный guard-тест по тексту класса. Он показывает, что в теле
+<code>BuildSearchXMLStep</code> нет ссылок на <code>NoValidRowsError</code>, <code>AttemptId</code> и
+<code>DataSelectorNoMatchError</code>, потому что эти вещи относятся к другим шагам.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">"symbol"</span><span class="p">,</span> <span class="n">_FORBIDDEN_SOURCE_SYMBOLS</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">test_class_body_does_not_depend_on_source_control_symbols</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span> <span class="n">symbol</span><span class="p">:</span> <span class="nb">str</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Шаг не знает о source-ошибках и управлении попытками."""</span>
+    <span class="c1"># Arrange / Act / Assert</span>
+    <span class="k">assert</span> <span class="n">symbol</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_CLASS_SRC</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>symbols = [
+    "NoValidRowsError",
+    "AttemptId",
+    "DataSelectorNoMatchError",
+]
+class_source = inspect.getsource(BuildSearchXMLStep)</code></pre>
+
+#### Вызов
+
+<pre><code>assert symbol not in class_source</code></pre>
+
+#### Вывод
+
+<pre><code>Тест ничего не печатает.
+Проверяется условие:
+каждый symbol из списка отсутствует в тексте класса BuildSearchXMLStep
+
+tests/pipeline/test_build_search_xml_step.py::TestBuildSearchXMLStepArchitecture::test_class_body_does_not_depend_on_source_control_symbols[NoValidRowsError] PASSED
+tests/pipeline/test_build_search_xml_step.py::TestBuildSearchXMLStepArchitecture::test_class_body_does_not_depend_on_source_control_symbols[AttemptId] PASSED
+tests/pipeline/test_build_search_xml_step.py::TestBuildSearchXMLStepArchitecture::test_class_body_does_not_depend_on_source_control_symbols[DataSelectorNoMatchError] PASSED</code></pre>
+</div>
+</details>
+<h2 id="transport-">Четырнадцатый блок: тело класса изолировано от transport-слоя</h2>
+<h3 id="_16">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Шаг</span> <span class="n">не</span> <span class="n">зависит</span> <span class="n">от</span> <span class="n">transport</span><span class="o">-</span><span class="n">слоя</span> <span class="n">и</span> <span class="n">сырых</span> <span class="n">response</span><span class="o">-</span><span class="n">байтов</span><span class="o">.</span>
+</code></pre></div>
+<p>Этот параметризованный тест защищает соседнюю архитектурную границу:
+<code>BuildSearchXMLStep</code> строит запрос, но ничего не знает о transport-response.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">"symbol"</span><span class="p">,</span> <span class="n">_FORBIDDEN_TRANSPORT_SYMBOLS</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">test_class_body_does_not_depend_on_transport_symbols</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span> <span class="n">symbol</span><span class="p">:</span> <span class="nb">str</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Шаг не зависит от transport-слоя и сырых response-байтов."""</span>
+    <span class="c1"># Arrange / Act / Assert</span>
+    <span class="k">assert</span> <span class="n">symbol</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_CLASS_SRC</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>symbols = [
+    "TransportResponseDTO",
+    "xml_transport",
+    "response_bytes",
+]
+class_source = inspect.getsource(BuildSearchXMLStep)</code></pre>
+
+#### Вызов
+
+<pre><code>assert symbol not in class_source</code></pre>
+
+#### Вывод
+
+<pre><code>Тест ничего не печатает.
+Проверяется условие:
+каждый symbol из списка отсутствует в тексте класса BuildSearchXMLStep
+
+tests/pipeline/test_build_search_xml_step.py::TestBuildSearchXMLStepArchitecture::test_class_body_does_not_depend_on_transport_symbols[TransportResponseDTO] PASSED
+tests/pipeline/test_build_search_xml_step.py::TestBuildSearchXMLStepArchitecture::test_class_body_does_not_depend_on_transport_symbols[xml_transport] PASSED
+tests/pipeline/test_build_search_xml_step.py::TestBuildSearchXMLStepArchitecture::test_class_body_does_not_depend_on_transport_symbols[response_bytes] PASSED</code></pre>
+</div>
+</details>
+<h2 id="_17">Пятнадцатый блок: сигнатуры шага не расползаются</h2>
+<h3 id="test_init_signature_contains_only_expected_parameters">Докстринг теста <code>test_init_signature_contains_only_expected_parameters</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="err">`</span><span class="fm">__init__</span><span class="err">`</span> <span class="n">принимает</span> <span class="n">только</span> <span class="n">builder</span> <span class="n">и</span> <span class="n">два</span> <span class="n">adapter</span><span class="o">-</span><span class="n">а</span><span class="o">.</span>
+</code></pre></div>
+<h3 id="test_search_person_signature_contains_only_context">Докстринг теста <code>test_search_person_signature_contains_only_context</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="err">`</span><span class="n">search_person</span><span class="err">`</span> <span class="n">остаётся</span> <span class="n">синхронным</span> <span class="n">методом</span> <span class="n">с</span> <span class="n">одним</span> <span class="err">`</span><span class="n">context</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<p>Эти тесты служат как API-guard. Они фиксируют компактный конструктор и то,
+что <code>search_person(...)</code> не превращается в <code>async</code> и не обрастает лишними
+аргументами.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код тестов</span><span class="docs-test-hide">Скрыть код тестов</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_init_signature_contains_only_expected_parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`__init__` принимает только builder и два adapter-а."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">signature</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="n">BuildSearchXMLStep</span><span class="o">.</span><span class="fm">__init__</span><span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">signature</span><span class="o">.</span><span class="n">parameters</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">params</span> <span class="o">==</span> <span class="p">[</span><span class="s2">"self"</span><span class="p">,</span> <span class="s2">"builder"</span><span class="p">,</span> <span class="s2">"adapter_rename"</span><span class="p">,</span> <span class="s2">"adapter_put_bytes"</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">test_search_person_signature_contains_only_context</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`search_person` остаётся синхронным методом с одним `context`."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">signature</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="n">BuildSearchXMLStep</span><span class="o">.</span><span class="n">search_person</span><span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">signature</span><span class="o">.</span><span class="n">parameters</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">params</span> <span class="o">==</span> <span class="p">[</span><span class="s2">"self"</span><span class="p">,</span> <span class="s2">"context"</span><span class="p">]</span>
+    <span class="k">assert</span> <span class="ow">not</span> <span class="n">inspect</span><span class="o">.</span><span class="n">iscoroutinefunction</span><span class="p">(</span><span class="n">BuildSearchXMLStep</span><span class="o">.</span><span class="n">search_person</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>init_signature = inspect.signature(BuildSearchXMLStep.__init__)
+search_signature = inspect.signature(BuildSearchXMLStep.search_person)</code></pre>
+
+#### Вызов
+
+<pre><code>list(init_signature.parameters)
+list(search_signature.parameters)
+inspect.iscoroutinefunction(BuildSearchXMLStep.search_person)</code></pre>
+
+#### Вывод
+
+<pre><code>Тесты ничего не печатают.
+Проверяется состояние:
+list(init_signature.parameters) == ["self", "builder", "adapter_rename", "adapter_put_bytes"]
+list(search_signature.parameters) == ["self", "context"]
+inspect.iscoroutinefunction(BuildSearchXMLStep.search_person) == False
+
+tests/pipeline/test_build_search_xml_step.py::TestBuildSearchXMLStepArchitecture::test_init_signature_contains_only_expected_parameters PASSED
+tests/pipeline/test_build_search_xml_step.py::TestBuildSearchXMLStepArchitecture::test_search_person_signature_contains_only_context PASSED</code></pre>
+</div>
+</details>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.sections", "toc.integrate", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../../../../assets/javascripts/toc-collapse.js"></script>
+</body>
+</html>

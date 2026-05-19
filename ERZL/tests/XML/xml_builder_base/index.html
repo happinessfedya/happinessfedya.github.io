@@ -1,0 +1,1515 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../container_fields_section/" rel="prev"/>
+<link href="../../../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<title>Тесты XMLBuilderBase - Integration Documentation</title>
+<link href="../../../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../../assets/_mkdocstrings.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/toc-collapse.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/docs-tests.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#xmlbuilderbase">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Integration Documentation" class="md-header__button md-logo" data-md-component="logo" href="../../../.." title="Integration Documentation">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Integration Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Тесты XMLBuilderBase
+            
+          </span>
+</div>
+</div>
+</div>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Integration Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../../../.." title="Integration Documentation">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    Integration Documentation
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../..">
+<span class="md-ellipsis">
+    
+  
+    Общая структура проекта
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    ERZL
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    ERZL
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../architecture/ERZLcontext-lifestyle-mermaid/">
+<span class="md-ellipsis">
+    
+  
+    Жизненный цикл ERZL_Context
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../architecture/overview/">
+<span class="md-ellipsis">
+    
+  
+    Архитектура системы
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    How to
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    How to
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA/">
+<span class="md-ellipsis">
+    
+  
+    Добавить источник
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%D0%BB%D0%B5%20%D0%BE%D1%82%20%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B0%20%D0%B4%D0%BE%20XML/">
+<span class="md-ellipsis">
+    
+  
+    Добавить поле от источника до XML
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%D0%BF%D1%8B%D1%82%D0%BA%D1%83/">
+<span class="md-ellipsis">
+    
+  
+    Добавить попытку
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D1%84%D0%B8%D0%BB%D1%8C%20%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%B0%D1%86%D0%B8%D0%B8%20%D0%B2%20config.toml/">
+<span class="md-ellipsis">
+    
+  
+    Добавить профиль активации в config.toml
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%9E%D1%82%D0%BB%D0%B0%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BE%D1%82%D0%B2%D0%B5%D1%82%20ERZL/">
+<span class="md-ellipsis">
+    
+  
+    Отладить ответ ERZL
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../reference/api/">
+<span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Tests
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Tests
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_1" id="__nav_2_4_1_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Adapters
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Adapters
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Adapters/adapter_base/">
+<span class="md-ellipsis">
+    
+  
+    Тесты AdapterBase
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Adapters/erzl_adapter/">
+<span class="md-ellipsis">
+    
+  
+    Тесты ERZLAdapter
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Adapters/get_xml_answer_adapter/">
+<span class="md-ellipsis">
+    
+  
+    Тесты GetXMLAnswerAdapter
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Adapters/rename_to_source_input_adapter/">
+<span class="md-ellipsis">
+    
+  
+    Тесты RenameToSourceInputAdapter
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Adapters/rename_to_source_input_adapter_cfg/">
+<span class="md-ellipsis">
+    
+  
+    Тесты RenameToSourceInputAdapterCfg
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Adapters/rename_xml_kv_pairs_adapter/">
+<span class="md-ellipsis">
+    
+  
+    Тесты RenameXmlKVPairsAdapter
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_2" id="__nav_2_4_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Pipeline
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Pipeline
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Pipeline/answer_decision_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты AnswerDecisionStep
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Pipeline/build_search_xml_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты BuildSearchXMLStep
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Pipeline/create_person_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты CreatePersonStep
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Pipeline/load_context_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты LoadContextStep
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Pipeline/prepare_attempt_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты PrepareAttemptStep
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Pipeline/transport_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты TransportStep
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_3" id="__nav_2_4_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Source
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Source
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Source/create_flags/">
+<span class="md-ellipsis">
+    
+  
+    Тесты CreateFlags
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Source/erzl_context/">
+<span class="md-ellipsis">
+    
+  
+    Тесты ERZL_Context
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Source/person_fields/">
+<span class="md-ellipsis">
+    
+  
+    Тесты PersonFields
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Source/xlsm_row_dto/">
+<span class="md-ellipsis">
+    
+  
+    Тесты XLSMRowDTO
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_4_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_4" id="__nav_2_4_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    XML
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_4_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    XML
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../client_section/">
+<span class="md-ellipsis">
+    
+  
+    Тесты ClientSection
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../container_fields_section/">
+<span class="md-ellipsis">
+    
+  
+    Тесты ContainerFieldsSection
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Тесты XMLBuilderBase
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    Тесты XMLBuilderBase
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
+      
+        Докстринг модуля
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      
+        Зачем этот класс
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_build_envelope-envelope-header-body-soap-namespace">
+<span class="md-ellipsis">
+      
+        Первый тест: _build_envelope создает Envelope, Header и Body в SOAP namespace
+      
+    </span>
+</a>
+<nav aria-label="Первый тест: _build_envelope создает Envelope, Header и Body в SOAP namespace" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#envelopensmap-namespace-config">
+<span class="md-ellipsis">
+      
+        Второй тест: Envelope.nsmap сохраняет полную namespace-карту из config
+      
+    </span>
+</a>
+<nav aria-label="Второй тест: Envelope.nsmap сохраняет полную namespace-карту из config" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_ser_ns-service-namespace">
+<span class="md-ellipsis">
+      
+        Третий тест: _ser_ns возвращает service namespace из конфигурации
+      
+    </span>
+</a>
+<nav aria-label="Третий тест: _ser_ns возвращает service namespace из конфигурации" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_finalize_xml-envelope-utf-8-bytes">
+<span class="md-ellipsis">
+      
+        Четвертый тест: _finalize_xml сериализует минимальный envelope в UTF-8 bytes
+      
+    </span>
+</a>
+<nav aria-label="Четвертый тест: _finalize_xml сериализует минимальный envelope в UTF-8 bytes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#namespace-keyerror">
+<span class="md-ellipsis">
+      
+        Пятый блок: пропавшие namespace-ключи дают прямой KeyError
+      
+    </span>
+</a>
+<nav aria-label="Пятый блок: пропавшие namespace-ключи дают прямой KeyError" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_build_envelope_raises_key_error_when_soap_prefix_disappears_at_runtime">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_build_envelope_raises_key_error_when_soap_prefix_disappears_at_runtime
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_ser_ns_raises_key_error_when_service_prefix_disappears_at_runtime">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_ser_ns_raises_key_error_when_service_prefix_disappears_at_runtime
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_finalize_xml-lxmltypeerror">
+<span class="md-ellipsis">
+      
+        Шестой тест: _finalize_xml не маскирует lxml.TypeError для невалидного объекта
+      
+    </span>
+</a>
+<nav aria-label="Шестой тест: _finalize_xml не маскирует lxml.TypeError для невалидного объекта" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#request-specific-transport-source-">
+<span class="md-ellipsis">
+      
+        Седьмой блок: тело класса изолировано от request-specific, transport и source-терминов
+      
+    </span>
+</a>
+<nav aria-label="Седьмой блок: тело класса изолировано от request-specific, transport и source-терминов" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_9">
+<span class="md-ellipsis">
+      
+        Восьмой блок: сигнатуры класса остаются минимальными
+      
+    </span>
+</a>
+<nav aria-label="Восьмой блок: сигнатуры класса остаются минимальными" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_init_signature_contains_only_xml_config">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_init_signature_contains_only_xml_config
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_build_envelope_signature_contains_only_self">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_build_envelope_signature_contains_only_self
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_finalize_xml_signature_contains_only_envelope">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_finalize_xml_signature_contains_only_envelope
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_ser_ns_signature_contains_only_self">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_ser_ns_signature_contains_only_self
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="xmlbuilderbase">Тесты XMLBuilderBase</h1>
+<p>Эта страница показывает тесты из общего test-файла. Команда, на которой
+основаны сценарии:</p>
+<div class="language-powershell highlight"><pre><span></span><code><span class="n">python</span> <span class="n">-m</span> <span class="n">pytest</span> <span class="n">-vv</span> <span class="n">-s</span> <span class="n">tests</span><span class="p">/</span><span class="n">xml</span><span class="p">/</span><span class="n">test_xml_builder_base</span><span class="p">.</span><span class="n">py</span>
+</code></pre></div>
+<p>Флаг <code>-s</code> здесь не добавляет пользовательской печати: модуль не выводит свои
+сценарии, поэтому в <code>pytest</code> видны только имена тестов и статусы <code>PASSED</code>.
+Ниже раскрыто, какие именно базовые SOAP-сценарии, low-level ошибки и
+архитектурные ограничения стоят за этими статусами.</p>
+<h2 id="_1">Докстринг модуля</h2>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Тесты</span> <span class="n">для</span> <span class="err">`</span><span class="n">XML</span><span class="o">.</span><span class="n">xml_builder</span><span class="o">.</span><span class="n">XMLBuilderBase</span><span class="err">`</span><span class="o">.</span>
+
+<span class="n">Модуль</span> <span class="n">проверяет</span> <span class="n">базовый</span> <span class="n">контракт</span> <span class="n">XML</span><span class="o">-</span><span class="n">builder</span><span class="o">-</span><span class="n">а</span><span class="p">:</span> <span class="n">сборку</span> <span class="n">общего</span> <span class="n">SOAP</span><span class="o">-</span><span class="n">каркаса</span><span class="p">,</span>
+<span class="n">получение</span> <span class="n">service</span> <span class="n">namespace</span> <span class="n">из</span> <span class="n">конфигурации</span> <span class="n">и</span> <span class="n">сериализацию</span> <span class="n">готового</span> <span class="n">дерева</span> <span class="n">в</span>
+<span class="n">байты</span><span class="o">.</span>
+
+<span class="n">Файл</span> <span class="n">нужен</span> <span class="n">для</span> <span class="n">фиксации</span> <span class="n">минимальной</span> <span class="n">ответственности</span> <span class="err">`</span><span class="n">XMLBuilderBase</span><span class="err">`</span> <span class="n">и</span> <span class="n">защиты</span>
+<span class="n">от</span> <span class="n">регрессий</span> <span class="n">в</span> <span class="n">общей</span> <span class="n">инфраструктуре</span> <span class="n">XML</span><span class="o">-</span><span class="n">сборки</span><span class="o">.</span>
+</code></pre></div>
+<p>Исходный код больше не вынесен в один общий блок сверху. Ниже у каждого
+сценария есть отдельный раскрывающийся блок с кодом именно того теста,
+который документируется.</p>
+<h2 id="_2">Зачем этот класс</h2>
+<p><code>XMLBuilderBase</code> живет в XML-слое и обслуживает только общую инфраструктуру
+сборки XML. Он берет <code>xml_config</code> и дает наследникам три базовые операции:</p>
+<ul>
+<li><code>_build_envelope()</code> создает общий SOAP <code>Envelope</code> с <code>Header</code> и <code>Body</code>;</li>
+<li><code>_finalize_xml(envelope)</code> сериализует готовое дерево в <code>bytes</code>;</li>
+<li><code>_ser_ns()</code> достает service namespace из конфигурации.</li>
+</ul>
+<p>Этот класс не:</p>
+<ul>
+<li>не знает о request-specific DTO вроде <code>search_pairs</code> или <code>ClientContainerCfg</code>;</li>
+<li>не заполняет пользовательские поля;</li>
+<li>не валидирует бизнес-данные;</li>
+<li>не отправляет XML и не парсит ответ;</li>
+<li>не скрывает low-level ошибки <code>lxml</code> или <code>KeyError</code> в испорченном конфиге.</li>
+</ul>
+<h2 id="_build_envelope-envelope-header-body-soap-namespace">Первый тест: <code>_build_envelope</code> создает <code>Envelope</code>, <code>Header</code> и <code>Body</code> в SOAP namespace</h2>
+<h3 id="_3">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="err">`</span><span class="n">_build_envelope</span><span class="err">`</span> <span class="n">создаёт</span> <span class="n">SOAP</span> <span class="err">`</span><span class="n">Envelope</span><span class="err">`</span><span class="p">,</span> <span class="err">`</span><span class="n">Header</span><span class="err">`</span> <span class="n">и</span> <span class="err">`</span><span class="n">Body</span><span class="err">`</span> <span class="n">с</span> <span class="n">корректной</span> <span class="n">вложенностью</span><span class="o">.</span>
+</code></pre></div>
+<p>Это главный happy-path базового builder-а. Он фиксирует форму общего SOAP
+каркаса, на который потом опираются уже конкретные request-builder-ы. Вывод
+именно такой, потому что метод сам создает ровно два дочерних узла корня:
+<code>Header</code> и <code>Body</code>, причем оба в том же SOAP namespace, что и <code>Envelope</code>.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_build_envelope_creates_envelope_header_and_body_in_soap_namespace</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`_build_envelope` создаёт SOAP `Envelope`, `Header` и `Body` с корректной вложенностью."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">xml_config</span> <span class="o">=</span> <span class="n">_make_xml_config</span><span class="p">()</span>
+    <span class="n">builder</span> <span class="o">=</span> <span class="n">XMLBuilderBase</span><span class="p">(</span><span class="n">xml_config</span><span class="o">=</span><span class="n">xml_config</span><span class="p">)</span>
+    <span class="n">soap_ns</span> <span class="o">=</span> <span class="n">xml_config</span><span class="o">.</span><span class="n">namespaces</span><span class="p">[</span><span class="n">xml_config</span><span class="o">.</span><span class="n">soap_prefix</span><span class="p">]</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">envelope</span><span class="p">,</span> <span class="n">body</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">_build_envelope</span><span class="p">()</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">etree</span><span class="o">.</span><span class="n">QName</span><span class="p">(</span><span class="n">envelope</span><span class="p">)</span><span class="o">.</span><span class="n">localname</span> <span class="o">==</span> <span class="s2">"Envelope"</span>
+    <span class="k">assert</span> <span class="n">etree</span><span class="o">.</span><span class="n">QName</span><span class="p">(</span><span class="n">envelope</span><span class="p">)</span><span class="o">.</span><span class="n">namespace</span> <span class="o">==</span> <span class="n">soap_ns</span>
+    <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">envelope</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
+    <span class="k">assert</span> <span class="n">etree</span><span class="o">.</span><span class="n">QName</span><span class="p">(</span><span class="n">envelope</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">localname</span> <span class="o">==</span> <span class="s2">"Header"</span>
+    <span class="k">assert</span> <span class="n">etree</span><span class="o">.</span><span class="n">QName</span><span class="p">(</span><span class="n">envelope</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">namespace</span> <span class="o">==</span> <span class="n">soap_ns</span>
+    <span class="k">assert</span> <span class="n">etree</span><span class="o">.</span><span class="n">QName</span><span class="p">(</span><span class="n">body</span><span class="p">)</span><span class="o">.</span><span class="n">localname</span> <span class="o">==</span> <span class="s2">"Body"</span>
+    <span class="k">assert</span> <span class="n">etree</span><span class="o">.</span><span class="n">QName</span><span class="p">(</span><span class="n">body</span><span class="p">)</span><span class="o">.</span><span class="n">namespace</span> <span class="o">==</span> <span class="n">soap_ns</span>
+    <span class="k">assert</span> <span class="n">body</span><span class="o">.</span><span class="n">getparent</span><span class="p">()</span> <span class="ow">is</span> <span class="n">envelope</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>xml_config = _make_xml_config()
+builder = XMLBuilderBase(xml_config=xml_config)
+soap_ns = xml_config.namespaces[xml_config.soap_prefix]</code></pre>
+
+#### Вызов
+
+<pre><code>envelope, body = builder._build_envelope()</code></pre>
+
+#### Вывод
+
+<pre><code>Тест ничего не печатает.
+Проверяется состояние:
+QName(envelope).localname == "Envelope"
+QName(envelope).namespace == "urn:test:soap"
+len(envelope) == 2
+QName(envelope[0]).localname == "Header"
+QName(envelope[0]).namespace == "urn:test:soap"
+QName(body).localname == "Body"
+QName(body).namespace == "urn:test:soap"
+body.getparent() is envelope
+
+tests/xml/test_xml_builder_base.py::TestXMLBuilderBaseHappyPath::test_build_envelope_creates_envelope_header_and_body_in_soap_namespace PASSED</code></pre>
+</div>
+</details>
+<h2 id="envelopensmap-namespace-config">Второй тест: <code>Envelope.nsmap</code> сохраняет полную namespace-карту из config</h2>
+<h3 id="_4">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Все</span> <span class="n">namespaces</span> <span class="n">из</span> <span class="n">config</span> <span class="n">сохраняются</span> <span class="n">в</span> <span class="err">`</span><span class="n">Envelope</span><span class="o">.</span><span class="n">nsmap</span><span class="err">`</span><span class="p">,</span> <span class="n">а</span> <span class="n">не</span> <span class="n">только</span> <span class="n">SOAP</span><span class="o">/</span><span class="n">service</span><span class="o">.</span>
+</code></pre></div>
+<p>Тест показывает, что <code>XMLBuilderBase</code> копирует в <code>Envelope</code> всю карту
+namespace-ов из конфигурации через <code>nsmap=dict(self._xml_config.namespaces)</code>.
+Это важно, потому что дочерние секции могут использовать не только SOAP и
+service namespace, но и дополнительные alias вроде <code>alt</code>.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_build_envelope_preserves_full_namespace_map_from_config</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Все namespaces из config сохраняются в `Envelope.nsmap`, а не только SOAP/service."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">namespaces</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">"soapenv"</span><span class="p">:</span> <span class="s2">"urn:test:soap"</span><span class="p">,</span>
+        <span class="s2">"ser"</span><span class="p">:</span> <span class="s2">"urn:test:service"</span><span class="p">,</span>
+        <span class="s2">"alt"</span><span class="p">:</span> <span class="s2">"urn:test:alt"</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">builder</span> <span class="o">=</span> <span class="n">XMLBuilderBase</span><span class="p">(</span><span class="n">xml_config</span><span class="o">=</span><span class="n">_make_xml_config</span><span class="p">(</span><span class="n">namespaces</span><span class="p">))</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">envelope</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">_build_envelope</span><span class="p">()</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">envelope</span><span class="o">.</span><span class="n">nsmap</span> <span class="o">==</span> <span class="n">namespaces</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>namespaces = {
+    "soapenv": "urn:test:soap",
+    "ser": "urn:test:service",
+    "alt": "urn:test:alt",
+}
+builder = XMLBuilderBase(xml_config=_make_xml_config(namespaces))</code></pre>
+
+#### Вызов
+
+<pre><code>envelope, _ = builder._build_envelope()</code></pre>
+
+#### Вывод
+
+<pre><code>Тест ничего не печатает.
+Проверяется состояние:
+envelope.nsmap == {
+    "soapenv": "urn:test:soap",
+    "ser": "urn:test:service",
+    "alt": "urn:test:alt",
+}
+
+tests/xml/test_xml_builder_base.py::TestXMLBuilderBaseHappyPath::test_build_envelope_preserves_full_namespace_map_from_config PASSED</code></pre>
+</div>
+</details>
+<h2 id="_ser_ns-service-namespace">Третий тест: <code>_ser_ns</code> возвращает service namespace из конфигурации</h2>
+<h3 id="_5">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="err">`</span><span class="n">_ser_ns</span><span class="err">`</span> <span class="n">возвращает</span> <span class="n">ровно</span> <span class="err">`</span><span class="n">namespaces</span><span class="p">[</span><span class="n">service_prefix</span><span class="p">]</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<p>Это минимальный accessor-тест. Он важен, потому что наследники builder-а
+должны использовать один и тот же способ доступа к service namespace, а не
+дублировать этот lookup каждый раз вручную.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_ser_ns_returns_service_namespace_uri_from_config</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`_ser_ns` возвращает ровно `namespaces[service_prefix]`."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">xml_config</span> <span class="o">=</span> <span class="n">_make_xml_config</span><span class="p">()</span>
+    <span class="n">builder</span> <span class="o">=</span> <span class="n">XMLBuilderBase</span><span class="p">(</span><span class="n">xml_config</span><span class="o">=</span><span class="n">xml_config</span><span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">service_ns</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">_ser_ns</span><span class="p">()</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">service_ns</span> <span class="o">==</span> <span class="n">xml_config</span><span class="o">.</span><span class="n">namespaces</span><span class="p">[</span><span class="n">xml_config</span><span class="o">.</span><span class="n">service_prefix</span><span class="p">]</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>xml_config = _make_xml_config()
+builder = XMLBuilderBase(xml_config=xml_config)</code></pre>
+
+#### Вызов
+
+<pre><code>service_ns = builder._ser_ns()</code></pre>
+
+#### Вывод
+
+<pre><code>Тест ничего не печатает.
+Проверяется состояние:
+service_ns == xml_config.namespaces[xml_config.service_prefix]
+service_ns == "urn:test:service"
+
+tests/xml/test_xml_builder_base.py::TestXMLBuilderBaseHappyPath::test_ser_ns_returns_service_namespace_uri_from_config PASSED</code></pre>
+</div>
+</details>
+<h2 id="_finalize_xml-envelope-utf-8-bytes">Четвертый тест: <code>_finalize_xml</code> сериализует минимальный envelope в UTF-8 bytes</h2>
+<h3 id="_6">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="err">`</span><span class="n">_finalize_xml</span><span class="err">`</span> <span class="n">сериализует</span> <span class="n">даже</span> <span class="n">минимальный</span> <span class="n">envelope</span> <span class="n">в</span> <span class="err">`</span><span class="n">utf</span><span class="o">-</span><span class="mi">8</span><span class="err">`</span> <span class="nb">bytes</span> <span class="n">без</span> <span class="n">XML</span> <span class="n">declaration</span><span class="o">.</span>
+</code></pre></div>
+<p>Этот тест показывает границу ответственности метода: он не меняет структуру
+дерева, а только сериализует уже готовый <code>envelope</code>. Поэтому в выводе
+проверяются именно байты, отсутствие <code>&lt;?xml</code>, наличие <code>Envelope</code>, <code>Header</code>,
+<code>Body</code> и переводов строки от <code>pretty_print=True</code>.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_finalize_xml_serializes_minimal_envelope_to_utf8_bytes</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`_finalize_xml` сериализует даже минимальный envelope в `utf-8` bytes без XML declaration."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">xml_config</span> <span class="o">=</span> <span class="n">_make_xml_config</span><span class="p">()</span>
+    <span class="n">builder</span> <span class="o">=</span> <span class="n">XMLBuilderBase</span><span class="p">(</span><span class="n">xml_config</span><span class="o">=</span><span class="n">xml_config</span><span class="p">)</span>
+    <span class="n">envelope</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">_build_envelope</span><span class="p">()</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">xml_bytes</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">_finalize_xml</span><span class="p">(</span><span class="n">envelope</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">xml_bytes</span><span class="p">,</span> <span class="nb">bytes</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="sa">b</span><span class="s2">"&lt;?xml"</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">xml_bytes</span>
+    <span class="k">assert</span> <span class="sa">b</span><span class="s2">"Envelope"</span> <span class="ow">in</span> <span class="n">xml_bytes</span>
+    <span class="k">assert</span> <span class="sa">b</span><span class="s2">"Header"</span> <span class="ow">in</span> <span class="n">xml_bytes</span>
+    <span class="k">assert</span> <span class="sa">b</span><span class="s2">"Body"</span> <span class="ow">in</span> <span class="n">xml_bytes</span>
+    <span class="k">assert</span> <span class="sa">b</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="ow">in</span> <span class="n">xml_bytes</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>xml_config = _make_xml_config()
+builder = XMLBuilderBase(xml_config=xml_config)
+envelope, _ = builder._build_envelope()</code></pre>
+
+#### Вызов
+
+<pre><code>xml_bytes = builder._finalize_xml(envelope)</code></pre>
+
+#### Вывод
+
+<pre><code>Тест ничего не печатает.
+Проверяется состояние:
+isinstance(xml_bytes, bytes) == True
+b"&lt;?xml" not in xml_bytes
+b"Envelope" in xml_bytes
+b"Header" in xml_bytes
+b"Body" in xml_bytes
+b"\n" in xml_bytes
+
+tests/xml/test_xml_builder_base.py::TestXMLBuilderBaseHappyPath::test_finalize_xml_serializes_minimal_envelope_to_utf8_bytes PASSED</code></pre>
+</div>
+</details>
+<h2 id="namespace-keyerror">Пятый блок: пропавшие namespace-ключи дают прямой <code>KeyError</code></h2>
+<h3 id="test_build_envelope_raises_key_error_when_soap_prefix_disappears_at_runtime">Докстринг теста <code>test_build_envelope_raises_key_error_when_soap_prefix_disappears_at_runtime</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Если</span> <span class="n">из</span> <span class="n">mutable</span> <span class="err">`</span><span class="n">namespaces</span><span class="err">`</span> <span class="n">пропал</span> <span class="err">`</span><span class="n">soap_prefix</span><span class="err">`</span><span class="p">,</span> <span class="err">`</span><span class="n">_build_envelope</span><span class="err">`</span> <span class="n">даёт</span> <span class="err">`</span><span class="ne">KeyError</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<h3 id="test_ser_ns_raises_key_error_when_service_prefix_disappears_at_runtime">Докстринг теста <code>test_ser_ns_raises_key_error_when_service_prefix_disappears_at_runtime</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Если</span> <span class="n">из</span> <span class="n">mutable</span> <span class="err">`</span><span class="n">namespaces</span><span class="err">`</span> <span class="n">пропал</span> <span class="err">`</span><span class="n">service_prefix</span><span class="err">`</span><span class="p">,</span> <span class="err">`</span><span class="n">_ser_ns</span><span class="err">`</span> <span class="n">даёт</span> <span class="err">`</span><span class="ne">KeyError</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<p>Эти два теста фиксируют принципиальный выбор <code>XMLBuilderBase</code>: он не оборачивает
+runtime-поломку mutable-конфига в собственные исключения, а оставляет наружу
+чистый <code>KeyError</code>. Поэтому в <code>Вывод</code> здесь не может быть никакого
+<code>XMLBuilderFailError</code>.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код тестов</span><span class="docs-test-hide">Скрыть код тестов</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_build_envelope_raises_key_error_when_soap_prefix_disappears_at_runtime</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Если из mutable `namespaces` пропал `soap_prefix`, `_build_envelope` даёт `KeyError`."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">namespaces</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">"soapenv"</span><span class="p">:</span> <span class="s2">"urn:test:soap"</span><span class="p">,</span>
+        <span class="s2">"ser"</span><span class="p">:</span> <span class="s2">"urn:test:service"</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">builder</span> <span class="o">=</span> <span class="n">XMLBuilderBase</span><span class="p">(</span><span class="n">xml_config</span><span class="o">=</span><span class="n">_make_xml_config</span><span class="p">(</span><span class="n">namespaces</span><span class="p">))</span>
+    <span class="n">namespaces</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">"soapenv"</span><span class="p">)</span>
+
+    <span class="c1"># Act / Assert</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">KeyError</span><span class="p">):</span>
+        <span class="n">builder</span><span class="o">.</span><span class="n">_build_envelope</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">test_ser_ns_raises_key_error_when_service_prefix_disappears_at_runtime</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Если из mutable `namespaces` пропал `service_prefix`, `_ser_ns` даёт `KeyError`."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">namespaces</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">"soapenv"</span><span class="p">:</span> <span class="s2">"urn:test:soap"</span><span class="p">,</span>
+        <span class="s2">"ser"</span><span class="p">:</span> <span class="s2">"urn:test:service"</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="n">builder</span> <span class="o">=</span> <span class="n">XMLBuilderBase</span><span class="p">(</span><span class="n">xml_config</span><span class="o">=</span><span class="n">_make_xml_config</span><span class="p">(</span><span class="n">namespaces</span><span class="p">))</span>
+    <span class="n">namespaces</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">"ser"</span><span class="p">)</span>
+
+    <span class="c1"># Act / Assert</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">KeyError</span><span class="p">):</span>
+        <span class="n">builder</span><span class="o">.</span><span class="n">_ser_ns</span><span class="p">()</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>Сценарий 1:
+namespaces = {
+    "soapenv": "urn:test:soap",
+    "ser": "urn:test:service",
+}
+namespaces.pop("soapenv")
+
+Сценарий 2:
+namespaces = {
+    "soapenv": "urn:test:soap",
+    "ser": "urn:test:service",
+}
+namespaces.pop("ser")</code></pre>
+
+#### Вызов
+
+<pre><code>with pytest.raises(KeyError):
+    builder._build_envelope()
+
+with pytest.raises(KeyError):
+    builder._ser_ns()</code></pre>
+
+#### Ошибка
+
+<pre><code>Тесты ничего не печатают.
+Проверяются ошибки:
+в сценарии 1:
+KeyError из-за отсутствия namespaces["soapenv"]
+
+в сценарии 2:
+KeyError из-за отсутствия namespaces["ser"]
+
+tests/xml/test_xml_builder_base.py::TestXMLBuilderBaseContractViolations::test_build_envelope_raises_key_error_when_soap_prefix_disappears_at_runtime PASSED
+tests/xml/test_xml_builder_base.py::TestXMLBuilderBaseContractViolations::test_ser_ns_raises_key_error_when_service_prefix_disappears_at_runtime PASSED</code></pre>
+</div>
+</details>
+<h2 id="_finalize_xml-lxmltypeerror">Шестой тест: <code>_finalize_xml</code> не маскирует <code>lxml.TypeError</code> для невалидного объекта</h2>
+<h3 id="_7">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="err">`</span><span class="n">_finalize_xml</span><span class="err">`</span> <span class="n">не</span> <span class="n">валидирует</span> <span class="n">входной</span> <span class="n">объект</span> <span class="n">и</span> <span class="n">оставляет</span> <span class="n">low</span><span class="o">-</span><span class="n">level</span> <span class="n">ошибку</span> <span class="err">`</span><span class="n">lxml</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<p>Этот тест нужен, чтобы явно отделить обязанности. <code>XMLBuilderBase</code> не
+проверяет, что ему передали именно настоящий <code>etree._Element</code>; он просто
+делегирует сериализацию в <code>lxml.etree.tostring(...)</code>. Поэтому наружу выходит
+именно <code>TypeError</code> с текстом про невозможность сериализации.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_finalize_xml_propagates_lxml_type_error_for_invalid_object</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`_finalize_xml` не валидирует входной объект и оставляет low-level ошибку `lxml`."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">builder</span> <span class="o">=</span> <span class="n">XMLBuilderBase</span><span class="p">(</span><span class="n">xml_config</span><span class="o">=</span><span class="n">_make_xml_config</span><span class="p">())</span>
+    <span class="n">bad_envelope</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="n">etree</span><span class="o">.</span><span class="n">_Element</span><span class="p">,</span> <span class="nb">object</span><span class="p">())</span>
+
+    <span class="c1"># Act / Assert</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="n">match</span><span class="o">=</span><span class="s2">"cannot be serialized"</span><span class="p">):</span>
+        <span class="n">builder</span><span class="o">.</span><span class="n">_finalize_xml</span><span class="p">(</span><span class="n">bad_envelope</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>builder = XMLBuilderBase(xml_config=_make_xml_config())
+bad_envelope = cast(etree._Element, object())</code></pre>
+
+#### Вызов
+
+<pre><code>with pytest.raises(TypeError, match="cannot be serialized"):
+    builder._finalize_xml(bad_envelope)</code></pre>
+
+#### Ошибка
+
+<pre><code>Тест ничего не печатает.
+Проверяется ошибка:
+TypeError с текстом, содержащим "cannot be serialized"
+
+tests/xml/test_xml_builder_base.py::TestXMLBuilderBaseContractViolations::test_finalize_xml_propagates_lxml_type_error_for_invalid_object PASSED</code></pre>
+</div>
+</details>
+<h2 id="request-specific-transport-source-">Седьмой блок: тело класса изолировано от request-specific, transport и source-терминов</h2>
+<h3 id="_8">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="err">`</span><span class="n">XMLBuilderBase</span><span class="err">`</span> <span class="n">не</span> <span class="n">должен</span> <span class="n">тянуть</span> <span class="n">request</span><span class="o">-</span><span class="n">level</span> <span class="n">данные</span><span class="p">,</span> <span class="n">transport</span> <span class="n">и</span> <span class="n">source</span><span class="o">-</span><span class="n">логику</span><span class="o">.</span>
+</code></pre></div>
+<p>Этот параметризованный guard-тест защищает архитектурную границу базового
+builder-а. В классе не должно быть ни поисковых полей, ни transport DTO, ни
+source-слоя, ни даже retry/fail-ошибок более высоких XML-секций.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">"term"</span><span class="p">,</span> <span class="n">_FORBIDDEN_TERMS</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">test_class_body_does_not_depend_on_request_specific_or_foreign_layers</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">term</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`XMLBuilderBase` не должен тянуть request-level данные, transport и source-логику."""</span>
+    <span class="c1"># Arrange / Act / Assert</span>
+    <span class="k">assert</span> <span class="n">term</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_CLASS_SRC</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>forbidden_terms = [
+    "search_pairs",
+    "ClientContainerCfg",
+    "TransportResponseDTO",
+    "AttemptId",
+    "SourceData",
+    "response_bytes",
+    "XMLBuilderRetryError",
+    "XMLBuilderFailError",
+]
+class_source = inspect.getsource(XMLBuilderBase)</code></pre>
+
+#### Вызов
+
+<pre><code>assert term not in class_source</code></pre>
+
+#### Вывод
+
+<pre><code>Тесты ничего не печатают.
+Проверяется условие:
+каждый term из forbidden_terms отсутствует в тексте класса XMLBuilderBase
+
+tests/xml/test_xml_builder_base.py::TestXMLBuilderBaseArchitecture::test_class_body_does_not_depend_on_request_specific_or_foreign_layers[search_pairs] PASSED
+tests/xml/test_xml_builder_base.py::TestXMLBuilderBaseArchitecture::test_class_body_does_not_depend_on_request_specific_or_foreign_layers[ClientContainerCfg] PASSED
+tests/xml/test_xml_builder_base.py::TestXMLBuilderBaseArchitecture::test_class_body_does_not_depend_on_request_specific_or_foreign_layers[TransportResponseDTO] PASSED
+tests/xml/test_xml_builder_base.py::TestXMLBuilderBaseArchitecture::test_class_body_does_not_depend_on_request_specific_or_foreign_layers[AttemptId] PASSED
+tests/xml/test_xml_builder_base.py::TestXMLBuilderBaseArchitecture::test_class_body_does_not_depend_on_request_specific_or_foreign_layers[SourceData] PASSED
+tests/xml/test_xml_builder_base.py::TestXMLBuilderBaseArchitecture::test_class_body_does_not_depend_on_request_specific_or_foreign_layers[response_bytes] PASSED
+tests/xml/test_xml_builder_base.py::TestXMLBuilderBaseArchitecture::test_class_body_does_not_depend_on_request_specific_or_foreign_layers[XMLBuilderRetryError] PASSED
+tests/xml/test_xml_builder_base.py::TestXMLBuilderBaseArchitecture::test_class_body_does_not_depend_on_request_specific_or_foreign_layers[XMLBuilderFailError] PASSED</code></pre>
+</div>
+</details>
+<h2 id="_9">Восьмой блок: сигнатуры класса остаются минимальными</h2>
+<h3 id="test_init_signature_contains_only_xml_config">Докстринг теста <code>test_init_signature_contains_only_xml_config</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="err">`</span><span class="fm">__init__</span><span class="err">`</span> <span class="n">принимает</span> <span class="n">только</span> <span class="n">готовый</span> <span class="n">XML</span><span class="o">-</span><span class="n">config</span><span class="o">.</span>
+</code></pre></div>
+<h3 id="test_build_envelope_signature_contains_only_self">Докстринг теста <code>test_build_envelope_signature_contains_only_self</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="err">`</span><span class="n">_build_envelope</span><span class="err">`</span> <span class="n">не</span> <span class="n">принимает</span> <span class="n">внешние</span> <span class="n">DTO</span> <span class="n">и</span> <span class="n">строит</span> <span class="n">только</span> <span class="n">общий</span> <span class="n">SOAP</span> <span class="n">shell</span><span class="o">.</span>
+</code></pre></div>
+<h3 id="test_finalize_xml_signature_contains_only_envelope">Докстринг теста <code>test_finalize_xml_signature_contains_only_envelope</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="err">`</span><span class="n">_finalize_xml</span><span class="err">`</span> <span class="n">принимает</span> <span class="n">только</span> <span class="n">корневой</span> <span class="n">envelope</span> <span class="n">для</span> <span class="n">сериализации</span><span class="o">.</span>
+</code></pre></div>
+<h3 id="test_ser_ns_signature_contains_only_self">Докстринг теста <code>test_ser_ns_signature_contains_only_self</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="err">`</span><span class="n">_ser_ns</span><span class="err">`</span> <span class="n">остаётся</span> <span class="n">минимальным</span> <span class="n">accessor</span><span class="o">-</span><span class="n">ом</span> <span class="n">service</span> <span class="n">namespace</span><span class="o">.</span>
+</code></pre></div>
+<p>Это API-guard на случай случайного разрастания базового builder-а. Он
+фиксирует, что класс остается узким инфраструктурным слоем, а не начинает
+принимать request-level данные напрямую.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код тестов</span><span class="docs-test-hide">Скрыть код тестов</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_init_signature_contains_only_xml_config</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`__init__` принимает только готовый XML-config."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">signature</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="n">XMLBuilderBase</span><span class="o">.</span><span class="fm">__init__</span><span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">signature</span><span class="o">.</span><span class="n">parameters</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">params</span> <span class="o">==</span> <span class="p">[</span><span class="s2">"self"</span><span class="p">,</span> <span class="s2">"xml_config"</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">test_build_envelope_signature_contains_only_self</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`_build_envelope` не принимает внешние DTO и строит только общий SOAP shell."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">signature</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="n">XMLBuilderBase</span><span class="o">.</span><span class="n">_build_envelope</span><span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">signature</span><span class="o">.</span><span class="n">parameters</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">params</span> <span class="o">==</span> <span class="p">[</span><span class="s2">"self"</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">test_finalize_xml_signature_contains_only_envelope</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`_finalize_xml` принимает только корневой envelope для сериализации."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">signature</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="n">XMLBuilderBase</span><span class="o">.</span><span class="n">_finalize_xml</span><span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">signature</span><span class="o">.</span><span class="n">parameters</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">params</span> <span class="o">==</span> <span class="p">[</span><span class="s2">"self"</span><span class="p">,</span> <span class="s2">"envelope"</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">test_ser_ns_signature_contains_only_self</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`_ser_ns` остаётся минимальным accessor-ом service namespace."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">signature</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="n">XMLBuilderBase</span><span class="o">.</span><span class="n">_ser_ns</span><span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">signature</span><span class="o">.</span><span class="n">parameters</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">params</span> <span class="o">==</span> <span class="p">[</span><span class="s2">"self"</span><span class="p">]</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>init_signature = inspect.signature(XMLBuilderBase.__init__)
+build_signature = inspect.signature(XMLBuilderBase._build_envelope)
+finalize_signature = inspect.signature(XMLBuilderBase._finalize_xml)
+ser_signature = inspect.signature(XMLBuilderBase._ser_ns)</code></pre>
+
+#### Вызов
+
+<pre><code>list(signature.parameters)</code></pre>
+
+#### Вывод
+
+<pre><code>Тесты ничего не печатают.
+Проверяется состояние:
+list(init_signature.parameters) == ["self", "xml_config"]
+list(build_signature.parameters) == ["self"]
+list(finalize_signature.parameters) == ["self", "envelope"]
+list(ser_signature.parameters) == ["self"]
+
+tests/xml/test_xml_builder_base.py::TestXMLBuilderBaseArchitecture::test_init_signature_contains_only_xml_config PASSED
+tests/xml/test_xml_builder_base.py::TestXMLBuilderBaseArchitecture::test_build_envelope_signature_contains_only_self PASSED
+tests/xml/test_xml_builder_base.py::TestXMLBuilderBaseArchitecture::test_finalize_xml_signature_contains_only_envelope PASSED
+tests/xml/test_xml_builder_base.py::TestXMLBuilderBaseArchitecture::test_ser_ns_signature_contains_only_self PASSED</code></pre>
+</div>
+</details>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.sections", "toc.integrate", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../../../../assets/javascripts/toc-collapse.js"></script>
+</body>
+</html>

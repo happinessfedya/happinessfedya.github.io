@@ -1,0 +1,2174 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../load_context_step/" rel="prev"/>
+<link href="../transport_step/" rel="next"/>
+<link href="../../../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<title>Тесты PrepareAttemptStep - Integration Documentation</title>
+<link href="../../../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../../assets/_mkdocstrings.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/toc-collapse.css" rel="stylesheet"/>
+<link href="../../../../assets/stylesheets/docs-tests.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#prepareattemptstep">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Integration Documentation" class="md-header__button md-logo" data-md-component="logo" href="../../../.." title="Integration Documentation">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Integration Documentation
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Тесты PrepareAttemptStep
+            
+          </span>
+</div>
+</div>
+</div>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Integration Documentation" class="md-nav__button md-logo" data-md-component="logo" href="../../../.." title="Integration Documentation">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    Integration Documentation
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../..">
+<span class="md-ellipsis">
+    
+  
+    Общая структура проекта
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    ERZL
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    ERZL
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../architecture/ERZLcontext-lifestyle-mermaid/">
+<span class="md-ellipsis">
+    
+  
+    Жизненный цикл ERZL_Context
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../architecture/overview/">
+<span class="md-ellipsis">
+    
+  
+    Архитектура системы
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    How to
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    How to
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA/">
+<span class="md-ellipsis">
+    
+  
+    Добавить источник
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%D0%BB%D0%B5%20%D0%BE%D1%82%20%D0%B8%D1%81%D1%82%D0%BE%D1%87%D0%BD%D0%B8%D0%BA%D0%B0%20%D0%B4%D0%BE%20XML/">
+<span class="md-ellipsis">
+    
+  
+    Добавить поле от источника до XML
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D0%BE%D0%BF%D1%8B%D1%82%D0%BA%D1%83/">
+<span class="md-ellipsis">
+    
+  
+    Добавить попытку
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%94%D0%BE%D0%B1%D0%B0%D0%B2%D0%B8%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D1%84%D0%B8%D0%BB%D1%8C%20%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%B0%D1%86%D0%B8%D0%B8%20%D0%B2%20config.toml/">
+<span class="md-ellipsis">
+    
+  
+    Добавить профиль активации в config.toml
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../how-to/%D0%9E%D1%82%D0%BB%D0%B0%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BE%D1%82%D0%B2%D0%B5%D1%82%20ERZL/">
+<span class="md-ellipsis">
+    
+  
+    Отладить ответ ERZL
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../reference/api/">
+<span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Tests
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Tests
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_1" id="__nav_2_4_1_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Adapters
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_1_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_1">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Adapters
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Adapters/adapter_base/">
+<span class="md-ellipsis">
+    
+  
+    Тесты AdapterBase
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Adapters/erzl_adapter/">
+<span class="md-ellipsis">
+    
+  
+    Тесты ERZLAdapter
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Adapters/get_xml_answer_adapter/">
+<span class="md-ellipsis">
+    
+  
+    Тесты GetXMLAnswerAdapter
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Adapters/rename_to_source_input_adapter/">
+<span class="md-ellipsis">
+    
+  
+    Тесты RenameToSourceInputAdapter
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Adapters/rename_to_source_input_adapter_cfg/">
+<span class="md-ellipsis">
+    
+  
+    Тесты RenameToSourceInputAdapterCfg
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Adapters/rename_xml_kv_pairs_adapter/">
+<span class="md-ellipsis">
+    
+  
+    Тесты RenameXmlKVPairsAdapter
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_4_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_2" id="__nav_2_4_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Pipeline
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_4_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Pipeline
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../answer_decision_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты AnswerDecisionStep
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../build_search_xml_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты BuildSearchXMLStep
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../create_person_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты CreatePersonStep
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../load_context_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты LoadContextStep
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Тесты PrepareAttemptStep
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    Тесты PrepareAttemptStep
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
+      
+        Докстринг модуля
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      
+        Зачем этот класс
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cfg-selector-adapter">
+<span class="md-ellipsis">
+      
+        Первый тест: конструктор сохраняет cfg, selector и adapter
+      
+    </span>
+</a>
+<nav aria-label="Первый тест: конструктор сохраняет cfg, selector и adapter" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#continue-dataattemptstr">
+<span class="md-ellipsis">
+      
+        Второй тест: штатная ветка дает CONTINUE и обновляет DataAttemptStr
+      
+    </span>
+</a>
+<nav aria-label="Второй тест: штатная ветка дает CONTINUE и обновляет DataAttemptStr" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#attemptid1-cfg">
+<span class="md-ellipsis">
+      
+        Третий тест: AttemptId=1 берет второй набор полей из cfg
+      
+    </span>
+</a>
+<nav aria-label="Третий тест: AttemptId=1 берет второй набор полей из cfg" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#selector-adapter-context">
+<span class="md-ellipsis">
+      
+        Четвертый тест: реальный selector и реальный adapter обновляют context
+      
+    </span>
+</a>
+<nav aria-label="Четвертый тест: реальный selector и реальный adapter обновляют context" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#selector">
+<span class="md-ellipsis">
+      
+        Пятый тест: последняя валидная попытка все еще идет через selector
+      
+    </span>
+</a>
+<nav aria-label="Пятый тест: последняя валидная попытка все еще идет через selector" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cfg-no_more_attempts">
+<span class="md-ellipsis">
+      
+        Шестой блок: значения за границей cfg дают NO_MORE_ATTEMPTS
+      
+    </span>
+</a>
+<nav aria-label="Шестой блок: значения за границей cfg дают NO_MORE_ATTEMPTS" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_attempt_id_equal_to_cfg_length_returns_no_more_attempts">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_attempt_id_equal_to_cfg_length_returns_no_more_attempts
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_large_attempt_id_returns_no_more_attempts">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_large_attempt_id_returns_no_more_attempts
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#attemptid-python-">
+<span class="md-ellipsis">
+      
+        Седьмой тест: отрицательный AttemptId использует обычную Python-индексацию
+      
+    </span>
+</a>
+<nav aria-label="Седьмой тест: отрицательный AttemptId использует обычную Python-индексацию" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dataselectornomatcherror-next_attempt">
+<span class="md-ellipsis">
+      
+        Восьмой тест: DataSelectorNoMatchError дает NEXT_ATTEMPT
+      
+    </span>
+</a>
+<nav aria-label="Восьмой тест: DataSelectorNoMatchError дает NEXT_ATTEMPT" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_9">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#context">
+<span class="md-ellipsis">
+      
+        Девятый блок: отсутствие обязательных атрибутов context не скрывается
+      
+    </span>
+</a>
+<nav aria-label="Девятый блок: отсутствие обязательных атрибутов context не скрывается" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_missing_attempt_id_raises_attribute_error">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_missing_attempt_id_raises_attribute_error
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_missing_source_data_raises_attribute_error">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_missing_source_data_raises_attribute_error
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#attemptid-steprslt">
+<span class="md-ellipsis">
+      
+        Десятый тест: строковый AttemptId ломает сравнение до любого StepRslt
+      
+    </span>
+</a>
+<nav aria-label="Десятый тест: строковый AttemptId ломает сравнение до любого StepRslt" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_10">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#selector-adapter-">
+<span class="md-ellipsis">
+      
+        Одиннадцатый блок: отсутствие методов у selector-а и adapter-а не скрывается
+      
+    </span>
+</a>
+<nav aria-label="Одиннадцатый блок: отсутствие методов у selector-а и adapter-а не скрывается" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_missing_selector_method_raises_attribute_error">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_missing_selector_method_raises_attribute_error
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_missing_adapter_method_raises_attribute_error">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_missing_adapter_method_raises_attribute_error
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#runtime-selector-adapter-">
+<span class="md-ellipsis">
+      
+        Двенадцатый блок: неожиданные runtime-ошибки selector-а и adapter-а пробрасываются
+      
+    </span>
+</a>
+<nav aria-label="Двенадцатый блок: неожиданные runtime-ошибки selector-а и adapter-а пробрасываются" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_unexpected_runtime_error_from_selector_propagates">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_unexpected_runtime_error_from_selector_propagates
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_unexpected_runtime_error_from_adapter_propagates">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_unexpected_runtime_error_from_adapter_propagates
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#xml-transport-">
+<span class="md-ellipsis">
+      
+        Тринадцатый блок: тело класса изолировано от XML- и transport-слоев
+      
+    </span>
+</a>
+<nav aria-label="Тринадцатый блок: тело класса изолировано от XML- и transport-слоев" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_11">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source-">
+<span class="md-ellipsis">
+      
+        Четырнадцатый блок: тело класса не зависит от ошибок загрузки source-слоя
+      
+    </span>
+</a>
+<nav aria-label="Четырнадцатый блок: тело класса не зависит от ошибок загрузки source-слоя" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_12">
+<span class="md-ellipsis">
+      
+        Докстринг теста
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_13">
+<span class="md-ellipsis">
+      
+        Пятнадцатый блок: сигнатуры шага остаются компактными и синхронными
+      
+    </span>
+</a>
+<nav aria-label="Пятнадцатый блок: сигнатуры шага остаются компактными и синхронными" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_init_signature_contains_only_expected_parameters">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_init_signature_contains_only_expected_parameters
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test_input_ctx_attempt_columns_signature_contains_only_ctx">
+<span class="md-ellipsis">
+      
+        Докстринг теста test_input_ctx_attempt_columns_signature_contains_only_ctx
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../transport_step/">
+<span class="md-ellipsis">
+    
+  
+    Тесты TransportStep
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_3" id="__nav_2_4_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Source
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Source
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Source/create_flags/">
+<span class="md-ellipsis">
+    
+  
+    Тесты CreateFlags
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Source/erzl_context/">
+<span class="md-ellipsis">
+    
+  
+    Тесты ERZL_Context
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Source/person_fields/">
+<span class="md-ellipsis">
+    
+  
+    Тесты PersonFields
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Source/xlsm_row_dto/">
+<span class="md-ellipsis">
+    
+  
+    Тесты XLSMRowDTO
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_4_4" id="__nav_2_4_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    XML
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    XML
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../XML/client_section/">
+<span class="md-ellipsis">
+    
+  
+    Тесты ClientSection
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../XML/container_fields_section/">
+<span class="md-ellipsis">
+    
+  
+    Тесты ContainerFieldsSection
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../XML/xml_builder_base/">
+<span class="md-ellipsis">
+    
+  
+    Тесты XMLBuilderBase
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="prepareattemptstep">Тесты PrepareAttemptStep</h1>
+<p>Эта страница показывает тесты из общего test-файла. Команда, на которой
+основаны сценарии:</p>
+<div class="language-powershell highlight"><pre><span></span><code><span class="n">python</span> <span class="n">-m</span> <span class="n">pytest</span> <span class="n">-vv</span> <span class="n">-s</span> <span class="n">tests</span><span class="p">/</span><span class="n">pipeline</span><span class="p">/</span><span class="n">test_prepare_attempt_step</span><span class="p">.</span><span class="n">py</span>
+</code></pre></div>
+<p>Флаг <code>-s</code> здесь не добавляет пользовательской печати: модуль не выводит свои
+сценарии, поэтому в <code>pytest</code> видны только имена тестов и статусы <code>PASSED</code>.
+Ниже раскрыто, какие именно ветки <code>CONTINUE / NEXT_ATTEMPT /
+NO_MORE_ATTEMPTS</code>, какие ошибки и какие архитектурные ограничения стоят за
+этими статусами.</p>
+<h2 id="_1">Докстринг модуля</h2>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Тесты</span> <span class="n">для</span> <span class="err">`</span><span class="n">PrepareAttemptStep</span><span class="err">`</span><span class="o">.</span>
+
+<span class="n">Модуль</span> <span class="n">фиксирует</span> <span class="n">контракт</span> <span class="n">шага</span> <span class="n">выбора</span> <span class="n">ключей</span> <span class="n">текущей</span> <span class="n">попытки</span><span class="p">:</span> <span class="n">работу</span> <span class="n">с</span>
+<span class="err">`</span><span class="n">PrepareAttemptStepCfg</span><span class="err">`</span><span class="p">,</span> <span class="n">controlled</span><span class="o">-</span><span class="n">ветки</span> <span class="err">`</span><span class="n">CONTINUE</span> <span class="o">/</span> <span class="n">NEXT_ATTEMPT</span> <span class="o">/</span>
+<span class="n">NO_MORE_ATTEMPTS</span><span class="err">`</span><span class="p">,</span> <span class="n">а</span> <span class="n">также</span> <span class="n">архитектурную</span> <span class="n">изоляцию</span> <span class="n">от</span> <span class="n">XML</span><span class="o">-</span> <span class="n">и</span> <span class="n">transport</span><span class="o">-</span><span class="n">слоёв</span><span class="o">.</span>
+</code></pre></div>
+<p>Исходный код больше не вынесен в один общий блок сверху. Ниже у каждого
+сценария есть отдельный раскрывающийся блок с кодом именно того теста,
+который документируется.</p>
+<h2 id="_2">Зачем этот класс</h2>
+<p><code>PrepareAttemptStep</code> живет в Pipeline-слое и отвечает за подготовку данных
+текущей search-попытки. Он связывает три зависимости:</p>
+<ul>
+<li><code>cfg.attempt_fields</code> хранит упорядоченные наборы полей для каждой попытки;</li>
+<li><code>data_selector.make_ColumnsAttemptStr(SourceData, selected_fields)</code> выбирает пригодные поля из source-данных;</li>
+<li><code>data_selector_adapter.input_DataSelectorRslt(ctx, rslt)</code> записывает результат selector-а в <code>context.DataAttemptStr</code>.</li>
+</ul>
+<p>Этот шаг:</p>
+<ul>
+<li>читает <code>AttemptId</code> и <code>SourceData</code> из context;</li>
+<li>решает, закончились ли попытки;</li>
+<li>для текущей попытки запрашивает selector;</li>
+<li>на успехе пишет <code>DataAttemptStr</code> в context;</li>
+<li>controlled error <code>DataSelectorNoMatchError</code> превращает в <code>NEXT_ATTEMPT</code>.</li>
+</ul>
+<p>Этот шаг не:</p>
+<ul>
+<li>не строит XML и не работает с <code>xml_bytes</code>;</li>
+<li>не знает ничего о transport-ответах;</li>
+<li>не загружает source сам и не обрабатывает <code>NoValidRowsError</code>;</li>
+<li>не скрывает неожиданные runtime-ошибки collaborators.</li>
+</ul>
+<h2 id="cfg-selector-adapter">Первый тест: конструктор сохраняет cfg, selector и adapter</h2>
+<h3 id="_3">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Конструктор</span> <span class="n">сохраняет</span> <span class="n">cfg</span><span class="p">,</span> <span class="n">selector</span> <span class="n">и</span> <span class="n">adapter</span> <span class="n">без</span> <span class="n">изменений</span><span class="o">.</span>
+</code></pre></div>
+<p>Этот тест защищает самый базовый контракт инициализации шага. Если одна из
+DI-зависимостей подменится уже в конструкторе, дальше нельзя будет доверять ни
+выбору набора полей, ни записи результата в context.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_init_stores_cfg_selector_and_adapter</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Конструктор сохраняет cfg, selector и adapter без изменений."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">cfg</span> <span class="o">=</span> <span class="n">PrepareAttemptStepCfg</span><span class="p">(</span><span class="n">attempt_fields</span><span class="o">=</span><span class="p">((</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">,),))</span>
+    <span class="n">selector</span> <span class="o">=</span> <span class="n">_SelectorStub</span><span class="p">(</span>
+        <span class="n">result</span><span class="o">=</span><span class="n">TupleDataSelectorRslt</span><span class="p">(</span><span class="n">selected_columns</span><span class="o">=</span><span class="p">(</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">,))</span>
+    <span class="p">)</span>
+    <span class="n">adapter</span> <span class="o">=</span> <span class="n">_SelectorAdapterStub</span><span class="p">()</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="n">PrepareAttemptStep</span><span class="p">(</span>
+        <span class="n">cfg</span><span class="o">=</span><span class="n">cfg</span><span class="p">,</span>
+        <span class="n">data_selector</span><span class="o">=</span><span class="n">selector</span><span class="p">,</span>
+        <span class="n">data_selector_adapter</span><span class="o">=</span><span class="n">adapter</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">step</span><span class="o">.</span><span class="n">_cfg</span> <span class="ow">is</span> <span class="n">cfg</span>
+    <span class="k">assert</span> <span class="n">step</span><span class="o">.</span><span class="n">_data_selector</span> <span class="ow">is</span> <span class="n">selector</span>
+    <span class="k">assert</span> <span class="n">step</span><span class="o">.</span><span class="n">_data_selector_adapter</span> <span class="ow">is</span> <span class="n">adapter</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>cfg = PrepareAttemptStepCfg(attempt_fields=((PersonFields.SURNAME,),))
+selector = _SelectorStub(
+    result=TupleDataSelectorRslt(selected_columns=(PersonFields.SURNAME,))
+)
+adapter = _SelectorAdapterStub()</code></pre>
+
+#### Вызов
+
+<pre><code>step = PrepareAttemptStep(
+    cfg=cfg,
+    data_selector=selector,
+    data_selector_adapter=adapter,
+)</code></pre>
+
+#### Вывод
+
+<pre><code>Тест ничего не печатает.
+Проверяется состояние:
+step._cfg is cfg
+step._data_selector is selector
+step._data_selector_adapter is adapter
+
+tests/pipeline/test_prepare_attempt_step.py::TestPrepareAttemptStepInstantiation::test_init_stores_cfg_selector_and_adapter PASSED</code></pre>
+</div>
+</details>
+<h2 id="continue-dataattemptstr">Второй тест: штатная ветка дает <code>CONTINUE</code> и обновляет <code>DataAttemptStr</code></h2>
+<h3 id="_4">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Шаг</span> <span class="n">вызывает</span> <span class="n">selector</span><span class="p">,</span> <span class="n">затем</span> <span class="n">adapter</span> <span class="n">и</span> <span class="n">пишет</span> <span class="err">`</span><span class="n">DataAttemptStr</span><span class="err">`</span> <span class="n">в</span> <span class="n">context</span><span class="o">.</span>
+</code></pre></div>
+<p>Это основной happy-path шага. Он показывает, что <code>PrepareAttemptStep</code> не
+меняет source-данные сам, а только делегирует выбор полей selector-у и потом
+через adapter записывает результат в context.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_input_ctx_attempt_columns_returns_continue_and_updates_context</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Шаг вызывает selector, затем adapter и пишет `DataAttemptStr` в context."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span><span class="p">,</span> <span class="n">selector</span><span class="p">,</span> <span class="n">adapter</span> <span class="o">=</span> <span class="n">_make_step</span><span class="p">(</span>
+        <span class="n">attempt_fields</span><span class="o">=</span><span class="p">((</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">,</span> <span class="n">PersonFields</span><span class="o">.</span><span class="n">NAME</span><span class="p">),),</span>
+        <span class="n">selector_result</span><span class="o">=</span><span class="n">TupleDataSelectorRslt</span><span class="p">(</span>
+            <span class="n">selected_columns</span><span class="o">=</span><span class="p">(</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">,</span> <span class="n">PersonFields</span><span class="o">.</span><span class="n">NAME</span><span class="p">)</span>
+        <span class="p">),</span>
+    <span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_PrepareContextStub</span><span class="p">(</span>
+        <span class="n">SourceData</span><span class="o">=</span><span class="p">{</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">:</span> <span class="s2">"Ivanov"</span><span class="p">,</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">NAME</span><span class="p">:</span> <span class="s2">"Ivan"</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="n">AttemptId</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">step</span><span class="o">.</span><span class="n">input_ctx_attemptColumns</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="n">StepRslt</span><span class="o">.</span><span class="n">ok</span><span class="p">(</span>
+        <span class="n">SelectAttemptKeysDecision_StrEnum</span><span class="o">.</span><span class="n">CONTINUE</span><span class="p">,</span>
+        <span class="s2">"Положили ключи для попытки в context"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">assert</span> <span class="n">selector</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[</span>
+        <span class="p">(</span>
+            <span class="n">context</span><span class="o">.</span><span class="n">SourceData</span><span class="p">,</span>
+            <span class="p">(</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">,</span> <span class="n">PersonFields</span><span class="o">.</span><span class="n">NAME</span><span class="p">),</span>
+        <span class="p">)</span>
+    <span class="p">]</span>
+    <span class="k">assert</span> <span class="n">adapter</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[</span>
+        <span class="p">(</span>
+            <span class="n">context</span><span class="p">,</span>
+            <span class="n">TupleDataSelectorRslt</span><span class="p">(</span>
+                <span class="n">selected_columns</span><span class="o">=</span><span class="p">(</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">,</span> <span class="n">PersonFields</span><span class="o">.</span><span class="n">NAME</span><span class="p">)</span>
+            <span class="p">),</span>
+        <span class="p">)</span>
+    <span class="p">]</span>
+    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">DataAttemptStr</span> <span class="o">==</span> <span class="p">(</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">,</span> <span class="n">PersonFields</span><span class="o">.</span><span class="n">NAME</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>attempt_fields = ((PersonFields.SURNAME, PersonFields.NAME),)
+selector_result = TupleDataSelectorRslt(
+    selected_columns=(PersonFields.SURNAME, PersonFields.NAME)
+)
+context = _PrepareContextStub(
+    SourceData={
+        PersonFields.SURNAME: "Ivanov",
+        PersonFields.NAME: "Ivan",
+    },
+    AttemptId=0,
+)</code></pre>
+
+#### Вызов
+
+<pre><code>result = step.input_ctx_attemptColumns(context)</code></pre>
+
+#### Вывод
+
+<pre><code>Тест ничего не печатает.
+Проверяется результат:
+result == StepRslt.ok(
+    SelectAttemptKeysDecision_StrEnum.CONTINUE,
+    "Положили ключи для попытки в context",
+)
+selector.received == [
+    (context.SourceData, (PersonFields.SURNAME, PersonFields.NAME))
+]
+adapter.received == [
+    (
+        context,
+        TupleDataSelectorRslt(
+            selected_columns=(PersonFields.SURNAME, PersonFields.NAME)
+        ),
+    )
+]
+context.DataAttemptStr == (PersonFields.SURNAME, PersonFields.NAME)
+
+tests/pipeline/test_prepare_attempt_step.py::TestPrepareAttemptStepHappyPath::test_input_ctx_attempt_columns_returns_continue_and_updates_context PASSED</code></pre>
+</div>
+</details>
+<h2 id="attemptid1-cfg">Третий тест: <code>AttemptId=1</code> берет второй набор полей из cfg</h2>
+<h3 id="_5">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">При</span> <span class="err">`</span><span class="n">AttemptId</span><span class="o">=</span><span class="mi">1</span><span class="err">`</span> <span class="n">шаг</span> <span class="n">берёт</span> <span class="n">второй</span> <span class="n">набор</span> <span class="n">полей</span> <span class="n">из</span> <span class="n">cfg</span><span class="o">.</span>
+</code></pre></div>
+<p>Этот сценарий важен потому, что сам смысл шага в привязке <code>AttemptId</code> к
+конкретному слоту <code>cfg.attempt_fields</code>. Тест защищает, что при переходе ко
+второй попытке selector получает именно второй набор полей, а не первый.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_second_attempt_uses_second_cfg_slot</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""При `AttemptId=1` шаг берёт второй набор полей из cfg."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span><span class="p">,</span> <span class="n">selector</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">_make_step</span><span class="p">(</span>
+        <span class="n">attempt_fields</span><span class="o">=</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">,),</span>
+            <span class="p">(</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SNILS</span><span class="p">,</span> <span class="n">PersonFields</span><span class="o">.</span><span class="n">DATE_BIRTH</span><span class="p">),</span>
+        <span class="p">),</span>
+        <span class="n">selector_result</span><span class="o">=</span><span class="n">TupleDataSelectorRslt</span><span class="p">(</span>
+            <span class="n">selected_columns</span><span class="o">=</span><span class="p">(</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SNILS</span><span class="p">,)</span>
+        <span class="p">),</span>
+    <span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_PrepareContextStub</span><span class="p">(</span>
+        <span class="n">SourceData</span><span class="o">=</span><span class="p">{</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SNILS</span><span class="p">:</span> <span class="s2">"123-456-789 00"</span><span class="p">},</span>
+        <span class="n">AttemptId</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">step</span><span class="o">.</span><span class="n">input_ctx_attemptColumns</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">status</span> <span class="ow">is</span> <span class="n">StepStatus_StrEnum</span><span class="o">.</span><span class="n">OK</span>
+    <span class="k">assert</span> <span class="n">selector</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[</span>
+        <span class="p">(</span>
+            <span class="n">context</span><span class="o">.</span><span class="n">SourceData</span><span class="p">,</span>
+            <span class="p">(</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SNILS</span><span class="p">,</span> <span class="n">PersonFields</span><span class="o">.</span><span class="n">DATE_BIRTH</span><span class="p">),</span>
+        <span class="p">)</span>
+    <span class="p">]</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>attempt_fields = (
+    (PersonFields.SURNAME,),
+    (PersonFields.SNILS, PersonFields.DATE_BIRTH),
+)
+context = _PrepareContextStub(
+    SourceData={PersonFields.SNILS: "123-456-789 00"},
+    AttemptId=1,
+)</code></pre>
+
+#### Вызов
+
+<pre><code>result = step.input_ctx_attemptColumns(context)</code></pre>
+
+#### Вывод
+
+<pre><code>Тест ничего не печатает.
+Проверяется результат:
+result.status is StepStatus_StrEnum.OK
+selector.received == [
+    (context.SourceData, (PersonFields.SNILS, PersonFields.DATE_BIRTH))
+]
+
+tests/pipeline/test_prepare_attempt_step.py::TestPrepareAttemptStepHappyPath::test_second_attempt_uses_second_cfg_slot PASSED</code></pre>
+</div>
+</details>
+<h2 id="selector-adapter-context">Четвертый тест: реальный selector и реальный adapter обновляют context</h2>
+<h3 id="_6">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Интеграция</span> <span class="n">с</span> <span class="err">`</span><span class="n">DataKeySelector</span><span class="err">`</span> <span class="n">и</span> <span class="err">`</span><span class="n">ColumnSelectorAdapter</span><span class="err">`</span> <span class="n">обновляет</span> <span class="n">context</span><span class="o">.</span>
+</code></pre></div>
+<p>Это уже не чисто stub-based сценарий. Здесь важно показать реальный полезный
+эффект шага: пробельный <code>SNILS</code> не проходит selector, поэтому в
+<code>DataAttemptStr</code> остается только реально пригодное поле <code>SURNAME</code>.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_real_selector_and_real_adapter_update_data_attempt_str</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Интеграция с `DataKeySelector` и `ColumnSelectorAdapter` обновляет context."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">cfg</span> <span class="o">=</span> <span class="n">PrepareAttemptStepCfg</span><span class="p">(</span>
+        <span class="n">attempt_fields</span><span class="o">=</span><span class="p">((</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">,</span> <span class="n">PersonFields</span><span class="o">.</span><span class="n">SNILS</span><span class="p">),)</span>
+    <span class="p">)</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="n">PrepareAttemptStep</span><span class="p">(</span>
+        <span class="n">cfg</span><span class="o">=</span><span class="n">cfg</span><span class="p">,</span>
+        <span class="n">data_selector</span><span class="o">=</span><span class="n">DataKeySelector</span><span class="p">[</span><span class="n">PersonFields</span><span class="p">](),</span>
+        <span class="n">data_selector_adapter</span><span class="o">=</span><span class="n">ColumnSelectorAdapter</span><span class="p">[</span><span class="n">PersonFields</span><span class="p">](),</span>
+    <span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_PrepareContextStub</span><span class="p">(</span>
+        <span class="n">SourceData</span><span class="o">=</span><span class="p">{</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">:</span> <span class="s2">"Ivanov"</span><span class="p">,</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">NAME</span><span class="p">:</span> <span class="s2">"Ivan"</span><span class="p">,</span>
+            <span class="n">PersonFields</span><span class="o">.</span><span class="n">SNILS</span><span class="p">:</span> <span class="s2">"   "</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="n">AttemptId</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">step</span><span class="o">.</span><span class="n">input_ctx_attemptColumns</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">decision</span> <span class="ow">is</span> <span class="n">SelectAttemptKeysDecision_StrEnum</span><span class="o">.</span><span class="n">CONTINUE</span>
+    <span class="k">assert</span> <span class="n">context</span><span class="o">.</span><span class="n">DataAttemptStr</span> <span class="o">==</span> <span class="p">(</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">,)</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>cfg = PrepareAttemptStepCfg(
+    attempt_fields=((PersonFields.SURNAME, PersonFields.SNILS),)
+)
+context = _PrepareContextStub(
+    SourceData={
+        PersonFields.SURNAME: "Ivanov",
+        PersonFields.NAME: "Ivan",
+        PersonFields.SNILS: "   ",
+    },
+    AttemptId=0,
+)</code></pre>
+
+#### Вызов
+
+<pre><code>result = step.input_ctx_attemptColumns(context)</code></pre>
+
+#### Вывод
+
+<pre><code>Тест ничего не печатает.
+Проверяется результат:
+result.decision is SelectAttemptKeysDecision_StrEnum.CONTINUE
+context.DataAttemptStr == (PersonFields.SURNAME,)
+
+tests/pipeline/test_prepare_attempt_step.py::TestPrepareAttemptStepHappyPath::test_real_selector_and_real_adapter_update_data_attempt_str PASSED</code></pre>
+</div>
+</details>
+<h2 id="selector">Пятый тест: последняя валидная попытка все еще идет через selector</h2>
+<h3 id="_7">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="err">`</span><span class="n">AttemptId</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">cfg</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="err">`</span> <span class="n">остаётся</span> <span class="n">валидной</span> <span class="n">последней</span> <span class="n">попыткой</span><span class="o">.</span>
+</code></pre></div>
+<p>Сценарий нужен для защиты границы между «последняя допустимая попытка» и
+«попытки уже закончились». Пока индекс попадает в диапазон cfg, selector
+обязан быть вызван.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_last_valid_attempt_id_still_runs_selector</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`AttemptId == len(cfg) - 1` остаётся валидной последней попыткой."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span><span class="p">,</span> <span class="n">selector</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">_make_step</span><span class="p">(</span>
+        <span class="n">attempt_fields</span><span class="o">=</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">,),</span>
+            <span class="p">(</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">NAME</span><span class="p">,),</span>
+        <span class="p">),</span>
+        <span class="n">selector_result</span><span class="o">=</span><span class="n">TupleDataSelectorRslt</span><span class="p">(</span>
+            <span class="n">selected_columns</span><span class="o">=</span><span class="p">(</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">NAME</span><span class="p">,)</span>
+        <span class="p">),</span>
+    <span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_PrepareContextStub</span><span class="p">(</span>
+        <span class="n">SourceData</span><span class="o">=</span><span class="p">{</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">NAME</span><span class="p">:</span> <span class="s2">"Ivan"</span><span class="p">},</span>
+        <span class="n">AttemptId</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">step</span><span class="o">.</span><span class="n">input_ctx_attemptColumns</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">decision</span> <span class="ow">is</span> <span class="n">SelectAttemptKeysDecision_StrEnum</span><span class="o">.</span><span class="n">CONTINUE</span>
+    <span class="k">assert</span> <span class="n">selector</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[(</span><span class="n">context</span><span class="o">.</span><span class="n">SourceData</span><span class="p">,</span> <span class="p">(</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">NAME</span><span class="p">,))]</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>attempt_fields = (
+    (PersonFields.SURNAME,),
+    (PersonFields.NAME,),
+)
+context = _PrepareContextStub(
+    SourceData={PersonFields.NAME: "Ivan"},
+    AttemptId=1,
+)</code></pre>
+
+#### Вызов
+
+<pre><code>result = step.input_ctx_attemptColumns(context)</code></pre>
+
+#### Вывод
+
+<pre><code>Тест ничего не печатает.
+Проверяется результат:
+result.decision is SelectAttemptKeysDecision_StrEnum.CONTINUE
+selector.received == [(context.SourceData, (PersonFields.NAME,))]
+
+tests/pipeline/test_prepare_attempt_step.py::TestPrepareAttemptStepEdgeCases::test_last_valid_attempt_id_still_runs_selector PASSED</code></pre>
+</div>
+</details>
+<h2 id="cfg-no_more_attempts">Шестой блок: значения за границей cfg дают <code>NO_MORE_ATTEMPTS</code></h2>
+<h3 id="test_attempt_id_equal_to_cfg_length_returns_no_more_attempts">Докстринг теста <code>test_attempt_id_equal_to_cfg_length_returns_no_more_attempts</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Ровно</span> <span class="n">первое</span> <span class="n">значение</span> <span class="n">за</span> <span class="n">границей</span> <span class="n">cfg</span> <span class="n">даёт</span> <span class="err">`</span><span class="n">NO_MORE_ATTEMPTS</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<h3 id="test_large_attempt_id_returns_no_more_attempts">Докстринг теста <code>test_large_attempt_id_returns_no_more_attempts</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Сильно</span> <span class="n">большой</span> <span class="err">`</span><span class="n">AttemptId</span><span class="err">`</span> <span class="n">тоже</span> <span class="n">даёт</span> <span class="err">`</span><span class="n">NO_MORE_ATTEMPTS</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<p>Оба теста показывают одно и то же правило: как только <code>AttemptId</code> выходит за
+правую границу <code>cfg.attempt_fields</code>, шаг вообще не должен звать selector или
+adapter и должен сразу вернуть controlled stop-результат.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код тестов</span><span class="docs-test-hide">Скрыть код тестов</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_attempt_id_equal_to_cfg_length_returns_no_more_attempts</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Ровно первое значение за границей cfg даёт `NO_MORE_ATTEMPTS`."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span><span class="p">,</span> <span class="n">selector</span><span class="p">,</span> <span class="n">adapter</span> <span class="o">=</span> <span class="n">_make_step</span><span class="p">()</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_PrepareContextStub</span><span class="p">(</span>
+        <span class="n">SourceData</span><span class="o">=</span><span class="p">{</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">:</span> <span class="s2">"Ivanov"</span><span class="p">},</span>
+        <span class="n">AttemptId</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">step</span><span class="o">.</span><span class="n">input_ctx_attemptColumns</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="n">StepRslt</span><span class="o">.</span><span class="n">stop</span><span class="p">(</span>
+        <span class="n">SelectAttemptKeysDecision_StrEnum</span><span class="o">.</span><span class="n">NO_MORE_ATTEMPTS</span><span class="p">,</span>
+        <span class="s2">"Попытки закончились"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">assert</span> <span class="n">selector</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[]</span>
+    <span class="k">assert</span> <span class="n">adapter</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[]</span>
+
+<span class="k">def</span> <span class="nf">test_large_attempt_id_returns_no_more_attempts</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Сильно большой `AttemptId` тоже даёт `NO_MORE_ATTEMPTS`."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span><span class="p">,</span> <span class="n">selector</span><span class="p">,</span> <span class="n">adapter</span> <span class="o">=</span> <span class="n">_make_step</span><span class="p">()</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_PrepareContextStub</span><span class="p">(</span>
+        <span class="n">SourceData</span><span class="o">=</span><span class="p">{</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">:</span> <span class="s2">"Ivanov"</span><span class="p">},</span>
+        <span class="n">AttemptId</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">step</span><span class="o">.</span><span class="n">input_ctx_attemptColumns</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">status</span> <span class="ow">is</span> <span class="n">StepStatus_StrEnum</span><span class="o">.</span><span class="n">STOP</span>
+    <span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">decision</span> <span class="ow">is</span> <span class="n">SelectAttemptKeysDecision_StrEnum</span><span class="o">.</span><span class="n">NO_MORE_ATTEMPTS</span>
+    <span class="k">assert</span> <span class="n">selector</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[]</span>
+    <span class="k">assert</span> <span class="n">adapter</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[]</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>Сценарий 1:
+context = _PrepareContextStub(
+    SourceData={PersonFields.SURNAME: "Ivanov"},
+    AttemptId=1,
+)
+
+Сценарий 2:
+context = _PrepareContextStub(
+    SourceData={PersonFields.SURNAME: "Ivanov"},
+    AttemptId=100,
+)</code></pre>
+
+#### Вызов
+
+<pre><code>result = step.input_ctx_attemptColumns(context)</code></pre>
+
+#### Вывод
+
+<pre><code>Тесты ничего не печатают.
+Проверяется результат:
+для AttemptId=1:
+result == StepRslt.stop(
+    SelectAttemptKeysDecision_StrEnum.NO_MORE_ATTEMPTS,
+    "Попытки закончились",
+)
+selector.received == []
+adapter.received == []
+
+для AttemptId=100:
+result.status is StepStatus_StrEnum.STOP
+result.decision is SelectAttemptKeysDecision_StrEnum.NO_MORE_ATTEMPTS
+selector.received == []
+adapter.received == []
+
+tests/pipeline/test_prepare_attempt_step.py::TestPrepareAttemptStepEdgeCases::test_attempt_id_equal_to_cfg_length_returns_no_more_attempts PASSED
+tests/pipeline/test_prepare_attempt_step.py::TestPrepareAttemptStepEdgeCases::test_large_attempt_id_returns_no_more_attempts PASSED</code></pre>
+</div>
+</details>
+<h2 id="attemptid-python-">Седьмой тест: отрицательный <code>AttemptId</code> использует обычную Python-индексацию</h2>
+<h3 id="_8">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Отрицательный</span> <span class="err">`</span><span class="n">AttemptId</span><span class="err">`</span> <span class="n">не</span> <span class="n">отсекается</span> <span class="n">и</span> <span class="n">берёт</span> <span class="n">попытку</span> <span class="n">с</span> <span class="n">конца</span> <span class="n">cfg</span><span class="o">.</span>
+</code></pre></div>
+<p>Это один из самых полезных edge-case сценариев страницы. Тест показывает, что
+шаг не валидирует <code>AttemptId</code> как неотрицательный индекс: значение <code>-1</code>
+проходит в обычную Python-индексацию кортежа и берет последний слот.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_negative_attempt_id_uses_python_negative_indexing</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Отрицательный `AttemptId` не отсекается и берёт попытку с конца cfg."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span><span class="p">,</span> <span class="n">selector</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">_make_step</span><span class="p">(</span>
+        <span class="n">attempt_fields</span><span class="o">=</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">,),</span>
+            <span class="p">(</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SNILS</span><span class="p">,),</span>
+        <span class="p">),</span>
+        <span class="n">selector_result</span><span class="o">=</span><span class="n">TupleDataSelectorRslt</span><span class="p">(</span>
+            <span class="n">selected_columns</span><span class="o">=</span><span class="p">(</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SNILS</span><span class="p">,)</span>
+        <span class="p">),</span>
+    <span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_PrepareContextStub</span><span class="p">(</span>
+        <span class="n">SourceData</span><span class="o">=</span><span class="p">{</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SNILS</span><span class="p">:</span> <span class="s2">"123-456-789 00"</span><span class="p">},</span>
+        <span class="n">AttemptId</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">step</span><span class="o">.</span><span class="n">input_ctx_attemptColumns</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">result</span><span class="o">.</span><span class="n">decision</span> <span class="ow">is</span> <span class="n">SelectAttemptKeysDecision_StrEnum</span><span class="o">.</span><span class="n">CONTINUE</span>
+    <span class="k">assert</span> <span class="n">selector</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[(</span><span class="n">context</span><span class="o">.</span><span class="n">SourceData</span><span class="p">,</span> <span class="p">(</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SNILS</span><span class="p">,))]</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>attempt_fields = (
+    (PersonFields.SURNAME,),
+    (PersonFields.SNILS,),
+)
+context = _PrepareContextStub(
+    SourceData={PersonFields.SNILS: "123-456-789 00"},
+    AttemptId=-1,
+)</code></pre>
+
+#### Вызов
+
+<pre><code>result = step.input_ctx_attemptColumns(context)</code></pre>
+
+#### Вывод
+
+<pre><code>Тест ничего не печатает.
+Проверяется результат:
+result.decision is SelectAttemptKeysDecision_StrEnum.CONTINUE
+selector.received == [(context.SourceData, (PersonFields.SNILS,))]
+
+tests/pipeline/test_prepare_attempt_step.py::TestPrepareAttemptStepEdgeCases::test_negative_attempt_id_uses_python_negative_indexing PASSED</code></pre>
+</div>
+</details>
+<h2 id="dataselectornomatcherror-next_attempt">Восьмой тест: <code>DataSelectorNoMatchError</code> дает <code>NEXT_ATTEMPT</code></h2>
+<h3 id="_9">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="err">`</span><span class="n">DataSelectorNoMatchError</span><span class="err">`</span> <span class="n">переводится</span> <span class="n">в</span> <span class="err">`</span><span class="n">STOP</span><span class="o">/</span><span class="n">NEXT_ATTEMPT</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<p>Этот controlled error и есть главный branching-контракт шага: selector не нашел
+подходящих полей для текущей попытки, значит шаг не пишет ничего в context, а
+просит orchestrator перейти к следующей попытке.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_selector_no_match_returns_next_attempt_and_skips_adapter</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`DataSelectorNoMatchError` переводится в `STOP/NEXT_ATTEMPT`."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span><span class="p">,</span> <span class="n">selector</span><span class="p">,</span> <span class="n">adapter</span> <span class="o">=</span> <span class="n">_make_step</span><span class="p">()</span>
+    <span class="n">selector</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span class="n">DataSelectorNoMatchError</span><span class="p">(</span><span class="s2">"nothing matched"</span><span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_PrepareContextStub</span><span class="p">(</span>
+        <span class="n">SourceData</span><span class="o">=</span><span class="p">{</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">:</span> <span class="kc">None</span><span class="p">},</span>
+        <span class="n">AttemptId</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">step</span><span class="o">.</span><span class="n">input_ctx_attemptColumns</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">result</span> <span class="o">==</span> <span class="n">StepRslt</span><span class="o">.</span><span class="n">stop</span><span class="p">(</span>
+        <span class="n">SelectAttemptKeysDecision_StrEnum</span><span class="o">.</span><span class="n">NEXT_ATTEMPT</span><span class="p">,</span>
+        <span class="s2">"nothing matched"</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">assert</span> <span class="n">adapter</span><span class="o">.</span><span class="n">received</span> <span class="o">==</span> <span class="p">[]</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>selector.error = DataSelectorNoMatchError("nothing matched")
+context = _PrepareContextStub(
+    SourceData={PersonFields.SURNAME: None},
+    AttemptId=0,
+)</code></pre>
+
+#### Вызов
+
+<pre><code>result = step.input_ctx_attemptColumns(context)</code></pre>
+
+#### Вывод
+
+<pre><code>Тест ничего не печатает.
+Проверяется результат:
+result == StepRslt.stop(
+    SelectAttemptKeysDecision_StrEnum.NEXT_ATTEMPT,
+    "nothing matched",
+)
+adapter.received == []
+
+tests/pipeline/test_prepare_attempt_step.py::TestPrepareAttemptStepEdgeCases::test_selector_no_match_returns_next_attempt_and_skips_adapter PASSED</code></pre>
+</div>
+</details>
+<h2 id="context">Девятый блок: отсутствие обязательных атрибутов context не скрывается</h2>
+<h3 id="test_missing_attempt_id_raises_attribute_error">Докстринг теста <code>test_missing_attempt_id_raises_attribute_error</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Шаг</span> <span class="n">не</span> <span class="n">маскирует</span> <span class="n">отсутствие</span> <span class="err">`</span><span class="n">AttemptId</span><span class="err">`</span> <span class="n">в</span> <span class="n">context</span><span class="o">.</span>
+</code></pre></div>
+<h3 id="test_missing_source_data_raises_attribute_error">Докстринг теста <code>test_missing_source_data_raises_attribute_error</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">При</span> <span class="n">валидном</span> <span class="err">`</span><span class="n">AttemptId</span><span class="err">`</span> <span class="n">отсутствие</span> <span class="err">`</span><span class="n">SourceData</span><span class="err">`</span> <span class="n">даёт</span> <span class="err">`</span><span class="ne">AttributeError</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<p>Эти два теста фиксируют минимальный protocol-контракт context. Шаг ожидает, что
+в объекте есть и <code>AttemptId</code>, и <code>SourceData</code>, и не пытается компенсировать их
+отсутствие своими fallback-ветками.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код тестов</span><span class="docs-test-hide">Скрыть код тестов</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_missing_attempt_id_raises_attribute_error</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Шаг не маскирует отсутствие `AttemptId` в context."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="n">_make_step</span><span class="p">()</span>
+
+    <span class="c1"># Act / Assert</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">):</span>
+        <span class="n">step</span><span class="o">.</span><span class="n">input_ctx_attemptColumns</span><span class="p">(</span><span class="n">_ContextWithoutAttemptId</span><span class="p">())</span>
+
+<span class="k">def</span> <span class="nf">test_missing_source_data_raises_attribute_error</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""При валидном `AttemptId` отсутствие `SourceData` даёт `AttributeError`."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="n">_make_step</span><span class="p">()</span>
+
+    <span class="c1"># Act / Assert</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">):</span>
+        <span class="n">step</span><span class="o">.</span><span class="n">input_ctx_attemptColumns</span><span class="p">(</span><span class="n">_ContextWithoutSourceData</span><span class="p">(</span><span class="n">AttemptId</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>Сценарий 1:
+context = _ContextWithoutAttemptId()
+
+Сценарий 2:
+context = _ContextWithoutSourceData(AttemptId=0)</code></pre>
+
+#### Вызов
+
+<pre><code>with pytest.raises(AttributeError):
+    step.input_ctx_attemptColumns(context)</code></pre>
+
+#### Ошибка
+
+<pre><code>Тесты ничего не печатают.
+Проверяется только то, что нарушение context-контракта
+приводит к AttributeError.
+
+tests/pipeline/test_prepare_attempt_step.py::TestPrepareAttemptStepContractViolations::test_missing_attempt_id_raises_attribute_error PASSED
+tests/pipeline/test_prepare_attempt_step.py::TestPrepareAttemptStepContractViolations::test_missing_source_data_raises_attribute_error PASSED</code></pre>
+</div>
+</details>
+<h2 id="attemptid-steprslt">Десятый тест: строковый <code>AttemptId</code> ломает сравнение до любого <code>StepRslt</code></h2>
+<h3 id="_10">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Строковый</span> <span class="err">`</span><span class="n">AttemptId</span><span class="err">`</span> <span class="n">ломает</span> <span class="n">сравнение</span> <span class="n">с</span> <span class="err">`</span><span class="nb">int</span><span class="err">`</span> <span class="n">и</span> <span class="n">не</span> <span class="n">переводится</span> <span class="n">в</span> <span class="err">`</span><span class="n">StepRslt</span><span class="err">`</span><span class="o">.</span>
+</code></pre></div>
+<p>Это важный negative-case про отсутствие явной runtime-валидации типа. Шаг
+пытается сравнить <code>ctx.AttemptId</code> с длиной cfg, и если это строка, ошибка
+появляется раньше, чем какой-либо controlled result.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_string_attempt_id_raises_type_error_before_step_result</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Строковый `AttemptId` ломает сравнение с `int` и не переводится в `StepRslt`."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="n">_make_step</span><span class="p">()</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_ContextWithStringAttemptId</span><span class="p">(</span>
+        <span class="n">SourceData</span><span class="o">=</span><span class="p">{</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">:</span> <span class="s2">"Ivanov"</span><span class="p">},</span>
+        <span class="n">AttemptId</span><span class="o">=</span><span class="s2">"0"</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act / Assert</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">TypeError</span><span class="p">):</span>
+        <span class="n">step</span><span class="o">.</span><span class="n">input_ctx_attemptColumns</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>context = _ContextWithStringAttemptId(
+    SourceData={PersonFields.SURNAME: "Ivanov"},
+    AttemptId="0",
+)</code></pre>
+
+#### Вызов
+
+<pre><code>with pytest.raises(TypeError):
+    step.input_ctx_attemptColumns(context)</code></pre>
+
+#### Ошибка
+
+<pre><code>Тест ничего не печатает.
+Проверяется только то, что сравнение строкового AttemptId с int
+поднимает TypeError до возврата любого StepRslt.
+
+tests/pipeline/test_prepare_attempt_step.py::TestPrepareAttemptStepContractViolations::test_string_attempt_id_raises_type_error_before_step_result PASSED</code></pre>
+</div>
+</details>
+<h2 id="selector-adapter-">Одиннадцатый блок: отсутствие методов у selector-а и adapter-а не скрывается</h2>
+<h3 id="test_missing_selector_method_raises_attribute_error">Докстринг теста <code>test_missing_selector_method_raises_attribute_error</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Шаг</span> <span class="n">не</span> <span class="n">маскирует</span> <span class="n">отсутствие</span> <span class="err">`</span><span class="n">make_ColumnsAttemptStr</span><span class="err">`</span> <span class="n">у</span> <span class="n">selector</span><span class="o">-</span><span class="n">а</span><span class="o">.</span>
+</code></pre></div>
+<h3 id="test_missing_adapter_method_raises_attribute_error">Докстринг теста <code>test_missing_adapter_method_raises_attribute_error</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Шаг</span> <span class="n">не</span> <span class="n">маскирует</span> <span class="n">отсутствие</span> <span class="err">`</span><span class="n">input_DataSelectorRslt</span><span class="err">`</span> <span class="n">у</span> <span class="n">adapter</span><span class="o">-</span><span class="n">а</span><span class="o">.</span>
+</code></pre></div>
+<p>Здесь тестируется structural-контракт обоих collaborators. <code>PrepareAttemptStep</code>
+не выполняет отдельную проверку интерфейсов, а просто вызывает ожидаемые
+методы.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код тестов</span><span class="docs-test-hide">Скрыть код тестов</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_missing_selector_method_raises_attribute_error</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Шаг не маскирует отсутствие `make_ColumnsAttemptStr` у selector-а."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="n">PrepareAttemptStep</span><span class="p">(</span>
+        <span class="n">cfg</span><span class="o">=</span><span class="n">PrepareAttemptStepCfg</span><span class="p">(</span><span class="n">attempt_fields</span><span class="o">=</span><span class="p">((</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">,),)),</span>
+        <span class="n">data_selector</span><span class="o">=</span><span class="n">_SelectorWithoutMethod</span><span class="p">(),</span>
+        <span class="n">data_selector_adapter</span><span class="o">=</span><span class="n">_SelectorAdapterStub</span><span class="p">(),</span>
+    <span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_PrepareContextStub</span><span class="p">(</span>
+        <span class="n">SourceData</span><span class="o">=</span><span class="p">{</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">:</span> <span class="s2">"Ivanov"</span><span class="p">},</span>
+        <span class="n">AttemptId</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act / Assert</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">):</span>
+        <span class="n">step</span><span class="o">.</span><span class="n">input_ctx_attemptColumns</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">test_missing_adapter_method_raises_attribute_error</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Шаг не маскирует отсутствие `input_DataSelectorRslt` у adapter-а."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="n">PrepareAttemptStep</span><span class="p">(</span>
+        <span class="n">cfg</span><span class="o">=</span><span class="n">PrepareAttemptStepCfg</span><span class="p">(</span><span class="n">attempt_fields</span><span class="o">=</span><span class="p">((</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">,),)),</span>
+        <span class="n">data_selector</span><span class="o">=</span><span class="n">_SelectorStub</span><span class="p">(</span>
+            <span class="n">result</span><span class="o">=</span><span class="n">TupleDataSelectorRslt</span><span class="p">(</span>
+                <span class="n">selected_columns</span><span class="o">=</span><span class="p">(</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">,)</span>
+            <span class="p">)</span>
+        <span class="p">),</span>
+        <span class="n">data_selector_adapter</span><span class="o">=</span><span class="n">_AdapterWithoutMethod</span><span class="p">(),</span>
+    <span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_PrepareContextStub</span><span class="p">(</span>
+        <span class="n">SourceData</span><span class="o">=</span><span class="p">{</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">:</span> <span class="s2">"Ivanov"</span><span class="p">},</span>
+        <span class="n">AttemptId</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act / Assert</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">):</span>
+        <span class="n">step</span><span class="o">.</span><span class="n">input_ctx_attemptColumns</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>Сценарий 1:
+data_selector = _SelectorWithoutMethod()
+
+Сценарий 2:
+data_selector_adapter = _AdapterWithoutMethod()</code></pre>
+
+#### Вызов
+
+<pre><code>with pytest.raises(AttributeError):
+    step.input_ctx_attemptColumns(context)</code></pre>
+
+#### Ошибка
+
+<pre><code>Тесты ничего не печатают.
+Проверяется только то, что отсутствие ожидаемого collaborator-метода
+приводит к AttributeError.
+
+tests/pipeline/test_prepare_attempt_step.py::TestPrepareAttemptStepContractViolations::test_missing_selector_method_raises_attribute_error PASSED
+tests/pipeline/test_prepare_attempt_step.py::TestPrepareAttemptStepContractViolations::test_missing_adapter_method_raises_attribute_error PASSED</code></pre>
+</div>
+</details>
+<h2 id="runtime-selector-adapter-">Двенадцатый блок: неожиданные runtime-ошибки selector-а и adapter-а пробрасываются</h2>
+<h3 id="test_unexpected_runtime_error_from_selector_propagates">Докстринг теста <code>test_unexpected_runtime_error_from_selector_propagates</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Неожиданная</span> <span class="n">runtime</span><span class="o">-</span><span class="n">ошибка</span> <span class="n">selector</span><span class="o">-</span><span class="n">а</span> <span class="n">пробрасывается</span> <span class="n">наружу</span><span class="o">.</span>
+</code></pre></div>
+<h3 id="test_unexpected_runtime_error_from_adapter_propagates">Докстринг теста <code>test_unexpected_runtime_error_from_adapter_propagates</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Неожиданная</span> <span class="n">runtime</span><span class="o">-</span><span class="n">ошибка</span> <span class="n">adapter</span><span class="o">-</span><span class="n">а</span> <span class="n">пробрасывается</span> <span class="n">наружу</span><span class="o">.</span>
+</code></pre></div>
+<p>Эти тесты нужны, чтобы шаг не превратился в слишком широкий error-wrapper. В
+<code>StepRslt.stop(...)</code> переводится только <code>DataSelectorNoMatchError</code>; остальные
+runtime-ошибки должны идти выше как есть.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код тестов</span><span class="docs-test-hide">Скрыть код тестов</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_unexpected_runtime_error_from_selector_propagates</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Неожиданная runtime-ошибка selector-а пробрасывается наружу."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span><span class="p">,</span> <span class="n">selector</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">_make_step</span><span class="p">()</span>
+    <span class="n">selector</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">"selector exploded"</span><span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_PrepareContextStub</span><span class="p">(</span>
+        <span class="n">SourceData</span><span class="o">=</span><span class="p">{</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">:</span> <span class="s2">"Ivanov"</span><span class="p">},</span>
+        <span class="n">AttemptId</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act / Assert</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">RuntimeError</span><span class="p">,</span> <span class="n">match</span><span class="o">=</span><span class="s2">"selector exploded"</span><span class="p">):</span>
+        <span class="n">step</span><span class="o">.</span><span class="n">input_ctx_attemptColumns</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">test_unexpected_runtime_error_from_adapter_propagates</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Неожиданная runtime-ошибка adapter-а пробрасывается наружу."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">step</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">adapter</span> <span class="o">=</span> <span class="n">_make_step</span><span class="p">()</span>
+    <span class="n">adapter</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">"adapter exploded"</span><span class="p">)</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="n">_PrepareContextStub</span><span class="p">(</span>
+        <span class="n">SourceData</span><span class="o">=</span><span class="p">{</span><span class="n">PersonFields</span><span class="o">.</span><span class="n">SURNAME</span><span class="p">:</span> <span class="s2">"Ivanov"</span><span class="p">},</span>
+        <span class="n">AttemptId</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Act / Assert</span>
+    <span class="k">with</span> <span class="n">pytest</span><span class="o">.</span><span class="n">raises</span><span class="p">(</span><span class="ne">RuntimeError</span><span class="p">,</span> <span class="n">match</span><span class="o">=</span><span class="s2">"adapter exploded"</span><span class="p">):</span>
+        <span class="n">step</span><span class="o">.</span><span class="n">input_ctx_attemptColumns</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>Сценарий 1:
+selector.error = RuntimeError("selector exploded")
+
+Сценарий 2:
+adapter.error = RuntimeError("adapter exploded")</code></pre>
+
+#### Вызов
+
+<pre><code>with pytest.raises(RuntimeError, match=...):
+    step.input_ctx_attemptColumns(context)</code></pre>
+
+#### Ошибка
+
+<pre><code>Тесты ничего не печатают.
+Проверяются ошибки:
+RuntimeError("selector exploded")
+RuntimeError("adapter exploded")
+
+tests/pipeline/test_prepare_attempt_step.py::TestPrepareAttemptStepContractViolations::test_unexpected_runtime_error_from_selector_propagates PASSED
+tests/pipeline/test_prepare_attempt_step.py::TestPrepareAttemptStepContractViolations::test_unexpected_runtime_error_from_adapter_propagates PASSED</code></pre>
+</div>
+</details>
+<h2 id="xml-transport-">Тринадцатый блок: тело класса изолировано от XML- и transport-слоев</h2>
+<h3 id="_11">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Шаг</span> <span class="n">выбора</span> <span class="n">попытки</span> <span class="n">не</span> <span class="n">должен</span> <span class="n">зависеть</span> <span class="n">от</span> <span class="n">XML</span><span class="o">-</span> <span class="n">и</span> <span class="n">transport</span><span class="o">-</span><span class="n">слоёв</span><span class="o">.</span>
+</code></pre></div>
+<p>Это параметризованный guard-тест по тексту класса. Он защищает архитектурную
+границу: шаг выбора попытки не должен знать о <code>xml_bytes</code>, transport DTO и
+самом transport-слое.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">"symbol"</span><span class="p">,</span> <span class="n">_FORBIDDEN_XML_SYMBOLS</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">test_class_body_does_not_depend_on_xml_or_transport_symbols</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span> <span class="n">symbol</span><span class="p">:</span> <span class="nb">str</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Шаг выбора попытки не должен зависеть от XML- и transport-слоёв."""</span>
+    <span class="c1"># Arrange / Act / Assert</span>
+    <span class="k">assert</span> <span class="n">symbol</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_CLASS_SRC</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>symbols = [
+    "xml_bytes",
+    "TransportResponseDTO",
+    "xml_transport",
+]
+class_source = inspect.getsource(PrepareAttemptStep)</code></pre>
+
+#### Вызов
+
+<pre><code>assert symbol not in class_source</code></pre>
+
+#### Вывод
+
+<pre><code>Тест ничего не печатает.
+Проверяется условие:
+каждый symbol из списка отсутствует в тексте класса PrepareAttemptStep
+
+tests/pipeline/test_prepare_attempt_step.py::TestPrepareAttemptStepArchitecture::test_class_body_does_not_depend_on_xml_or_transport_symbols[xml_bytes] PASSED
+tests/pipeline/test_prepare_attempt_step.py::TestPrepareAttemptStepArchitecture::test_class_body_does_not_depend_on_xml_or_transport_symbols[TransportResponseDTO] PASSED
+tests/pipeline/test_prepare_attempt_step.py::TestPrepareAttemptStepArchitecture::test_class_body_does_not_depend_on_xml_or_transport_symbols[xml_transport] PASSED</code></pre>
+</div>
+</details>
+<h2 id="source-">Четырнадцатый блок: тело класса не зависит от ошибок загрузки source-слоя</h2>
+<h3 id="_12">Докстринг теста</h3>
+<div class="language-python highlight"><pre><span></span><code><span class="n">Шаг</span> <span class="n">не</span> <span class="n">работает</span> <span class="n">с</span> <span class="n">ошибками</span> <span class="n">загрузки</span> <span class="n">source</span><span class="o">-</span><span class="n">слоя</span><span class="o">.</span>
+</code></pre></div>
+<p>Этот guard-тест нужен, чтобы <code>PrepareAttemptStep</code> не начал смешивать свою
+ответственность с <code>LoadContextStep</code> и source-слоем. В тексте класса не должно
+быть <code>NoValidRowsError</code>.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код теста</span><span class="docs-test-hide">Скрыть код теста</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">parametrize</span><span class="p">(</span><span class="s2">"symbol"</span><span class="p">,</span> <span class="n">_FORBIDDEN_SOURCE_SYMBOLS</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">test_class_body_does_not_depend_on_source_loading_errors</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span> <span class="n">symbol</span><span class="p">:</span> <span class="nb">str</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Шаг не работает с ошибками загрузки source-слоя."""</span>
+    <span class="c1"># Arrange / Act / Assert</span>
+    <span class="k">assert</span> <span class="n">symbol</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_CLASS_SRC</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>symbol = "NoValidRowsError"
+class_source = inspect.getsource(PrepareAttemptStep)</code></pre>
+
+#### Вызов
+
+<pre><code>assert symbol not in class_source</code></pre>
+
+#### Вывод
+
+<pre><code>Тест ничего не печатает.
+Проверяется условие:
+"NoValidRowsError" отсутствует в тексте класса PrepareAttemptStep
+
+tests/pipeline/test_prepare_attempt_step.py::TestPrepareAttemptStepArchitecture::test_class_body_does_not_depend_on_source_loading_errors[NoValidRowsError] PASSED</code></pre>
+</div>
+</details>
+<h2 id="_13">Пятнадцатый блок: сигнатуры шага остаются компактными и синхронными</h2>
+<h3 id="test_init_signature_contains_only_expected_parameters">Докстринг теста <code>test_init_signature_contains_only_expected_parameters</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="err">`</span><span class="fm">__init__</span><span class="err">`</span> <span class="n">принимает</span> <span class="n">только</span> <span class="n">cfg</span><span class="p">,</span> <span class="n">selector</span> <span class="n">и</span> <span class="n">adapter</span><span class="o">.</span>
+</code></pre></div>
+<h3 id="test_input_ctx_attempt_columns_signature_contains_only_ctx">Докстринг теста <code>test_input_ctx_attempt_columns_signature_contains_only_ctx</code></h3>
+<div class="language-python highlight"><pre><span></span><code><span class="err">`</span><span class="n">input_ctx_attemptColumns</span><span class="err">`</span> <span class="n">остаётся</span> <span class="n">компактным</span> <span class="n">синхронным</span> <span class="n">методом</span><span class="o">.</span>
+</code></pre></div>
+<p>Эти тесты работают как API-guard. Они фиксируют, что шаг не разрастается по
+аргументам и не становится <code>async</code>, хотя по смыслу должен оставаться простым
+синхронным orchestration-методом.</p>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать код тестов</span><span class="docs-test-hide">Скрыть код тестов</span></summary>
+<div class="docs-test-panel">
+<div class="language-python highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_init_signature_contains_only_expected_parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`__init__` принимает только cfg, selector и adapter."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">signature</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="n">PrepareAttemptStep</span><span class="o">.</span><span class="fm">__init__</span><span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">signature</span><span class="o">.</span><span class="n">parameters</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">params</span> <span class="o">==</span> <span class="p">[</span><span class="s2">"self"</span><span class="p">,</span> <span class="s2">"cfg"</span><span class="p">,</span> <span class="s2">"data_selector"</span><span class="p">,</span> <span class="s2">"data_selector_adapter"</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">test_input_ctx_attempt_columns_signature_contains_only_ctx</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""`input_ctx_attemptColumns` остаётся компактным синхронным методом."""</span>
+    <span class="c1"># Arrange</span>
+    <span class="n">signature</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="n">PrepareAttemptStep</span><span class="o">.</span><span class="n">input_ctx_attemptColumns</span><span class="p">)</span>
+
+    <span class="c1"># Act</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">signature</span><span class="o">.</span><span class="n">parameters</span><span class="p">)</span>
+
+    <span class="c1"># Assert</span>
+    <span class="k">assert</span> <span class="n">params</span> <span class="o">==</span> <span class="p">[</span><span class="s2">"self"</span><span class="p">,</span> <span class="s2">"ctx"</span><span class="p">]</span>
+    <span class="k">assert</span> <span class="ow">not</span> <span class="n">inspect</span><span class="o">.</span><span class="n">iscoroutinefunction</span><span class="p">(</span><span class="n">PrepareAttemptStep</span><span class="o">.</span><span class="n">input_ctx_attemptColumns</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</details>
+<details class="docs-test-case">
+<summary><span class="docs-test-show">Показать вызов</span><span class="docs-test-hide">Скрыть вызов</span></summary>
+<div class="docs-test-panel">
+
+#### Вход
+
+<pre><code>init_signature = inspect.signature(PrepareAttemptStep.__init__)
+method_signature = inspect.signature(PrepareAttemptStep.input_ctx_attemptColumns)</code></pre>
+
+#### Вызов
+
+<pre><code>list(init_signature.parameters)
+list(method_signature.parameters)
+inspect.iscoroutinefunction(PrepareAttemptStep.input_ctx_attemptColumns)</code></pre>
+
+#### Вывод
+
+<pre><code>Тесты ничего не печатают.
+Проверяется состояние:
+list(init_signature.parameters) == ["self", "cfg", "data_selector", "data_selector_adapter"]
+list(method_signature.parameters) == ["self", "ctx"]
+inspect.iscoroutinefunction(PrepareAttemptStep.input_ctx_attemptColumns) == False
+
+tests/pipeline/test_prepare_attempt_step.py::TestPrepareAttemptStepArchitecture::test_init_signature_contains_only_expected_parameters PASSED
+tests/pipeline/test_prepare_attempt_step.py::TestPrepareAttemptStepArchitecture::test_input_ctx_attempt_columns_signature_contains_only_ctx PASSED</code></pre>
+</div>
+</details>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.sections", "toc.integrate", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../../../../assets/javascripts/toc-collapse.js"></script>
+</body>
+</html>
